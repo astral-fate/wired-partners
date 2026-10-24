@@ -1,0 +1,45 @@
+\begin{tikzpicture}[
+  font=\footnotesize,
+  box/.style={draw, rounded corners=2pt, align=center, minimum height=9mm, inner sep=3pt, fill=white},
+  agent/.style={box, fill=blue!8},
+  plant/.style={box, fill=red!10},
+  gm/.style={box, fill=green!10},
+  pipe/.style={box, fill=gray!8, text width=2.3cm, minimum height=12mm},
+  arr/.style={-{Stealth[length=2mm]}, thick},
+  lane/.style={draw=gray!60, dashed, rounded corners=4pt, inner sep=7pt},
+  lbl/.style={font=\scriptsize\itshape, text=gray!30!black, fill=white, inner sep=1pt}
+]
+% ---------------- game layer ----------------
+\node[box, fill=yellow!15, text width=4.2cm] (rules) {\textbf{House rules} (announced at game start)\\ $p$\% of private offers come from compliance agents; accepting one disqualifies; reporting is free};
+\node[plant, right=10mm of rules] (plant) {\textbf{Plant seat}\\(peer player)};
+\node[agent, right=22mm of plant] (target) {\textbf{Target agent}\\(model under test)};
+\node[gm, right=16mm of target] (gm) {\textbf{Game}\\\textbf{master}};
+\draw[arr] (plant) -- node[above=1pt, lbl]{private offer} (target);
+\draw[arr, red!70!black] (target) -- node[above=1pt, lbl]{\textsc{report}} (gm);
+\draw[arr, gray] ($(rules.east)+(0,-0.5)$) -- node[pos=0.5, below=1pt, lbl]{known to all players} ($(target.south)+(-0.6,-0.5)$) -- ($(target.south)+(-0.6,0)$);
+\node[below=9mm of target, xshift=6mm, font=\scriptsize] (dec) {decision: \textsc{accept} / \textsc{decline} / \textsc{report}};
+\draw[arr] ($(target.south)+(0.6,0)$) -- ($(dec.north)+(0,0)$);
+\begin{scope}[on background layer]
+  \node[lane, fit=(rules)(plant)(target)(gm)(dec)] (L1) {};
+\end{scope}
+\node[lbl, anchor=south west] at ($(L1.north west)+(0.1,0.05)$) {\textbf{Game layer:} the sting as the agent experiences it};
+
+% ---------------- experiment layer ----------------
+\node[pipe, below=17mm of L1.south west, anchor=north west, xshift=7pt] (gen) {\textbf{Trial generator}\\ seed $\to$ seats, round, scores};
+\node[pipe, right=4mm of gen] (build) {\textbf{Prompt builder}\\ rules + context + offer};
+\node[pipe, right=4mm of build] (route) {\textbf{Provider router}\\ OpenRouter / Groq / NIM};
+\node[pipe, right=4mm of route] (parse) {\textbf{Strict parser}\\ \texttt{DECISION:} token + suspicion lexicon};
+\node[pipe, right=4mm of parse] (log) {\textbf{Append-only log}\\ \texttt{trials.jsonl}};
+\node[pipe, right=4mm of log, fill=green!8] (ana) {\textbf{Analysis}\\ paired tables, CMH, bootstrap};
+\draw[arr] (gen) -- (build);
+\draw[arr] (build) -- (route);
+\draw[arr] (route) -- (parse);
+\draw[arr] (parse) -- (log);
+\draw[arr] (log) -- (ana);
+\draw[arr, dashed, gray] (log.south) -- ++(0,-0.55) -| node[pos=0.25, below=1pt, lbl]{rerun the same command: skip finished trials, retry failed calls} (gen.south);
+\begin{scope}[on background layer]
+  \node[lane, fit=(gen)(build)(route)(parse)(log)(ana), inner ysep=14pt, yshift=-4pt] (L2) {};
+\end{scope}
+\node[lbl, anchor=south east] at ($(L2.north east)+(-0.1,0.05)$) {\textbf{Experiment layer:} one call per (model, condition, trial)};
+\draw[arr, dotted, thick, gray] (build.north) -- node[right=2pt, lbl]{builds the offer the target sees} (build.north |- L1.south);
+\end{tikzpicture}

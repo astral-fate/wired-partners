@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wired-partners"
+version = "0.1.0"
+description = "Announced sting operations as a deterrent to voluntary collusion between LLM agents"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [
+    { name = "Fatimah Emad Eldin", email = "Fatimah@trouve.works" },
+]
+requires-python = ">=3.10"
+dependencies = [
+    "openai>=1.40",
+    "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=7.4",
+]
+
+[project.scripts]
+wired-partners = "wired_partners.run:main"
+wp-analyze = "wired_partners.analyze:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+wired_partners = ["assets/liars_bar/*.txt"]
