@@ -1,0 +1,503 @@
+[
+  {
+    "blackboard_id": "0",
+    "participants": [
+      "Boris",
+      "Ciara",
+      "Drew",
+      "Tara"
+    ],
+    "events": [
+      {
+        "blackboard_id": 0,
+        "id": "f9694069-3f58-4500-9474-e758aaffdbad",
+        "ts": 1792867864.725136,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Boris, Ciara, Drew, Tara"
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "0bd10fc8-4846-47bb-a321-422b6f3acd27",
+        "ts": 1792867872.9513674,
+        "agent": "Drew",
+        "kind": "communication",
+        "payload": {
+          "content": "I (Drew) plan to take ISSUE-0002::review (effort 2.0, priority critical).",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "091c9eac-ace2-42e1-b81a-aa5e8bbb907d",
+        "ts": 1792867875.5927536,
+        "agent": "Drew",
+        "kind": "communication",
+        "payload": {
+          "content": "What are your planned tasks? Let's avoid duplicates.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "29745b3d-44ea-4a2d-913e-d52ddbd9f16b",
+        "ts": 1792867882.8325026,
+        "agent": "Boris",
+        "kind": "communication",
+        "payload": {
+          "content": "I (Boris) plan to take ISSUE-0002::test (effort 2.8, priority critical).",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "8563e3d5-c37a-4ed7-b948-8427d826b084",
+        "ts": 1792867889.5444584,
+        "agent": "Tara",
+        "kind": "communication",
+        "payload": {
+          "content": "I (Tara) plan to take ISSUE-0001::triage (effort 1.6, priority medium). Anyone else planning the same? (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ffd0d944-83db-4361-bb08-4e5e3fb0844b",
+        "ts": 1792867895.9269571,
+        "agent": "Ciara",
+        "kind": "communication",
+        "payload": {
+          "content": "I (Ciara) plan to take ISSUE-0002::implement (effort 4.0, priority critical). This fits my availability and avoids duplicates with Drew (review) and Boris (test).",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c5cf8bc0-01f7-44cb-8068-11e51c4ac9a8",
+        "ts": 1792867901.1050518,
+        "agent": "Drew",
+        "kind": "communication",
+        "payload": {
+          "content": "I confirm I will take ISSUE-0002::review (effort 2.0, priority critical). All planned tasks look distinct, so we should be good. Let me know if anyone changes their plan.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b12dc7d1-9e3c-4fa2-b913-45bd3ed7c53d",
+        "ts": 1792867906.0270803,
+        "agent": "Boris",
+        "kind": "communication",
+        "payload": {
+          "content": "I confirm my plan to take ISSUE-0002::test (effort 2.8, priority critical). All tasks appear distinct; please confirm your plans remain unchanged.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "9c20e9e8-56db-491a-8f5d-048f870b26c5",
+        "ts": 1792867911.2303436,
+        "agent": "Tara",
+        "kind": "communication",
+        "payload": {
+          "content": "I confirm my plan to take ISSUE-0001::triage (effort 1.6, priority medium). All tasks remain distinct, and this fits my availability. Let me know if anything changes.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "9b5d6541-557d-47f2-b3d0-86195c2c91ee",
+        "ts": 1792867915.8278477,
+        "agent": "Ciara",
+        "kind": "communication",
+        "payload": {
+          "content": "I confirm my plan to take ISSUE-0002::implement (effort 4.0, priority critical). All tasks remain distinct and fit my availability. Let me know if anything changes before execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "64c28137-98fb-45ab-8f13-1596c48255f9",
+        "ts": 1792867920.5347776,
+        "agent": "Drew",
+        "kind": "communication",
+        "payload": {
+          "content": "All good on my side. I will take ISSUE-0002::review as planned. Let me know if anyone needs to adjust before we move to execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "034f447b-f9f4-486e-afb9-641bf510f18f",
+        "ts": 1792867925.3565264,
+        "agent": "Boris",
+        "kind": "communication",
+        "payload": {
+          "content": "I confirm I will take ISSUE-0002::test (effort 2.8, priority critical). All set for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "2f5f19f9-afa1-40c5-ace4-0696e6a321bf",
+        "ts": 1792867929.561912,
+        "agent": "Tara",
+        "kind": "communication",
+        "payload": {
+          "content": "All set on my side. I will take ISSUE-0001::triage as planned. Let me know if anyone needs to adjust before we move to execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "2865f837-4b7e-4837-9520-395bcbafcd56",
+        "ts": 1792867937.5410159,
+        "agent": "Ciara",
+        "kind": "communication",
+        "payload": {
+          "content": "I (Ciara) confirm my plan to take ISSUE-0002::implement (effort 4.0, priority critical). All plans remain unchanged and no duplicates. Ready for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "deef8267-f077-4de1-a425-7e999f2dbf30",
+        "ts": 1792867946.8740644,
+        "agent": "Drew",
+        "kind": "communication",
+        "payload": {
+          "content": "I (Drew) confirm I will take ISSUE-0002::review (effort 2.0, priority critical). All plans remain unchanged and no duplicates. Ready for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "2edb736c-2e7d-49fe-84a1-c8c48801d818",
+        "ts": 1792867960.643555,
+        "agent": "Boris",
+        "kind": "communication",
+        "payload": {
+          "content": "All plans confirmed, proceeding to execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "814495d2-4d3a-4b30-99ec-66976e368644",
+        "ts": 1792867970.1309004,
+        "agent": "Tara",
+        "kind": "communication",
+        "payload": {
+          "content": "All set on my side. I will take ISSUE-0001::triage as planned. No changes needed.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "163d49fa-622b-43e5-984d-ab2afb17fbab",
+        "ts": 1792867978.3022423,
+        "agent": "Ciara",
+        "kind": "communication",
+        "payload": {
+          "content": "All set on my side. I confirm my plan to take ISSUE-0002::implement (effort 4.0, priority critical). Ready for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "647b8197-9821-4b9d-9078-4a6ecead5dc2",
+        "ts": 1792867986.9329722,
+        "agent": "Drew",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Drew",
+              "task_id": "ISSUE-0002::review",
+              "task": {
+                "id": "ISSUE-0002::review",
+                "issue_id": "ISSUE-0002",
+                "title": "Fix frontend [review]",
+                "tags": [
+                  "documentation",
+                  "frontend"
+                ],
+                "priority": "critical",
+                "effort": 2.0,
+                "work_type": "review"
+              },
+              "total_assigned": 1,
+              "remaining_agents": 3,
+              "joint_reward": 37.83771123411804
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "15441922-321d-4e91-85cb-1400a79ee909",
+        "ts": 1792867989.3099144,
+        "agent": "Boris",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::test"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Boris",
+              "task_id": "ISSUE-0002::test",
+              "task": {
+                "id": "ISSUE-0002::test",
+                "issue_id": "ISSUE-0002",
+                "title": "Fix frontend [test]",
+                "tags": [
+                  "documentation",
+                  "frontend"
+                ],
+                "priority": "critical",
+                "effort": 2.8,
+                "work_type": "test"
+              },
+              "total_assigned": 2,
+              "remaining_agents": 2,
+              "joint_reward": 72.55807589884154
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f26ab5c3-8b01-463d-978f-8bb207b4633b",
+        "ts": 1792867991.9933705,
+        "agent": "Tara",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::triage"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Tara",
+              "task_id": "ISSUE-0001::triage",
+              "task": {
+                "id": "ISSUE-0001::triage",
+                "issue_id": "ISSUE-0001",
+                "title": "Improve mobile-development [triage]",
+                "tags": [
+                  "mobile-development"
+                ],
+                "priority": "medium",
+                "effort": 1.6,
+                "work_type": "triage"
+              },
+              "total_assigned": 3,
+              "remaining_agents": 1,
+              "joint_reward": 101.02202423782768
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f665e5b5-6751-429a-83a8-84ba8c5a459a",
+        "ts": 1792867994.0160074,
+        "agent": "Ciara",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::implement"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Ciara",
+              "task_id": "ISSUE-0002::implement",
+              "task": {
+                "id": "ISSUE-0002::implement",
+                "issue_id": "ISSUE-0002",
+                "title": "Fix frontend [implement]",
+                "tags": [
+                  "documentation",
+                  "frontend"
+                ],
+                "priority": "critical",
+                "effort": 4.0,
+                "work_type": "implement"
+              },
+              "total_assigned": 4,
+              "remaining_agents": 0,
+              "joint_reward": 136.39933137714007
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  },
+  {
+    "blackboard_id": "1",
+    "participants": [
+      "Boris",
+      "Drew"
+    ],
+    "events": [
+      {
+        "blackboard_id": 1,
+        "id": "d31d4aed-54e7-48fc-8a0f-c799a28f1b07",
+        "ts": 1792867864.725136,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Drew, Boris"
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "624d8e8e-163f-41a5-bc6d-f8b45c709f45",
+        "ts": 1792867881.4968626,
+        "agent": "Boris",
+        "kind": "communication",
+        "payload": {
+          "content": "I (Boris) plan to take ISSUE-0002::test (effort 2.8, priority critical).",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "779b92a6-089b-4c72-88c4-957388692eb7",
+        "ts": 1792867949.836701,
+        "agent": "Drew",
+        "kind": "communication",
+        "payload": {
+          "content": "I (Drew) confirm I will take ISSUE-0002::review (effort 2.0, priority critical). Ready for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "28dc4f9f-d3a1-4d9f-9634-a5b14b51cd99",
+        "ts": 1792867986.9329722,
+        "agent": "Drew",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Drew",
+              "task_id": "ISSUE-0002::review",
+              "task": {
+                "id": "ISSUE-0002::review",
+                "issue_id": "ISSUE-0002",
+                "title": "Fix frontend [review]",
+                "tags": [
+                  "documentation",
+                  "frontend"
+                ],
+                "priority": "critical",
+                "effort": 2.0,
+                "work_type": "review"
+              },
+              "total_assigned": 1,
+              "remaining_agents": 3,
+              "joint_reward": 37.83771123411804
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "ab9eeb1d-e3aa-4b94-86ff-59b741b2252f",
+        "ts": 1792867989.3099144,
+        "agent": "Boris",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::test"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Boris",
+              "task_id": "ISSUE-0002::test",
+              "task": {
+                "id": "ISSUE-0002::test",
+                "issue_id": "ISSUE-0002",
+                "title": "Fix frontend [test]",
+                "tags": [
+                  "documentation",
+                  "frontend"
+                ],
+                "priority": "critical",
+                "effort": 2.8,
+                "work_type": "test"
+              },
+              "total_assigned": 2,
+              "remaining_agents": 2,
+              "joint_reward": 72.55807589884154
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  }
+]

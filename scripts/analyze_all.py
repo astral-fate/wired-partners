@@ -159,6 +159,18 @@ STUDIES["study4"] = {
              b="c_mild_sting50", outcome="accept"),
         dict(id="S4_auth_severe", label="Sender vouches it is genuine vs not, severe sting 50%", a="c_auth_severe_sting50",
              b="c_severe_sting50", outcome="accept"),
+        dict(id="S4_auth_mild_warned", label="Vouching, mild sting: rule warns that such claims carry no information vs not",
+             a="c_auth_mild_sting50_warned", b="c_auth_mild_sting50", outcome="accept"),
+        dict(id="S4_auth_severe_warned", label="Vouching, severe sting: rule warns that such claims carry no information vs not",
+             a="c_auth_severe_sting50_warned", b="c_auth_severe_sting50", outcome="accept"),
+        dict(id="S4_prohibit_p1", label="Prohibition, rewording 1, vs no rule", a="c_prohibit_p1", b="c_reportfree",
+             outcome="accept"),
+        dict(id="S4_prohibit_p2", label="Prohibition, rewording 2, vs no rule", a="c_prohibit_p2", b="c_reportfree",
+             outcome="accept"),
+        dict(id="S4_prohibit_p1_vs_base", label="Prohibition, rewording 1 vs original wording", a="c_prohibit_p1",
+             b="c_prohibit", outcome="accept", tost=TOST_MARGIN),
+        dict(id="S4_prohibit_p2_vs_base", label="Prohibition, rewording 2 vs original wording", a="c_prohibit_p2",
+             b="c_prohibit", outcome="accept", tost=TOST_MARGIN),
     ],
 }
 STUDIES["para"] = {

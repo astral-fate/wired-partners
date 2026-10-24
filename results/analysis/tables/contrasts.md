@@ -1104,88 +1104,124 @@ RD = rate(A) − rate(B). Per model: Newcombe 95% CI, Fisher exact p, Holm acros
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | all | S4_prohibit | accept | c_prohibit | c_reportfree | MH RD | 10 | -0.480 | [-0.755, -0.180] | 1.61e-30 | CMH chi-square |  |
 | all | S4_prohibit | accept | c_prohibit | c_reportfree | paired RD | 10 | -0.480 | [-0.755, -0.180] | 5.25e-23 | exact McNemar (pooled pairs) |  |
-| all | S4_sev_mild_50 | accept | c_severe_sting50 | c_mild_sting50 | MH RD | 10 | -0.198 | [-0.373, -0.055] | 1.40e-10 | CMH chi-square |  |
-| all | S4_sev_mild_50 | accept | c_severe_sting50 | c_mild_sting50 | paired RD | 10 | -0.197 | [-0.371, -0.055] | 7.60e-09 | exact McNemar (pooled pairs) |  |
-| all | S4_sev_mild_1 | accept | c_severe_sting1 | c_mild_sting1 | MH RD | 10 | -0.223 | [-0.434, -0.040] | 2.80e-11 | CMH chi-square |  |
-| all | S4_sev_mild_1 | accept | c_severe_sting1 | c_mild_sting1 | paired RD | 10 | -0.221 | [-0.429, -0.040] | 5.21e-09 | exact McNemar (pooled pairs) |  |
-| all | S4_mild_rate | accept | c_mild_sting50 | c_mild_sting1 | MH RD | 10 | -0.103 | [-0.202, -0.020] | 0.002 | CMH chi-square | False |
-| all | S4_mild_rate | accept | c_mild_sting50 | c_mild_sting1 | paired RD | 10 | -0.101 | [-0.196, -0.020] | 0.006 | exact McNemar (pooled pairs) | False |
+| all | S4_sev_mild_50 | accept | c_severe_sting50 | c_mild_sting50 | MH RD | 10 | -0.195 | [-0.365, -0.055] | 2.47e-10 | CMH chi-square |  |
+| all | S4_sev_mild_50 | accept | c_severe_sting50 | c_mild_sting50 | paired RD | 10 | -0.195 | [-0.365, -0.055] | 7.60e-09 | exact McNemar (pooled pairs) |  |
+| all | S4_sev_mild_1 | accept | c_severe_sting1 | c_mild_sting1 | MH RD | 10 | -0.225 | [-0.435, -0.040] | 1.92e-11 | CMH chi-square |  |
+| all | S4_sev_mild_1 | accept | c_severe_sting1 | c_mild_sting1 | paired RD | 10 | -0.225 | [-0.435, -0.040] | 2.99e-09 | exact McNemar (pooled pairs) |  |
+| all | S4_mild_rate | accept | c_mild_sting50 | c_mild_sting1 | MH RD | 10 | -0.110 | [-0.215, -0.020] | 0.001 | CMH chi-square | False |
+| all | S4_mild_rate | accept | c_mild_sting50 | c_mild_sting1 | paired RD | 10 | -0.110 | [-0.215, -0.020] | 0.003 | exact McNemar (pooled pairs) | False |
 | all | S4_mild_rate10 | accept | c_mild_sting10 | c_mild_sting1 | MH RD | 10 | -0.010 | [-0.065, +0.035] | 0.756 | CMH chi-square |  |
 | all | S4_mild_rate10 | accept | c_mild_sting10 | c_mild_sting1 | paired RD | 10 | -0.010 | [-0.065, +0.035] | 0.880 | exact McNemar (pooled pairs) |  |
-| all | S4_severe_rate | accept | c_severe_sting50 | c_severe_sting1 | MH RD | 10 | -0.080 | [-0.175, -0.005] | 1.69e-04 | CMH chi-square |  |
+| all | S4_severe_rate | accept | c_severe_sting50 | c_severe_sting1 | MH RD | 10 | -0.080 | [-0.175, -0.005] | 1.73e-04 | CMH chi-square |  |
 | all | S4_severe_rate | accept | c_severe_sting50 | c_severe_sting1 | paired RD | 10 | -0.080 | [-0.175, -0.005] | 8.55e-04 | exact McNemar (pooled pairs) |  |
 | all | S4_mild_vs_prohibit | accept | c_mild_sting1 | c_prohibit | MH RD | 10 | 0.060 | [-0.205, +0.345] | 0.090 | CMH chi-square |  |
 | all | S4_mild_vs_prohibit | accept | c_mild_sting1 | c_prohibit | paired RD | 10 | 0.060 | [-0.205, +0.345] | 0.175 | exact McNemar (pooled pairs) |  |
-| all | S4_noprohibit | accept | c_mild_noprohibit_sting50 | c_mild_sting50 | MH RD | 10 | 0.375 | [+0.181, +0.561] | 5.03e-19 | CMH chi-square |  |
-| all | S4_noprohibit | accept | c_mild_noprohibit_sting50 | c_mild_sting50 | paired RD | 10 | 0.371 | [+0.175, +0.560] | 2.44e-17 | exact McNemar (pooled pairs) |  |
-| all | S4_mild_sting_audit | accept | c_mild_sting50 | c_mild_audit50 | MH RD | 10 | 0.099 | [+0.010, +0.205] | 0.002 | CMH chi-square | False |
-| all | S4_mild_sting_audit | accept | c_mild_sting50 | c_mild_audit50 | paired RD | 10 | 0.092 | [+0.000, +0.203] | 0.008 | exact McNemar (pooled pairs) | False |
+| all | S4_noprohibit | accept | c_mild_noprohibit_sting50 | c_mild_sting50 | MH RD | 10 | 0.380 | [+0.190, +0.565] | 1.47e-19 | CMH chi-square |  |
+| all | S4_noprohibit | accept | c_mild_noprohibit_sting50 | c_mild_sting50 | paired RD | 10 | 0.380 | [+0.190, +0.565] | 3.77e-18 | exact McNemar (pooled pairs) |  |
+| all | S4_mild_sting_audit | accept | c_mild_sting50 | c_mild_audit50 | MH RD | 10 | 0.095 | [+0.010, +0.205] | 0.003 | CMH chi-square | False |
+| all | S4_mild_sting_audit | accept | c_mild_sting50 | c_mild_audit50 | paired RD | 10 | 0.095 | [+0.010, +0.205] | 0.005 | exact McNemar (pooled pairs) | False |
 | all | S4_safeharbour | nonaccept | c_fair_safeharbour_sting50 | c_fair_severe_sting50 | MH RD | 10 | -0.171 | [-0.340, -0.040] | 1.24e-09 | CMH chi-square |  |
 | all | S4_safeharbour | nonaccept | c_fair_safeharbour_sting50 | c_fair_severe_sting50 | paired RD | 10 | -0.171 | [-0.340, -0.040] | 1.95e-08 | exact McNemar (pooled pairs) |  |
 | all | S4_safeharbour_rep | report | c_fair_safeharbour_sting50 | c_fair_severe_sting50 | MH RD | 10 | -0.257 | [-0.405, -0.120] | 1.29e-13 | CMH chi-square |  |
 | all | S4_safeharbour_rep | report | c_fair_safeharbour_sting50 | c_fair_severe_sting50 | paired RD | 10 | -0.256 | [-0.405, -0.120] | 4.29e-13 | exact McNemar (pooled pairs) |  |
 | all | S4_safeharbour_collusive | accept | c_safeharbour_sting50 | c_severe_sting50 | MH RD | 10 | 0.030 | [+0.000, +0.065] | 0.105 | CMH chi-square | True |
 | all | S4_safeharbour_collusive | accept | c_safeharbour_sting50 | c_severe_sting50 | paired RD | 10 | 0.030 | [+0.000, +0.065] | 0.180 | exact McNemar (pooled pairs) | True |
-| all | S4_auth_mild | accept | c_auth_mild_sting50 | c_mild_sting50 | MH RD | 10 | 0.128 | [-0.007, +0.302] | 2.26e-04 | CMH chi-square |  |
-| all | S4_auth_mild | accept | c_auth_mild_sting50 | c_mild_sting50 | paired RD | 10 | 0.126 | [-0.015, +0.304] | 2.71e-04 | exact McNemar (pooled pairs) |  |
+| all | S4_auth_mild | accept | c_auth_mild_sting50 | c_mild_sting50 | MH RD | 10 | 0.133 | [+0.005, +0.303] | 1.28e-04 | CMH chi-square |  |
+| all | S4_auth_mild | accept | c_auth_mild_sting50 | c_mild_sting50 | paired RD | 10 | 0.136 | [+0.010, +0.305] | 6.57e-05 | exact McNemar (pooled pairs) |  |
 | all | S4_auth_severe | accept | c_auth_severe_sting50 | c_severe_sting50 | MH RD | 10 | 0.105 | [+0.000, +0.255] | 2.77e-05 | CMH chi-square |  |
 | all | S4_auth_severe | accept | c_auth_severe_sting50 | c_severe_sting50 | paired RD | 10 | 0.105 | [+0.000, +0.255] | 1.04e-04 | exact McNemar (pooled pairs) |  |
+| all | S4_auth_mild_warned | accept | c_auth_mild_sting50_warned | c_auth_mild_sting50 | MH RD | 10 | 0.050 | [-0.026, +0.136] | 0.099 | CMH chi-square |  |
+| all | S4_auth_mild_warned | accept | c_auth_mild_sting50_warned | c_auth_mild_sting50 | paired RD | 10 | 0.046 | [-0.025, +0.130] | 0.200 | exact McNemar (pooled pairs) |  |
+| all | S4_auth_severe_warned | accept | c_auth_severe_sting50_warned | c_auth_severe_sting50 | MH RD | 10 | -0.010 | [-0.085, +0.065] | 0.716 | CMH chi-square |  |
+| all | S4_auth_severe_warned | accept | c_auth_severe_sting50_warned | c_auth_severe_sting50 | paired RD | 10 | -0.010 | [-0.085, +0.066] | 0.856 | exact McNemar (pooled pairs) |  |
+| all | S4_prohibit_p1 | accept | c_prohibit_p1 | c_reportfree | MH RD | 10 | -0.585 | [-0.820, -0.335] | 1.68e-39 | CMH chi-square |  |
+| all | S4_prohibit_p1 | accept | c_prohibit_p1 | c_reportfree | paired RD | 10 | -0.585 | [-0.820, -0.335] | 1.76e-29 | exact McNemar (pooled pairs) |  |
+| all | S4_prohibit_p2 | accept | c_prohibit_p2 | c_reportfree | MH RD | 10 | -0.485 | [-0.725, -0.255] | 5.60e-32 | CMH chi-square |  |
+| all | S4_prohibit_p2 | accept | c_prohibit_p2 | c_reportfree | paired RD | 10 | -0.485 | [-0.725, -0.255] | 3.59e-26 | exact McNemar (pooled pairs) |  |
+| all | S4_prohibit_p1_vs_base | accept | c_prohibit_p1 | c_prohibit | MH RD | 10 | -0.105 | [-0.340, +0.065] | 5.22e-04 | CMH chi-square | False |
+| all | S4_prohibit_p1_vs_base | accept | c_prohibit_p1 | c_prohibit | paired RD | 10 | -0.105 | [-0.340, +0.065] | 0.005 | exact McNemar (pooled pairs) | False |
+| all | S4_prohibit_p2_vs_base | accept | c_prohibit_p2 | c_prohibit | MH RD | 10 | -0.005 | [-0.145, +0.135] | 0.853 | CMH chi-square | False |
+| all | S4_prohibit_p2_vs_base | accept | c_prohibit_p2 | c_prohibit | paired RD | 10 | -0.005 | [-0.145, +0.135] | 1.000 | exact McNemar (pooled pairs) | False |
 | informative | S4_prohibit | accept | c_prohibit | c_reportfree | MH RD | 9 | -0.528 | [-0.817, -0.217] | 2.49e-30 | CMH chi-square |  |
 | informative | S4_prohibit | accept | c_prohibit | c_reportfree | paired RD | 9 | -0.528 | [-0.817, -0.217] | 9.84e-23 | exact McNemar (pooled pairs) |  |
-| informative | S4_sev_mild_50 | accept | c_severe_sting50 | c_mild_sting50 | MH RD | 9 | -0.221 | [-0.411, -0.067] | 1.40e-10 | CMH chi-square |  |
-| informative | S4_sev_mild_50 | accept | c_severe_sting50 | c_mild_sting50 | paired RD | 9 | -0.219 | [-0.410, -0.067] | 7.60e-09 | exact McNemar (pooled pairs) |  |
-| informative | S4_sev_mild_1 | accept | c_severe_sting1 | c_mild_sting1 | MH RD | 9 | -0.248 | [-0.468, -0.050] | 2.80e-11 | CMH chi-square |  |
-| informative | S4_sev_mild_1 | accept | c_severe_sting1 | c_mild_sting1 | paired RD | 9 | -0.246 | [-0.463, -0.050] | 5.21e-09 | exact McNemar (pooled pairs) |  |
-| informative | S4_mild_rate | accept | c_mild_sting50 | c_mild_sting1 | MH RD | 9 | -0.115 | [-0.219, -0.028] | 0.002 | CMH chi-square | False |
-| informative | S4_mild_rate | accept | c_mild_sting50 | c_mild_sting1 | paired RD | 9 | -0.112 | [-0.213, -0.028] | 0.006 | exact McNemar (pooled pairs) | False |
+| informative | S4_sev_mild_50 | accept | c_severe_sting50 | c_mild_sting50 | MH RD | 9 | -0.217 | [-0.406, -0.067] | 2.47e-10 | CMH chi-square |  |
+| informative | S4_sev_mild_50 | accept | c_severe_sting50 | c_mild_sting50 | paired RD | 9 | -0.217 | [-0.406, -0.067] | 7.60e-09 | exact McNemar (pooled pairs) |  |
+| informative | S4_sev_mild_1 | accept | c_severe_sting1 | c_mild_sting1 | MH RD | 9 | -0.250 | [-0.472, -0.050] | 1.92e-11 | CMH chi-square |  |
+| informative | S4_sev_mild_1 | accept | c_severe_sting1 | c_mild_sting1 | paired RD | 9 | -0.250 | [-0.472, -0.050] | 2.99e-09 | exact McNemar (pooled pairs) |  |
+| informative | S4_mild_rate | accept | c_mild_sting50 | c_mild_sting1 | MH RD | 9 | -0.122 | [-0.234, -0.028] | 0.001 | CMH chi-square | False |
+| informative | S4_mild_rate | accept | c_mild_sting50 | c_mild_sting1 | paired RD | 9 | -0.122 | [-0.234, -0.028] | 0.003 | exact McNemar (pooled pairs) | False |
 | informative | S4_mild_rate10 | accept | c_mild_sting10 | c_mild_sting1 | MH RD | 9 | -0.017 | [-0.078, +0.033] | 0.637 | CMH chi-square |  |
 | informative | S4_mild_rate10 | accept | c_mild_sting10 | c_mild_sting1 | paired RD | 9 | -0.017 | [-0.078, +0.033] | 0.761 | exact McNemar (pooled pairs) |  |
-| informative | S4_severe_rate | accept | c_severe_sting50 | c_severe_sting1 | MH RD | 9 | -0.089 | [-0.194, -0.011] | 1.69e-04 | CMH chi-square |  |
+| informative | S4_severe_rate | accept | c_severe_sting50 | c_severe_sting1 | MH RD | 9 | -0.089 | [-0.194, -0.011] | 1.73e-04 | CMH chi-square |  |
 | informative | S4_severe_rate | accept | c_severe_sting50 | c_severe_sting1 | paired RD | 9 | -0.089 | [-0.194, -0.011] | 8.55e-04 | exact McNemar (pooled pairs) |  |
 | informative | S4_mild_vs_prohibit | accept | c_mild_sting1 | c_prohibit | MH RD | 9 | 0.067 | [-0.222, +0.400] | 0.090 | CMH chi-square |  |
 | informative | S4_mild_vs_prohibit | accept | c_mild_sting1 | c_prohibit | paired RD | 9 | 0.067 | [-0.222, +0.400] | 0.175 | exact McNemar (pooled pairs) |  |
-| informative | S4_noprohibit | accept | c_mild_noprohibit_sting50 | c_mild_sting50 | MH RD | 9 | 0.417 | [+0.222, +0.606] | 5.03e-19 | CMH chi-square |  |
-| informative | S4_noprohibit | accept | c_mild_noprohibit_sting50 | c_mild_sting50 | paired RD | 9 | 0.412 | [+0.217, +0.602] | 2.44e-17 | exact McNemar (pooled pairs) |  |
-| informative | S4_mild_sting_audit | accept | c_mild_sting50 | c_mild_audit50 | MH RD | 9 | 0.110 | [+0.014, +0.228] | 0.002 | CMH chi-square | False |
-| informative | S4_mild_sting_audit | accept | c_mild_sting50 | c_mild_audit50 | paired RD | 9 | 0.102 | [+0.000, +0.222] | 0.008 | exact McNemar (pooled pairs) | False |
+| informative | S4_noprohibit | accept | c_mild_noprohibit_sting50 | c_mild_sting50 | MH RD | 9 | 0.422 | [+0.233, +0.606] | 1.47e-19 | CMH chi-square |  |
+| informative | S4_noprohibit | accept | c_mild_noprohibit_sting50 | c_mild_sting50 | paired RD | 9 | 0.422 | [+0.233, +0.606] | 3.77e-18 | exact McNemar (pooled pairs) |  |
+| informative | S4_mild_sting_audit | accept | c_mild_sting50 | c_mild_audit50 | MH RD | 9 | 0.106 | [+0.011, +0.222] | 0.003 | CMH chi-square | False |
+| informative | S4_mild_sting_audit | accept | c_mild_sting50 | c_mild_audit50 | paired RD | 9 | 0.106 | [+0.011, +0.222] | 0.005 | exact McNemar (pooled pairs) | False |
 | informative | S4_safeharbour | nonaccept | c_fair_safeharbour_sting50 | c_fair_severe_sting50 | MH RD | 9 | -0.190 | [-0.371, -0.050] | 1.24e-09 | CMH chi-square |  |
 | informative | S4_safeharbour | nonaccept | c_fair_safeharbour_sting50 | c_fair_severe_sting50 | paired RD | 9 | -0.190 | [-0.371, -0.050] | 1.95e-08 | exact McNemar (pooled pairs) |  |
 | informative | S4_safeharbour_rep | report | c_fair_safeharbour_sting50 | c_fair_severe_sting50 | MH RD | 9 | -0.280 | [-0.439, -0.128] | 2.14e-13 | CMH chi-square |  |
 | informative | S4_safeharbour_rep | report | c_fair_safeharbour_sting50 | c_fair_severe_sting50 | paired RD | 9 | -0.279 | [-0.439, -0.128] | 8.14e-13 | exact McNemar (pooled pairs) |  |
 | informative | S4_safeharbour_collusive | accept | c_safeharbour_sting50 | c_severe_sting50 | MH RD | 9 | 0.033 | [+0.006, +0.072] | 0.105 | CMH chi-square | True |
 | informative | S4_safeharbour_collusive | accept | c_safeharbour_sting50 | c_severe_sting50 | paired RD | 9 | 0.033 | [+0.006, +0.072] | 0.180 | exact McNemar (pooled pairs) | True |
-| informative | S4_auth_mild | accept | c_auth_mild_sting50 | c_mild_sting50 | MH RD | 9 | 0.137 | [-0.017, +0.326] | 3.44e-04 | CMH chi-square |  |
-| informative | S4_auth_mild | accept | c_auth_mild_sting50 | c_mild_sting50 | paired RD | 9 | 0.135 | [-0.025, +0.328] | 4.31e-04 | exact McNemar (pooled pairs) |  |
+| informative | S4_auth_mild | accept | c_auth_mild_sting50 | c_mild_sting50 | MH RD | 9 | 0.142 | [-0.003, +0.326] | 1.96e-04 | CMH chi-square |  |
+| informative | S4_auth_mild | accept | c_auth_mild_sting50 | c_mild_sting50 | paired RD | 9 | 0.145 | [+0.000, +0.330] | 1.06e-04 | exact McNemar (pooled pairs) |  |
 | informative | S4_auth_severe | accept | c_auth_severe_sting50 | c_severe_sting50 | MH RD | 9 | 0.117 | [+0.000, +0.283] | 2.77e-05 | CMH chi-square |  |
 | informative | S4_auth_severe | accept | c_auth_severe_sting50 | c_severe_sting50 | paired RD | 9 | 0.117 | [+0.000, +0.283] | 1.04e-04 | exact McNemar (pooled pairs) |  |
+| informative | S4_auth_mild_warned | accept | c_auth_mild_sting50_warned | c_auth_mild_sting50 | MH RD | 9 | 0.061 | [-0.023, +0.155] | 0.065 | CMH chi-square |  |
+| informative | S4_auth_mild_warned | accept | c_auth_mild_sting50_warned | c_auth_mild_sting50 | paired RD | 9 | 0.058 | [-0.022, +0.147] | 0.143 | exact McNemar (pooled pairs) |  |
+| informative | S4_auth_severe_warned | accept | c_auth_severe_sting50_warned | c_auth_severe_sting50 | MH RD | 9 | -0.011 | [-0.094, +0.072] | 0.716 | CMH chi-square |  |
+| informative | S4_auth_severe_warned | accept | c_auth_severe_sting50_warned | c_auth_severe_sting50 | paired RD | 9 | -0.011 | [-0.094, +0.073] | 0.856 | exact McNemar (pooled pairs) |  |
+| informative | S4_prohibit_p1 | accept | c_prohibit_p1 | c_reportfree | MH RD | 9 | -0.644 | [-0.867, -0.406] | 2.48e-39 | CMH chi-square |  |
+| informative | S4_prohibit_p1 | accept | c_prohibit_p1 | c_reportfree | paired RD | 9 | -0.644 | [-0.867, -0.406] | 3.35e-29 | exact McNemar (pooled pairs) |  |
+| informative | S4_prohibit_p2 | accept | c_prohibit_p2 | c_reportfree | MH RD | 9 | -0.533 | [-0.772, -0.300] | 8.43e-32 | CMH chi-square |  |
+| informative | S4_prohibit_p2 | accept | c_prohibit_p2 | c_reportfree | paired RD | 9 | -0.533 | [-0.772, -0.300] | 6.98e-26 | exact McNemar (pooled pairs) |  |
+| informative | S4_prohibit_p1_vs_base | accept | c_prohibit_p1 | c_prohibit | MH RD | 9 | -0.117 | [-0.378, +0.072] | 5.22e-04 | CMH chi-square | False |
+| informative | S4_prohibit_p1_vs_base | accept | c_prohibit_p1 | c_prohibit | paired RD | 9 | -0.117 | [-0.378, +0.072] | 0.005 | exact McNemar (pooled pairs) | False |
+| informative | S4_prohibit_p2_vs_base | accept | c_prohibit_p2 | c_prohibit | MH RD | 9 | -0.006 | [-0.156, +0.156] | 0.853 | CMH chi-square | False |
+| informative | S4_prohibit_p2_vs_base | accept | c_prohibit_p2 | c_prohibit | paired RD | 9 | -0.006 | [-0.156, +0.156] | 1.000 | exact McNemar (pooled pairs) | False |
 | roster | S4_prohibit | accept | c_prohibit | c_reportfree | MH RD | 10 | -0.480 | [-0.755, -0.180] | 1.61e-30 | CMH chi-square |  |
 | roster | S4_prohibit | accept | c_prohibit | c_reportfree | paired RD | 10 | -0.480 | [-0.755, -0.180] | 5.25e-23 | exact McNemar (pooled pairs) |  |
-| roster | S4_sev_mild_50 | accept | c_severe_sting50 | c_mild_sting50 | MH RD | 10 | -0.198 | [-0.373, -0.055] | 1.40e-10 | CMH chi-square |  |
-| roster | S4_sev_mild_50 | accept | c_severe_sting50 | c_mild_sting50 | paired RD | 10 | -0.197 | [-0.371, -0.055] | 7.60e-09 | exact McNemar (pooled pairs) |  |
-| roster | S4_sev_mild_1 | accept | c_severe_sting1 | c_mild_sting1 | MH RD | 10 | -0.223 | [-0.434, -0.040] | 2.80e-11 | CMH chi-square |  |
-| roster | S4_sev_mild_1 | accept | c_severe_sting1 | c_mild_sting1 | paired RD | 10 | -0.221 | [-0.429, -0.040] | 5.21e-09 | exact McNemar (pooled pairs) |  |
-| roster | S4_mild_rate | accept | c_mild_sting50 | c_mild_sting1 | MH RD | 10 | -0.103 | [-0.202, -0.020] | 0.002 | CMH chi-square | False |
-| roster | S4_mild_rate | accept | c_mild_sting50 | c_mild_sting1 | paired RD | 10 | -0.101 | [-0.196, -0.020] | 0.006 | exact McNemar (pooled pairs) | False |
+| roster | S4_sev_mild_50 | accept | c_severe_sting50 | c_mild_sting50 | MH RD | 10 | -0.195 | [-0.365, -0.055] | 2.47e-10 | CMH chi-square |  |
+| roster | S4_sev_mild_50 | accept | c_severe_sting50 | c_mild_sting50 | paired RD | 10 | -0.195 | [-0.365, -0.055] | 7.60e-09 | exact McNemar (pooled pairs) |  |
+| roster | S4_sev_mild_1 | accept | c_severe_sting1 | c_mild_sting1 | MH RD | 10 | -0.225 | [-0.435, -0.040] | 1.92e-11 | CMH chi-square |  |
+| roster | S4_sev_mild_1 | accept | c_severe_sting1 | c_mild_sting1 | paired RD | 10 | -0.225 | [-0.435, -0.040] | 2.99e-09 | exact McNemar (pooled pairs) |  |
+| roster | S4_mild_rate | accept | c_mild_sting50 | c_mild_sting1 | MH RD | 10 | -0.110 | [-0.215, -0.020] | 0.001 | CMH chi-square | False |
+| roster | S4_mild_rate | accept | c_mild_sting50 | c_mild_sting1 | paired RD | 10 | -0.110 | [-0.215, -0.020] | 0.003 | exact McNemar (pooled pairs) | False |
 | roster | S4_mild_rate10 | accept | c_mild_sting10 | c_mild_sting1 | MH RD | 10 | -0.010 | [-0.065, +0.035] | 0.756 | CMH chi-square |  |
 | roster | S4_mild_rate10 | accept | c_mild_sting10 | c_mild_sting1 | paired RD | 10 | -0.010 | [-0.065, +0.035] | 0.880 | exact McNemar (pooled pairs) |  |
-| roster | S4_severe_rate | accept | c_severe_sting50 | c_severe_sting1 | MH RD | 10 | -0.080 | [-0.175, -0.005] | 1.69e-04 | CMH chi-square |  |
+| roster | S4_severe_rate | accept | c_severe_sting50 | c_severe_sting1 | MH RD | 10 | -0.080 | [-0.175, -0.005] | 1.73e-04 | CMH chi-square |  |
 | roster | S4_severe_rate | accept | c_severe_sting50 | c_severe_sting1 | paired RD | 10 | -0.080 | [-0.175, -0.005] | 8.55e-04 | exact McNemar (pooled pairs) |  |
 | roster | S4_mild_vs_prohibit | accept | c_mild_sting1 | c_prohibit | MH RD | 10 | 0.060 | [-0.205, +0.345] | 0.090 | CMH chi-square |  |
 | roster | S4_mild_vs_prohibit | accept | c_mild_sting1 | c_prohibit | paired RD | 10 | 0.060 | [-0.205, +0.345] | 0.175 | exact McNemar (pooled pairs) |  |
-| roster | S4_noprohibit | accept | c_mild_noprohibit_sting50 | c_mild_sting50 | MH RD | 10 | 0.375 | [+0.181, +0.561] | 5.03e-19 | CMH chi-square |  |
-| roster | S4_noprohibit | accept | c_mild_noprohibit_sting50 | c_mild_sting50 | paired RD | 10 | 0.371 | [+0.175, +0.560] | 2.44e-17 | exact McNemar (pooled pairs) |  |
-| roster | S4_mild_sting_audit | accept | c_mild_sting50 | c_mild_audit50 | MH RD | 10 | 0.099 | [+0.010, +0.205] | 0.002 | CMH chi-square | False |
-| roster | S4_mild_sting_audit | accept | c_mild_sting50 | c_mild_audit50 | paired RD | 10 | 0.092 | [+0.000, +0.203] | 0.008 | exact McNemar (pooled pairs) | False |
+| roster | S4_noprohibit | accept | c_mild_noprohibit_sting50 | c_mild_sting50 | MH RD | 10 | 0.380 | [+0.190, +0.565] | 1.47e-19 | CMH chi-square |  |
+| roster | S4_noprohibit | accept | c_mild_noprohibit_sting50 | c_mild_sting50 | paired RD | 10 | 0.380 | [+0.190, +0.565] | 3.77e-18 | exact McNemar (pooled pairs) |  |
+| roster | S4_mild_sting_audit | accept | c_mild_sting50 | c_mild_audit50 | MH RD | 10 | 0.095 | [+0.010, +0.205] | 0.003 | CMH chi-square | False |
+| roster | S4_mild_sting_audit | accept | c_mild_sting50 | c_mild_audit50 | paired RD | 10 | 0.095 | [+0.010, +0.205] | 0.005 | exact McNemar (pooled pairs) | False |
 | roster | S4_safeharbour | nonaccept | c_fair_safeharbour_sting50 | c_fair_severe_sting50 | MH RD | 10 | -0.171 | [-0.340, -0.040] | 1.24e-09 | CMH chi-square |  |
 | roster | S4_safeharbour | nonaccept | c_fair_safeharbour_sting50 | c_fair_severe_sting50 | paired RD | 10 | -0.171 | [-0.340, -0.040] | 1.95e-08 | exact McNemar (pooled pairs) |  |
 | roster | S4_safeharbour_rep | report | c_fair_safeharbour_sting50 | c_fair_severe_sting50 | MH RD | 10 | -0.257 | [-0.405, -0.120] | 1.29e-13 | CMH chi-square |  |
 | roster | S4_safeharbour_rep | report | c_fair_safeharbour_sting50 | c_fair_severe_sting50 | paired RD | 10 | -0.256 | [-0.405, -0.120] | 4.29e-13 | exact McNemar (pooled pairs) |  |
 | roster | S4_safeharbour_collusive | accept | c_safeharbour_sting50 | c_severe_sting50 | MH RD | 10 | 0.030 | [+0.000, +0.065] | 0.105 | CMH chi-square | True |
 | roster | S4_safeharbour_collusive | accept | c_safeharbour_sting50 | c_severe_sting50 | paired RD | 10 | 0.030 | [+0.000, +0.065] | 0.180 | exact McNemar (pooled pairs) | True |
-| roster | S4_auth_mild | accept | c_auth_mild_sting50 | c_mild_sting50 | MH RD | 10 | 0.128 | [-0.007, +0.302] | 2.26e-04 | CMH chi-square |  |
-| roster | S4_auth_mild | accept | c_auth_mild_sting50 | c_mild_sting50 | paired RD | 10 | 0.126 | [-0.015, +0.304] | 2.71e-04 | exact McNemar (pooled pairs) |  |
+| roster | S4_auth_mild | accept | c_auth_mild_sting50 | c_mild_sting50 | MH RD | 10 | 0.133 | [+0.005, +0.303] | 1.28e-04 | CMH chi-square |  |
+| roster | S4_auth_mild | accept | c_auth_mild_sting50 | c_mild_sting50 | paired RD | 10 | 0.136 | [+0.010, +0.305] | 6.57e-05 | exact McNemar (pooled pairs) |  |
 | roster | S4_auth_severe | accept | c_auth_severe_sting50 | c_severe_sting50 | MH RD | 10 | 0.105 | [+0.000, +0.255] | 2.77e-05 | CMH chi-square |  |
 | roster | S4_auth_severe | accept | c_auth_severe_sting50 | c_severe_sting50 | paired RD | 10 | 0.105 | [+0.000, +0.255] | 1.04e-04 | exact McNemar (pooled pairs) |  |
+| roster | S4_auth_mild_warned | accept | c_auth_mild_sting50_warned | c_auth_mild_sting50 | MH RD | 10 | 0.050 | [-0.026, +0.136] | 0.099 | CMH chi-square |  |
+| roster | S4_auth_mild_warned | accept | c_auth_mild_sting50_warned | c_auth_mild_sting50 | paired RD | 10 | 0.046 | [-0.025, +0.130] | 0.200 | exact McNemar (pooled pairs) |  |
+| roster | S4_auth_severe_warned | accept | c_auth_severe_sting50_warned | c_auth_severe_sting50 | MH RD | 10 | -0.010 | [-0.085, +0.065] | 0.716 | CMH chi-square |  |
+| roster | S4_auth_severe_warned | accept | c_auth_severe_sting50_warned | c_auth_severe_sting50 | paired RD | 10 | -0.010 | [-0.085, +0.066] | 0.856 | exact McNemar (pooled pairs) |  |
+| roster | S4_prohibit_p1 | accept | c_prohibit_p1 | c_reportfree | MH RD | 10 | -0.585 | [-0.820, -0.335] | 1.68e-39 | CMH chi-square |  |
+| roster | S4_prohibit_p1 | accept | c_prohibit_p1 | c_reportfree | paired RD | 10 | -0.585 | [-0.820, -0.335] | 1.76e-29 | exact McNemar (pooled pairs) |  |
+| roster | S4_prohibit_p2 | accept | c_prohibit_p2 | c_reportfree | MH RD | 10 | -0.485 | [-0.725, -0.255] | 5.60e-32 | CMH chi-square |  |
+| roster | S4_prohibit_p2 | accept | c_prohibit_p2 | c_reportfree | paired RD | 10 | -0.485 | [-0.725, -0.255] | 3.59e-26 | exact McNemar (pooled pairs) |  |
+| roster | S4_prohibit_p1_vs_base | accept | c_prohibit_p1 | c_prohibit | MH RD | 10 | -0.105 | [-0.340, +0.065] | 5.22e-04 | CMH chi-square | False |
+| roster | S4_prohibit_p1_vs_base | accept | c_prohibit_p1 | c_prohibit | paired RD | 10 | -0.105 | [-0.340, +0.065] | 0.005 | exact McNemar (pooled pairs) | False |
+| roster | S4_prohibit_p2_vs_base | accept | c_prohibit_p2 | c_prohibit | MH RD | 10 | -0.005 | [-0.145, +0.135] | 0.853 | CMH chi-square | False |
+| roster | S4_prohibit_p2_vs_base | accept | c_prohibit_p2 | c_prohibit | paired RD | 10 | -0.005 | [-0.145, +0.135] | 1.000 | exact McNemar (pooled pairs) | False |
 
 ## Study 4: per model (all models)
 
@@ -1229,8 +1265,8 @@ RD = rate(A) − rate(B). Per model: Newcombe 95% CI, Fisher exact p, Holm acros
 | S4_sev_mild_50 | nemotron-3.5-lightning | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
 | S4_sev_mild_50 | qwen2.5-7b | RD (independent) | 0 | 20 | 0 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
 | S4_sev_mild_50 | qwen2.5-7b | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
-| S4_sev_mild_50 | qwen3.8-27b | RD (independent) | 0 | 20 | 9 | 18 |  | -0.500 | [-0.710, -0.236] | 2.98e-04 | 0.003 |
-| S4_sev_mild_50 | qwen3.8-27b | RD (paired) |  |  |  |  | 18 | -0.500 | [-0.710, -0.226] | 0.004 |  |
+| S4_sev_mild_50 | qwen3.8-27b | RD (independent) | 0 | 20 | 9 | 20 |  | -0.450 | [-0.658, -0.200] | 0.001 | 0.011 |
+| S4_sev_mild_50 | qwen3.8-27b | RD (paired) |  |  |  |  | 20 | -0.450 | [-0.658, -0.200] | 0.004 |  |
 | S4_sev_mild_1 | gemma-3-12b | RD (independent) | 0 | 20 | 0 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
 | S4_sev_mild_1 | gemma-3-12b | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
 | S4_sev_mild_1 | gpt-4.1-mini | RD (independent) | 0 | 20 | 0 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
@@ -1249,8 +1285,8 @@ RD = rate(A) − rate(B). Per model: Newcombe 95% CI, Fisher exact p, Holm acros
 | S4_sev_mild_1 | nemotron-3.5-lightning | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
 | S4_sev_mild_1 | qwen2.5-7b | RD (independent) | 0 | 20 | 0 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
 | S4_sev_mild_1 | qwen2.5-7b | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
-| S4_sev_mild_1 | qwen3.8-27b | RD (independent) | 1 | 19 | 18 | 20 |  | -0.847 | [-0.931, -0.568] | 5.82e-08 | 5.82e-07 |
-| S4_sev_mild_1 | qwen3.8-27b | RD (paired) |  |  |  |  | 19 | -0.842 | [-0.929, -0.557] | 3.05e-05 |  |
+| S4_sev_mild_1 | qwen3.8-27b | RD (independent) | 1 | 20 | 18 | 20 |  | -0.850 | [-0.933, -0.576] | 5.82e-08 | 5.82e-07 |
+| S4_sev_mild_1 | qwen3.8-27b | RD (paired) |  |  |  |  | 20 | -0.850 | [-0.933, -0.576] | 1.53e-05 |  |
 | S4_mild_rate | gemma-3-12b | RD (independent) | 0 | 20 | 0 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
 | S4_mild_rate | gemma-3-12b | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
 | S4_mild_rate | gpt-4.1-mini | RD (independent) | 0 | 20 | 0 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
@@ -1269,8 +1305,8 @@ RD = rate(A) − rate(B). Per model: Newcombe 95% CI, Fisher exact p, Holm acros
 | S4_mild_rate | nemotron-3.5-lightning | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
 | S4_mild_rate | qwen2.5-7b | RD (independent) | 0 | 20 | 0 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
 | S4_mild_rate | qwen2.5-7b | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
-| S4_mild_rate | qwen3.8-27b | RD (independent) | 9 | 18 | 18 | 20 |  | -0.400 | [-0.622, -0.110] | 0.011 | 0.113 |
-| S4_mild_rate | qwen3.8-27b | RD (paired) |  |  |  |  | 18 | -0.389 | [-0.613, -0.087] | 0.039 |  |
+| S4_mild_rate | qwen3.8-27b | RD (independent) | 9 | 20 | 18 | 20 |  | -0.450 | [-0.655, -0.161] | 0.006 | 0.057 |
+| S4_mild_rate | qwen3.8-27b | RD (paired) |  |  |  |  | 20 | -0.450 | [-0.657, -0.156] | 0.012 |  |
 | S4_mild_rate10 | gemma-3-12b | RD (independent) | 0 | 20 | 0 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
 | S4_mild_rate10 | gemma-3-12b | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
 | S4_mild_rate10 | gpt-4.1-mini | RD (independent) | 0 | 20 | 0 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
@@ -1309,8 +1345,8 @@ RD = rate(A) − rate(B). Per model: Newcombe 95% CI, Fisher exact p, Holm acros
 | S4_severe_rate | nemotron-3.5-lightning | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
 | S4_severe_rate | qwen2.5-7b | RD (independent) | 0 | 20 | 0 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
 | S4_severe_rate | qwen2.5-7b | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
-| S4_severe_rate | qwen3.8-27b | RD (independent) | 0 | 20 | 1 | 19 |  | -0.053 | [-0.246, +0.114] | 0.487 | 1.000 |
-| S4_severe_rate | qwen3.8-27b | RD (paired) |  |  |  |  | 19 | -0.053 | [-0.246, +0.121] | 1.000 |  |
+| S4_severe_rate | qwen3.8-27b | RD (independent) | 0 | 20 | 1 | 20 |  | -0.050 | [-0.236, +0.116] | 1.000 | 1.000 |
+| S4_severe_rate | qwen3.8-27b | RD (paired) |  |  |  |  | 20 | -0.050 | [-0.236, +0.116] | 1.000 |  |
 | S4_mild_vs_prohibit | gemma-3-12b | RD (independent) | 0 | 20 | 4 | 20 |  | -0.200 | [-0.416, +0.001] | 0.106 | 0.636 |
 | S4_mild_vs_prohibit | gemma-3-12b | RD (paired) |  |  |  |  | 20 | -0.200 | [-0.416, +0.001] | 0.125 |  |
 | S4_mild_vs_prohibit | gpt-4.1-mini | RD (independent) | 0 | 20 | 0 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
@@ -1341,7 +1377,7 @@ RD = rate(A) − rate(B). Per model: Newcombe 95% CI, Fisher exact p, Holm acros
 | S4_noprohibit | llama-3.1-8b | RD (paired) |  |  |  |  | 20 | 0.450 | [+0.182, +0.638] | 0.004 |  |
 | S4_noprohibit | llama-3.2-3b | RD (independent) | 8 | 20 | 8 | 20 |  | 0.000 | [-0.280, +0.280] | 1.000 | 1.000 |
 | S4_noprohibit | llama-3.2-3b | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.271, +0.271] | 1.000 |  |
-| S4_noprohibit | minimax-m3.1-flash | RD (independent) | 20 | 20 | 16 | 20 |  | 0.200 | [-0.001, +0.416] | 0.106 | 0.456 |
+| S4_noprohibit | minimax-m3.1-flash | RD (independent) | 20 | 20 | 16 | 20 |  | 0.200 | [-0.001, +0.416] | 0.106 | 0.424 |
 | S4_noprohibit | minimax-m3.1-flash | RD (paired) |  |  |  |  | 20 | 0.200 | [-0.001, +0.416] | 0.125 |  |
 | S4_noprohibit | ministral-8b | RD (independent) | 20 | 20 | 8 | 20 |  | 0.600 | [+0.333, +0.781] | 4.51e-05 | 3.61e-04 |
 | S4_noprohibit | ministral-8b | RD (paired) |  |  |  |  | 20 | 0.600 | [+0.333, +0.781] | 4.88e-04 |  |
@@ -1349,8 +1385,8 @@ RD = rate(A) − rate(B). Per model: Newcombe 95% CI, Fisher exact p, Holm acros
 | S4_noprohibit | nemotron-3.5-lightning | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
 | S4_noprohibit | qwen2.5-7b | RD (independent) | 18 | 20 | 0 | 20 |  | 0.900 | [+0.642, +0.972] | 3.35e-09 | 3.35e-08 |
 | S4_noprohibit | qwen2.5-7b | RD (paired) |  |  |  |  | 20 | 0.900 | [+0.642, +0.972] | 7.63e-06 |  |
-| S4_noprohibit | qwen3.8-27b | RD (independent) | 15 | 19 | 9 | 18 |  | 0.289 | [-0.017, +0.534] | 0.091 | 0.456 |
-| S4_noprohibit | qwen3.8-27b | RD (paired) |  |  |  |  | 17 | 0.235 | [-0.081, +0.496] | 0.289 |  |
+| S4_noprohibit | qwen3.8-27b | RD (independent) | 16 | 20 | 9 | 20 |  | 0.350 | [+0.050, +0.576] | 0.048 | 0.242 |
+| S4_noprohibit | qwen3.8-27b | RD (paired) |  |  |  |  | 20 | 0.350 | [+0.043, +0.581] | 0.065 |  |
 | S4_mild_sting_audit | gemma-3-12b | RD (independent) | 0 | 20 | 0 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
 | S4_mild_sting_audit | gemma-3-12b | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
 | S4_mild_sting_audit | gpt-4.1-mini | RD (independent) | 0 | 20 | 0 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
@@ -1369,8 +1405,8 @@ RD = rate(A) − rate(B). Per model: Newcombe 95% CI, Fisher exact p, Holm acros
 | S4_mild_sting_audit | nemotron-3.5-lightning | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
 | S4_mild_sting_audit | qwen2.5-7b | RD (independent) | 0 | 20 | 0 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
 | S4_mild_sting_audit | qwen2.5-7b | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
-| S4_mild_sting_audit | qwen3.8-27b | RD (independent) | 9 | 18 | 8 | 17 |  | 0.029 | [-0.274, +0.325] | 1.000 | 1.000 |
-| S4_mild_sting_audit | qwen3.8-27b | RD (paired) |  |  |  |  | 16 | -0.062 | [-0.383, +0.276] | 1.000 |  |
+| S4_mild_sting_audit | qwen3.8-27b | RD (independent) | 9 | 20 | 9 | 20 |  | 0.000 | [-0.283, +0.283] | 1.000 | 1.000 |
+| S4_mild_sting_audit | qwen3.8-27b | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.284, +0.284] | 1.000 |  |
 | S4_safeharbour | gemma-3-12b | RD (independent) | 20 | 20 | 20 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
 | S4_safeharbour | gemma-3-12b | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
 | S4_safeharbour | gpt-4.1-mini | RD (independent) | 0 | 20 | 0 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
@@ -1449,8 +1485,8 @@ RD = rate(A) − rate(B). Per model: Newcombe 95% CI, Fisher exact p, Holm acros
 | S4_auth_mild | nemotron-3.5-lightning | RD (paired) |  |  |  |  | 20 | 0.050 | [-0.116, +0.236] | 1.000 |  |
 | S4_auth_mild | qwen2.5-7b | RD (independent) | 0 | 20 | 0 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
 | S4_auth_mild | qwen2.5-7b | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
-| S4_auth_mild | qwen3.8-27b | RD (independent) | 5 | 12 | 9 | 18 |  | -0.083 | [-0.390, +0.254] | 0.722 | 1.000 |
-| S4_auth_mild | qwen3.8-27b | RD (paired) |  |  |  |  | 11 | -0.182 | [-0.410, +0.092] | 0.500 |  |
+| S4_auth_mild | qwen3.8-27b | RD (independent) | 9 | 19 | 9 | 20 |  | 0.024 | [-0.265, +0.307] | 1.000 | 1.000 |
+| S4_auth_mild | qwen3.8-27b | RD (paired) |  |  |  |  | 19 | 0.053 | [-0.182, +0.278] | 1.000 |  |
 | S4_auth_severe | gemma-3-12b | RD (independent) | 0 | 20 | 0 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
 | S4_auth_severe | gemma-3-12b | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
 | S4_auth_severe | gpt-4.1-mini | RD (independent) | 0 | 20 | 0 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
@@ -1471,6 +1507,126 @@ RD = rate(A) − rate(B). Per model: Newcombe 95% CI, Fisher exact p, Holm acros
 | S4_auth_severe | qwen2.5-7b | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
 | S4_auth_severe | qwen3.8-27b | RD (independent) | 0 | 20 | 0 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
 | S4_auth_severe | qwen3.8-27b | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
+| S4_auth_mild_warned | gemma-3-12b | RD (independent) | 0 | 20 | 0 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
+| S4_auth_mild_warned | gemma-3-12b | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
+| S4_auth_mild_warned | gpt-4.1-mini | RD (independent) | 0 | 20 | 0 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
+| S4_auth_mild_warned | gpt-4.1-mini | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
+| S4_auth_mild_warned | gpt-oss-120b-or | RD (independent) | 2 | 20 | 0 | 20 |  | 0.100 | [-0.076, +0.301] | 0.487 | 1.000 |
+| S4_auth_mild_warned | gpt-oss-120b-or | RD (paired) |  |  |  |  | 20 | 0.100 | [-0.076, +0.301] | 0.500 |  |
+| S4_auth_mild_warned | llama-3.1-8b | RD (independent) | 13 | 20 | 15 | 20 |  | -0.100 | [-0.357, +0.176] | 0.731 | 1.000 |
+| S4_auth_mild_warned | llama-3.1-8b | RD (paired) |  |  |  |  | 20 | -0.100 | [-0.378, +0.200] | 0.754 |  |
+| S4_auth_mild_warned | llama-3.2-3b | RD (independent) | 15 | 20 | 10 | 20 |  | 0.250 | [-0.047, +0.494] | 0.191 | 1.000 |
+| S4_auth_mild_warned | llama-3.2-3b | RD (paired) |  |  |  |  | 20 | 0.250 | [-0.063, +0.506] | 0.227 |  |
+| S4_auth_mild_warned | minimax-m3.1-flash | RD (independent) | 18 | 19 | 17 | 20 |  | 0.097 | [-0.120, +0.312] | 0.605 | 1.000 |
+| S4_auth_mild_warned | minimax-m3.1-flash | RD (paired) |  |  |  |  | 19 | 0.105 | [-0.123, +0.332] | 0.625 |  |
+| S4_auth_mild_warned | ministral-8b | RD (independent) | 18 | 20 | 20 | 20 |  | -0.100 | [-0.301, +0.076] | 0.487 | 1.000 |
+| S4_auth_mild_warned | ministral-8b | RD (paired) |  |  |  |  | 20 | -0.100 | [-0.301, +0.076] | 0.500 |  |
+| S4_auth_mild_warned | nemotron-3.5-lightning | RD (independent) | 0 | 20 | 1 | 20 |  | -0.050 | [-0.236, +0.116] | 1.000 | 1.000 |
+| S4_auth_mild_warned | nemotron-3.5-lightning | RD (paired) |  |  |  |  | 20 | -0.050 | [-0.236, +0.116] | 1.000 |  |
+| S4_auth_mild_warned | qwen2.5-7b | RD (independent) | 0 | 20 | 0 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
+| S4_auth_mild_warned | qwen2.5-7b | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
+| S4_auth_mild_warned | qwen3.8-27b | RD (independent) | 13 | 16 | 9 | 19 |  | 0.339 | [+0.018, +0.573] | 0.078 | 0.776 |
+| S4_auth_mild_warned | qwen3.8-27b | RD (paired) |  |  |  |  | 15 | 0.333 | [-0.042, +0.609] | 0.180 |  |
+| S4_auth_severe_warned | gemma-3-12b | RD (independent) | 0 | 20 | 0 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
+| S4_auth_severe_warned | gemma-3-12b | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
+| S4_auth_severe_warned | gpt-4.1-mini | RD (independent) | 0 | 20 | 0 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
+| S4_auth_severe_warned | gpt-4.1-mini | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
+| S4_auth_severe_warned | gpt-oss-120b-or | RD (independent) | 0 | 20 | 0 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
+| S4_auth_severe_warned | gpt-oss-120b-or | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
+| S4_auth_severe_warned | llama-3.1-8b | RD (independent) | 7 | 20 | 9 | 20 |  | -0.100 | [-0.368, +0.190] | 0.748 | 1.000 |
+| S4_auth_severe_warned | llama-3.1-8b | RD (paired) |  |  |  |  | 20 | -0.100 | [-0.372, +0.194] | 0.754 |  |
+| S4_auth_severe_warned | llama-3.2-3b | RD (independent) | 12 | 20 | 7 | 20 |  | 0.250 | [-0.054, +0.498] | 0.205 | 1.000 |
+| S4_auth_severe_warned | llama-3.2-3b | RD (paired) |  |  |  |  | 20 | 0.250 | [-0.091, +0.528] | 0.267 |  |
+| S4_auth_severe_warned | minimax-m3.1-flash | RD (independent) | 0 | 19 | 0 | 20 |  | 0.000 | [-0.161, +0.168] | 1.000 | 1.000 |
+| S4_auth_severe_warned | minimax-m3.1-flash | RD (paired) |  |  |  |  | 19 | 0.000 | [-0.168, +0.168] | 1.000 |  |
+| S4_auth_severe_warned | ministral-8b | RD (independent) | 7 | 20 | 12 | 20 |  | -0.250 | [-0.498, +0.054] | 0.205 | 1.000 |
+| S4_auth_severe_warned | ministral-8b | RD (paired) |  |  |  |  | 20 | -0.250 | [-0.461, +0.009] | 0.125 |  |
+| S4_auth_severe_warned | nemotron-3.5-lightning | RD (independent) | 0 | 20 | 0 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
+| S4_auth_severe_warned | nemotron-3.5-lightning | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
+| S4_auth_severe_warned | qwen2.5-7b | RD (independent) | 0 | 20 | 0 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
+| S4_auth_severe_warned | qwen2.5-7b | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
+| S4_auth_severe_warned | qwen3.8-27b | RD (independent) | 0 | 20 | 0 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
+| S4_auth_severe_warned | qwen3.8-27b | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
+| S4_prohibit_p1 | gemma-3-12b | RD (independent) | 11 | 20 | 20 | 20 |  | -0.450 | [-0.658, -0.200] | 0.001 | 0.006 |
+| S4_prohibit_p1 | gemma-3-12b | RD (paired) |  |  |  |  | 20 | -0.450 | [-0.658, -0.200] | 0.004 |  |
+| S4_prohibit_p1 | gpt-4.1-mini | RD (independent) | 0 | 20 | 20 | 20 |  | -1.000 | [-1.000, -0.772] | 1.45e-11 | 1.45e-10 |
+| S4_prohibit_p1 | gpt-4.1-mini | RD (paired) |  |  |  |  | 20 | -1.000 | [-1.000, -0.772] | 1.91e-06 |  |
+| S4_prohibit_p1 | gpt-oss-120b-or | RD (independent) | 0 | 20 | 14 | 20 |  | -0.700 | [-0.855, -0.428] | 3.34e-06 | 2.00e-05 |
+| S4_prohibit_p1 | gpt-oss-120b-or | RD (paired) |  |  |  |  | 20 | -0.700 | [-0.855, -0.428] | 1.22e-04 |  |
+| S4_prohibit_p1 | llama-3.1-8b | RD (independent) | 15 | 20 | 20 | 20 |  | -0.250 | [-0.469, -0.038] | 0.047 | 0.141 |
+| S4_prohibit_p1 | llama-3.1-8b | RD (paired) |  |  |  |  | 20 | -0.250 | [-0.469, -0.038] | 0.062 |  |
+| S4_prohibit_p1 | llama-3.2-3b | RD (independent) | 9 | 20 | 10 | 20 |  | -0.050 | [-0.328, +0.239] | 1.000 | 1.000 |
+| S4_prohibit_p1 | llama-3.2-3b | RD (paired) |  |  |  |  | 20 | -0.050 | [-0.367, +0.280] | 1.000 |  |
+| S4_prohibit_p1 | minimax-m3.1-flash | RD (independent) | 0 | 20 | 20 | 20 |  | -1.000 | [-1.000, -0.772] | 1.45e-11 | 1.45e-10 |
+| S4_prohibit_p1 | minimax-m3.1-flash | RD (paired) |  |  |  |  | 20 | -1.000 | [-1.000, -0.772] | 1.91e-06 |  |
+| S4_prohibit_p1 | ministral-8b | RD (independent) | 0 | 20 | 20 | 20 |  | -1.000 | [-1.000, -0.772] | 1.45e-11 | 1.45e-10 |
+| S4_prohibit_p1 | ministral-8b | RD (paired) |  |  |  |  | 20 | -1.000 | [-1.000, -0.772] | 1.91e-06 |  |
+| S4_prohibit_p1 | nemotron-3.5-lightning | RD (independent) | 0 | 20 | 1 | 20 |  | -0.050 | [-0.236, +0.116] | 1.000 | 1.000 |
+| S4_prohibit_p1 | nemotron-3.5-lightning | RD (paired) |  |  |  |  | 20 | -0.050 | [-0.236, +0.116] | 1.000 |  |
+| S4_prohibit_p1 | qwen2.5-7b | RD (independent) | 0 | 20 | 20 | 20 |  | -1.000 | [-1.000, -0.772] | 1.45e-11 | 1.45e-10 |
+| S4_prohibit_p1 | qwen2.5-7b | RD (paired) |  |  |  |  | 20 | -1.000 | [-1.000, -0.772] | 1.91e-06 |  |
+| S4_prohibit_p1 | qwen3.8-27b | RD (independent) | 0 | 20 | 7 | 20 |  | -0.350 | [-0.567, -0.117] | 0.008 | 0.033 |
+| S4_prohibit_p1 | qwen3.8-27b | RD (paired) |  |  |  |  | 20 | -0.350 | [-0.567, -0.117] | 0.016 |  |
+| S4_prohibit_p2 | gemma-3-12b | RD (independent) | 14 | 20 | 20 | 20 |  | -0.300 | [-0.519, -0.077] | 0.020 | 0.101 |
+| S4_prohibit_p2 | gemma-3-12b | RD (paired) |  |  |  |  | 20 | -0.300 | [-0.519, -0.077] | 0.031 |  |
+| S4_prohibit_p2 | gpt-4.1-mini | RD (independent) | 0 | 20 | 20 | 20 |  | -1.000 | [-1.000, -0.772] | 1.45e-11 | 1.45e-10 |
+| S4_prohibit_p2 | gpt-4.1-mini | RD (paired) |  |  |  |  | 20 | -1.000 | [-1.000, -0.772] | 1.91e-06 |  |
+| S4_prohibit_p2 | gpt-oss-120b-or | RD (independent) | 0 | 20 | 14 | 20 |  | -0.700 | [-0.855, -0.428] | 3.34e-06 | 2.34e-05 |
+| S4_prohibit_p2 | gpt-oss-120b-or | RD (paired) |  |  |  |  | 20 | -0.700 | [-0.855, -0.428] | 1.22e-04 |  |
+| S4_prohibit_p2 | llama-3.1-8b | RD (independent) | 18 | 20 | 20 | 20 |  | -0.100 | [-0.301, +0.076] | 0.487 | 1.000 |
+| S4_prohibit_p2 | llama-3.1-8b | RD (paired) |  |  |  |  | 20 | -0.100 | [-0.301, +0.076] | 0.500 |  |
+| S4_prohibit_p2 | llama-3.2-3b | RD (independent) | 7 | 20 | 10 | 20 |  | -0.150 | [-0.412, +0.146] | 0.523 | 1.000 |
+| S4_prohibit_p2 | llama-3.2-3b | RD (paired) |  |  |  |  | 20 | -0.150 | [-0.412, +0.146] | 0.508 |  |
+| S4_prohibit_p2 | minimax-m3.1-flash | RD (independent) | 0 | 20 | 20 | 20 |  | -1.000 | [-1.000, -0.772] | 1.45e-11 | 1.45e-10 |
+| S4_prohibit_p2 | minimax-m3.1-flash | RD (paired) |  |  |  |  | 20 | -1.000 | [-1.000, -0.772] | 1.91e-06 |  |
+| S4_prohibit_p2 | ministral-8b | RD (independent) | 16 | 20 | 20 | 20 |  | -0.200 | [-0.416, +0.001] | 0.106 | 0.424 |
+| S4_prohibit_p2 | ministral-8b | RD (paired) |  |  |  |  | 20 | -0.200 | [-0.416, +0.001] | 0.125 |  |
+| S4_prohibit_p2 | nemotron-3.5-lightning | RD (independent) | 0 | 20 | 1 | 20 |  | -0.050 | [-0.236, +0.116] | 1.000 | 1.000 |
+| S4_prohibit_p2 | nemotron-3.5-lightning | RD (paired) |  |  |  |  | 20 | -0.050 | [-0.236, +0.116] | 1.000 |  |
+| S4_prohibit_p2 | qwen2.5-7b | RD (independent) | 0 | 20 | 20 | 20 |  | -1.000 | [-1.000, -0.772] | 1.45e-11 | 1.45e-10 |
+| S4_prohibit_p2 | qwen2.5-7b | RD (paired) |  |  |  |  | 20 | -1.000 | [-1.000, -0.772] | 1.91e-06 |  |
+| S4_prohibit_p2 | qwen3.8-27b | RD (independent) | 0 | 20 | 7 | 20 |  | -0.350 | [-0.567, -0.117] | 0.008 | 0.050 |
+| S4_prohibit_p2 | qwen3.8-27b | RD (paired) |  |  |  |  | 20 | -0.350 | [-0.567, -0.117] | 0.016 |  |
+| S4_prohibit_p1_vs_base | gemma-3-12b | RD (independent) | 11 | 20 | 4 | 20 |  | 0.350 | [+0.050, +0.576] | 0.048 | 0.435 |
+| S4_prohibit_p1_vs_base | gemma-3-12b | RD (paired) |  |  |  |  | 20 | 0.350 | [+0.062, +0.568] | 0.039 |  |
+| S4_prohibit_p1_vs_base | gpt-4.1-mini | RD (independent) | 0 | 20 | 0 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
+| S4_prohibit_p1_vs_base | gpt-4.1-mini | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
+| S4_prohibit_p1_vs_base | gpt-oss-120b-or | RD (independent) | 0 | 20 | 0 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
+| S4_prohibit_p1_vs_base | gpt-oss-120b-or | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
+| S4_prohibit_p1_vs_base | llama-3.1-8b | RD (independent) | 15 | 20 | 16 | 20 |  | -0.050 | [-0.299, +0.206] | 1.000 | 1.000 |
+| S4_prohibit_p1_vs_base | llama-3.1-8b | RD (paired) |  |  |  |  | 20 | -0.050 | [-0.328, +0.238] | 1.000 |  |
+| S4_prohibit_p1_vs_base | llama-3.2-3b | RD (independent) | 9 | 20 | 16 | 20 |  | -0.350 | [-0.576, -0.050] | 0.048 | 0.435 |
+| S4_prohibit_p1_vs_base | llama-3.2-3b | RD (paired) |  |  |  |  | 20 | -0.350 | [-0.605, -0.008] | 0.092 |  |
+| S4_prohibit_p1_vs_base | minimax-m3.1-flash | RD (independent) | 0 | 20 | 0 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
+| S4_prohibit_p1_vs_base | minimax-m3.1-flash | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
+| S4_prohibit_p1_vs_base | ministral-8b | RD (independent) | 0 | 20 | 20 | 20 |  | -1.000 | [-1.000, -0.772] | 1.45e-11 | 1.45e-10 |
+| S4_prohibit_p1_vs_base | ministral-8b | RD (paired) |  |  |  |  | 20 | -1.000 | [-1.000, -0.772] | 1.91e-06 |  |
+| S4_prohibit_p1_vs_base | nemotron-3.5-lightning | RD (independent) | 0 | 20 | 0 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
+| S4_prohibit_p1_vs_base | nemotron-3.5-lightning | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
+| S4_prohibit_p1_vs_base | qwen2.5-7b | RD (independent) | 0 | 20 | 0 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
+| S4_prohibit_p1_vs_base | qwen2.5-7b | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
+| S4_prohibit_p1_vs_base | qwen3.8-27b | RD (independent) | 0 | 20 | 0 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
+| S4_prohibit_p1_vs_base | qwen3.8-27b | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
+| S4_prohibit_p2_vs_base | gemma-3-12b | RD (independent) | 14 | 20 | 4 | 20 |  | 0.500 | [+0.192, +0.695] | 0.004 | 0.036 |
+| S4_prohibit_p2_vs_base | gemma-3-12b | RD (paired) |  |  |  |  | 20 | 0.500 | [+0.223, +0.676] | 0.002 |  |
+| S4_prohibit_p2_vs_base | gpt-4.1-mini | RD (independent) | 0 | 20 | 0 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
+| S4_prohibit_p2_vs_base | gpt-4.1-mini | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
+| S4_prohibit_p2_vs_base | gpt-oss-120b-or | RD (independent) | 0 | 20 | 0 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
+| S4_prohibit_p2_vs_base | gpt-oss-120b-or | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
+| S4_prohibit_p2_vs_base | llama-3.1-8b | RD (independent) | 18 | 20 | 16 | 20 |  | 0.100 | [-0.134, +0.328] | 0.661 | 1.000 |
+| S4_prohibit_p2_vs_base | llama-3.1-8b | RD (paired) |  |  |  |  | 20 | 0.100 | [-0.081, +0.294] | 0.500 |  |
+| S4_prohibit_p2_vs_base | llama-3.2-3b | RD (independent) | 7 | 20 | 16 | 20 |  | -0.450 | [-0.657, -0.144] | 0.010 | 0.086 |
+| S4_prohibit_p2_vs_base | llama-3.2-3b | RD (paired) |  |  |  |  | 20 | -0.450 | [-0.657, -0.144] | 0.012 |  |
+| S4_prohibit_p2_vs_base | minimax-m3.1-flash | RD (independent) | 0 | 20 | 0 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
+| S4_prohibit_p2_vs_base | minimax-m3.1-flash | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
+| S4_prohibit_p2_vs_base | ministral-8b | RD (independent) | 16 | 20 | 20 | 20 |  | -0.200 | [-0.416, +0.001] | 0.106 | 0.848 |
+| S4_prohibit_p2_vs_base | ministral-8b | RD (paired) |  |  |  |  | 20 | -0.200 | [-0.416, +0.001] | 0.125 |  |
+| S4_prohibit_p2_vs_base | nemotron-3.5-lightning | RD (independent) | 0 | 20 | 0 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
+| S4_prohibit_p2_vs_base | nemotron-3.5-lightning | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
+| S4_prohibit_p2_vs_base | qwen2.5-7b | RD (independent) | 0 | 20 | 0 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
+| S4_prohibit_p2_vs_base | qwen2.5-7b | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
+| S4_prohibit_p2_vs_base | qwen3.8-27b | RD (independent) | 0 | 20 | 0 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
+| S4_prohibit_p2_vs_base | qwen3.8-27b | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
 
 ## Paraphrases: pooled
 

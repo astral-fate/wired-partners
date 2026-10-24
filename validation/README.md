@@ -1,6 +1,6 @@
 # Hand validation (about 20–30 minutes)
 
-Open `hand_labels.xlsx` (dropdowns, instructions and a progress counter; `hand_labels_TODO.csv` holds the same items as plain text). For each of the 96 replies, fill in two columns:
+Open **`hand_labels.xlsx`** in Excel and work in the *Label* sheet: pick from the dropdowns in the two yellow columns (clicking a cell shows the definitions), the definitions also sit beside the table, the counter at the top shows progress, and a row turns green once both labels are set. `hand_labels_TODO.csv` is only the source the workbook is built from (`python scripts/make_label_workbook.py` rebuilds it and keeps any labels already entered). For each of the 96 replies, fill in two columns:
 
 1. **your_decision**: what the agent decided, judged from the reply alone. Use `ACCEPT`, `DECLINE` or `REPORT`, or `NOT_A_DECISION` if it refused to play or didn't answer.
 2. **your_main_reason**: the main reason it gives:

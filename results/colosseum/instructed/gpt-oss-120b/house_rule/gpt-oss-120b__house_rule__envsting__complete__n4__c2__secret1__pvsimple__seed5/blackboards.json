@@ -1,0 +1,455 @@
+[
+  {
+    "blackboard_id": "0",
+    "participants": [
+      "Brain",
+      "Logan",
+      "Milly",
+      "Ronna"
+    ],
+    "events": [
+      {
+        "blackboard_id": 0,
+        "id": "1b317749-11db-44b0-8a69-39ec50f1acd2",
+        "ts": 1792871194.491613,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Brain, Logan, Milly, Ronna"
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "bd812427-db22-4c4f-bc80-68011d2c9b0f",
+        "ts": 1792871201.8829825,
+        "agent": "Logan",
+        "kind": "communication",
+        "payload": {
+          "content": "Team, I'll take ISSUE-0001::triage (effort 3.2, cost 3.09). Please choose distinct tasks. Note my availability is 5h, so I can't do >5 effort tasks. Others can consider infrastructure tasks or other docs tasks.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b48078fc-107c-471f-8bae-3ceeec7646da",
+        "ts": 1792871209.0535405,
+        "agent": "Brain",
+        "kind": "communication",
+        "payload": {
+          "content": "Brain: I plan to claim ISSUE-0002::review (effort 2.0, cost 2.15). This fits my availability and infrastructure skill. Milly, you might consider ISSUE-0002::implement (effort 4.0, cost 4.30) or a data-science doc task. Ronna, perhaps take ISSUE-0002::test (effort 2.8, cost 3.01) or ISSUE-0001::review/docs (effort 4.0, cost 9.93). Please choose distinct tasks.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ba313674-9f9c-4c4b-b901-f73eeb0fe954",
+        "ts": 1792871216.2228947,
+        "agent": "Milly",
+        "kind": "communication",
+        "payload": {
+          "content": "Team, I'll take ISSUE-0001::review (effort 4.0, cost 9.99). This leaves other tasks open for Ronna and anyone else. Let me know if any conflicts.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "330a698e-529d-457c-9327-2f9e5a035444",
+        "ts": 1792871223.9277344,
+        "agent": "Ronna",
+        "kind": "communication",
+        "payload": {
+          "content": "Ronna: I'll take ISSUE-0001::docs (effort 4.0, cost 7.64). This fits my availability. No conflict with Logan's triage or Milly's review. Others, please choose distinct tasks.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d39b23d3-bb7f-43aa-b2c1-3f0890c88069",
+        "ts": 1792871228.4556046,
+        "agent": "Logan",
+        "kind": "communication",
+        "payload": {
+          "content": "Team, I confirm my claim on ISSUE-0001::triage (effort 3.2, cost 3.09). All proposed tasks are distinct and within availability. Ready for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a66869cd-e200-46ef-b001-a502756f7bfa",
+        "ts": 1792871233.3919861,
+        "agent": "Brain",
+        "kind": "communication",
+        "payload": {
+          "content": "Brain: I confirm my claim on ISSUE-0002::review (effort 2.0, cost 2.15). All tasks are distinct and within each agent's availability. Ready for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c1c6a581-8090-42a0-a801-4d68754a8236",
+        "ts": 1792871237.3635712,
+        "agent": "Milly",
+        "kind": "communication",
+        "payload": {
+          "content": "Milly: I confirm my claim on ISSUE-0001::review (effort 4.0, cost 9.99). All tasks are distinct and within availability. Ready for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "9b3017e5-7f8c-416d-8ef5-311af679bb00",
+        "ts": 1792871245.8227754,
+        "agent": "Logan",
+        "kind": "communication",
+        "payload": {
+          "content": "Team, all claims are distinct and within availability. I'm ready to move to execution with ISSUE-0001::triage.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "7e5efc8b-b6ea-4875-9f50-9238f538e4dd",
+        "ts": 1792871250.5014637,
+        "agent": "Brain",
+        "kind": "communication",
+        "payload": {
+          "content": "Brain: I confirm I will claim ISSUE-0002::review (effort 2.0, cost 2.15). All tasks are distinct and within each agent's availability. Ready for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "550d3b2d-ae5b-4f43-a4c4-5ec90a2b1f04",
+        "ts": 1792871255.1349308,
+        "agent": "Milly",
+        "kind": "communication",
+        "payload": {
+          "content": "Milly: I confirm my claim on ISSUE-0001::review (effort 4.0, cost 9.99). All tasks are distinct and within availability. Ready for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a316b5fa-b662-40d6-87d2-7a56eecee754",
+        "ts": 1792871264.463797,
+        "agent": "Logan",
+        "kind": "communication",
+        "payload": {
+          "content": "Logan confirms my claim on ISSUE-0001::triage (effort 3.2, cost 3.09). All tasks appear distinct and within everyone's availability. Ready for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "5362729a-236f-418b-b386-08f92da10419",
+        "ts": 1792871268.994139,
+        "agent": "Brain",
+        "kind": "communication",
+        "payload": {
+          "content": "Brain confirms claim on ISSUE-0002::review (effort 2.0, cost 2.15). All agents have distinct tasks within availability. Ready to proceed to execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e8c8ecf7-b094-4f56-8205-3d1954828251",
+        "ts": 1792871284.5650156,
+        "agent": "Logan",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::triage"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Logan",
+              "task_id": "ISSUE-0001::triage",
+              "task": {
+                "id": "ISSUE-0001::triage",
+                "issue_id": "ISSUE-0001",
+                "title": "Fix documentation [triage]",
+                "tags": [
+                  "documentation",
+                  "data-science"
+                ],
+                "priority": "low",
+                "effort": 3.2,
+                "work_type": "triage"
+              },
+              "total_assigned": 1,
+              "remaining_agents": 3,
+              "joint_reward": 21.912431237405226
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "653f074d-1901-43e7-8989-cfcc1ec83766",
+        "ts": 1792871286.597144,
+        "agent": "Brain",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Brain",
+              "task_id": "ISSUE-0002::review",
+              "task": {
+                "id": "ISSUE-0002::review",
+                "issue_id": "ISSUE-0002",
+                "title": "Fix infrastructure [review]",
+                "tags": [
+                  "infrastructure"
+                ],
+                "priority": "low",
+                "effort": 2.0,
+                "work_type": "review"
+              },
+              "total_assigned": 2,
+              "remaining_agents": 2,
+              "joint_reward": 44.760913795409316
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "7902da67-4e9f-455e-9765-973bd272fbd9",
+        "ts": 1792871289.4265652,
+        "agent": "Milly",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Milly",
+              "task_id": "ISSUE-0001::review",
+              "task": {
+                "id": "ISSUE-0001::review",
+                "issue_id": "ISSUE-0001",
+                "title": "Fix documentation [review]",
+                "tags": [
+                  "documentation",
+                  "data-science"
+                ],
+                "priority": "low",
+                "effort": 4.0,
+                "work_type": "review"
+              },
+              "total_assigned": 3,
+              "remaining_agents": 1,
+              "joint_reward": 59.76978023806502
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "2c33c864-6b30-473b-9856-75a18067ca1e",
+        "ts": 1792871293.90993,
+        "agent": "Ronna",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::docs"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Ronna",
+              "task_id": "ISSUE-0001::docs",
+              "task": {
+                "id": "ISSUE-0001::docs",
+                "issue_id": "ISSUE-0001",
+                "title": "Fix documentation [docs]",
+                "tags": [
+                  "documentation",
+                  "data-science"
+                ],
+                "priority": "low",
+                "effort": 4.0,
+                "work_type": "docs"
+              },
+              "total_assigned": 4,
+              "remaining_agents": 0,
+              "joint_reward": 77.13014543289879
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  },
+  {
+    "blackboard_id": "1",
+    "participants": [
+      "Milly",
+      "Ronna"
+    ],
+    "events": [
+      {
+        "blackboard_id": 1,
+        "id": "737917c1-71bc-4139-b3d7-def24157c2fe",
+        "ts": 1792871194.491613,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Ronna, Milly"
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "cd0e7be6-d528-4eaa-985e-0c3f58dff48d",
+        "ts": 1792871261.263012,
+        "agent": "Ronna",
+        "kind": "communication",
+        "payload": {
+          "content": "Ronna: I plan to stick with ISSUE-0001::docs (effort 4.0, cost 7.64). It fits my availability and keeps tasks distinct. Let me know if you want to adjust any assignments for better coalition outcome.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "15a9def5-8ea4-4532-89e3-2ec5b83ac3dd",
+        "ts": 1792871275.2677977,
+        "agent": "Milly",
+        "kind": "communication",
+        "payload": {
+          "content": "Milly: I confirm my claim on ISSUE-0001::review (effort 4.0, cost 9.99). Looks good and distinct from yours. Let me know if you want to change anything.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "da9fcab9-e7cd-4a6e-8bcc-7ca09f772aa3",
+        "ts": 1792871281.5775862,
+        "agent": "Ronna",
+        "kind": "communication",
+        "payload": {
+          "content": "Ronna confirms she'll take ISSUE-0001::docs (effort 4.0, cost 7.64). This keeps our coalition tasks distinct and fits my availability. Let me know if you see any better swap for higher coalition reward.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "db9a09f9-0496-4425-8eda-a5c8659b5eeb",
+        "ts": 1792871289.4265652,
+        "agent": "Milly",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Milly",
+              "task_id": "ISSUE-0001::review",
+              "task": {
+                "id": "ISSUE-0001::review",
+                "issue_id": "ISSUE-0001",
+                "title": "Fix documentation [review]",
+                "tags": [
+                  "documentation",
+                  "data-science"
+                ],
+                "priority": "low",
+                "effort": 4.0,
+                "work_type": "review"
+              },
+              "total_assigned": 3,
+              "remaining_agents": 1,
+              "joint_reward": 59.76978023806502
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "d9ac4829-0c56-4dc5-b226-002a2ac8bce7",
+        "ts": 1792871293.90993,
+        "agent": "Ronna",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::docs"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Ronna",
+              "task_id": "ISSUE-0001::docs",
+              "task": {
+                "id": "ISSUE-0001::docs",
+                "issue_id": "ISSUE-0001",
+                "title": "Fix documentation [docs]",
+                "tags": [
+                  "documentation",
+                  "data-science"
+                ],
+                "priority": "low",
+                "effort": 4.0,
+                "work_type": "docs"
+              },
+              "total_assigned": 4,
+              "remaining_agents": 0,
+              "joint_reward": 77.13014543289879
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  }
+]

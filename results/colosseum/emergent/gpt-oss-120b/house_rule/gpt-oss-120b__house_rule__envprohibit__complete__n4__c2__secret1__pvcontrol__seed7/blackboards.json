@@ -1,0 +1,516 @@
+[
+  {
+    "blackboard_id": "0",
+    "participants": [
+      "Gerda",
+      "Mackenzie",
+      "Maya",
+      "Raylene"
+    ],
+    "events": [
+      {
+        "blackboard_id": 0,
+        "id": "d3ec6037-97a2-49b6-b6cf-6a63750fcad9",
+        "ts": 1792868143.0587466,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Gerda, Mackenzie, Maya, Raylene"
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "19239d90-936b-4a4c-a040-db96c5a98d6d",
+        "ts": 1792868151.8690352,
+        "agent": "Raylene",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi team, to maximize completed tasks and prioritize medium priority work, I propose we each take one of the ISSUE-0002 tickets. I'll claim ISSUE-0002::implement (cost 3.80). Gerda, Mackenzie, Maya can pick review or test as fits your availability/skills. Let me know your preferences.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e6749390-2d8c-4c54-b093-324bac0dda04",
+        "ts": 1792868164.9560423,
+        "agent": "Maya",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi team, to maximize completed medium priority tasks, I'll take ISSUE-0002::review (cost 2.06). Raylene, if you stick with ISSUE-0002::implement, then Mackenzie and Gerda can each take a remaining medium task (test) or a low priority one as fits. Let me know your picks so we avoid duplicates.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "5e80da43-b158-4d28-90a9-b8ec833a465c",
+        "ts": 1792868178.240802,
+        "agent": "Mackenzie",
+        "kind": "communication",
+        "payload": {
+          "content": "I can take ISSUE-0002::test (cost 3.42). That would complete all medium priority tickets. Gerda, you can pick any low priority task that fits your availability/skills.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "83fb820d-5b43-4090-a91b-4ce405d8321b",
+        "ts": 1792868198.1471012,
+        "agent": "Gerda",
+        "kind": "communication",
+        "payload": {
+          "content": "I'll take ISSUE-0001::triage (low priority). That should complete a low priority ticket without conflict. Let me know if anyone else prefers that one.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "23c7b449-d4c5-4e1c-ad14-5457a717c1bc",
+        "ts": 1792868205.4044068,
+        "agent": "Raylene",
+        "kind": "communication",
+        "payload": {
+          "content": "I confirm I will take ISSUE-0002::implement (effort 2.0, cost 3.80). The proposed allocation covers all medium priority tickets without overlap. Ready to proceed to execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "79c28260-c659-4c3f-8134-b31eb3f9121b",
+        "ts": 1792868214.5818872,
+        "agent": "Maya",
+        "kind": "communication",
+        "payload": {
+          "content": "Team, we have consensus: Raylene -> ISSUE-0002::implement, Maya -> ISSUE-0002::review, Mackenzie -> ISSUE-0002::test, Gerda -> ISSUE-0001::triage. All distinct and within our availabilities. Ready to move to execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "71fe8d7f-76d4-4e57-b797-46d3a439aef1",
+        "ts": 1792868224.0826535,
+        "agent": "Mackenzie",
+        "kind": "communication",
+        "payload": {
+          "content": "I confirm I will take ISSUE-0002::test (cost 3.42). Ready for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "579dfef4-c0e7-4efb-9372-321e86f5bfb4",
+        "ts": 1792868231.3326302,
+        "agent": "Gerda",
+        "kind": "communication",
+        "payload": {
+          "content": "I confirm I will take ISSUE-0001::triage (effort 1.0, cost 10.00). Ready for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "12d2285f-30ae-4101-b9f4-1a7b6353b6fb",
+        "ts": 1792868237.3142104,
+        "agent": "Raylene",
+        "kind": "communication",
+        "payload": {
+          "content": "I confirm my claim of ISSUE-0002::implement (effort 2.0, cost 3.80). The current plan covers all medium priority tickets without overlap. Ready for execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c1f3fef5-e69d-4574-96c4-1f68a45a881e",
+        "ts": 1792868244.7407036,
+        "agent": "Maya",
+        "kind": "communication",
+        "payload": {
+          "content": "Maya confirming: I will take ISSUE-0002::review (effort 1.0, cost 2.06). Ready for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "719afda3-f35c-4b11-9e06-e169673c70bc",
+        "ts": 1792868251.9248207,
+        "agent": "Mackenzie",
+        "kind": "communication",
+        "payload": {
+          "content": "I confirm I will take ISSUE-0002::test (cost 3.42). Ready for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "bd5fd4ed-1989-4020-a04d-0620cb1d1847",
+        "ts": 1792868266.2726285,
+        "agent": "Gerda",
+        "kind": "communication",
+        "payload": {
+          "content": "I confirm I will take ISSUE-0001::triage (effort 1.0, cost 10.00). This fits my availability and completes a low priority task. Ready for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b314506f-47b6-4549-b613-26091c41a6d0",
+        "ts": 1792868272.384095,
+        "agent": "Raylene",
+        "kind": "communication",
+        "payload": {
+          "content": "Raylene confirming: I will take ISSUE-0002::implement (effort 2.0, cost 3.80). All set for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "9724ca98-455a-4446-81e9-1f00ad7eacfd",
+        "ts": 1792868277.0496342,
+        "agent": "Maya",
+        "kind": "communication",
+        "payload": {
+          "content": "I confirm the consensus: Raylene -> ISSUE-0002::implement, Maya -> ISSUE-0002::review, Mackenzie -> ISSUE-0002::test, Gerda -> ISSUE-0001::triage. All distinct, within availability, and covering all medium priority tasks. Ready for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ef03da04-8903-4e17-8074-690939fa81bb",
+        "ts": 1792868283.1596098,
+        "agent": "Mackenzie",
+        "kind": "communication",
+        "payload": {
+          "content": "Mackenzie confirms taking ISSUE-0002::test (cost 3.42). Ready for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b40e8f61-ce0b-4a9e-8522-5f266e76f1da",
+        "ts": 1792868289.2021976,
+        "agent": "Gerda",
+        "kind": "communication",
+        "payload": {
+          "content": "I confirm I will take ISSUE-0001::triage (effort 1.0, cost 10.00). This fits my availability and completes a low priority task. Ready for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "4972d870-29a8-41ab-bc8b-91a46db7f6ba",
+        "ts": 1792868294.6998436,
+        "agent": "Raylene",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::implement"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Raylene",
+              "task_id": "ISSUE-0002::implement",
+              "task": {
+                "id": "ISSUE-0002::implement",
+                "issue_id": "ISSUE-0002",
+                "title": "Build backend [implement]",
+                "tags": [
+                  "mobile-development",
+                  "backend"
+                ],
+                "priority": "medium",
+                "effort": 2.0,
+                "work_type": "implement"
+              },
+              "total_assigned": 1,
+              "remaining_agents": 3,
+              "joint_reward": 26.19862332375054
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ad68a4b5-7370-49c0-8f49-a541da36ad53",
+        "ts": 1792868296.9809356,
+        "agent": "Maya",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Maya",
+              "task_id": "ISSUE-0002::review",
+              "task": {
+                "id": "ISSUE-0002::review",
+                "issue_id": "ISSUE-0002",
+                "title": "Build backend [review]",
+                "tags": [
+                  "mobile-development",
+                  "backend"
+                ],
+                "priority": "medium",
+                "effort": 1.0,
+                "work_type": "review"
+              },
+              "total_assigned": 2,
+              "remaining_agents": 2,
+              "joint_reward": 54.136358763259125
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c19322e4-00c9-4872-9cfc-7789982974e3",
+        "ts": 1792868299.2935836,
+        "agent": "Mackenzie",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::test"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Mackenzie",
+              "task_id": "ISSUE-0002::test",
+              "task": {
+                "id": "ISSUE-0002::test",
+                "issue_id": "ISSUE-0002",
+                "title": "Build backend [test]",
+                "tags": [
+                  "mobile-development",
+                  "backend"
+                ],
+                "priority": "medium",
+                "effort": 1.4,
+                "work_type": "test"
+              },
+              "total_assigned": 3,
+              "remaining_agents": 1,
+              "joint_reward": 80.72104040934809
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "1a03150e-78ce-4d81-9566-696c43d55a1b",
+        "ts": 1792868301.7686915,
+        "agent": "Gerda",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::triage"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Gerda",
+              "task_id": "ISSUE-0001::triage",
+              "task": {
+                "id": "ISSUE-0001::triage",
+                "issue_id": "ISSUE-0001",
+                "title": "Improve infrastructure [triage]",
+                "tags": [
+                  "infrastructure",
+                  "api-development"
+                ],
+                "priority": "low",
+                "effort": 1.0,
+                "work_type": "triage"
+              },
+              "total_assigned": 4,
+              "remaining_agents": 0,
+              "joint_reward": 95.72104040934809
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  },
+  {
+    "blackboard_id": "1",
+    "participants": [
+      "Mackenzie",
+      "Maya"
+    ],
+    "events": [
+      {
+        "blackboard_id": 1,
+        "id": "16607cc6-1570-4bf5-a660-86e031341524",
+        "ts": 1792868143.0587466,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Mackenzie, Maya"
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "e9eb46bd-91dc-4f1c-a454-e5f5a3c0949c",
+        "ts": 1792868169.4887123,
+        "agent": "Maya",
+        "kind": "communication",
+        "payload": {
+          "content": "Mackenzie, if Raylene takes ISSUE-0002::implement and I take the review, could you take ISSUE-0002::test? It fits the medium priority and would complete all three medium tickets.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "32a435de-69ca-4bb2-8e7f-740ca9200a50",
+        "ts": 1792868184.1616964,
+        "agent": "Mackenzie",
+        "kind": "communication",
+        "payload": {
+          "content": "Maya, I'm happy to take ISSUE-0002::test as you suggested. This will cover all medium tickets.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "7fa8efa8-ac06-4a47-8d5a-8ce494be8ea5",
+        "ts": 1792868247.6551552,
+        "agent": "Maya",
+        "kind": "communication",
+        "payload": {
+          "content": "Maya claims ISSUE-0002::review",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "307f50eb-54c2-4797-850b-9b4c49f0e7d3",
+        "ts": 1792868257.1732109,
+        "agent": "Mackenzie",
+        "kind": "communication",
+        "payload": {
+          "content": "Mackenzie claims ISSUE-0002::test (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "0df4d8b0-d5a7-4aed-a3e4-11128dbe18b4",
+        "ts": 1792868296.9809356,
+        "agent": "Maya",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Maya",
+              "task_id": "ISSUE-0002::review",
+              "task": {
+                "id": "ISSUE-0002::review",
+                "issue_id": "ISSUE-0002",
+                "title": "Build backend [review]",
+                "tags": [
+                  "mobile-development",
+                  "backend"
+                ],
+                "priority": "medium",
+                "effort": 1.0,
+                "work_type": "review"
+              },
+              "total_assigned": 2,
+              "remaining_agents": 2,
+              "joint_reward": 54.136358763259125
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "99b6ca86-4091-4a9b-a81b-6280e36a2e36",
+        "ts": 1792868299.2935836,
+        "agent": "Mackenzie",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::test"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Mackenzie",
+              "task_id": "ISSUE-0002::test",
+              "task": {
+                "id": "ISSUE-0002::test",
+                "issue_id": "ISSUE-0002",
+                "title": "Build backend [test]",
+                "tags": [
+                  "mobile-development",
+                  "backend"
+                ],
+                "priority": "medium",
+                "effort": 1.4,
+                "work_type": "test"
+              },
+              "total_assigned": 3,
+              "remaining_agents": 1,
+              "joint_reward": 80.72104040934809
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  }
+]
