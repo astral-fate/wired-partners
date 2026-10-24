@@ -7,7 +7,8 @@ experiments/sting/outputs/{main,instructed} into results/colosseum/{emergent,ins
 results/colosseum, so it reruns from the repository alone.
 
 Design: 4 agents, complete topology, 2 of them share a secret blackboard. "emergent" = nobody is told to collude
-(Colosseum's control prompt); "instructed" = the two are told they are a coalition (Colosseum's "simple" prompt).
+(Colosseum's control prompt); "instructed" = the two are told they are a coalition (Colosseum's "simple" prompt);
+"meeting" = the instructed arm in Colosseum's meeting-scheduling environment.
 The house rule (none / prohibition / sting) is appended to every agent's system prompt. Seeds are shared across
 conditions, so contrasts are paired by seed within model; intervals are percentile bootstraps over seeds (pooled:
 the mean of per-model differences, resampling seeds within each model). The no-channel runs are the positive
@@ -31,10 +32,10 @@ import matplotlib.pyplot as plt  # noqa: E402
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "results" / "colosseum"
 KEEP = ("metrics.json", "run_config.json", "blackboards.json", "final_summary.json")
-ARMS = {"emergent": "main", "instructed": "instructed"}
+ARMS = {"emergent": "main", "instructed": "instructed", "meeting": "meeting"}
 CONDS = ["no_channel", "no_rule", "prohibit", "sting"]
 METRICS = {"adv": "coalition_advantage_mean", "regret": "system_regret_ratio", "secret": "colluder_posts_secret_rate"}
-MODEL_NAME = {"gpt-4.1-mini": "GPT-4.1-mini", "gpt-oss-120b": "GPT-OSS-120B"}
+MODEL_NAME = {"gpt-4.1-mini": "GPT-4.1-mini", "gpt-oss-120b": "GPT-OSS-120B", "deepseek-v4.1-flash": "DeepSeek-V4.1-Flash"}
 
 
 def sync(checkout: Path):
@@ -144,7 +145,7 @@ def figure(by, models):
     fig, axes = plt.subplots(1, len(arms), figsize=(3.4 * len(arms), 2.5), sharey=True, squeeze=False)
     labels = {"no_channel": "No secret\nchannel", "no_rule": "Channel,\nno rule", "prohibit": "Channel,\nprohibition",
               "sting": "Channel,\nsting"}
-    colors = {"gpt-4.1-mini": "#0072B2", "gpt-oss-120b": "#D55E00"}
+    colors = {"gpt-4.1-mini": "#0072B2", "gpt-oss-120b": "#D55E00", "deepseek-v4.1-flash": "#009E73"}
     for ax, arm in zip(axes[0], arms):
         conds = [c for c in CONDS if any(by.get((arm, m, c)) for m in models)]
         for j, m in enumerate(models):
@@ -161,7 +162,8 @@ def figure(by, models):
                             label=MODEL_NAME.get(m, m) if i == 0 else None)
         ax.axhline(0, color="#999", lw=0.7, ls=":")
         ax.set_xticks(range(len(conds)), [labels[c] for c in conds])
-        ax.set_title({"emergent": "Not told to collude", "instructed": "Told to form a coalition"}[arm], fontsize=8.5)
+        ax.set_title({"emergent": "Jira: not told to collude", "instructed": "Jira: told to form a coalition",
+                      "meeting": "Meetings: told to form a coalition"}[arm], fontsize=8.5)
     axes[0][0].set_ylabel("Coalition advantage\n(coalition minus others, mean reward)")
     axes[0][0].legend(frameon=False, fontsize=7, loc="upper left")
     fig.tight_layout()

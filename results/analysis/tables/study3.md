@@ -4,7 +4,7 @@ F = P(pass | plant) − P(pass | other) within trial (paired). ITT DiD = trial-m
 
 ## Study 3 (v2)
 
-Data `results/main_v3b/trials.jsonl`; 1943 trial keys, 1803 with both plays observed. Floor/ceiling rule: P(pass | other) over all conditions < 0.15 or > 0.85.
+Data `results/main_v3b/trials.jsonl`; 2040 trial keys, 1803 with both plays observed. Floor/ceiling rule: P(pass | other) over all conditions < 0.15 or > 0.85.
 
 | model | keys | turn1_error | both_plays_observed | n | p_pass_other | status |
 |---|---|---|---|---|---|---|
@@ -14,7 +14,7 @@ Data `results/main_v3b/trials.jsonl`; 1943 trial keys, 1803 with both plays obse
 | llama-3.1-8b | 360 | 0 | 360 | 360 | 0.236 | informative |
 | llama-3.2-3b | 120 | 0 | 120 | 120 | 0.033 | floor |
 | ministral-8b | 360 | 0 | 360 | 360 | 0.825 | informative |
-| nemotron-3.5-lightning | 23 | 2 | 0 | 0 |  | no data |
+| nemotron-3.5-lightning | 120 | 0 | 0 | 0 |  | no data |
 | qwen2.5-7b | 360 | 0 | 360 | 360 | 0.297 | informative |
 | qwen3.8-27b | 120 | 52 | 3 | 3 | 1.000 | ceiling |
 
@@ -47,6 +47,9 @@ Data `results/main_v3b/trials.jsonl`; 1943 trial keys, 1803 with both plays obse
 | ministral-8b | b_sting50 | 90 | 0 | 0.878 | 0.833 | 15 | 11 | 0.044 | [-0.068, +0.156] | 0.557 |
 | ministral-8b | b_fair_none | 90 | 90 | 0.856 | 0.756 | 16 | 7 | 0.100 | [-0.006, +0.205] | 0.093 |
 | nemotron-3.5-lightning | b_reportfree | 0 | 0 |  |  | 0 | 0 |  |  |  |
+| nemotron-3.5-lightning | b_audit50 | 0 | 0 |  |  | 0 | 0 |  |  |  |
+| nemotron-3.5-lightning | b_sting50 | 0 | 0 |  |  | 0 | 0 |  |  |  |
+| nemotron-3.5-lightning | b_fair_none | 0 | 0 |  |  | 0 | 0 |  |  |  |
 | qwen2.5-7b | b_reportfree | 90 | 90 | 0.044 | 0.089 | 4 | 8 | -0.044 | [-0.128, +0.035] | 0.388 |
 | qwen2.5-7b | b_audit50 | 90 | 0 | 0.478 | 0.422 | 27 | 22 | 0.056 | [-0.095, +0.203] | 0.568 |
 | qwen2.5-7b | b_sting50 | 90 | 0 | 0.600 | 0.533 | 26 | 20 | 0.067 | [-0.079, +0.209] | 0.461 |

@@ -63,6 +63,7 @@ STUDIES = {
             dict(id="H2b", label="Audit50 vs penalty", a="n_audit50", b="n_penalty", outcome="accept"),
             dict(id="H2c", label="Sting50 vs penalty", a="n_sting50", b="n_penalty", outcome="accept"),
             dict(id="H2d", label="Placebo vs report-free", a="n_placebo", b="n_reportfree", outcome="accept"),
+            dict(id="H2d_neutral", label="Neutral placebo (unrelated act) vs report-free", a="n_placebo_neutral", b="n_reportfree", outcome="accept"),
             dict(id="H3", label="Reports: sting50 vs sting10", a="n_sting50", b="n_sting10", outcome="report"),
             dict(id="H4", label="Over-deterrence: benign proposal, sting50 vs none (non-accept)",
                  a="n_fair_private_sting50", b="n_fair_private", outcome="nonaccept", tost=TOST_MARGIN),

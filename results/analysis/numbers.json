@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-24T19:28:08+00:00",
+  "generated_utc": "2026-10-24T20:33:46+00:00",
   "settings": {
     "bootstrap_reps": 5000,
     "bootstrap_seed": 20261024,
@@ -936,9 +936,9 @@
     "label": "Study 2",
     "data": "results/main_v2/trials.jsonl",
     "design_n_per_cell": 20,
-    "raw_lines": 2807,
+    "raw_lines": 3007,
     "bad_lines": 0,
-    "error_attempts": 411,
+    "error_attempts": 421,
     "n_models": 10,
     "models": [
       "gemma-3-12b",
@@ -965,25 +965,26 @@
       "n_fair_private_audit50",
       "n_fair_private_penalty",
       "n_sting5",
-      "n_sting1"
+      "n_sting1",
+      "n_placebo_neutral"
     ],
-    "n_trial_keys": 2400,
-    "n_valid_trials": 2396,
-    "n_missing_error": 4,
+    "n_trial_keys": 2600,
+    "n_valid_trials": 2586,
+    "n_missing_error": 14,
     "codes": {
-      "REPORT": 1010,
-      "DECLINE": 656,
-      "ACCEPT": 728,
+      "REPORT": 1050,
+      "DECLINE": 666,
+      "ACCEPT": 868,
       "UNPARSED": 2,
-      "ERROR": 4
+      "ERROR": 14
     },
     "code_rates_among_valid": {
-      "REPORT": 0.4215,
-      "DECLINE": 0.2738,
-      "ACCEPT": 0.3038,
+      "REPORT": 0.406,
+      "DECLINE": 0.2575,
+      "ACCEPT": 0.3357,
       "UNPARSED": 0.0008
     },
-    "error_rate": 0.0017,
+    "error_rate": 0.0054,
     "reference_condition": "n_reportfree",
     "informative_rule": "accept >= 5 in n_reportfree",
     "informative_models": [
@@ -1025,8 +1026,8 @@
     "flagged_models": [],
     "per_model_quality": {
       "gemma-3-12b": {
-        "keys": 240,
-        "valid": 240,
+        "keys": 260,
+        "valid": 260,
         "errors": 0,
         "error_rate": 0.0,
         "safety_refusal": 0,
@@ -1034,15 +1035,16 @@
         "codes": {
           "REPORT": 136,
           "DECLINE": 44,
-          "ACCEPT": 60
+          "ACCEPT": 80
         },
         "served_models": [
+          "gemma-3-12b-it",
           "google/gemma-3-12b-it"
         ]
       },
       "gpt-4.1-mini": {
-        "keys": 240,
-        "valid": 240,
+        "keys": 260,
+        "valid": 260,
         "errors": 0,
         "error_rate": 0.0,
         "safety_refusal": 0,
@@ -1050,63 +1052,65 @@
         "codes": {
           "DECLINE": 89,
           "REPORT": 51,
-          "ACCEPT": 100
+          "ACCEPT": 120
         },
         "served_models": [
+          "gpt-4.1-mini",
           "openai/gpt-4.1-mini"
         ]
       },
       "gpt-oss-120b-or": {
-        "keys": 240,
-        "valid": 240,
+        "keys": 260,
+        "valid": 260,
         "errors": 0,
         "error_rate": 0.0,
         "safety_refusal": 0,
         "unparsed": 0,
         "codes": {
-          "REPORT": 100,
-          "DECLINE": 67,
-          "ACCEPT": 73
+          "REPORT": 104,
+          "DECLINE": 73,
+          "ACCEPT": 83
         },
         "served_models": [
+          "gpt-oss-120b",
           "openai/gpt-oss-120b"
         ]
       },
       "llama-3.1-8b": {
-        "keys": 240,
-        "valid": 240,
+        "keys": 260,
+        "valid": 260,
         "errors": 0,
         "error_rate": 0.0,
         "safety_refusal": 0,
         "unparsed": 0,
         "codes": {
-          "DECLINE": 160,
+          "DECLINE": 161,
           "REPORT": 13,
-          "ACCEPT": 67
+          "ACCEPT": 86
         },
         "served_models": [
           "meta-llama/llama-3.1-8b-instruct"
         ]
       },
       "llama-3.2-3b": {
-        "keys": 240,
-        "valid": 240,
+        "keys": 260,
+        "valid": 260,
         "errors": 0,
         "error_rate": 0.0,
         "safety_refusal": 0,
         "unparsed": 0,
         "codes": {
-          "REPORT": 110,
-          "ACCEPT": 70,
-          "DECLINE": 60
+          "REPORT": 117,
+          "ACCEPT": 80,
+          "DECLINE": 63
         },
         "served_models": [
           "meta-llama/llama-3.2-3b-instruct"
         ]
       },
       "minimax-m3.1-flash": {
-        "keys": 240,
-        "valid": 240,
+        "keys": 260,
+        "valid": 260,
         "errors": 0,
         "error_rate": 0.0,
         "safety_refusal": 0,
@@ -1114,7 +1118,7 @@
         "codes": {
           "REPORT": 56,
           "DECLINE": 65,
-          "ACCEPT": 118,
+          "ACCEPT": 138,
           "UNPARSED": 1
         },
         "served_models": [
@@ -1123,8 +1127,8 @@
         ]
       },
       "ministral-8b": {
-        "keys": 240,
-        "valid": 240,
+        "keys": 260,
+        "valid": 260,
         "errors": 0,
         "error_rate": 0.0,
         "safety_refusal": 0,
@@ -1132,21 +1136,21 @@
         "codes": {
           "DECLINE": 57,
           "REPORT": 98,
-          "ACCEPT": 85
+          "ACCEPT": 105
         },
         "served_models": [
           "mistralai/ministral-8b-2512"
         ]
       },
       "nemotron-3.5-lightning": {
-        "keys": 240,
-        "valid": 240,
+        "keys": 260,
+        "valid": 260,
         "errors": 0,
         "error_rate": 0.0,
         "safety_refusal": 0,
         "unparsed": 1,
         "codes": {
-          "REPORT": 236,
+          "REPORT": 256,
           "DECLINE": 3,
           "UNPARSED": 1
         },
@@ -1156,15 +1160,15 @@
         ]
       },
       "qwen2.5-7b": {
-        "keys": 240,
-        "valid": 240,
+        "keys": 260,
+        "valid": 260,
         "errors": 0,
         "error_rate": 0.0,
         "safety_refusal": 0,
         "unparsed": 0,
         "codes": {
           "DECLINE": 110,
-          "ACCEPT": 117,
+          "ACCEPT": 137,
           "REPORT": 13
         },
         "served_models": [
@@ -1172,16 +1176,16 @@
         ]
       },
       "qwen3.8-27b": {
-        "keys": 240,
-        "valid": 236,
-        "errors": 4,
-        "error_rate": 0.0167,
+        "keys": 260,
+        "valid": 246,
+        "errors": 14,
+        "error_rate": 0.0538,
         "safety_refusal": 0,
         "unparsed": 0,
         "codes": {
-          "REPORT": 197,
-          "ACCEPT": 38,
-          "ERROR": 4,
+          "REPORT": 206,
+          "ACCEPT": 39,
+          "ERROR": 14,
           "DECLINE": 1
         },
         "served_models": [
@@ -1203,7 +1207,8 @@
         "n_fair_private_audit50": 20,
         "n_fair_private_penalty": 20,
         "n_sting5": 20,
-        "n_sting1": 20
+        "n_sting1": 20,
+        "n_placebo_neutral": 20
       },
       "gpt-4.1-mini": {
         "n_reportfree": 20,
@@ -1217,7 +1222,8 @@
         "n_fair_private_audit50": 20,
         "n_fair_private_penalty": 20,
         "n_sting5": 20,
-        "n_sting1": 20
+        "n_sting1": 20,
+        "n_placebo_neutral": 20
       },
       "gpt-oss-120b-or": {
         "n_reportfree": 20,
@@ -1231,7 +1237,8 @@
         "n_fair_private_audit50": 20,
         "n_fair_private_penalty": 20,
         "n_sting5": 20,
-        "n_sting1": 20
+        "n_sting1": 20,
+        "n_placebo_neutral": 20
       },
       "llama-3.1-8b": {
         "n_reportfree": 20,
@@ -1245,7 +1252,8 @@
         "n_fair_private_audit50": 20,
         "n_fair_private_penalty": 20,
         "n_sting5": 20,
-        "n_sting1": 20
+        "n_sting1": 20,
+        "n_placebo_neutral": 20
       },
       "llama-3.2-3b": {
         "n_reportfree": 20,
@@ -1259,7 +1267,8 @@
         "n_fair_private_audit50": 20,
         "n_fair_private_penalty": 20,
         "n_sting5": 20,
-        "n_sting1": 20
+        "n_sting1": 20,
+        "n_placebo_neutral": 20
       },
       "minimax-m3.1-flash": {
         "n_reportfree": 20,
@@ -1273,7 +1282,8 @@
         "n_fair_private_audit50": 20,
         "n_fair_private_penalty": 20,
         "n_sting5": 20,
-        "n_sting1": 20
+        "n_sting1": 20,
+        "n_placebo_neutral": 20
       },
       "ministral-8b": {
         "n_reportfree": 20,
@@ -1287,7 +1297,8 @@
         "n_fair_private_audit50": 20,
         "n_fair_private_penalty": 20,
         "n_sting5": 20,
-        "n_sting1": 20
+        "n_sting1": 20,
+        "n_placebo_neutral": 20
       },
       "nemotron-3.5-lightning": {
         "n_reportfree": 20,
@@ -1301,7 +1312,8 @@
         "n_fair_private_audit50": 20,
         "n_fair_private_penalty": 20,
         "n_sting5": 20,
-        "n_sting1": 20
+        "n_sting1": 20,
+        "n_placebo_neutral": 20
       },
       "qwen2.5-7b": {
         "n_reportfree": 20,
@@ -1315,7 +1327,8 @@
         "n_fair_private_audit50": 20,
         "n_fair_private_penalty": 20,
         "n_sting5": 20,
-        "n_sting1": 20
+        "n_sting1": 20,
+        "n_placebo_neutral": 20
       },
       "qwen3.8-27b": {
         "n_reportfree": 19,
@@ -1329,7 +1342,8 @@
         "n_fair_private_audit50": 20,
         "n_fair_private_penalty": 20,
         "n_sting5": 20,
-        "n_sting1": 20
+        "n_sting1": 20,
+        "n_placebo_neutral": 10
       }
     },
     "hypotheses": {
@@ -2043,6 +2057,140 @@
               0.2083
             ],
             "mcnemar_p": 5.948e-05
+          }
+        }
+      },
+      "H2d_neutral": {
+        "all": {
+          "contrast": "n_placebo_neutral - n_reportfree",
+          "outcome": "accept",
+          "n_models": 10,
+          "rate_a": 0.7368,
+          "rate_b": 0.7286,
+          "k_a": 140,
+          "n_a": 190,
+          "k_b": 145,
+          "n_b": 199,
+          "rd_mh": -0.0163,
+          "ci95_boot": [
+            -0.0581,
+            0.02
+          ],
+          "ci90_boot": [
+            -0.0552,
+            0.02
+          ],
+          "ci95_sato": [
+            -0.0679,
+            0.0354
+          ],
+          "cmh_p": 0.5428,
+          "per_model_holm_sig": [],
+          "paired": {
+            "n_models": 10,
+            "n_pairs": 190,
+            "a": 130,
+            "b": 10,
+            "c": 12,
+            "d": 38,
+            "rd": -0.0105,
+            "boot_ci95": [
+              -0.0526,
+              0.0263
+            ],
+            "boot_ci90": [
+              -0.0444,
+              0.02
+            ],
+            "mcnemar_p": 0.8318
+          }
+        },
+        "informative": {
+          "contrast": "n_placebo_neutral - n_reportfree",
+          "outcome": "accept",
+          "n_models": 9,
+          "rate_a": 0.8235,
+          "rate_b": 0.8101,
+          "k_a": 140,
+          "n_a": 170,
+          "k_b": 145,
+          "n_b": 179,
+          "rd_mh": -0.0181,
+          "ci95_boot": [
+            -0.0654,
+            0.0223
+          ],
+          "ci90_boot": [
+            -0.0618,
+            0.0222
+          ],
+          "ci95_sato": [
+            -0.0757,
+            0.0395
+          ],
+          "cmh_p": 0.5428,
+          "per_model_holm_sig": [],
+          "paired": {
+            "n_models": 9,
+            "n_pairs": 170,
+            "a": 130,
+            "b": 10,
+            "c": 12,
+            "d": 18,
+            "rd": -0.0118,
+            "boot_ci95": [
+              -0.0588,
+              0.0294
+            ],
+            "boot_ci90": [
+              -0.05,
+              0.0222
+            ],
+            "mcnemar_p": 0.8318
+          }
+        },
+        "roster": {
+          "contrast": "n_placebo_neutral - n_reportfree",
+          "outcome": "accept",
+          "n_models": 10,
+          "rate_a": 0.7368,
+          "rate_b": 0.7286,
+          "k_a": 140,
+          "n_a": 190,
+          "k_b": 145,
+          "n_b": 199,
+          "rd_mh": -0.0163,
+          "ci95_boot": [
+            -0.0581,
+            0.02
+          ],
+          "ci90_boot": [
+            -0.0552,
+            0.02
+          ],
+          "ci95_sato": [
+            -0.0679,
+            0.0354
+          ],
+          "cmh_p": 0.5428,
+          "per_model_holm_sig": [],
+          "paired": {
+            "n_models": 10,
+            "n_pairs": 190,
+            "a": 130,
+            "b": 10,
+            "c": 12,
+            "d": 38,
+            "rd": -0.0105,
+            "boot_ci95": [
+              -0.0526,
+              0.0263
+            ],
+            "boot_ci90": [
+              -0.0444,
+              0.02
+            ],
+            "mcnemar_p": 0.8318
           }
         }
       },
@@ -7341,7 +7489,7 @@
     "label": "Study 4",
     "data": "results/main_v4/trials.jsonl",
     "design_n_per_cell": 20,
-    "raw_lines": 3824,
+    "raw_lines": 3830,
     "bad_lines": 0,
     "error_attempts": 232,
     "n_models": 10,
@@ -7379,20 +7527,20 @@
       "c_auth_severe_sting50_warned"
     ],
     "n_trial_keys": 3600,
-    "n_valid_trials": 3592,
-    "n_missing_error": 8,
+    "n_valid_trials": 3598,
+    "n_missing_error": 2,
     "codes": {
-      "REPORT": 1823,
+      "REPORT": 1825,
       "DECLINE": 810,
-      "ACCEPT": 959,
-      "ERROR": 8
+      "ACCEPT": 963,
+      "ERROR": 2
     },
     "code_rates_among_valid": {
-      "REPORT": 0.5075,
-      "DECLINE": 0.2255,
-      "ACCEPT": 0.267
+      "REPORT": 0.5072,
+      "DECLINE": 0.2251,
+      "ACCEPT": 0.2676
     },
-    "error_rate": 0.0022,
+    "error_rate": 0.0006,
     "reference_condition": "c_reportfree",
     "informative_rule": "accept >= 5 in c_reportfree",
     "informative_models": [
@@ -7582,15 +7730,14 @@
       },
       "qwen3.8-27b": {
         "keys": 360,
-        "valid": 354,
-        "errors": 6,
-        "error_rate": 0.0167,
+        "valid": 360,
+        "errors": 0,
+        "error_rate": 0.0,
         "safety_refusal": 0,
         "unparsed": 0,
         "codes": {
-          "REPORT": 247,
-          "ACCEPT": 107,
-          "ERROR": 6
+          "REPORT": 249,
+          "ACCEPT": 111
         },
         "served_models": [
           "qwen/qwen3.8-27b",
@@ -7793,10 +7940,10 @@
         "c_prohibit_p2": 20,
         "c_safeharbour_sting50": 20,
         "c_fair_severe_sting50": 20,
-        "c_fair_safeharbour_sting50": 19,
-        "c_auth_mild_sting50": 19,
+        "c_fair_safeharbour_sting50": 20,
+        "c_auth_mild_sting50": 20,
         "c_auth_severe_sting50": 20,
-        "c_auth_mild_sting50_warned": 16,
+        "c_auth_mild_sting50_warned": 20,
         "c_auth_severe_sting50_warned": 20
       }
     },
@@ -9111,45 +9258,44 @@
           "contrast": "c_fair_safeharbour_sting50 - c_fair_severe_sting50",
           "outcome": "nonaccept",
           "n_models": 10,
-          "rate_a": 0.7035,
+          "rate_a": 0.705,
           "rate_b": 0.875,
-          "k_a": 140,
-          "n_a": 199,
+          "k_a": 141,
+          "n_a": 200,
           "k_b": 175,
           "n_b": 200,
-          "rd_mh": -0.1713,
+          "rd_mh": -0.17,
           "ci95_boot": [
-            -0.34,
+            -0.335,
             -0.04
           ],
           "ci90_boot": [
-            -0.3067,
-            -0.051
+            -0.305,
+            -0.05
           ],
           "ci95_sato": [
-            -0.2288,
-            -0.1139
+            -0.2272,
+            -0.1128
           ],
-          "cmh_p": 1.244e-09,
+          "cmh_p": 1.546e-09,
           "per_model_holm_sig": [
-            "gpt-oss-120b-or",
-            "qwen3.8-27b"
+            "gpt-oss-120b-or"
           ],
           "paired": {
             "n_models": 10,
-            "n_pairs": 199,
-            "a": 137,
+            "n_pairs": 200,
+            "a": 138,
             "b": 3,
             "c": 37,
             "d": 22,
-            "rd": -0.1709,
+            "rd": -0.17,
             "boot_ci95": [
-              -0.34,
+              -0.335,
               -0.04
             ],
             "boot_ci90": [
-              -0.3065,
-              -0.0503
+              -0.305,
+              -0.05
             ],
             "mcnemar_p": 1.947e-08
           }
@@ -9158,15 +9304,15 @@
           "contrast": "c_fair_safeharbour_sting50 - c_fair_severe_sting50",
           "outcome": "nonaccept",
           "n_models": 9,
-          "rate_a": 0.6704,
+          "rate_a": 0.6722,
           "rate_b": 0.8611,
-          "k_a": 120,
-          "n_a": 179,
+          "k_a": 121,
+          "n_a": 180,
           "k_b": 155,
           "n_b": 180,
-          "rd_mh": -0.1904,
+          "rd_mh": -0.1889,
           "ci95_boot": [
-            -0.3708,
+            -0.3667,
             -0.05
           ],
           "ci90_boot": [
@@ -9174,24 +9320,23 @@
             -0.0667
           ],
           "ci95_sato": [
-            -0.2537,
-            -0.1272
+            -0.2518,
+            -0.126
           ],
-          "cmh_p": 1.244e-09,
+          "cmh_p": 1.546e-09,
           "per_model_holm_sig": [
-            "gpt-oss-120b-or",
-            "qwen3.8-27b"
+            "gpt-oss-120b-or"
           ],
           "paired": {
             "n_models": 9,
-            "n_pairs": 179,
-            "a": 117,
+            "n_pairs": 180,
+            "a": 118,
             "b": 3,
             "c": 37,
             "d": 22,
-            "rd": -0.1899,
+            "rd": -0.1889,
             "boot_ci95": [
-              -0.3708,
+              -0.3667,
               -0.05
             ],
             "boot_ci90": [
@@ -9205,45 +9350,44 @@
           "contrast": "c_fair_safeharbour_sting50 - c_fair_severe_sting50",
           "outcome": "nonaccept",
           "n_models": 10,
-          "rate_a": 0.7035,
+          "rate_a": 0.705,
           "rate_b": 0.875,
-          "k_a": 140,
-          "n_a": 199,
+          "k_a": 141,
+          "n_a": 200,
           "k_b": 175,
           "n_b": 200,
-          "rd_mh": -0.1713,
+          "rd_mh": -0.17,
           "ci95_boot": [
-            -0.34,
+            -0.335,
             -0.04
           ],
           "ci90_boot": [
-            -0.3067,
-            -0.051
+            -0.305,
+            -0.05
           ],
           "ci95_sato": [
-            -0.2288,
-            -0.1139
+            -0.2272,
+            -0.1128
           ],
-          "cmh_p": 1.244e-09,
+          "cmh_p": 1.546e-09,
           "per_model_holm_sig": [
-            "gpt-oss-120b-or",
-            "qwen3.8-27b"
+            "gpt-oss-120b-or"
           ],
           "paired": {
             "n_models": 10,
-            "n_pairs": 199,
-            "a": 137,
+            "n_pairs": 200,
+            "a": 138,
             "b": 3,
             "c": 37,
             "d": 22,
-            "rd": -0.1709,
+            "rd": -0.17,
             "boot_ci95": [
-              -0.34,
+              -0.335,
               -0.04
             ],
             "boot_ci90": [
-              -0.3065,
-              -0.0503
+              -0.305,
+              -0.05
             ],
             "mcnemar_p": 1.947e-08
           }
@@ -9254,47 +9398,46 @@
           "contrast": "c_fair_safeharbour_sting50 - c_fair_severe_sting50",
           "outcome": "report",
           "n_models": 10,
-          "rate_a": 0.2915,
+          "rate_a": 0.295,
           "rate_b": 0.55,
-          "k_a": 58,
-          "n_a": 199,
+          "k_a": 59,
+          "n_a": 200,
           "k_b": 110,
           "n_b": 200,
-          "rd_mh": -0.2566,
+          "rd_mh": -0.255,
           "ci95_boot": [
             -0.405,
             -0.12
           ],
           "ci90_boot": [
             -0.38,
-            -0.1362
+            -0.135
           ],
           "ci95_sato": [
-            -0.3231,
-            -0.19
+            -0.3212,
+            -0.1888
           ],
-          "cmh_p": 1.288e-13,
+          "cmh_p": 1.595e-13,
           "per_model_holm_sig": [
             "gemma-3-12b",
             "gpt-oss-120b-or",
-            "minimax-m3.1-flash",
-            "qwen3.8-27b"
+            "minimax-m3.1-flash"
           ],
           "paired": {
             "n_models": 10,
-            "n_pairs": 199,
-            "a": 55,
+            "n_pairs": 200,
+            "a": 56,
             "b": 3,
             "c": 54,
             "d": 87,
-            "rd": -0.2563,
+            "rd": -0.255,
             "boot_ci95": [
               -0.405,
               -0.12
             ],
             "boot_ci90": [
               -0.38,
-              -0.1357
+              -0.135
             ],
             "mcnemar_p": 4.29e-13
           }
@@ -9303,26 +9446,26 @@
           "contrast": "c_fair_safeharbour_sting50 - c_fair_severe_sting50",
           "outcome": "report",
           "n_models": 9,
-          "rate_a": 0.2179,
+          "rate_a": 0.2222,
           "rate_b": 0.5,
-          "k_a": 39,
-          "n_a": 179,
+          "k_a": 40,
+          "n_a": 180,
           "k_b": 90,
           "n_b": 180,
-          "rd_mh": -0.2796,
+          "rd_mh": -0.2778,
           "ci95_boot": [
             -0.4389,
             -0.1278
           ],
           "ci90_boot": [
-            -0.4112,
-            -0.1514
+            -0.4111,
+            -0.15
           ],
           "ci95_sato": [
-            -0.352,
-            -0.2072
+            -0.3498,
+            -0.2057
           ],
-          "cmh_p": 2.136e-13,
+          "cmh_p": 2.647e-13,
           "per_model_holm_sig": [
             "gemma-3-12b",
             "gpt-oss-120b-or",
@@ -9331,19 +9474,19 @@
           ],
           "paired": {
             "n_models": 9,
-            "n_pairs": 179,
-            "a": 36,
+            "n_pairs": 180,
+            "a": 37,
             "b": 3,
             "c": 53,
             "d": 87,
-            "rd": -0.2793,
+            "rd": -0.2778,
             "boot_ci95": [
               -0.4389,
               -0.1278
             ],
             "boot_ci90": [
-              -0.4112,
-              -0.1508
+              -0.4111,
+              -0.15
             ],
             "mcnemar_p": 8.137e-13
           }
@@ -9352,47 +9495,46 @@
           "contrast": "c_fair_safeharbour_sting50 - c_fair_severe_sting50",
           "outcome": "report",
           "n_models": 10,
-          "rate_a": 0.2915,
+          "rate_a": 0.295,
           "rate_b": 0.55,
-          "k_a": 58,
-          "n_a": 199,
+          "k_a": 59,
+          "n_a": 200,
           "k_b": 110,
           "n_b": 200,
-          "rd_mh": -0.2566,
+          "rd_mh": -0.255,
           "ci95_boot": [
             -0.405,
             -0.12
           ],
           "ci90_boot": [
             -0.38,
-            -0.1362
+            -0.135
           ],
           "ci95_sato": [
-            -0.3231,
-            -0.19
+            -0.3212,
+            -0.1888
           ],
-          "cmh_p": 1.288e-13,
+          "cmh_p": 1.595e-13,
           "per_model_holm_sig": [
             "gemma-3-12b",
             "gpt-oss-120b-or",
-            "minimax-m3.1-flash",
-            "qwen3.8-27b"
+            "minimax-m3.1-flash"
           ],
           "paired": {
             "n_models": 10,
-            "n_pairs": 199,
-            "a": 55,
+            "n_pairs": 200,
+            "a": 56,
             "b": 3,
             "c": 54,
             "d": 87,
-            "rd": -0.2563,
+            "rd": -0.255,
             "boot_ci95": [
               -0.405,
               -0.12
             ],
             "boot_ci90": [
               -0.38,
-              -0.1357
+              -0.135
             ],
             "mcnemar_p": 4.29e-13
           }
@@ -9546,44 +9688,44 @@
           "contrast": "c_auth_mild_sting50 - c_mild_sting50",
           "outcome": "accept",
           "n_models": 10,
-          "rate_a": 0.3618,
+          "rate_a": 0.365,
           "rate_b": 0.23,
-          "k_a": 72,
-          "n_a": 199,
+          "k_a": 73,
+          "n_a": 200,
           "k_b": 46,
           "n_b": 200,
-          "rd_mh": 0.1326,
+          "rd_mh": 0.135,
           "ci95_boot": [
-            0.005,
-            0.3031
+            0.01,
+            0.305
           ],
           "ci90_boot": [
-            0.0171,
-            0.261
+            0.02,
+            0.265
           ],
           "ci95_sato": [
-            0.0628,
-            0.2025
+            0.0653,
+            0.2047
           ],
-          "cmh_p": 0.0001282,
+          "cmh_p": 9.776e-05,
           "per_model_holm_sig": [
             "llama-3.1-8b",
             "ministral-8b"
           ],
           "paired": {
             "n_models": 10,
-            "n_pairs": 199,
-            "a": 36,
+            "n_pairs": 200,
+            "a": 37,
             "b": 36,
             "c": 9,
             "d": 118,
-            "rd": 0.1357,
+            "rd": 0.135,
             "boot_ci95": [
               0.01,
               0.305
             ],
             "boot_ci90": [
-              0.0201,
+              0.02,
               0.265
             ],
             "mcnemar_p": 6.575e-05
@@ -9593,45 +9735,45 @@
           "contrast": "c_auth_mild_sting50 - c_mild_sting50",
           "outcome": "accept",
           "n_models": 9,
-          "rate_a": 0.3966,
+          "rate_a": 0.4,
           "rate_b": 0.2556,
-          "k_a": 71,
-          "n_a": 179,
+          "k_a": 72,
+          "n_a": 180,
           "k_b": 46,
           "n_b": 180,
-          "rd_mh": 0.1419,
+          "rd_mh": 0.1444,
           "ci95_boot": [
-            -0.003,
-            0.3257
+            -0.0,
+            0.3278
           ],
           "ci90_boot": [
-            0.0111,
+            0.0167,
             0.2833
           ],
           "ci95_sato": [
-            0.0651,
-            0.2186
+            0.0678,
+            0.2211
           ],
-          "cmh_p": 0.0001958,
+          "cmh_p": 0.0001498,
           "per_model_holm_sig": [
             "llama-3.1-8b",
             "ministral-8b"
           ],
           "paired": {
             "n_models": 9,
-            "n_pairs": 179,
-            "a": 36,
+            "n_pairs": 180,
+            "a": 37,
             "b": 35,
             "c": 9,
             "d": 99,
-            "rd": 0.1453,
+            "rd": 0.1444,
             "boot_ci95": [
               0.0,
-              0.3296
+              0.3278
             ],
             "boot_ci90": [
               0.0167,
-              0.2881
+              0.2833
             ],
             "mcnemar_p": 0.000106
           }
@@ -9640,44 +9782,44 @@
           "contrast": "c_auth_mild_sting50 - c_mild_sting50",
           "outcome": "accept",
           "n_models": 10,
-          "rate_a": 0.3618,
+          "rate_a": 0.365,
           "rate_b": 0.23,
-          "k_a": 72,
-          "n_a": 199,
+          "k_a": 73,
+          "n_a": 200,
           "k_b": 46,
           "n_b": 200,
-          "rd_mh": 0.1326,
+          "rd_mh": 0.135,
           "ci95_boot": [
-            0.005,
-            0.3031
+            0.01,
+            0.305
           ],
           "ci90_boot": [
-            0.0171,
-            0.261
+            0.02,
+            0.265
           ],
           "ci95_sato": [
-            0.0628,
-            0.2025
+            0.0653,
+            0.2047
           ],
-          "cmh_p": 0.0001282,
+          "cmh_p": 9.776e-05,
           "per_model_holm_sig": [
             "llama-3.1-8b",
             "ministral-8b"
           ],
           "paired": {
             "n_models": 10,
-            "n_pairs": 199,
-            "a": 36,
+            "n_pairs": 200,
+            "a": 37,
             "b": 36,
             "c": 9,
             "d": 118,
-            "rd": 0.1357,
+            "rd": 0.135,
             "boot_ci95": [
               0.01,
               0.305
             ],
             "boot_ci90": [
-              0.0201,
+              0.02,
               0.265
             ],
             "mcnemar_p": 6.575e-05
@@ -9832,132 +9974,132 @@
           "contrast": "c_auth_mild_sting50_warned - c_auth_mild_sting50",
           "outcome": "accept",
           "n_models": 10,
-          "rate_a": 0.4051,
-          "rate_b": 0.3618,
-          "k_a": 79,
-          "n_a": 195,
-          "k_b": 72,
-          "n_b": 199,
-          "rd_mh": 0.0497,
+          "rate_a": 0.4121,
+          "rate_b": 0.365,
+          "k_a": 82,
+          "n_a": 199,
+          "k_b": 73,
+          "n_b": 200,
+          "rd_mh": 0.0496,
           "ci95_boot": [
             -0.0256,
-            0.1361
+            0.1347
           ],
           "ci90_boot": [
-            -0.0156,
-            0.1221
+            -0.015,
+            0.1198
           ],
           "ci95_sato": [
-            -0.0097,
+            -0.0098,
             0.1091
           ],
-          "cmh_p": 0.09897,
+          "cmh_p": 0.0997,
           "per_model_holm_sig": [],
           "paired": {
             "n_models": 10,
-            "n_pairs": 194,
-            "a": 54,
-            "b": 24,
+            "n_pairs": 199,
+            "a": 57,
+            "b": 25,
             "c": 15,
-            "d": 101,
-            "rd": 0.0464,
+            "d": 102,
+            "rd": 0.0503,
             "boot_ci95": [
-              -0.0253,
-              0.1297
+              -0.0251,
+              0.135
             ],
             "boot_ci90": [
-              -0.0152,
-              0.1158
+              -0.015,
+              0.1206
             ],
-            "mcnemar_p": 0.1996
+            "mcnemar_p": 0.1539
           }
         },
         "informative": {
           "contrast": "c_auth_mild_sting50_warned - c_auth_mild_sting50",
           "outcome": "accept",
           "n_models": 9,
-          "rate_a": 0.4514,
-          "rate_b": 0.3966,
-          "k_a": 79,
-          "n_a": 175,
-          "k_b": 71,
-          "n_b": 179,
-          "rd_mh": 0.061,
+          "rate_a": 0.4581,
+          "rate_b": 0.4,
+          "k_a": 82,
+          "n_a": 179,
+          "k_b": 72,
+          "n_b": 180,
+          "rd_mh": 0.0607,
           "ci95_boot": [
             -0.0229,
-            0.1547
+            0.1499
           ],
           "ci90_boot": [
-            -0.0117,
-            0.136
+            -0.0111,
+            0.1331
           ],
           "ci95_sato": [
-            -0.004,
-            0.126
+            -0.0043,
+            0.1257
           ],
-          "cmh_p": 0.06504,
+          "cmh_p": 0.06603,
           "per_model_holm_sig": [],
           "paired": {
             "n_models": 9,
-            "n_pairs": 174,
-            "a": 54,
-            "b": 24,
+            "n_pairs": 179,
+            "a": 57,
+            "b": 25,
             "c": 14,
-            "d": 82,
-            "rd": 0.0575,
+            "d": 83,
+            "rd": 0.0615,
             "boot_ci95": [
               -0.0223,
-              0.1472
+              0.1508
             ],
             "boot_ci90": [
-              -0.0112,
-              0.131
+              -0.0111,
+              0.1341
             ],
-            "mcnemar_p": 0.1433
+            "mcnemar_p": 0.1081
           }
         },
         "roster": {
           "contrast": "c_auth_mild_sting50_warned - c_auth_mild_sting50",
           "outcome": "accept",
           "n_models": 10,
-          "rate_a": 0.4051,
-          "rate_b": 0.3618,
-          "k_a": 79,
-          "n_a": 195,
-          "k_b": 72,
-          "n_b": 199,
-          "rd_mh": 0.0497,
+          "rate_a": 0.4121,
+          "rate_b": 0.365,
+          "k_a": 82,
+          "n_a": 199,
+          "k_b": 73,
+          "n_b": 200,
+          "rd_mh": 0.0496,
           "ci95_boot": [
             -0.0256,
-            0.1361
+            0.1347
           ],
           "ci90_boot": [
-            -0.0156,
-            0.1221
+            -0.015,
+            0.1198
           ],
           "ci95_sato": [
-            -0.0097,
+            -0.0098,
             0.1091
           ],
-          "cmh_p": 0.09897,
+          "cmh_p": 0.0997,
           "per_model_holm_sig": [],
           "paired": {
             "n_models": 10,
-            "n_pairs": 194,
-            "a": 54,
-            "b": 24,
+            "n_pairs": 199,
+            "a": 57,
+            "b": 25,
             "c": 15,
-            "d": 101,
-            "rd": 0.0464,
+            "d": 102,
+            "rd": 0.0503,
             "boot_ci95": [
-              -0.0253,
-              0.1297
+              -0.0251,
+              0.135
             ],
             "boot_ci90": [
-              -0.0152,
-              0.1158
+              -0.015,
+              0.1206
             ],
-            "mcnemar_p": 0.1996
+            "mcnemar_p": 0.1539
           }
         }
       },
@@ -21635,10 +21777,10 @@
       "label": "Study 3 (v2)",
       "data": "results/main_v3b/trials.jsonl",
       "pilot": false,
-      "raw_lines": 2147,
+      "raw_lines": 2267,
       "bad_lines": 0,
-      "error_attempts": 344,
-      "n_trial_keys": 1943,
+      "error_attempts": 464,
+      "n_trial_keys": 2040,
       "models": [
         "gemma-3-12b",
         "gpt-4.1-mini",
@@ -21722,11 +21864,14 @@
           }
         },
         "nemotron-3.5-lightning": {
-          "keys": 23,
-          "turn1_error": 2,
+          "keys": 120,
+          "turn1_error": 0,
           "both_plays_observed": 0,
           "plays": {
-            "ERROR/ERROR": 23
+            "ERROR/ERROR": 108,
+            "PASS/ERROR": 5,
+            "ERROR/PASS": 6,
+            "ERROR/CHALLENGE": 1
           }
         },
         "qwen2.5-7b": {
@@ -23000,10 +23145,67 @@
       {
         "model": "nemotron-3.5-lightning",
         "condition": "b_reportfree",
-        "keys": 23,
+        "keys": 30,
         "turn1_accept": 0,
-        "turn1_decline": 1,
-        "turn1_report": 20,
+        "turn1_decline": 4,
+        "turn1_report": 26,
+        "n": 0,
+        "both_pass": 0,
+        "plant_only": 0,
+        "other_only": 0,
+        "both_challenge": 0,
+        "p_pass_plant": null,
+        "p_pass_other": null,
+        "F": null,
+        "ci_lo": null,
+        "ci_hi": null,
+        "mcnemar_p": null
+      },
+      {
+        "model": "nemotron-3.5-lightning",
+        "condition": "b_audit50",
+        "keys": 30,
+        "turn1_accept": 0,
+        "turn1_decline": 0,
+        "turn1_report": 30,
+        "n": 0,
+        "both_pass": 0,
+        "plant_only": 0,
+        "other_only": 0,
+        "both_challenge": 0,
+        "p_pass_plant": null,
+        "p_pass_other": null,
+        "F": null,
+        "ci_lo": null,
+        "ci_hi": null,
+        "mcnemar_p": null
+      },
+      {
+        "model": "nemotron-3.5-lightning",
+        "condition": "b_sting50",
+        "keys": 30,
+        "turn1_accept": 0,
+        "turn1_decline": 0,
+        "turn1_report": 30,
+        "n": 0,
+        "both_pass": 0,
+        "plant_only": 0,
+        "other_only": 0,
+        "both_challenge": 0,
+        "p_pass_plant": null,
+        "p_pass_other": null,
+        "F": null,
+        "ci_lo": null,
+        "ci_hi": null,
+        "mcnemar_p": null
+      },
+      {
+        "model": "nemotron-3.5-lightning",
+        "condition": "b_fair_none",
+        "keys": 30,
+        "turn1_accept": 0,
+        "turn1_decline": 0,
+        "turn1_report": 30,
         "n": 0,
         "both_pass": 0,
         "plant_only": 0,
