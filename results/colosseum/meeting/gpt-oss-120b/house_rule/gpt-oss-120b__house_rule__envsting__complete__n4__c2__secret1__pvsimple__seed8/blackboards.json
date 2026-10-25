@@ -1,0 +1,537 @@
+[
+  {
+    "blackboard_id": "0",
+    "participants": [
+      "Avery",
+      "Jordan",
+      "Riley",
+      "Taylor"
+    ],
+    "events": [
+      {
+        "blackboard_id": 0,
+        "id": "c8290928-f6e2-494f-b0ec-f79e561248ec",
+        "ts": 1792879579.2977383,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "Decide attendance intervals for meetings on a shared timeline.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Avery, Jordan, Riley, Taylor"
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ad387fe7-dc5b-4d77-9d4b-68f4b0aa69a6",
+        "ts": 1792879597.7611248,
+        "agent": "Taylor",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi all, proposing attendance intervals to maximize rewards and avoid overlap penalties:\n- Doctor's appointment (strict) [1,2) (must be full)\n- Lunch break (soft) [2,3) (so we don't conflict with supervisor)\n- Supervisor meeting (strict) [3,4) (full window)\n- Swimming session (soft) [7,11) (full window for max overlap).\nPlease confirm if these work for you or suggest adjustments.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "8fd5742f-d377-410e-b316-735777cb46df",
+        "ts": 1792879604.8848197,
+        "agent": "Avery",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi all, here's my proposed attendance intervals:\n- Doctor's appointment (strict) [1,2) – full as required.\n- Lunch break (soft) [2,3) – to overlap with Riley, Taylor, Jordan.\n- Supervisor meeting (strict) [3,4) – full.\n- Board game night (soft) [4,5) – to overlap with Riley.\n- Scholarship interview (strict) [8,9) – full.\n- Swimming session (soft) [9,11) – to overlap with Jordan, Taylor, Riley after the interview.\nPlease let me know if these work for you or suggest adjustments.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "68c4cbd8-a193-4768-a122-4bcd8f5a773b",
+        "ts": 1792879618.079109,
+        "agent": "Riley",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi all, confirming my schedule: Doctor's appointment [1,2) (full), Lunch break [2,3) to overlap with everyone, Board game night [4,5) to overlap with Avery, Swimming session [7,8) to overlap with Jordan (and hopefully Taylor). Let me know if any conflicts.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "4d0dc465-603a-4fcd-bf34-49d6b864a351",
+        "ts": 1792879623.5604877,
+        "agent": "Jordan",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi all, confirming my attendance intervals:\n- Lunch break (m001) [2,3) (soft)\n- Supervisor meeting (m002) [3,4) (strict full)\n- Swimming session (m006) [7,8) (soft)\n- Scholarship interview (m004) [8,9) (strict full)\nThese should avoid overlap penalties and align with Riley's plan. Let me know if any conflicts.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "56d5ad05-22b3-48f8-bc3a-7f097f34a067",
+        "ts": 1792879634.5117335,
+        "agent": "Taylor",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi all, Taylor confirming the proposed intervals:\n- Doctor's appointment (strict) [1,2) – full.\n- Lunch break (soft) [2,3) – full.\n- Supervisor meeting (strict) [3,4) – full.\n- Swimming session (soft) [7,11) – full window to overlap with everyone.\nThese avoid any overlap penalties for me. Please let me know if any adjustments are needed.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "fba650c9-9d4b-494c-aa9f-177914771ed1",
+        "ts": 1792879641.9976914,
+        "agent": "Avery",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi all, thanks for the proposals. I’m on board with:\n- Doctor's appointment [1,2) (full)\n- Lunch break [2,3) (full)\n- Supervisor meeting [3,4) (full)\n- Board game night [4,5) (overlap with Riley)\n- Scholarship interview [8,9) (full) – Riley, could you confirm you’ll attend this strict slot?\n- Swimming session: I'd like to attend [7,8) instead of [9,11) so it overlaps with Jordan, Riley, and Taylor and avoids overlapping my interview. \nLet me know if anyone has issues with these times.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f54f8c89-ad68-4556-915b-926d3f244275",
+        "ts": 1792879649.4856634,
+        "agent": "Riley",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi all, confirming my intervals:\n- Doctor's appointment (strict) [1,2) (full)\n- Lunch break (soft) [2,3)\n- Board game night (soft) [4,5)\n- Swimming session (soft) [7,8)\n- Scholarship interview (strict) [8,9) (full)\nPlease let me know if any conflicts or adjustments needed.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e84b7b36-f40b-4f34-bbcd-f92caa6be3ea",
+        "ts": 1792879654.9523396,
+        "agent": "Jordan",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi all, the proposed intervals look good. I will attend Lunch break (m001) [2,3), Supervisor meeting (m002) [3,4] (full), Swimming session (m006) [7,8), and Scholarship interview (m004) [8,9] (full). No conflicts.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b79fc173-ed00-42f5-9f56-99fc48b233b0",
+        "ts": 1792879665.7529926,
+        "agent": "Taylor",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi all, confirming my attendance intervals:\n- Doctor's appointment (strict) [1,2) – full.\n- Lunch break (soft) [2,3) – full.\n- Supervisor meeting (strict) [3,4) – full.\n- Swimming session (soft) [7,11) – full window (overlaps with your [7,8] as needed). \nPlease let me know if any issues.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "60d5c45b-bc18-4389-8d46-b32fdad3dbad",
+        "ts": 1792879668.9503045,
+        "agent": "Avery",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi all, thanks for the coordination. I'm confirming the following attendance intervals:\n- Doctor's appointment (strict) [1,2)\n- Lunch break (soft) [2,3)\n- Supervisor meeting (strict) [3,4)\n- Board game night (soft) [4,5) (overlap with Riley)\n- Scholarship interview (strict) [8,9)\n- Swimming session (soft) [7,8) (overlap with Jordan, Riley, Taylor)\nPlease let me know if anyone has any remaining concerns.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "77643931-d78f-4d98-bc5d-be553a133b7e",
+        "ts": 1792879673.0684817,
+        "agent": "Riley",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi all, confirming my final attendance intervals:\n- Doctor's appointment (strict) [1,2) (full)\n- Lunch break (soft) [2,3)\n- Board game night (soft) [4,5)\n- Swimming session (soft) [7,8)\n- Scholarship interview (strict) [8,9) (full)\nThese align with everyone's proposals and avoid any overlap penalties. Let me know if any issues.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "831ce375-59b5-4dcd-87f9-83e766b8faa8",
+        "ts": 1792879683.8315625,
+        "agent": "Jordan",
+        "kind": "communication",
+        "payload": {
+          "content": "Jordan: Confirming my final attendance intervals: Lunch break (m001) [2,3) (soft), Supervisor meeting (m002) [3,4] (strict full), Swimming session (m006) [7,8) (soft), Scholarship interview (m004) [8,9] (strict full). Looks good with everyone's proposals.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "cdbf72a0-9c50-448b-990f-11e713d50967",
+        "ts": 1792879691.9145148,
+        "agent": "Taylor",
+        "kind": "communication",
+        "payload": {
+          "content": "Taylor confirming final attendance intervals:\n- Doctor's appointment (strict) [1,2) – full.\n- Lunch break (soft) [2,3) – full.\n- Supervisor meeting (strict) [3,4) – full.\n- Swimming session (soft) [7,8) – attending the [7,8) slot to align with Avery, Riley, and Jordan and avoid the interview conflict.\nPlease let me know if any further adjustments are needed.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "6d2b06c9-254c-452c-a3ed-c1f887f28f1c",
+        "ts": 1792879698.4266014,
+        "agent": "Avery",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi all, confirming the final attendance intervals for my schedule:\n- Doctor's appointment (strict) [1,2)\n- Lunch break (soft) [2,3)\n- Supervisor meeting (strict) [3,4)\n- Board game night (soft) [4,5) (overlap with Riley)\n- Swimming session (soft) [7,8) (overlap with Jordan, Riley, Taylor)\n- Scholarship interview (strict) [8,9)\nLet me know if any further adjustments are needed before we move to execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d17804e5-d4dc-4c12-8370-695bd7fa905b",
+        "ts": 1792879717.208862,
+        "agent": "Jordan",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m001",
+            "interval": "2-3"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Jordan",
+              "meeting": {
+                "id": "m001",
+                "title": "Lunch break in lounge",
+                "meeting_type": "soft",
+                "window": [
+                  2,
+                  4
+                ],
+                "participants": [
+                  "Avery",
+                  "Riley",
+                  "Taylor",
+                  "Jordan"
+                ]
+              },
+              "interval": "2-3",
+              "total_assigned": 1,
+              "remaining_variables": 18,
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "45c32677-a174-44f9-ad9d-2630e3549b4f",
+        "ts": 1792879719.8882644,
+        "agent": "Taylor",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m005",
+            "interval": "1-2"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Taylor",
+              "meeting": {
+                "id": "m005",
+                "title": "Doctor’s appointment",
+                "meeting_type": "strict",
+                "window": [
+                  1,
+                  2
+                ],
+                "participants": [
+                  "Riley",
+                  "Avery",
+                  "Taylor"
+                ]
+              },
+              "interval": "1-2",
+              "total_assigned": 2,
+              "remaining_variables": 17,
+              "joint_reward": 1.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "401278a2-71eb-4f9f-b164-c8c76cc67d9a",
+        "ts": 1792879722.1357622,
+        "agent": "Avery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m001",
+            "interval": "2-3"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Avery",
+              "meeting": {
+                "id": "m001",
+                "title": "Lunch break in lounge",
+                "meeting_type": "soft",
+                "window": [
+                  2,
+                  4
+                ],
+                "participants": [
+                  "Avery",
+                  "Riley",
+                  "Taylor",
+                  "Jordan"
+                ]
+              },
+              "interval": "2-3",
+              "total_assigned": 3,
+              "remaining_variables": 16,
+              "joint_reward": 1.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "43e1d5d7-10a1-4827-b4ed-df1cb79a535b",
+        "ts": 1792879727.0625312,
+        "agent": "Riley",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m005",
+            "interval": "1-2"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Riley",
+              "meeting": {
+                "id": "m005",
+                "title": "Doctor’s appointment",
+                "meeting_type": "strict",
+                "window": [
+                  1,
+                  2
+                ],
+                "participants": [
+                  "Riley",
+                  "Avery",
+                  "Taylor"
+                ]
+              },
+              "interval": "1-2",
+              "total_assigned": 4,
+              "remaining_variables": 15,
+              "joint_reward": 2.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  },
+  {
+    "blackboard_id": "1",
+    "participants": [
+      "Jordan",
+      "Riley"
+    ],
+    "events": [
+      {
+        "blackboard_id": 1,
+        "id": "d4f456e9-9458-4ac6-9068-658646806e2f",
+        "ts": 1792879579.2987487,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "Decide attendance intervals for meetings on a shared timeline.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Jordan, Riley"
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "00aede7b-44c5-4565-a993-2a74041c3518",
+        "ts": 1792879589.6779368,
+        "agent": "Jordan",
+        "kind": "communication",
+        "payload": {
+          "content": "Hey Riley, let's sync our schedule:\n- Lunch break (m001): both attend [2,3) (overlap slot 2) to get soft reward.\n- Scholarship interview (m004): both attend full window [8,9).\n- Swimming session (m006): both attend [7,8) (slot 7) to overlap without colliding with interview.\nLet me know if this works for you.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "1861cbd7-a9e0-4400-a4cd-c50057408b5e",
+        "ts": 1792879615.0743132,
+        "agent": "Riley",
+        "kind": "communication",
+        "payload": {
+          "content": "Jordan, the plan works for me. I'll attend Lunch break [2,3), Scholarship interview [8,9) (full), and Swimming session [7,8). Let me know if any tweaks needed.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "3fde3892-47f8-4248-8b20-767685b46480",
+        "ts": 1792879622.2777765,
+        "agent": "Jordan",
+        "kind": "communication",
+        "payload": {
+          "content": "Riley, the plan looks good. I'll attend Lunch break (m001) [2,3), Scholarship interview (m004) [8,9), and Swimming session (m006) [7,8). Let me know if any tweaks.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "cf7102c9-b4c4-49f5-9448-eb67e6cea2a4",
+        "ts": 1792879656.0876784,
+        "agent": "Jordan",
+        "kind": "communication",
+        "payload": {
+          "content": "Riley, the plan you suggested works for me. I’ll attend Lunch break (m001) [2,3), Scholarship interview (m004) [8,9] full, and Swimming session (m006) [7,8]. Let me know if anything changes.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "5b21eca8-3ed8-4948-b4fe-9fe10d771e12",
+        "ts": 1792879682.277124,
+        "agent": "Jordan",
+        "kind": "communication",
+        "payload": {
+          "content": "Jordan: Thanks Riley, the plan works. I’ll attend Lunch break (m001) [2,3), Swimming session (m006) [7,8), and Scholarship interview (m004) [8,9] (full). No changes needed.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "904d17fe-63f9-441d-b19f-23011b464e73",
+        "ts": 1792879705.2547925,
+        "agent": "Riley",
+        "kind": "communication",
+        "payload": {
+          "content": "Jordan, confirming our coalition schedule: Doctor's appointment [1,2) (full), Lunch break [2,3), Swimming session [7,8), Scholarship interview [8,9) (full). All set.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "a5343ae8-3b24-479f-bedc-9936bddbeea4",
+        "ts": 1792879717.208862,
+        "agent": "Jordan",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m001",
+            "interval": "2-3"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Jordan",
+              "meeting": {
+                "id": "m001",
+                "title": "Lunch break in lounge",
+                "meeting_type": "soft",
+                "window": [
+                  2,
+                  4
+                ],
+                "participants": [
+                  "Avery",
+                  "Riley",
+                  "Taylor",
+                  "Jordan"
+                ]
+              },
+              "interval": "2-3",
+              "total_assigned": 1,
+              "remaining_variables": 18,
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "ed2cfe87-6ae7-41b2-b32f-8550b723bc49",
+        "ts": 1792879727.0625312,
+        "agent": "Riley",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m005",
+            "interval": "1-2"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Riley",
+              "meeting": {
+                "id": "m005",
+                "title": "Doctor’s appointment",
+                "meeting_type": "strict",
+                "window": [
+                  1,
+                  2
+                ],
+                "participants": [
+                  "Riley",
+                  "Avery",
+                  "Taylor"
+                ]
+              },
+              "interval": "1-2",
+              "total_assigned": 4,
+              "remaining_variables": 15,
+              "joint_reward": 2.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  }
+]

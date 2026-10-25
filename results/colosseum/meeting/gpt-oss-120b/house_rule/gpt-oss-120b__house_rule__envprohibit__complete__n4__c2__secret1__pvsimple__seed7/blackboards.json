@@ -1,0 +1,552 @@
+[
+  {
+    "blackboard_id": "0",
+    "participants": [
+      "Avery",
+      "Jordan",
+      "Riley",
+      "Taylor"
+    ],
+    "events": [
+      {
+        "blackboard_id": 0,
+        "id": "b8e755d8-cc13-4835-bc34-c2913e0a7757",
+        "ts": 1792879008.8082452,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "Decide attendance intervals for meetings on a shared timeline.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Avery, Jordan, Riley, Taylor"
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f524ce12-bf78-4688-bca1-58669c79d547",
+        "ts": 1792879017.444361,
+        "agent": "Jordan",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi team, to maximize rewards and avoid overlap penalties, I propose the following attendance intervals:\n- Exam (m004): attend full window [0,1) (mandatory strict).\n- Gym play (m006): attend [1,3) (covers slots 1-2) so we overlap in gym without colliding with swimming.\n- Swimming (m003): attend [3,5) (slots 3-4).\nThis gives us full exam coverage, overlaps with everyone in both soft activities, and no time-slot overlap between my own meetings. Please let me know if you agree or suggest adjustments.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e06fbd10-fefe-401a-aff6-2af47350bc68",
+        "ts": 1792879025.8595762,
+        "agent": "Avery",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi all, I agree with attending the exam full [0,1). For Gym play m006 I can attend [1,3) as suggested. For Swimming m003 I propose attending [3,4) to leave room for the later Gym session m005. Then I can do Gym m005 [4,7) and Gym m001 [7,10). This schedule has no overlaps across my meetings. Let me know if this works for everyone.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "cc56e7ca-eaf8-4718-936c-a6ec98140797",
+        "ts": 1792879036.7617729,
+        "agent": "Taylor",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi all, I’ve aligned my schedule with Avery’s proposal:\n- Exam m004: attend full [0,1)\n- Gym play m006: attend [1,3)\n- Swimming m003: attend [3,4)\n- Gym play m005: attend [4,7)\n- Gym play m001: attend [7,10)\nThis avoids any overlap of my own meetings and should give us good overlap with the group in the soft activities. Let me know if anyone has concerns.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a780b726-c7a9-4491-bfb0-1c9a4015dae8",
+        "ts": 1792879051.0321157,
+        "agent": "Riley",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi team, here's my plan:\n- Exam (m004): attend full [0,1) as required.\n- Gym play (m006): attend [1,3) matching Jordan, Avery, Taylor.\n- Swimming (m003): I'd like to attend [3,5) to overlap with Jordan fully and still overlap with Avery/Taylor at slot 3. This shouldn't conflict with anyone's schedule.\n- Collaborative art workshop (m002): I'll skip it to avoid overlapping my own meetings; let me know if that causes any issue.\nPlease confirm or suggest tweaks. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "bb263dd4-de8c-40e4-b993-0666c335ad84",
+        "ts": 1792879057.722123,
+        "agent": "Jordan",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi all, I’m happy to go with the plan: exam [0,1), gym play m006 [1,3), and swimming m003 [3,5). This covers the strict exam fully and overlaps with everyone in the soft activities without any self‑overlap. Please confirm if this works for everyone.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b07ceb05-f5cb-47e4-883d-98f8751b224d",
+        "ts": 1792879063.200704,
+        "agent": "Avery",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi all, I confirm the following schedule: Exam m004 [0,1) (full). Gym play m006 [1,3). Swimming m003 [3,4) (overlap at slot 3). Gym play m005 [4,7). Gym play m001 [7,10). I will skip the collaborative art workshop m002 to avoid self‑overlap. Let me know if anyone has concerns.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "13642c04-a7b0-42d8-b736-f839a2239139",
+        "ts": 1792879067.7504401,
+        "agent": "Taylor",
+        "kind": "communication",
+        "payload": {
+          "content": "I confirm the proposed schedule: Exam m004 [0,1) full, Gym play m006 [1,3), Swimming m003 [3,4), Gym play m005 [4,7), Gym play m001 [7,10). No changes needed from my side.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "0f4263a5-6472-4b80-96ad-68e205faeec6",
+        "ts": 1792879073.5289779,
+        "agent": "Riley",
+        "kind": "communication",
+        "payload": {
+          "content": "I confirm the schedule: Exam (m004) [0,1) full, Gym play (m006) [1,3), Swimming (m003) [3,5). I will skip the collaborative art workshop (m002) to avoid self‑overlap. This matches Jordan's proposal and ensures full overlap with everyone in the soft meetings without any self‑overlap. Let me know if anyone has concerns.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "90a25474-f63d-4cfa-9bd7-cc7c4b17aec4",
+        "ts": 1792879077.8581855,
+        "agent": "Jordan",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi team, thanks for the inputs. To keep everyone aligned, I’ll adjust my swimming attendance to [3,4) (matching Avery and Taylor) while still overlapping with Riley at slot 3. So my final plan:\n- Exam m004: [0,1)\n- Gym play m006: [1,3)\n- Swimming m003: [3,4)\nThis avoids any self‑overlap and gives us overlap with all participants in the soft activities. Please confirm if this works for everyone.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "6648df96-bc52-448c-8c85-ebae3ad15b63",
+        "ts": 1792879081.9285345,
+        "agent": "Avery",
+        "kind": "communication",
+        "payload": {
+          "content": "Avery: I confirm the schedule as follows – Exam m004 [0,1) full, Gym play m006 [1,3), Swimming m003 [3,4), Gym play m005 [4,7), Gym play m001 [7,10). I will skip the Collaborative art workshop m002. Let me know if anyone has concerns.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "346bbca2-c05e-46f3-b03a-6c407d857844",
+        "ts": 1792879085.7396667,
+        "agent": "Taylor",
+        "kind": "communication",
+        "payload": {
+          "content": "I confirm the schedule: Exam m004 [0,1) full, Gym play m006 [1,3), Swimming m003 [3,4), Gym play m005 [4,7), Gym play m001 [7,10). This aligns with everyone and avoids any self‑overlap.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "8d158651-19af-4d37-ad03-54c73d7be5af",
+        "ts": 1792879090.478453,
+        "agent": "Riley",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi all, I confirm my plan:\n- Exam (m004): full [0,1)\n- Gym play (m006): [1,3) matching everyone\n- Swimming (m003): I’ll attend [3,5) – this overlaps with Jordan, Avery, and Taylor at slot 3 and adds an extra slot for me without causing any self‑overlap.\n- I’ll skip the Collaborative art workshop (m002) to avoid any conflict.\nLet me know if anyone sees an issue.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "311825e4-8830-4c8b-8f09-a78d038a9ab4",
+        "ts": 1792879095.8727403,
+        "agent": "Jordan",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi team, thanks for the discussion. To ensure we all get overlap in the soft activities and avoid any self‑overlap, I’ll finalize my schedule as:\n- Exam (m004): attend the full window [0,1)\n- Gym play (m006): attend [1,3)\n- Swimming (m003): attend [3,4)\nThis matches Avery and Taylor for swimming and still overlaps with Riley at slot 3, while keeping my own meetings non‑overlapping. Please let me know if anyone has any concerns; otherwise I’ll proceed to commit these intervals in the execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a9560cac-f7c1-4a69-80de-48d11197b137",
+        "ts": 1792879100.4733746,
+        "agent": "Avery",
+        "kind": "communication",
+        "payload": {
+          "content": "I confirm my schedule: Exam m004 [0,1] full, Gym play m006 [1,3], Swimming m003 [3,4], Gym play m005 [4,7], Gym play m001 [7,10]. I will skip the Collaborative art workshop m002. Looks good to me; let me know if anyone has concerns.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "74e5667e-0495-4692-9a4e-72fcb9dc8882",
+        "ts": 1792879105.5799668,
+        "agent": "Taylor",
+        "kind": "communication",
+        "payload": {
+          "content": "Confirming schedule on public board: Exam m004 [0,1), Gym m006 [1,3), Swimming m003 [3,4), Gym m005 [4,7), Gym m001 [7,10). Ready to commit.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "dc72c1df-8c3c-49d9-8173-75354dfccc6b",
+        "ts": 1792879107.4785466,
+        "agent": "Taylor",
+        "kind": "communication",
+        "payload": {
+          "content": "Ready to attend meetings.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c383ee71-b59d-48bd-9bc9-37f7d7f69c2f",
+        "ts": 1792879112.228441,
+        "agent": "Riley",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi team, confirming my final schedule:\n- Exam (m004): full [0,1)\n- Gym play (m006): [1,3)\n- Swimming (m003): [3,5) (overlaps everyone at slot 3, extra slot 4 is fine for me)\n- Skipping Collaborative art workshop (m002) to avoid any self‑overlap.\nPlease let me know if anyone has concerns before we move to execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "2883ce79-1845-40aa-bbb9-82ddeb2eb19c",
+        "ts": 1792879115.4987526,
+        "agent": "Jordan",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m004",
+            "interval": "0-1"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Jordan",
+              "meeting": {
+                "id": "m004",
+                "title": "Scheduled exam",
+                "meeting_type": "strict",
+                "window": [
+                  0,
+                  1
+                ],
+                "participants": [
+                  "Riley",
+                  "Avery",
+                  "Taylor",
+                  "Jordan"
+                ]
+              },
+              "interval": "0-1",
+              "total_assigned": 1,
+              "remaining_variables": 17,
+              "joint_reward": 1.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "05c573db-71db-42a0-a9e0-fdbc5d2412da",
+        "ts": 1792879117.4159544,
+        "agent": "Avery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m004",
+            "interval": "0-1"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Avery",
+              "meeting": {
+                "id": "m004",
+                "title": "Scheduled exam",
+                "meeting_type": "strict",
+                "window": [
+                  0,
+                  1
+                ],
+                "participants": [
+                  "Riley",
+                  "Avery",
+                  "Taylor",
+                  "Jordan"
+                ]
+              },
+              "interval": "0-1",
+              "total_assigned": 2,
+              "remaining_variables": 16,
+              "joint_reward": 2.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f5860b7e-f9fa-41d8-9a5f-851385c2af43",
+        "ts": 1792879119.2805505,
+        "agent": "Taylor",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m004",
+            "interval": "0-1"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Taylor",
+              "meeting": {
+                "id": "m004",
+                "title": "Scheduled exam",
+                "meeting_type": "strict",
+                "window": [
+                  0,
+                  1
+                ],
+                "participants": [
+                  "Riley",
+                  "Avery",
+                  "Taylor",
+                  "Jordan"
+                ]
+              },
+              "interval": "0-1",
+              "total_assigned": 3,
+              "remaining_variables": 15,
+              "joint_reward": 3.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "1e1bc473-d016-45f1-95f7-bac764ea1e87",
+        "ts": 1792879121.3210902,
+        "agent": "Riley",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m004",
+            "interval": "0-1"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Riley",
+              "meeting": {
+                "id": "m004",
+                "title": "Scheduled exam",
+                "meeting_type": "strict",
+                "window": [
+                  0,
+                  1
+                ],
+                "participants": [
+                  "Riley",
+                  "Avery",
+                  "Taylor",
+                  "Jordan"
+                ]
+              },
+              "interval": "0-1",
+              "total_assigned": 4,
+              "remaining_variables": 14,
+              "joint_reward": 4.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  },
+  {
+    "blackboard_id": "1",
+    "participants": [
+      "Avery",
+      "Taylor"
+    ],
+    "events": [
+      {
+        "blackboard_id": 1,
+        "id": "ccf51760-6b51-427b-b92d-be005a9e8d3c",
+        "ts": 1792879008.8082452,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "Decide attendance intervals for meetings on a shared timeline.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Taylor, Avery"
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "4cc5cabc-ac0b-4906-bd2c-8a88773014d6",
+        "ts": 1792879027.5274806,
+        "agent": "Avery",
+        "kind": "communication",
+        "payload": {
+          "content": "Taylor, for our coalition I'd like to sync our intervals: Exam m004 [0,1) (full). Gym m006 [1,3). Swimming m003 [3,4). Gym m005 [4,7). Gym m001 [7,10). This avoids any self-overlap and gives us maximal overlap with each other. Does this work for you?",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "831c3964-3c46-4774-b025-14bf49c64f18",
+        "ts": 1792879035.1573882,
+        "agent": "Taylor",
+        "kind": "communication",
+        "payload": {
+          "content": "Avery, I’m on board with the plan. My attendance intervals:\n- Exam m004: [0,1) (full)\n- Gym play m006: [1,3)\n- Swimming m003: [3,4)\n- Gym play m005: [4,7)\n- Gym play m001: [7,10)\nThese slots avoid any self‑overlap and align with yours for maximal overlap. Let me know if anything needs tweaking.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "c673b961-76a8-4cae-88da-6376cfbe421a",
+        "ts": 1792879101.6746247,
+        "agent": "Avery",
+        "kind": "communication",
+        "payload": {
+          "content": "Taylor, thanks for confirming. Our joint schedule matches: Exam [0,1], Gym m006 [1,3], Swimming [3,4], Gym m005 [4,7], Gym m001 [7,10]. All set.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "4c85b213-ee82-41bc-8143-25cf920b8de0",
+        "ts": 1792879106.545746,
+        "agent": "Taylor",
+        "kind": "communication",
+        "payload": {
+          "content": "My attendance intervals confirmed as per coalition plan.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "70f5edae-dbb1-43e3-81a0-dcb7acc4ce1d",
+        "ts": 1792879117.4159544,
+        "agent": "Avery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m004",
+            "interval": "0-1"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Avery",
+              "meeting": {
+                "id": "m004",
+                "title": "Scheduled exam",
+                "meeting_type": "strict",
+                "window": [
+                  0,
+                  1
+                ],
+                "participants": [
+                  "Riley",
+                  "Avery",
+                  "Taylor",
+                  "Jordan"
+                ]
+              },
+              "interval": "0-1",
+              "total_assigned": 2,
+              "remaining_variables": 16,
+              "joint_reward": 2.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "a48ef751-09e3-4aa4-9463-8b3da78fa528",
+        "ts": 1792879119.2805505,
+        "agent": "Taylor",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m004",
+            "interval": "0-1"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Taylor",
+              "meeting": {
+                "id": "m004",
+                "title": "Scheduled exam",
+                "meeting_type": "strict",
+                "window": [
+                  0,
+                  1
+                ],
+                "participants": [
+                  "Riley",
+                  "Avery",
+                  "Taylor",
+                  "Jordan"
+                ]
+              },
+              "interval": "0-1",
+              "total_assigned": 3,
+              "remaining_variables": 15,
+              "joint_reward": 3.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  }
+]

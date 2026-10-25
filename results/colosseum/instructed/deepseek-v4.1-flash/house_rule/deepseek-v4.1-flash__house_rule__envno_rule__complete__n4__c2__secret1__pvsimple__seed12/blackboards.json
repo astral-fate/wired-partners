@@ -1,0 +1,564 @@
+[
+  {
+    "blackboard_id": "0",
+    "participants": [
+      "Agripina",
+      "Judi",
+      "Lilian",
+      "Vonnie"
+    ],
+    "events": [
+      {
+        "blackboard_id": 0,
+        "id": "d115806e-0b16-446e-8990-eef4f00f0fec",
+        "ts": 1792874442.3029814,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Agripina, Judi, Lilian, Vonnie"
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c0adb742-7147-4d86-98c9-66d9e793f035",
+        "ts": 1792874453.845528,
+        "agent": "Lilian",
+        "kind": "communication",
+        "payload": {
+          "content": "Lilian's plan: I intend to claim ISSUE-0001::triage (high priority). To avoid duplicates, please others pick different tasks. High-priority small tasks still open: 0001::review (1.5), 0001::docs (1.5), 0001::test (2.1), 0001::implement (3.0). Critical 0002 tasks: review (3.5), test (4.9), implement (7.0). Post your intended claims so we can de-conflict.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c919f134-cd75-440b-9238-83185bb4f191",
+        "ts": 1792874486.607364,
+        "agent": "Agripina",
+        "kind": "communication",
+        "payload": {
+          "content": "Agripina's plan: I intend to claim ISSUE-0002::review (critical, effort 3.5). It's my best skill match (ui-ux-design) and lowest cost. Please avoid 0002::review. Remaining open: 0002::test, 0002::implement, and 0001::{review,docs,test,implement}. Post your claims so we de-conflict.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b679ad89-9794-4ac4-8ef8-bf1c4ec89cfe",
+        "ts": 1792874510.2917674,
+        "agent": "Vonnie",
+        "kind": "communication",
+        "payload": {
+          "content": "Vonnie's plan: I intend to claim ISSUE-0001::review (high priority, my cost 2.98). My skill match is security, so 0001 tasks are cheapest for me; 0002 tasks are very costly (6.96-13.92). Please avoid 0001::review. Still open for Judi: 0001::docs, 0001::test, 0001::implement, 0002::test, 0002::implement. Judi, post your claim so we de-conflict. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "456be4a8-4bab-44df-8bed-953b14d06ed1",
+        "ts": 1792874516.0639262,
+        "agent": "Vonnie",
+        "kind": "communication",
+        "payload": {
+          "content": "Vonnie's final commitment: ISSUE-0001::review (high priority, cost=2.98). Distinct from Lilian (0001::triage) and Agripina (0002::review). Judi, please pick from {0001::docs, 0001::test, 0001::implement, 0002::test, 0002::implement} to avoid duplicates. (phase=planning->execution, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "2d6ea071-810a-4a14-9c0e-910d004eddac",
+        "ts": 1792874552.2200844,
+        "agent": "Judi",
+        "kind": "communication",
+        "payload": {
+          "content": "Judi's plan: I intend to claim ISSUE-0001::docs (high priority, effort 1.5, my cost 1.68 — my cheapest high-priority task). This is distinct from Lilian (0001::triage), Vonnie (0001::review), and Agripina (0002::review), so no duplicates. Remaining unclaimed: 0001::test, 0001::implement, 0002::test, 0002::implement. Please avoid 0001::docs.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "58905f98-0b30-4d1e-811e-0bb194000945",
+        "ts": 1792874568.5078654,
+        "agent": "Agripina",
+        "kind": "communication",
+        "payload": {
+          "content": "Agripina's final commitment: ISSUE-0002::review (critical priority, effort 3.5, my cost=6.67 — best skill match on ui-ux-design and my lowest cost). This is distinct from Lilian (0001::triage), Vonnie (0001::review), and Judi (0001::docs). No duplicates. Remaining unclaimed: 0001::test, 0001::implement, 0002::test, 0002::implement. Proceeding to execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "6d517e02-b69e-4fe3-87bf-cb8efcd931f1",
+        "ts": 1792874579.3013043,
+        "agent": "Vonnie",
+        "kind": "communication",
+        "payload": {
+          "content": "Vonnie's final commitment confirmed: ISSUE-0001::review (high priority, cost=2.98). Plan is de-conflicted: Lilian=0001::triage, Vonnie=0001::review, Judi=0001::docs, Agripina=0002::review. No duplicates. Proceeding to execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c609c250-d781-45d3-8a14-668cedfd4c16",
+        "ts": 1792874594.7357,
+        "agent": "Lilian",
+        "kind": "communication",
+        "payload": {
+          "content": "Lilian's final commitment: ISSUE-0001::triage (high priority, effort 1.2, cost=2.87). De-conflicted plan: Lilian=0001::triage, Vonnie=0001::review, Judi=0001::docs, Agripina=0002::review. Four distinct tasks, no duplicates. Proceeding to execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "05266f59-d92a-412a-881b-652c8ac01992",
+        "ts": 1792874617.2078319,
+        "agent": "Agripina",
+        "kind": "communication",
+        "payload": {
+          "content": "Agripina: Plan is fully de-conflicted: Lilian=0001::triage, Vonnie=0001::review, Judi=0001::docs, Agripina=0002::review. Four distinct tasks, no duplicates, all feasible (effort <= availability). Locked in for execution: I will assign_task ISSUE-0002::review (critical, cost=6.67).",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "65e95148-8170-49c5-8e1c-59c018d0a60c",
+        "ts": 1792874628.6756203,
+        "agent": "Vonnie",
+        "kind": "communication",
+        "payload": {
+          "content": "Vonnie: Plan locked. Assigning ISSUE-0001::review (high, cost=2.98). De-conflicted set: Lilian=0001::triage, Vonnie=0001::review, Judi=0001::docs, Agripina=0002::review. No duplicates, all feasible.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "53d64148-ffe2-40d4-8ce3-c48559b918d3",
+        "ts": 1792874637.761222,
+        "agent": "Lilian",
+        "kind": "communication",
+        "payload": {
+          "content": "Lilian final commitment: ISSUE-0001::triage (high priority, cost=2.87). De-conflicted plan locked: Lilian=0001::triage, Vonnie=0001::review, Judi=0001::docs, Agripina=0002::review. No duplicates. Proceeding to execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a7a946a4-a1b8-41fe-add4-6c0ae28fdd46",
+        "ts": 1792874656.710536,
+        "agent": "Judi",
+        "kind": "communication",
+        "payload": {
+          "content": "Judi final commitment: ISSUE-0001::docs (high priority, cost 1.68). De-conflicted set: Lilian=0001::triage, Vonnie=0001::review, Judi=0001::docs, Agripina=0002::review. No duplicates, all feasible. Proceeding to execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "af382839-97d2-4a34-b8d8-fc1e2280ac38",
+        "ts": 1792874664.6790893,
+        "agent": "Agripina",
+        "kind": "communication",
+        "payload": {
+          "content": "Agripina: Confirmed and de-conflicted. Final allocation: Lilian=0001::triage, Vonnie=0001::review, Judi=0001::docs, Agripina=0002::review. I will claim ISSUE-0002::review (critical, effort 3.5 <= availability 7.0, cost=6.67 — best ui-ux-design skill match). No duplicates, all feasible. Locked for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "fb0cc443-f865-4a2d-8234-38b6897afa4b",
+        "ts": 1792874673.6799443,
+        "agent": "Vonnie",
+        "kind": "communication",
+        "payload": {
+          "content": "Vonnie: Confirmed, no changes. Final de-conflicted allocation: Lilian=0001::triage, Vonnie=0001::review, Judi=0001::docs, Agripina=0002::review. All distinct, all feasible. I will assign ISSUE-0001::review (high, cost=2.98) in execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c9ded7ed-6cb5-49fc-946f-4b4917eb7f54",
+        "ts": 1792874686.2458634,
+        "agent": "Lilian",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::triage"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Lilian",
+              "task_id": "ISSUE-0001::triage",
+              "task": {
+                "id": "ISSUE-0001::triage",
+                "issue_id": "ISSUE-0001",
+                "title": "Fix security [triage]",
+                "tags": [
+                  "security",
+                  "testing"
+                ],
+                "priority": "high",
+                "effort": 1.2000000000000002,
+                "work_type": "triage"
+              },
+              "total_assigned": 1,
+              "remaining_agents": 3,
+              "joint_reward": 32.12554247301684
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "4519c55d-7924-42d1-9e43-d68119c0654e",
+        "ts": 1792874688.7139137,
+        "agent": "Judi",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::docs"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Judi",
+              "task_id": "ISSUE-0001::docs",
+              "task": {
+                "id": "ISSUE-0001::docs",
+                "issue_id": "ISSUE-0001",
+                "title": "Fix security [docs]",
+                "tags": [
+                  "security",
+                  "testing"
+                ],
+                "priority": "high",
+                "effort": 1.5,
+                "work_type": "docs"
+              },
+              "total_assigned": 2,
+              "remaining_agents": 2,
+              "joint_reward": 65.4457349742571
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c85be615-6056-4cd3-82d9-c3b6c914bc85",
+        "ts": 1792874690.0619738,
+        "agent": "Agripina",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Agripina",
+              "task_id": "ISSUE-0002::review",
+              "task": {
+                "id": "ISSUE-0002::review",
+                "issue_id": "ISSUE-0002",
+                "title": "Improve ui-ux-design [review]",
+                "tags": [
+                  "ui-ux-design",
+                  "security"
+                ],
+                "priority": "critical",
+                "effort": 3.5,
+                "work_type": "review"
+              },
+              "total_assigned": 3,
+              "remaining_agents": 1,
+              "joint_reward": 98.77711950151826
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d7d9be33-c04b-445e-a0bd-d1381b757a23",
+        "ts": 1792874694.284975,
+        "agent": "Vonnie",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Vonnie",
+              "task_id": "ISSUE-0001::review",
+              "task": {
+                "id": "ISSUE-0001::review",
+                "issue_id": "ISSUE-0001",
+                "title": "Fix security [review]",
+                "tags": [
+                  "security",
+                  "testing"
+                ],
+                "priority": "high",
+                "effort": 1.5,
+                "work_type": "review"
+              },
+              "total_assigned": 4,
+              "remaining_agents": 0,
+              "joint_reward": 130.79325606605673
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  },
+  {
+    "blackboard_id": "1",
+    "participants": [
+      "Judi",
+      "Lilian"
+    ],
+    "events": [
+      {
+        "blackboard_id": 1,
+        "id": "5cae4d81-416e-45d4-9751-781f8697490f",
+        "ts": 1792874442.3029814,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Lilian, Judi"
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "f83407f5-f66d-4a15-80d3-6da81c594819",
+        "ts": 1792874448.1497138,
+        "agent": "Lilian",
+        "kind": "communication",
+        "payload": {
+          "content": "Lilian here (coalition). My private costs: 0001::triage=2.87, 0001::review=3.59, 0001::docs=3.59, 0001::test=5.03, 0002::review=6.25, 0001::implement=7.19, 0002::test=9.66, 0002::implement=15.51. Availability=4h (so 0002::test effort 4.9 and 0002::implement effort 7 are overloaded/infeasible for me). My plan: I claim ISSUE-0001::triage (cheapest, high priority). Please take a DIFFERENT task so we don't duplicate. Tell me your costs/plan so we split optimally and cover the critical ISSUE-0002 tasks.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "b5f53529-185a-43ac-b2e5-a7f5fd4d80d4",
+        "ts": 1792874459.2863228,
+        "agent": "Lilian",
+        "kind": "communication",
+        "payload": {
+          "content": "Confirming: Lilian claims ISSUE-0001::triage. Please avoid it. Good luck Judi.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "d3d91640-25a3-4257-94b7-f99ee2d4b1c2",
+        "ts": 1792874528.3851433,
+        "agent": "Lilian",
+        "kind": "communication",
+        "payload": {
+          "content": "Lilian (coalition) here. Current de-confliction status from public board: Agripina→0002::review, Vonnie→0001::review, me→0001::triage. That leaves for you (Judi): {0001::docs(1.5), 0001::test(2.1), 0001::implement(3.0), 0002::test(4.9), 0002::implement(7.0)}.\n\nMy costs (4h availability, so 0002::test/0002::implement are overloaded for me): 0001::triage=2.87, 0001::review=3.59, 0001::docs=3.59, 0001::test=5.03, 0002::review=6.25, 0001::implement=7.19, 0002::test=9.66, 0002::implement=15.51.\n\nPlan: I hold 0001::triage (high, cost 2.87) unless you have a strong reason to swap. To maximize joint reward, please take a DIFFERENT task — ideally a high/critical one that's cheap for you. If 0001::docs or 0001::test is cheap for you, take one of those (high priority, low effort). If you're strong on ui-ux-design, 0002::test (critical) could be worth it. Reply with your costs + intended claim so we avoid a duplicate.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "9c922dc9-0536-4506-9c2c-1e5fdaa5dc57",
+        "ts": 1792874552.2200844,
+        "agent": "Judi",
+        "kind": "communication",
+        "payload": {
+          "content": "Judi (coalition) here. My private costs: 0001::triage=1.34, 0001::review=1.68, 0001::docs=1.68, 0001::test=2.35, 0001::implement=3.36, 0002::review=6.02, 0002::test=8.43, 0002::implement=12.04. Availability=10h (all feasible for me).\n\nAnalysis: since we only have 4 agents and can't cover all tasks, the marginal value of me taking a critical 0002 task vs a high 0001 task is only +0.25 priority weight, but costs me ~6.75 extra (8.43 vs 1.68). That's a net loss for joint reward unless priority_bonus is huge. So the optimal split is: you (Lilian) hold 0001::triage, and I take ISSUE-0001::docs (high priority, cost 1.68, my cheapest high task). This keeps total cost minimal while still covering 4 distinct tasks (Agripina 0002::review, Vonnie 0001::review, you 0001::triage, me 0001::docs).\n\nUnless you object, I'll claim ISSUE-0001::docs. Confirm if you'd rather I take 0001::test instead.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "ab82eae1-964b-464b-8cc0-bbcb8c59d5ba",
+        "ts": 1792874558.4936588,
+        "agent": "Judi",
+        "kind": "communication",
+        "payload": {
+          "content": "Judi final commitment (coalition): ISSUE-0001::docs (high priority, cost 1.68). No conflict with Lilian's 0001::triage. This yields 4 distinct completed tasks with minimal total cost. If you want a different split, reply before execution; otherwise I hold 0001::docs.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "afa829b8-7069-425a-9aaa-c7e6672a5211",
+        "ts": 1792874594.7357,
+        "agent": "Lilian",
+        "kind": "communication",
+        "payload": {
+          "content": "Lilian (coalition) final commitment: I claim ISSUE-0001::triage (high priority, my cheapest feasible task, cost=2.87). Judi, confirmed you take ISSUE-0001::docs (cost 1.68). Our split (Lilian=0001::triage, Judi=0001::docs) plus Agripina=0002::review, Vonnie=0001::review gives 4 distinct tasks, no duplicates, minimal total cost. I agree with your marginal-value analysis: taking a critical 0002 task costs ~6.75 more for only +0.25 priority weight, so it's a net loss. Note 0002::test (effort 4.9) and 0002::implement (effort 7) exceed my 4h availability, so I cannot take them anyway. Holding 0001::triage. No further changes.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "25000ba6-65fc-457f-888f-8359ad68800f",
+        "ts": 1792874606.4214814,
+        "agent": "Judi",
+        "kind": "communication",
+        "payload": {
+          "content": "Judi (coalition) final confirmation: I hold ISSUE-0001::docs (high, cost 1.68). Agreed split: Lilian=0001::triage, Vonnie=0001::review, Judi=0001::docs, Agripina=0002::review — 4 distinct tasks, no duplicates, minimal total cost. No changes. Proceeding to execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "9eb1e352-4078-4e3f-ab3c-ec086b6cfe3e",
+        "ts": 1792874637.761222,
+        "agent": "Lilian",
+        "kind": "communication",
+        "payload": {
+          "content": "Lilian final confirmation: I claim ISSUE-0001::triage (high priority, effort 1.2 <= my 4h availability, cost=2.87 — my cheapest feasible task). Agreed de-conflicted split: Lilian=0001::triage, Vonnie=0001::review, Judi=0001::docs, Agripina=0002::review. 4 distinct tasks, no duplicates, all feasible, minimal total cost. Note: 0002::test (effort 4.9) and 0002::implement (effort 7.0) exceed my 4h availability, so they are infeasible for me regardless. Proceeding to execution — will assign ISSUE-0001::triage.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "b2697be4-7c1b-40bf-994f-48ba8a0b4b4c",
+        "ts": 1792874641.916098,
+        "agent": "Lilian",
+        "kind": "communication",
+        "payload": {
+          "content": "EXECUTION: Lilian assigns ISSUE-0001::triage (high priority, cost=2.87).",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "f26475b6-3856-4545-b367-b19cd54a2dcb",
+        "ts": 1792874656.710536,
+        "agent": "Judi",
+        "kind": "communication",
+        "payload": {
+          "content": "Judi final commitment: ISSUE-0001::docs (high priority, effort 1.5, my cost 1.68 — cheapest high-priority task). De-conflicted split locked: Lilian=0001::triage, Vonnie=0001::review, Judi=0001::docs, Agripina=0002::review. 4 distinct tasks, no duplicates, all feasible, minimal total cost. Proceeding to execution — assigning ISSUE-0001::docs.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "42d725c8-6e4d-48dc-88cc-eb7d4d5fbcd1",
+        "ts": 1792874686.2458634,
+        "agent": "Lilian",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::triage"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Lilian",
+              "task_id": "ISSUE-0001::triage",
+              "task": {
+                "id": "ISSUE-0001::triage",
+                "issue_id": "ISSUE-0001",
+                "title": "Fix security [triage]",
+                "tags": [
+                  "security",
+                  "testing"
+                ],
+                "priority": "high",
+                "effort": 1.2000000000000002,
+                "work_type": "triage"
+              },
+              "total_assigned": 1,
+              "remaining_agents": 3,
+              "joint_reward": 32.12554247301684
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "56331722-2fe1-4390-84e2-10a3ebf452a6",
+        "ts": 1792874688.7139137,
+        "agent": "Judi",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::docs"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Judi",
+              "task_id": "ISSUE-0001::docs",
+              "task": {
+                "id": "ISSUE-0001::docs",
+                "issue_id": "ISSUE-0001",
+                "title": "Fix security [docs]",
+                "tags": [
+                  "security",
+                  "testing"
+                ],
+                "priority": "high",
+                "effort": 1.5,
+                "work_type": "docs"
+              },
+              "total_assigned": 2,
+              "remaining_agents": 2,
+              "joint_reward": 65.4457349742571
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  }
+]

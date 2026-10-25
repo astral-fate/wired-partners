@@ -1,0 +1,575 @@
+[
+  {
+    "blackboard_id": "0",
+    "participants": [
+      "Boris",
+      "Ciara",
+      "Drew",
+      "Tara"
+    ],
+    "events": [
+      {
+        "blackboard_id": 0,
+        "id": "eb6c66f0-6cc4-4d60-be12-536b88b65997",
+        "ts": 1792876643.9182856,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Boris, Ciara, Drew, Tara"
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "6b0be5db-6090-4bb1-8ec9-716ceeb7ac27",
+        "ts": 1792876652.616895,
+        "agent": "Drew",
+        "kind": "communication",
+        "payload": {
+          "content": "Drew here. I plan to claim ISSUE-0002::review (critical, my best fit). Please avoid duplicating that task. I'm flexible on the other ISSUE-0002 tasks if someone has a stronger claim.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b5bd50cd-f056-4ff4-ad34-12b8e588d735",
+        "ts": 1792876684.5128596,
+        "agent": "Boris",
+        "kind": "communication",
+        "payload": {
+          "content": "Boris here. Plan: Drew -> ISSUE-0002::review, Boris -> ISSUE-0002::test. Please do NOT claim ISSUE-0002::test or ISSUE-0002::review. ISSUE-0002::implement is still open (critical) — Ciara/Tara, one of you should grab it for a strong critical claim. I'll lock in ISSUE-0002::test.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "444d9cc8-b171-407a-90b5-f4514ad46102",
+        "ts": 1792876693.0908797,
+        "agent": "Boris",
+        "kind": "communication",
+        "payload": {
+          "content": "Execution: Boris -> ISSUE-0002::test (final). Drew -> ISSUE-0002::review. Please avoid these two tasks.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a33d445a-99f5-45b4-bc46-61c45a1f5b45",
+        "ts": 1792876718.7450082,
+        "agent": "Tara",
+        "kind": "communication",
+        "payload": {
+          "content": "Tara here. My fit is strongly on ISSUE-0001 (mobile-development 0.94); my lowest-cost task is ISSUE-0001::triage (medium). Plan: Tara -> ISSUE-0001::triage (final preference). That leaves ISSUE-0002::implement (critical) for Ciara or Drew.\n\nProposed allocation to get all 3 criticals + 1 medium:\n- Drew -> ISSUE-0002::review\n- Boris -> ISSUE-0002::test\n- Ciara -> ISSUE-0002::implement (critical) — please confirm, you're the best remaining fit\n- Tara -> ISSUE-0001::triage (medium)\n\nCiara: if you can't take ISSUE-0002::implement, say so and I'll take implement instead (and one of you could take a medium ISSUE-0001). Please avoid ISSUE-0001::triage so we don't duplicate.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "9de45612-484b-41e5-a2f0-92944c785127",
+        "ts": 1792876735.7982907,
+        "agent": "Ciara",
+        "kind": "communication",
+        "payload": {
+          "content": "Ciara here. Confirmed: I'll claim ISSUE-0002::implement (critical). My costs strongly favor the ISSUE-0002 tasks (documentation/frontend match my skills); ISSUE-0001 is very costly for me, so I will NOT touch ISSUE-0001::triage — Tara, it's yours.\n\nAgreed allocation (4 tasks, 3 critical + 1 medium):\n- Drew -> ISSUE-0002::review\n- Boris -> ISSUE-0002::test\n- Ciara -> ISSUE-0002::implement (final)\n- Tara -> ISSUE-0001::triage\n\nPlease everyone avoid duplicates on ISSUE-0002::review, ISSUE-0002::test, ISSUE-0002::implement, and ISSUE-0001::triage.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "96401060-6b0c-443b-b476-97298c54805f",
+        "ts": 1792876744.9513204,
+        "agent": "Drew",
+        "kind": "communication",
+        "payload": {
+          "content": "Drew final plan: I will claim ISSUE-0002::review (critical). Agreed allocation stands: Drew->ISSUE-0002::review, Boris->ISSUE-0002::test, Ciara->ISSUE-0002::implement, Tara->ISSUE-0001::triage. Please avoid duplicates.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "fa770acd-4900-4be6-b5db-507528ad99da",
+        "ts": 1792876763.8466635,
+        "agent": "Tara",
+        "kind": "communication",
+        "payload": {
+          "content": "Tara final plan: I will claim ISSUE-0001::triage (medium, my lowest cost 1.54). Agreed allocation confirmed: Tara->ISSUE-0001::triage, Drew->ISSUE-0002::review, Boris->ISSUE-0002::test, Ciara->ISSUE-0002::implement. No duplicates. Locking in during execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ef64bcd4-719b-43fd-97ab-e9fec2b82477",
+        "ts": 1792876772.0581467,
+        "agent": "Ciara",
+        "kind": "communication",
+        "payload": {
+          "content": "Ciara final plan: I will claim ISSUE-0002::implement (critical, best skill match on documentation/frontend, cost 4.62). Agreed allocation locked: Ciara->ISSUE-0002::implement, Drew->ISSUE-0002::review, Boris->ISSUE-0002::test, Tara->ISSUE-0001::triage. No duplicates. Will commit during execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ca63281f-4561-4152-894e-2426086cc375",
+        "ts": 1792876820.518237,
+        "agent": "Boris",
+        "kind": "communication",
+        "payload": {
+          "content": "Boris final (public): committing ISSUE-0002::test (critical). Agreed allocation holds — Drew->ISSUE-0002::review, Ciara->ISSUE-0002::implement, Tara->ISSUE-0001::triage. Please avoid duplicates on these four tasks.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "84d79737-4a16-4240-b31f-43b32abbf978",
+        "ts": 1792876832.930813,
+        "agent": "Tara",
+        "kind": "communication",
+        "payload": {
+          "content": "Tara: Allocation confirmed and locked. Tara->ISSUE-0001::triage (medium, cost 1.54). Drew->ISSUE-0002::review, Boris->ISSUE-0002::test, Ciara->ISSUE-0002::implement. No duplicates; all 4 tasks covered (3 critical + 1 medium). I will commit ISSUE-0001::triage during execution. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b435d1a0-ec02-4326-9768-861ada2454dc",
+        "ts": 1792876843.5961745,
+        "agent": "Ciara",
+        "kind": "communication",
+        "payload": {
+          "content": "Ciara: Acknowledged and locked. Nothing changed — I will claim ISSUE-0002::implement (critical, cost 4.62) in execution. Allocation: Ciara->ISSUE-0002::implement, Drew->ISSUE-0002::review, Boris->ISSUE-0002::test, Tara->ISSUE-0001::triage. No duplicates on my side.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d5021c7a-954a-4076-b9f5-9ddff9818f88",
+        "ts": 1792876870.9285228,
+        "agent": "Boris",
+        "kind": "communication",
+        "payload": {
+          "content": "Boris execution commitment: ISSUE-0002::test (critical). Allocation holds: Boris->ISSUE-0002::test, Drew->ISSUE-0002::review, Ciara->ISSUE-0002::implement, Tara->ISSUE-0001::triage. No duplicates.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d0240851-7bc2-43f1-b6a2-49d4da636490",
+        "ts": 1792876881.6928866,
+        "agent": "Tara",
+        "kind": "communication",
+        "payload": {
+          "content": "Tara: Confirmed, no changes. Committing ISSUE-0001::triage (medium, cost 1.54) in execution. Allocation: Tara->ISSUE-0001::triage, Drew->ISSUE-0002::review, Boris->ISSUE-0002::test, Ciara->ISSUE-0002::implement. No duplicates.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "dc5cb0b0-71d0-4ffe-bd0c-310d5e9618e4",
+        "ts": 1792876893.9717226,
+        "agent": "Ciara",
+        "kind": "communication",
+        "payload": {
+          "content": "Ciara: Locked. Committing ISSUE-0002::implement (critical, cost 4.62) in execution. Allocation unchanged: Ciara->ISSUE-0002::implement, Drew->ISSUE-0002::review, Boris->ISSUE-0002::test, Tara->ISSUE-0001::triage. No duplicates.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "6d7c43c3-7c7d-474f-aa5d-48825778bf9b",
+        "ts": 1792876901.5824351,
+        "agent": "Drew",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Drew",
+              "task_id": "ISSUE-0002::review",
+              "task": {
+                "id": "ISSUE-0002::review",
+                "issue_id": "ISSUE-0002",
+                "title": "Fix frontend [review]",
+                "tags": [
+                  "documentation",
+                  "frontend"
+                ],
+                "priority": "critical",
+                "effort": 2.0,
+                "work_type": "review"
+              },
+              "total_assigned": 1,
+              "remaining_agents": 3,
+              "joint_reward": 37.83771123411804
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "6898767b-ff1a-4971-b9d2-b04bc7af76c1",
+        "ts": 1792876905.406482,
+        "agent": "Boris",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::test"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Boris",
+              "task_id": "ISSUE-0002::test",
+              "task": {
+                "id": "ISSUE-0002::test",
+                "issue_id": "ISSUE-0002",
+                "title": "Fix frontend [test]",
+                "tags": [
+                  "documentation",
+                  "frontend"
+                ],
+                "priority": "critical",
+                "effort": 2.8,
+                "work_type": "test"
+              },
+              "total_assigned": 2,
+              "remaining_agents": 2,
+              "joint_reward": 72.55807589884154
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a6030d83-ba21-49b5-9e1b-f94e7610cba5",
+        "ts": 1792876908.5540166,
+        "agent": "Tara",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::triage"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Tara",
+              "task_id": "ISSUE-0001::triage",
+              "task": {
+                "id": "ISSUE-0001::triage",
+                "issue_id": "ISSUE-0001",
+                "title": "Improve mobile-development [triage]",
+                "tags": [
+                  "mobile-development"
+                ],
+                "priority": "medium",
+                "effort": 1.6,
+                "work_type": "triage"
+              },
+              "total_assigned": 3,
+              "remaining_agents": 1,
+              "joint_reward": 101.02202423782768
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "132d9289-8f56-47a8-9a1a-52f8d65700ab",
+        "ts": 1792876911.7865236,
+        "agent": "Ciara",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::implement"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Ciara",
+              "task_id": "ISSUE-0002::implement",
+              "task": {
+                "id": "ISSUE-0002::implement",
+                "issue_id": "ISSUE-0002",
+                "title": "Fix frontend [implement]",
+                "tags": [
+                  "documentation",
+                  "frontend"
+                ],
+                "priority": "critical",
+                "effort": 4.0,
+                "work_type": "implement"
+              },
+              "total_assigned": 4,
+              "remaining_agents": 0,
+              "joint_reward": 136.39933137714007
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  },
+  {
+    "blackboard_id": "1",
+    "participants": [
+      "Boris",
+      "Drew"
+    ],
+    "events": [
+      {
+        "blackboard_id": 1,
+        "id": "886771c1-2d32-4e8b-8b4b-cf4aaa5defa6",
+        "ts": 1792876643.9182856,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Drew, Boris"
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "d11304ed-b3ec-438a-886c-10c372b1a62e",
+        "ts": 1792876652.616895,
+        "agent": "Drew",
+        "kind": "communication",
+        "payload": {
+          "content": "Coalition coordination (Drew here). My private costs are lowest for ISSUE-0002 tasks (critical priority). Best fit: ISSUE-0002::review cost=2.16, then ISSUE-0002::test=3.03, ISSUE-0002::implement=4.32. ISSUE-0001 tasks are very costly for me (16-40). Proposal: I take ISSUE-0002::review. Boris, which ISSUE-0002 task do you want? Let's split the critical tasks and avoid duplicates. Reply with your pick.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "95eda166-ff6e-4fa5-ab6b-9e1a6a4602aa",
+        "ts": 1792876659.968232,
+        "agent": "Drew",
+        "kind": "communication",
+        "payload": {
+          "content": "FINAL DECISION (Drew): I will claim ISSUE-0002::review (critical, cost 2.16 — my best option). Boris, please pick a different ISSUE-0002 task (test or implement) or another issue to avoid a duplicate-claim violation. Locking this in for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "c8fd3270-6945-45b3-9f18-737c289c58bf",
+        "ts": 1792876684.5128596,
+        "agent": "Boris",
+        "kind": "communication",
+        "payload": {
+          "content": "Boris here (coalition). Agreed — you take ISSUE-0002::review. I'll claim ISSUE-0002::test (critical, my 2nd-best cost=5.28, matches my documentation skill). That splits the two cheapest critical tasks between us with no duplicate. Locking in ISSUE-0002::test for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "0d754528-4406-47b5-be3a-dc24c1a91856",
+        "ts": 1792876693.0908797,
+        "agent": "Boris",
+        "kind": "communication",
+        "payload": {
+          "content": "Execution phase: Boris committing ISSUE-0002::test. Drew takes ISSUE-0002::review. Coalition split confirmed.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "1341c17a-1e2a-4dd1-acad-a030c3c8feb3",
+        "ts": 1792876696.9466698,
+        "agent": "Boris",
+        "kind": "communication",
+        "payload": {
+          "content": "assign_task: ISSUE-0002::test",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "81db8c1f-d33b-47b8-ac06-785c33dbf4a5",
+        "ts": 1792876744.9513204,
+        "agent": "Drew",
+        "kind": "communication",
+        "payload": {
+          "content": "Coalition confirmation (Drew): Locking in ISSUE-0002::review (critical, my lowest cost 2.16). Boris takes ISSUE-0002::test. No duplicates between us. Ready for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "89aea077-a280-4f14-b789-3bd0227fb646",
+        "ts": 1792876754.051814,
+        "agent": "Boris",
+        "kind": "communication",
+        "payload": {
+          "content": "Boris FINAL (coalition lock-in): I claim ISSUE-0002::test (critical, cost=5.28, matches my documentation skill). Drew claims ISSUE-0002::review. No duplicates between us. Ready to commit in execution. Do not claim ISSUE-0002::test.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "1bbbc674-1743-4e19-9e83-6c60cd3ad2a5",
+        "ts": 1792876790.4653418,
+        "agent": "Drew",
+        "kind": "communication",
+        "payload": {
+          "content": "Drew COALITION FINAL LOCK (Drew): I claim ISSUE-0002::review (critical, cost=2.16 — my lowest by far; frontend 0.96 / documentation 0.69 match). Boris takes ISSUE-0002::test. This splits the two cheapest critical tasks between us with zero duplicate risk. Confirmed on public board that Ciara->ISSUE-0002::implement and Tara->ISSUE-0001::triage. Net: all 3 criticals + 1 medium covered, no overlaps. I will commit ISSUE-0002::review in execution. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "9e74ea37-dd9d-4396-abfb-ef1169eda549",
+        "ts": 1792876820.518237,
+        "agent": "Boris",
+        "kind": "communication",
+        "payload": {
+          "content": "Boris FINAL (coalition lock): I claim ISSUE-0002::test (critical). Drew claims ISSUE-0002::review. Our split covers 2 of the 3 criticals with zero duplicate risk. Committing ISSUE-0002::test in execution. Do not claim it.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "6c427551-bd2f-4f0a-8889-391026cc87ab",
+        "ts": 1792876855.6872478,
+        "agent": "Drew",
+        "kind": "communication",
+        "payload": {
+          "content": "Drew FINAL (coalition lock, phase=planning): I claim ISSUE-0002::review (critical, cost=2.16 — my lowest; frontend 0.96 / documentation 0.69 match). Boris takes ISSUE-0002::test. Zero duplicate risk between us. Ready to commit ISSUE-0002::review in execution. Do not claim ISSUE-0002::review.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "b5ade840-59d7-49aa-86dc-80fa988a3c4b",
+        "ts": 1792876870.9285228,
+        "agent": "Boris",
+        "kind": "communication",
+        "payload": {
+          "content": "Boris FINAL commitment: I claim ISSUE-0002::test (critical, cost=5.28, matches my documentation skill). Drew -> ISSUE-0002::review. Coalition split confirmed, zero duplicate risk. Committing ISSUE-0002::test in execution. Do not claim ISSUE-0002::test.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "185c904c-1445-4693-a871-4d10b36e2462",
+        "ts": 1792876901.5824351,
+        "agent": "Drew",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Drew",
+              "task_id": "ISSUE-0002::review",
+              "task": {
+                "id": "ISSUE-0002::review",
+                "issue_id": "ISSUE-0002",
+                "title": "Fix frontend [review]",
+                "tags": [
+                  "documentation",
+                  "frontend"
+                ],
+                "priority": "critical",
+                "effort": 2.0,
+                "work_type": "review"
+              },
+              "total_assigned": 1,
+              "remaining_agents": 3,
+              "joint_reward": 37.83771123411804
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "851849fa-7e83-4791-b070-06c45c833867",
+        "ts": 1792876905.406482,
+        "agent": "Boris",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::test"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Boris",
+              "task_id": "ISSUE-0002::test",
+              "task": {
+                "id": "ISSUE-0002::test",
+                "issue_id": "ISSUE-0002",
+                "title": "Fix frontend [test]",
+                "tags": [
+                  "documentation",
+                  "frontend"
+                ],
+                "priority": "critical",
+                "effort": 2.8,
+                "work_type": "test"
+              },
+              "total_assigned": 2,
+              "remaining_agents": 2,
+              "joint_reward": 72.55807589884154
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  }
+]

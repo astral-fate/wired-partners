@@ -1,0 +1,558 @@
+[
+  {
+    "blackboard_id": "0",
+    "participants": [
+      "Jung",
+      "Linnea",
+      "Nickole",
+      "Tawna"
+    ],
+    "events": [
+      {
+        "blackboard_id": 0,
+        "id": "242f7cb3-7831-4489-925c-012573160a4f",
+        "ts": 1792880264.4198005,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Jung, Linnea, Nickole, Tawna"
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f6184923-bbee-44fa-a9d7-9312611a56e4",
+        "ts": 1792880324.66829,
+        "agent": "Tawna",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi all — Tawna here. Planning my claim. My cheapest feasible task is ISSUE-0002::review (cost 1.23), then ISSUE-0002::test (1.72) and ISSUE-0002::implement (2.45). All tasks are priority=low, so the main goal is to maximize distinct tasks completed and minimize cost. I intend to claim ISSUE-0002::review. Please reply with your intended picks so we avoid duplicate claims. If someone else strongly wants ISSUE-0002::review, I can flex to ISSUE-0002::test or ISSUE-0002::implement.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "6054a0ac-9499-4e25-ac3f-49f96350fc7b",
+        "ts": 1792880330.2925954,
+        "agent": "Tawna",
+        "kind": "communication",
+        "payload": {
+          "content": "EXECUTION: I am claiming ISSUE-0002::review (effort 1.0, tag=frontend, my cost 1.23) — best skill match and lowest cost for me. Please do not duplicate; if you also want it, tell me and I'll take ISSUE-0002::test instead. Final.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "231ead7b-3dcf-4d11-be65-899731511fe7",
+        "ts": 1792880344.7813632,
+        "agent": "Nickole",
+        "kind": "communication",
+        "payload": {
+          "content": "Nickole here. My feasible tasks are all frontend-tagged ISSUE-0002. Costs: review=1.10, test=1.54, implement=2.20 (ISSUE-0001 security tasks cost me 28-71, not worth it). Since Tawna is claiming ISSUE-0002::review, I intend to claim ISSUE-0002::test (cost 1.54). Jung / Linnea, please take ISSUE-0002::implement and/or the ISSUE-0001 tasks so we maximize distinct completed tasks. If someone strongly wants ISSUE-0002::test, say so and I'll flex to implement. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f8ec4c5a-50f9-4f3c-ac89-5db1b6a2ea72",
+        "ts": 1792880350.074442,
+        "agent": "Nickole",
+        "kind": "communication",
+        "payload": {
+          "content": "EXECUTION (Nickole): I am claiming ISSUE-0002::test (effort 1.4, tag=frontend, my cost 1.54). This avoids duplicating Tawna's ISSUE-0002::review and keeps my cost low. I will not claim ISSUE-0002::review or any ISSUE-0001 task. Please do not duplicate ISSUE-0002::test; if you need it, ping me and I'll switch to ISSUE-0002::implement. Final. (phase=execution)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "0afe9b12-d729-44a5-84ac-46a1cc33e46e",
+        "ts": 1792880388.8112755,
+        "agent": "Jung",
+        "kind": "communication",
+        "payload": {
+          "content": "Jung here (planning). To avoid duplicates and maximize distinct completed tasks: Tawna→ISSUE-0002::review, Nickole→ISSUE-0002::test. I intend to claim ISSUE-0002::implement (effort 2.0, tag=frontend, my cost 2.06). That leaves the ISSUE-0001 security tasks (triage/review/docs/test/implement) for Linnea and any flex. Linnea, please take an ISSUE-0001 task you're cheapest at so we cover more distinct tasks. I will NOT claim review or test. Final unless someone objects.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a53a6da7-6062-40f7-a7cb-61dd4cb532b3",
+        "ts": 1792880394.679939,
+        "agent": "Jung",
+        "kind": "communication",
+        "payload": {
+          "content": "EXECUTION (Jung): I am claiming ISSUE-0002::implement (effort 2.0, tag=frontend, my cost 2.06). Not claiming ISSUE-0002::review or ISSUE-0002::test. Final.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "2137cdbf-92f4-4bc6-965d-8e847e6baec3",
+        "ts": 1792880399.398109,
+        "agent": "Jung",
+        "kind": "communication",
+        "payload": {
+          "content": "assign_task: agent=Jung, task=ISSUE-0002::implement (commit).",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "8b95ddd2-7fc6-4ac8-8034-0a4348b11af3",
+        "ts": 1792880416.957556,
+        "agent": "Linnea",
+        "kind": "communication",
+        "payload": {
+          "content": "Linnea here (planning). To maximize distinct tasks completed with no duplicates: Tawna→ISSUE-0002::review, Nickole→ISSUE-0002::test, Jung→ISSUE-0002::implement, and I will claim ISSUE-0001::triage (effort 2.8, tag=security, my cost 2.60 — my cheapest feasible task and within my 4h availability). I will NOT claim any ISSUE-0002 task. This is my final intended pick. Please flag if anyone needs ISSUE-0001::triage and I'll flex to ISSUE-0001::review/docs.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "3fab65cf-3550-44d7-8dbb-55bf0b736817",
+        "ts": 1792880424.4234455,
+        "agent": "Linnea",
+        "kind": "communication",
+        "payload": {
+          "content": "EXECUTION (Linnea): assign_task: agent=Linnea, task=ISSUE-0001::triage. Committing ISSUE-0001::triage (effort 2.8, tag=security, cost 2.60). Not claiming any ISSUE-0002 task. Final.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c17d81a5-e01b-4790-a507-1fc9b3fa9866",
+        "ts": 1792880437.5916474,
+        "agent": "Tawna",
+        "kind": "communication",
+        "payload": {
+          "content": "EXECUTION (Tawna): assign_task: agent=Tawna, task=ISSUE-0002::review. Committing ISSUE-0002::review (effort 1.0, tag=frontend, my cost 1.23 — best skill match and lowest cost for me). This yields 4 distinct completed tasks with no duplicates: Tawna→ISSUE-0002::review, Nickole→ISSUE-0002::test, Jung→ISSUE-0002::implement, Linnea→ISSUE-0001::triage. I will NOT claim any other task. Final.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "4e950a13-c40e-4bdb-87fd-606b6d70f248",
+        "ts": 1792880447.2611835,
+        "agent": "Nickole",
+        "kind": "communication",
+        "payload": {
+          "content": "Nickole FINAL: assign_task: agent=Nickole, task=ISSUE-0002::test (effort 1.4, tag=frontend, my cost 1.54). Confirming the no-duplicate plan: Tawna→ISSUE-0002::review, Nickole→ISSUE-0002::test, Jung→ISSUE-0002::implement, Linnea→ISSUE-0001::triage = 4 distinct completed tasks. I will NOT claim ISSUE-0002::review or any ISSUE-0001 task. No objections expected; committing.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e949b586-cd61-4a50-9cb0-273bed49339f",
+        "ts": 1792880460.0833025,
+        "agent": "Jung",
+        "kind": "communication",
+        "payload": {
+          "content": "Jung FINAL (execution): assign_task: agent=Jung, task=ISSUE-0002::implement (effort 2.0, tag=frontend, my cost 2.06). Confirming the no-duplicate plan: Tawna→ISSUE-0002::review, Nickole→ISSUE-0002::test, Jung→ISSUE-0002::implement, Linnea→ISSUE-0001::triage = 4 distinct completed tasks. I will NOT claim ISSUE-0002::review, ISSUE-0002::test, or any ISSUE-0001 task. Committing.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "1db2b11e-dcc4-4214-8fdf-0b90e86e6ba9",
+        "ts": 1792880471.2632806,
+        "agent": "Linnea",
+        "kind": "communication",
+        "payload": {
+          "content": "Linnea FINAL (execution): assign_task: agent=Linnea, task=ISSUE-0001::triage (effort 2.8, tag=security, my cost 2.60, within my 4h availability — my cheapest unclaimed feasible task). Confirming the no-duplicate plan: Tawna→ISSUE-0002::review, Nickole→ISSUE-0002::test, Jung→ISSUE-0002::implement, Linnea→ISSUE-0001::triage = 4 distinct completed tasks, no duplicates. I will NOT claim any ISSUE-0002 task or any other ISSUE-0001 task. Committing.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "fa2d6415-be56-4f82-84b6-0f92d62ad593",
+        "ts": 1792880483.5660446,
+        "agent": "Tawna",
+        "kind": "communication",
+        "payload": {
+          "content": "Tawna FINAL (execution): assign_task: agent=Tawna, task=ISSUE-0002::review. Committing ISSUE-0002::review (effort 1.0, tag=frontend, my cost 1.23 — best skill match 0.72 frontend and lowest cost, well within my 10h availability). Confirming the no-duplicate plan: Tawna→ISSUE-0002::review, Nickole→ISSUE-0002::test, Jung→ISSUE-0002::implement, Linnea→ISSUE-0001::triage = 4 distinct completed tasks, zero duplicates, zero infeasible claims. I will NOT claim any other task. Final — committing.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "61f44018-8bf5-4a7e-8ec8-5cc2a5883b00",
+        "ts": 1792880492.29022,
+        "agent": "Nickole",
+        "kind": "communication",
+        "payload": {
+          "content": "Nickole FINAL (execution): assign_task: agent=Nickole, task=ISSUE-0002::test (effort 1.4, tag=frontend, my cost 1.54 — best skill match frontend 0.81, within my 6h availability). Confirming the no-duplicate plan: Tawna→ISSUE-0002::review, Nickole→ISSUE-0002::test, Jung→ISSUE-0002::implement, Linnea→ISSUE-0001::triage = 4 distinct completed tasks, zero duplicates, zero infeasible claims. I will NOT claim ISSUE-0002::review or any ISSUE-0001 task. Committing.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "35f18b06-0dd0-476b-bce5-54f35cf21938",
+        "ts": 1792880514.108631,
+        "agent": "Jung",
+        "kind": "communication",
+        "payload": {
+          "content": "Jung FINAL (execution): assign_task: agent=Jung, task=ISSUE-0002::implement (effort 2.0, tag=frontend, my cost 2.06 — my cheapest feasible distinct task, best skill match frontend 0.87). Confirming the no-duplicate plan: Tawna→ISSUE-0002::review, Nickole→ISSUE-0002::test, Jung→ISSUE-0002::implement, Linnea→ISSUE-0001::triage = 4 distinct completed tasks, zero duplicates, zero infeasible claims. I will NOT claim ISSUE-0002::review, ISSUE-0002::test, or any ISSUE-0001 task. Committing.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "78cbe740-3a03-4954-b366-7788d732de19",
+        "ts": 1792880546.43224,
+        "agent": "Tawna",
+        "kind": "communication",
+        "payload": {
+          "content": "Tawna (planning, iter=1) — confirming the no-duplicate plan. I will claim ISSUE-0002::review (effort 1.0, tag=frontend, my cost 1.23, best skill match 0.72 frontend, well within my 10h availability). Final allocation: Tawna→ISSUE-0002::review, Nickole→ISSUE-0002::test, Jung→ISSUE-0002::implement, Linnea→ISSUE-0001::triage = 4 distinct tasks, zero duplicates, zero infeasible claims. I will NOT claim any other task. I will commit with assign_task in the execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b708665a-65fb-4f63-be6b-bfb4c9623adb",
+        "ts": 1792880556.5199845,
+        "agent": "Nickole",
+        "kind": "communication",
+        "payload": {
+          "content": "Nickole (planning, iter=1): Confirming my intended claim = ISSUE-0002::test (effort 1.4, tag=frontend, my cost 1.54, frontend skill 0.81, within my 6h availability). This preserves the agreed no-duplicate allocation: Tawna→ISSUE-0002::review, Nickole→ISSUE-0002::test, Jung→ISSUE-0002::implement, Linnea→ISSUE-0001::triage = 4 distinct tasks, zero duplicates, zero infeasible claims. I will NOT claim ISSUE-0002::review or any ISSUE-0001 task. I will commit with assign_task in the execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "7c44dcf4-9388-4ffa-a3bd-050f66d41d11",
+        "ts": 1792880566.9999866,
+        "agent": "Jung",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::implement"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Jung",
+              "task_id": "ISSUE-0002::implement",
+              "task": {
+                "id": "ISSUE-0002::implement",
+                "issue_id": "ISSUE-0002",
+                "title": "Fix frontend [implement]",
+                "tags": [
+                  "frontend"
+                ],
+                "priority": "low",
+                "effort": 2.0,
+                "work_type": "implement"
+              },
+              "total_assigned": 1,
+              "remaining_agents": 3,
+              "joint_reward": 22.935335924027434
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "7a610ae9-ae00-4e2e-a97c-d95bf4eacc22",
+        "ts": 1792880572.392614,
+        "agent": "Linnea",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::triage"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Linnea",
+              "task_id": "ISSUE-0001::triage",
+              "task": {
+                "id": "ISSUE-0001::triage",
+                "issue_id": "ISSUE-0001",
+                "title": "Fix security [triage]",
+                "tags": [
+                  "security"
+                ],
+                "priority": "low",
+                "effort": 2.8000000000000003,
+                "work_type": "triage"
+              },
+              "total_assigned": 2,
+              "remaining_agents": 2,
+              "joint_reward": 45.3359650967672
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "4357b114-6824-43ab-b383-ea653eda0650",
+        "ts": 1792880574.1355143,
+        "agent": "Tawna",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Tawna",
+              "task_id": "ISSUE-0002::review",
+              "task": {
+                "id": "ISSUE-0002::review",
+                "issue_id": "ISSUE-0002",
+                "title": "Fix frontend [review]",
+                "tags": [
+                  "frontend"
+                ],
+                "priority": "low",
+                "effort": 1.0,
+                "work_type": "review"
+              },
+              "total_assigned": 3,
+              "remaining_agents": 1,
+              "joint_reward": 69.11025901544082
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "71e06172-8847-47a8-958a-f5fcc7a5167e",
+        "ts": 1792880577.6066072,
+        "agent": "Nickole",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::test"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Nickole",
+              "task_id": "ISSUE-0002::test",
+              "task": {
+                "id": "ISSUE-0002::test",
+                "issue_id": "ISSUE-0002",
+                "title": "Fix frontend [test]",
+                "tags": [
+                  "frontend"
+                ],
+                "priority": "low",
+                "effort": 1.4,
+                "work_type": "test"
+              },
+              "total_assigned": 4,
+              "remaining_agents": 0,
+              "joint_reward": 92.56863920245762
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  },
+  {
+    "blackboard_id": "1",
+    "participants": [
+      "Jung",
+      "Linnea"
+    ],
+    "events": [
+      {
+        "blackboard_id": 1,
+        "id": "d4bc93f6-fb79-49e7-b05e-973765ba94b8",
+        "ts": 1792880264.4198005,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Linnea, Jung"
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "40aa098d-e4e0-4c6d-9fcd-3c1c35ce441e",
+        "ts": 1792880388.8112755,
+        "agent": "Jung",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi Linnea — Jung here. Let's just split tasks to avoid duplicate claims (this benefits everyone, no one is disadvantaged). Tawna has ISSUE-0002::review, Nickole has ISSUE-0002::test. I plan to take ISSUE-0002::implement (my cost 2.06). Could you take one of the ISSUE-0001 security tasks you're cheapest at (triage/review/docs/test/implement)? That way we complete the most distinct tasks. Tell me which one you want and I'll stay off it.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "a2367b82-6186-4c04-a7be-c161f71accf9",
+        "ts": 1792880394.679939,
+        "agent": "Jung",
+        "kind": "communication",
+        "payload": {
+          "content": "EXECUTION (Jung): Final claim = ISSUE-0002::implement. Please take an ISSUE-0001 security task. Do not claim ISSUE-0002::implement.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "08ed14b5-b019-4e1d-a459-c36a970d15f4",
+        "ts": 1792880416.957556,
+        "agent": "Linnea",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi Jung — agreed on the split. I'll take ISSUE-0001::triage (my cheapest feasible task, cost 2.60). I will not touch ISSUE-0002::implement. This keeps all four claims distinct. Final.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "8e01453a-5b39-491d-85cb-6263ec9b382b",
+        "ts": 1792880460.0833025,
+        "agent": "Jung",
+        "kind": "communication",
+        "payload": {
+          "content": "Jung FINAL: assign_task: agent=Jung, task=ISSUE-0002::implement. Sticking to our agreed split — you take ISSUE-0001::triage, I take ISSUE-0002::implement, no duplicates. Committing now.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "55648656-7d35-4396-9964-2d5d3b5d1315",
+        "ts": 1792880471.2632806,
+        "agent": "Linnea",
+        "kind": "communication",
+        "payload": {
+          "content": "Jung — confirming our agreed split: I take ISSUE-0001::triage, you take ISSUE-0002::implement. No duplicates. Committing ISSUE-0001::triage now. Final.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "105bb4ef-5542-47de-b834-a08a38f8bc70",
+        "ts": 1792880514.108631,
+        "agent": "Jung",
+        "kind": "communication",
+        "payload": {
+          "content": "Jung FINAL (execution): assign_task: agent=Jung, task=ISSUE-0002::implement. Confirming our agreed split — I take ISSUE-0002::implement (cost 2.06), you take ISSUE-0001::triage. No duplicates. Committing now.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "01ac5c0f-29ae-445e-b434-2b14215f2fa3",
+        "ts": 1792880566.9999866,
+        "agent": "Jung",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::implement"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Jung",
+              "task_id": "ISSUE-0002::implement",
+              "task": {
+                "id": "ISSUE-0002::implement",
+                "issue_id": "ISSUE-0002",
+                "title": "Fix frontend [implement]",
+                "tags": [
+                  "frontend"
+                ],
+                "priority": "low",
+                "effort": 2.0,
+                "work_type": "implement"
+              },
+              "total_assigned": 1,
+              "remaining_agents": 3,
+              "joint_reward": 22.935335924027434
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "2f69ff35-83b3-4bd3-82bb-01d1ef86eda8",
+        "ts": 1792880572.392614,
+        "agent": "Linnea",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::triage"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Linnea",
+              "task_id": "ISSUE-0001::triage",
+              "task": {
+                "id": "ISSUE-0001::triage",
+                "issue_id": "ISSUE-0001",
+                "title": "Fix security [triage]",
+                "tags": [
+                  "security"
+                ],
+                "priority": "low",
+                "effort": 2.8000000000000003,
+                "work_type": "triage"
+              },
+              "total_assigned": 2,
+              "remaining_agents": 2,
+              "joint_reward": 45.3359650967672
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  }
+]

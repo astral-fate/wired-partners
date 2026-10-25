@@ -1,0 +1,612 @@
+[
+  {
+    "blackboard_id": "0",
+    "participants": [
+      "Avery",
+      "Jordan",
+      "Riley",
+      "Taylor"
+    ],
+    "events": [
+      {
+        "blackboard_id": 0,
+        "id": "1b9e3d32-5811-4ccf-98e5-ef9eeb5fdccf",
+        "ts": 1792878922.7857559,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "Decide attendance intervals for meetings on a shared timeline.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Avery, Jordan, Riley, Taylor"
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c915fee6-ab12-4d50-85d0-5ffb25159c75",
+        "ts": 1792878931.3226278,
+        "agent": "Avery",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi team, here's my proposed schedule:\n- Volleyball (m001): attend [2,4)\n- Mandatory training (m002): attend [4,5) (must be full)\n- Swimming (m004): attend [5,6)\n- Scholarship interview (m005): attend [7,8)\n- Scheduled exam (m006): attend [7,8)\nPlease let me know if these work for you so we can maximize overlaps. If anyone needs adjustments, suggest alternatives.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "6cc64add-fff1-49e5-90bf-5a3b12ea385c",
+        "ts": 1792878941.770618,
+        "agent": "Taylor",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi Avery, thanks for sharing your schedule. It works for me. I plan to:\n- Volleyball (m001): [2,4)\n- Mandatory training (m002): [4,5)\n- Swimming (m004): [5,6)\n- Scholarship interview (m005): [7,8)\n- Scheduled exam (m006): I may skip to avoid overlap with the interview, but let me know if you need me there.\nFor Gym play (m003), I’m thinking of [3,5) to overlap with Riley. Let me know if that’s okay.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "4209db67-c471-40b7-9659-9c221b8f538b",
+        "ts": 1792878953.0861125,
+        "agent": "Riley",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi team, here's my proposed schedule for the shared meetings:\n- Volleyball free play (m001): attend [2,3) – overlaps with you both in the early slot.\n- Mandatory training (m002): attend [4,5) – full window as required.\n- Gym play session (m003): attend [5,7) – avoids overlapping my own strict session.\n- Scholarship interview (m005): attend [7,8) – full window.\nLet me know if these work or if we should adjust to improve overlaps, especially for the gym session.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a01b6727-3016-4349-b9d2-42d8d9955663",
+        "ts": 1792878961.2455068,
+        "agent": "Jordan",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi team, confirming my schedule: Volleyball m001 [2,4), Mandatory training m002 [4,5), Scholarship interview m005 [7,8). Looks good with everyone's proposals.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "3abee0a4-4b23-4e62-b31a-c0107d6458bb",
+        "ts": 1792878967.9700243,
+        "agent": "Avery",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi all, thanks for the proposals. Here’s my final plan:\n- Volleyball (m001): attend [2,4) – overlaps with everyone.\n- Mandatory training (m002): attend full [4,5).\n- Swimming (m004): attend [5,6) to overlap with Taylor.\n- Scholarship interview (m005): attend full [7,8).\n- Scheduled exam (m006): I will skip to avoid overlapping the interview slot (still get the interview reward).\nPlease let me know if anyone needs adjustments. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b4d8dcde-ec43-4459-a225-16d9a89fcdcf",
+        "ts": 1792878979.0739596,
+        "agent": "Taylor",
+        "kind": "communication",
+        "payload": {
+          "content": "Team, I'm confirming the schedule: Volleyball [2,4), Mandatory training [4,5), Gym play [3,5), Swimming [5,6), Scholarship interview [7,8). Skipping the exam [7,8) to avoid conflict. Let me know if any adjustments needed.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c61dafc7-3991-4812-b61d-1dfea9da0d02",
+        "ts": 1792878988.9425404,
+        "agent": "Riley",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi team, I've reviewed the proposals. I can keep Volleyball free play at [2,3) (overlaps with everyone’s [2,4) slot), attend the full Mandatory training [4,5), and be present for the Scholarship interview [7,8). For the Gym play session I can attend [5,7) – this avoids overlapping my strict session and doesn’t conflict with anyone’s Gym slot, so I won’t get overlap reward there but also avoid any penalty. Please let me know if this works for everyone or if you’d prefer I skip the Gym session entirely.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "8b47da61-7348-43bf-8bfd-29455cf1e779",
+        "ts": 1792878994.0952625,
+        "agent": "Jordan",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi everyone, confirming my schedule as planned: Volleyball (m001) [2,4), Mandatory training (m002) [4,5) (full window), Scholarship interview (m005) [7,8) (full). This aligns with the team's proposals and avoids any conflicts. Let me know if any further adjustments are needed.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "02f7d223-153b-4697-a30f-b4e7c57a176b",
+        "ts": 1792878998.836358,
+        "agent": "Avery",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi team, confirming my final schedule:\n- Volleyball m001: [2,4) (overlaps with everyone's slots)\n- Mandatory training m002: full [4,5)\n- Swimming m004: [5,6) (overlaps with Taylor)\n- Scholarship interview m005: full [7,8)\n- Scheduled exam m006: I will skip (still get interview reward).\nLet me know if anyone has issues or wants adjustments. (phase=planning, iter=2)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "3ff5a65a-f75e-4cfb-b5dd-adc6380db2d6",
+        "ts": 1792879008.8318183,
+        "agent": "Taylor",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi team, just a quick suggestion: for the Gym play session (m003) could we all attend the overlapping window [3,5)? That would give Riley and me overlap reward and still fits within the [3,7) window. Also, Riley, if you're able to extend Volleyball free play (m001) to [2,4) instead of [2,3), we'd all get full overlap there. Let me know if these work for everyone.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "5ce3e4ff-beb6-4877-a1c6-4ec28fdc7a06",
+        "ts": 1792879018.6749773,
+        "agent": "Riley",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi team, thanks for all the proposals. To maximize overlap rewards I can adjust my schedule as follows:\n- Volleyball free play (m001): attend [2,4) – this fully overlaps with everyone’s slot.\n- Mandatory training (m002): attend the full window [4,5) as required.\n- Gym play session (m003): attend [3,5) – this overlaps with Taylor’s gym slot, giving us the soft‑activity reward (and incurs a –1 penalty for overlapping the mandatory training slot, which nets out).\n- Scholarship interview (m005): attend the full window [7,8).\nPlease let me know if this works for everyone or if any further tweaks are needed.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "02e267a8-2101-4fb0-bfb5-7078a60aab0c",
+        "ts": 1792879028.5758095,
+        "agent": "Jordan",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi everyone, confirming my schedule: Volleyball free play (m001) [2,4), Mandatory training (m002) [4,5) (full window), Scholarship interview (m005) [7,8) (full). This matches the team's proposals and avoids any conflicts.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d98ccfce-9ebf-4f68-89d7-ec70762df06d",
+        "ts": 1792879033.8345969,
+        "agent": "Avery",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi team, confirming my final schedule:\n- Volleyball m001: attend [2,4)\n- Mandatory training m002: attend full [4,5)\n- Swimming m004: attend [5,6)\n- Scholarship interview m005: attend full [7,8)\n- Scheduled exam m006: I will skip.\nLet me know if any issues.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "47de3c17-38fa-44ae-b57c-b7de84dc9022",
+        "ts": 1792879036.6998274,
+        "agent": "Avery",
+        "kind": "communication",
+        "payload": {
+          "content": "Attending meetings as per schedule.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "8351899c-eff3-44cd-9465-c6d509fdc7d0",
+        "ts": 1792879038.164034,
+        "agent": "Avery",
+        "kind": "communication",
+        "payload": {
+          "content": "Attempting to call attend_meeting (placeholder).",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "666994f3-cfb7-4a06-b33d-0f3b13590fc7",
+        "ts": 1792879042.5612953,
+        "agent": "Taylor",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi everyone, confirming my final schedule:\n- Volleyball (m001): [2,4]\n- Mandatory training (m002): [4,5] (full window)\n- Gym play (m003): [3,5]\n- Swimming (m004): [5,6]\n- Scholarship interview (m005): [7,8] (full window)\n- Scheduled exam (m006): skipping to avoid conflict.\nLet me know if any issues.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "5853642e-bdc0-4661-a0a9-77e69e52a146",
+        "ts": 1792879050.8452764,
+        "agent": "Riley",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi team, I'm aligning with the proposed schedule:\n- Volleyball free play (m001): attend [2,4)\n- Mandatory training (m002): attend [4,5) (full window)\n- Gym play session (m003): attend [3,5)\n- Scholarship interview (m005): attend [7,8) (full window)\nLet me know if any issues.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "6f1ee7f6-3f3c-4bf8-a841-08ceaae7cc4d",
+        "ts": 1792879059.770473,
+        "agent": "Jordan",
+        "kind": "communication",
+        "payload": {
+          "content": "Attending m001 [2,4), m002 [4,5), m005 [7,8).",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e6b5f920-8ad0-488c-82a3-8764b078e299",
+        "ts": 1792879061.068477,
+        "agent": "Jordan",
+        "kind": "communication",
+        "payload": {
+          "content": "Attempting to call attend_meeting (placeholder).",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "5a52d842-4a46-4b19-bf9b-3164fad464e6",
+        "ts": 1792879062.8125706,
+        "agent": "Avery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m001",
+            "interval": "2-4"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Avery",
+              "meeting": {
+                "id": "m001",
+                "title": "Volleyball free play",
+                "meeting_type": "soft",
+                "window": [
+                  2,
+                  5
+                ],
+                "participants": [
+                  "Riley",
+                  "Taylor",
+                  "Avery",
+                  "Jordan"
+                ]
+              },
+              "interval": "2-4",
+              "total_assigned": 1,
+              "remaining_variables": 17,
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c95704c9-6bff-45aa-ad73-0a7a34aaeb8e",
+        "ts": 1792879067.0216763,
+        "agent": "Taylor",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m001",
+            "interval": "2-4"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Taylor",
+              "meeting": {
+                "id": "m001",
+                "title": "Volleyball free play",
+                "meeting_type": "soft",
+                "window": [
+                  2,
+                  5
+                ],
+                "participants": [
+                  "Riley",
+                  "Taylor",
+                  "Avery",
+                  "Jordan"
+                ]
+              },
+              "interval": "2-4",
+              "total_assigned": 2,
+              "remaining_variables": 16,
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "cb70cd16-0e93-4d32-b89a-a1b164a4eda1",
+        "ts": 1792879070.2455778,
+        "agent": "Riley",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m001",
+            "interval": "2-4"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Riley",
+              "meeting": {
+                "id": "m001",
+                "title": "Volleyball free play",
+                "meeting_type": "soft",
+                "window": [
+                  2,
+                  5
+                ],
+                "participants": [
+                  "Riley",
+                  "Taylor",
+                  "Avery",
+                  "Jordan"
+                ]
+              },
+              "interval": "2-4",
+              "total_assigned": 3,
+              "remaining_variables": 15,
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "1c186d44-2fb6-41b5-9fda-80c6cf523a42",
+        "ts": 1792879072.4549856,
+        "agent": "Jordan",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m001",
+            "interval": "2-4"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Jordan",
+              "meeting": {
+                "id": "m001",
+                "title": "Volleyball free play",
+                "meeting_type": "soft",
+                "window": [
+                  2,
+                  5
+                ],
+                "participants": [
+                  "Riley",
+                  "Taylor",
+                  "Avery",
+                  "Jordan"
+                ]
+              },
+              "interval": "2-4",
+              "total_assigned": 4,
+              "remaining_variables": 14,
+              "joint_reward": 12.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  },
+  {
+    "blackboard_id": "1",
+    "participants": [
+      "Jordan",
+      "Taylor"
+    ],
+    "events": [
+      {
+        "blackboard_id": 1,
+        "id": "cc587dfd-3e00-4004-a74c-73ac2fcca642",
+        "ts": 1792878922.7857559,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "Decide attendance intervals for meetings on a shared timeline.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Jordan, Taylor"
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "8a0f9e3c-2503-458e-b580-bb9a1e618724",
+        "ts": 1792878940.292005,
+        "agent": "Taylor",
+        "kind": "communication",
+        "payload": {
+          "content": "Hey Jordan, here's my tentative plan: \n- m001 Volleyball: attend [2,4)\n- m002 Mandatory training: attend [4,5) (full as required)\n- m003 Gym play: attend [3,5) (to overlap with Riley)\n- m004 Swimming: attend [5,6)\n- m005 Scholarship interview: attend [7,8) (full)\n- m006 Scheduled exam: I'm considering skipping to avoid overlap penalty with m005. Let me know if you need me on m006 or have other preferences.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "efbfaa5c-c414-4ee0-8ad7-cb57aa92e2f6",
+        "ts": 1792878960.104606,
+        "agent": "Jordan",
+        "kind": "communication",
+        "payload": {
+          "content": "Hey Taylor, I'm on board with the plan. I'll attend Volleyball m001 from [2,4), Mandatory training m002 full [4,5), and Scholarship interview m005 full [7,8). Let me know if any adjustments needed.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "8ecf4bdd-d681-4038-9efc-9d512818aa5c",
+        "ts": 1792878976.397961,
+        "agent": "Taylor",
+        "kind": "communication",
+        "payload": {
+          "content": "Jordan, confirming my schedule: Volleyball m001 [2,4), Mandatory training m002 [4,5), Gym play m003 [3,5), Swimming m004 [5,6), Scholarship interview m005 [7,8). I'll skip the exam m006 to avoid overlap penalty. Let me know if you need any changes.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "5d7e1d1e-41e2-4370-9b16-6d76b989282a",
+        "ts": 1792879009.8787286,
+        "agent": "Taylor",
+        "kind": "communication",
+        "payload": {
+          "content": "Jordan, confirming our joint plan: Volleyball [2,4), Mandatory training [4,5), Gym play [3,5), Swimming [5,6), Scholarship interview [7,8), and skipping the exam. Let me know if any tweaks are needed.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "2b312e52-bba6-42d9-a8e7-db5eae4c00e6",
+        "ts": 1792879027.0104847,
+        "agent": "Jordan",
+        "kind": "communication",
+        "payload": {
+          "content": "Taylor, I'm on board with the schedule you outlined: Volleyball (m001) [2,4), Mandatory training (m002) [4,5), Gym play (m003) [3,5), Swimming (m004) [5,6), Scholarship interview (m005) [7,8). I'll skip the exam (m006) as discussed. Let me know if any tweaks are needed.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "e7badb18-80cb-41f8-9cd9-7b64f9e2b24f",
+        "ts": 1792879044.1745498,
+        "agent": "Taylor",
+        "kind": "communication",
+        "payload": {
+          "content": "Jordan, confirming our joint plan:\n- m001 Volleyball: [2,4]\n- m002 Mandatory training: [4,5]\n- m003 Gym play: [3,5]\n- m004 Swimming: [5,6]\n- m005 Scholarship interview: [7,8]\n- m006 Scheduled exam: skipping.\nLet me know if any tweaks.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "d62bfdd7-fe12-40b0-98c1-178506e31dcc",
+        "ts": 1792879056.4358947,
+        "agent": "Jordan",
+        "kind": "communication",
+        "payload": {
+          "content": "Jordan confirming coalition plan: I'll attend m001 Volleyball [2,4), m002 Mandatory training [4,5), m005 Scholarship interview [7,8]. Looking forward to overlapping fully.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "15584c3f-e170-4178-89e4-77d060d37e5c",
+        "ts": 1792879067.0216763,
+        "agent": "Taylor",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m001",
+            "interval": "2-4"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Taylor",
+              "meeting": {
+                "id": "m001",
+                "title": "Volleyball free play",
+                "meeting_type": "soft",
+                "window": [
+                  2,
+                  5
+                ],
+                "participants": [
+                  "Riley",
+                  "Taylor",
+                  "Avery",
+                  "Jordan"
+                ]
+              },
+              "interval": "2-4",
+              "total_assigned": 2,
+              "remaining_variables": 16,
+              "joint_reward": 0.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "d53a15fd-f27c-4316-bff5-92a090d91dea",
+        "ts": 1792879072.4549856,
+        "agent": "Jordan",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m001",
+            "interval": "2-4"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Jordan",
+              "meeting": {
+                "id": "m001",
+                "title": "Volleyball free play",
+                "meeting_type": "soft",
+                "window": [
+                  2,
+                  5
+                ],
+                "participants": [
+                  "Riley",
+                  "Taylor",
+                  "Avery",
+                  "Jordan"
+                ]
+              },
+              "interval": "2-4",
+              "total_assigned": 4,
+              "remaining_variables": 14,
+              "joint_reward": 12.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  }
+]

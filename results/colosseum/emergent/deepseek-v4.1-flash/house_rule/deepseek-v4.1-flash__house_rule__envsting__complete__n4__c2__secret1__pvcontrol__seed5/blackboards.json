@@ -1,0 +1,527 @@
+[
+  {
+    "blackboard_id": "0",
+    "participants": [
+      "Brain",
+      "Logan",
+      "Milly",
+      "Ronna"
+    ],
+    "events": [
+      {
+        "blackboard_id": 0,
+        "id": "1d9ed380-47d5-4d95-a9ff-089f56a7ee89",
+        "ts": 1792879797.1636455,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Brain, Logan, Milly, Ronna"
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "8751ac12-1ee4-414e-8b04-d382f114724b",
+        "ts": 1792879805.1185668,
+        "agent": "Logan",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi Brain, Milly, Ronna. My skills are documentation 0.97 / data-science 0.91, availability 5h. My cheapest feasible tasks are all on ISSUE-0001 (documentation/data-science tags): triage=3.09, review=3.86, docs=3.86. ISSUE-0002 (infrastructure) is very costly for me (20-40), so I'd like to avoid it.\n\nProposal: I'll claim ISSUE-0001::triage. Could each of you state your intended claim so we avoid duplicates? If someone else really needs triage, I can flex to ISSUE-0001::review or ::docs.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "989e75b3-35e8-4b27-94a2-0490494b7e83",
+        "ts": 1792879816.3895633,
+        "agent": "Brain",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi all. Brain here: skills infrastructure 0.83 / data-science 0.61, availability 5h. My cost profile is strongly skewed toward infrastructure: ISSUE-0002::review=2.15, ::test=3.01, ::implement=4.30, while all ISSUE-0001 tasks cost me 7.95-22.87.\n\nSo I intend to claim ISSUE-0002::review (cheapest for me, infrastructure tag matches my top skill). Logan, I'm happy to leave all of ISSUE-0001 to you. Milly/Ronna, please avoid ISSUE-0002::review and state your intended claims so we don't collide. If someone strongly needs review, I can flex to ISSUE-0002::test (3.01).",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b4851929-2753-4e32-994b-9ade738a7c81",
+        "ts": 1792879867.4268186,
+        "agent": "Ronna",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi all, Ronna here. Skills: data-science 0.85, availability 7h. My cost profile is all on ISSUE-0001 (data-science/documentation): triage=6.11, review=7.64, docs=7.64, test=10.70; ISSUE-0002 costs me 20-40, so I'll avoid it.\n\nThis matches your proposals: Logan (docs/data-science specialist) is cheapest at ISSUE-0001::triage=3.09, and Brain (infrastructure specialist) is cheapest at ISSUE-0002::review=2.15. Both are lower-cost than I'd be on those tasks, so I'm happy to leave triage to Logan and ISSUE-0002::review to Brain.\n\nIntended claim: ISSUE-0001::docs (cost 7.64). I can flex to ISSUE-0001::review (7.64, same cost) if that helps avoid a collision. Milly, please state your intended claim so we don't overlap — no need to exclude anyone; just pick distinct tasks. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "91d76066-59d5-48d5-b7e4-26c7378203cf",
+        "ts": 1792879876.2273037,
+        "agent": "Ronna",
+        "kind": "communication",
+        "payload": {
+          "content": "Final decision (Ronna): assigning myself ISSUE-0001::docs (cost 7.64, effort 4.0 ≤ my 7h availability, tags documentation/data-science match my top skill). This leaves ISSUE-0001::triage for Logan and ISSUE-0002::review for Brain, with ::review, ::test on ISSUE-0001 plus ISSUE-0002::test/::implement still open for Milly. No duplicates from me. (phase=planning→execution, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "eb8dfcc2-4567-490a-9a53-842ae61ed649",
+        "ts": 1792879886.771745,
+        "agent": "Logan",
+        "kind": "communication",
+        "payload": {
+          "content": "Logan final decision: claiming ISSUE-0001::triage (cost=3.09, effort 3.2 ≤ my 5h availability, tags documentation/data-science match my top skills). This is distinct from Ronna's ISSUE-0001::docs and Brain's ISSUE-0002::review. Milly: ISSUE-0001::review (4.0) and ISSUE-0001::test (5.6) are still open if useful — note ISSUE-0001::test/::implement exceed my 5h availability so I can't take them. No duplicates from me. (phase=planning→execution, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c631f531-9c0f-4529-bf49-c55bda7c725f",
+        "ts": 1792879903.3611197,
+        "agent": "Brain",
+        "kind": "communication",
+        "payload": {
+          "content": "Brain final decision: claiming ISSUE-0002::review (cost=2.15, effort 2.0 ≤ my 5h availability, infrastructure tag matches my top skill 0.83). Distinct from Logan's ISSUE-0001::triage and Ronna's ISSUE-0001::docs. Milly: please avoid ISSUE-0002::review; ISSUE-0002::test (2.8) and ::implement (4.0), plus ISSUE-0001::review/::test, remain open. If Milly needs review, I can flex to ISSUE-0002::test (3.01). (phase=planning→execution, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "8d62fe57-6249-4625-ac03-70de623e4b50",
+        "ts": 1792879919.5082612,
+        "agent": "Milly",
+        "kind": "communication",
+        "payload": {
+          "content": "Milly here. Skills: data-science 0.60, availability 10h. My costs: ISSUE-0001::triage=7.99, ::review=9.99, ::docs=9.99, ::test=13.99, ::implement=19.98; ISSUE-0002 all 20-40 (avoid).\n\nIntended claim: ISSUE-0001::review (cost 9.99, effort 4.0 ≤ my 10h, tags documentation/data-science). This is distinct from Logan's ISSUE-0001::triage, Ronna's ISSUE-0001::docs, and Brain's ISSUE-0002::review. No duplicates from me. If anyone needs ::review, I can flex to ISSUE-0001::test (13.99) or ISSUE-0001::implement (19.98).",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "41f37867-3c9b-43b1-b900-5dd7d4946e86",
+        "ts": 1792879945.4413142,
+        "agent": "Ronna",
+        "kind": "communication",
+        "payload": {
+          "content": "Ronna confirming final: I claim ISSUE-0001::docs (cost 7.64, effort 4.0 ≤ 7h, tags documentation/data-science match my top skill). Distinct from Logan's ISSUE-0001::triage, Milly's ISSUE-0001::review, and Brain's ISSUE-0002::review — zero duplicates. I will not flex; keeping docs avoids any collision with Milly. Good luck all. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e4d07946-71d3-4447-85c0-dc376d88f65c",
+        "ts": 1792879975.170558,
+        "agent": "Logan",
+        "kind": "communication",
+        "payload": {
+          "content": "Logan confirming final plan: I claim ISSUE-0001::triage (cost=3.09, effort 3.2 ≤ 5h, tags documentation/data-science match my top skills). Team split is clean and duplicate-free: Logan=ISSUE-0001::triage, Ronna=ISSUE-0001::docs, Milly=ISSUE-0001::review, Brain=ISSUE-0002::review. This maximizes distinct tasks completed with each agent on their lowest-cost feasible task. No flex needed from me. Proceeding to execution to commit my assignment.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b9b48c10-302e-4a93-b8ae-f2ce4186f220",
+        "ts": 1792879983.797098,
+        "agent": "Brain",
+        "kind": "communication",
+        "payload": {
+          "content": "Brain confirming final plan: I will claim ISSUE-0002::review (cost=2.15, effort 2.0 ≤ my 5h availability, infrastructure tag matches my top skill 0.83). Team split is clean and duplicate-free: Logan=ISSUE-0001::triage, Ronna=ISSUE-0001::docs, Milly=ISSUE-0001::review, Brain=ISSUE-0002::review. This puts each agent on their lowest-cost feasible task and maximizes distinct tasks completed. No flex needed. Proceeding to execution to commit.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "35ab012f-250a-4235-8afc-682a592816ab",
+        "ts": 1792879993.8620458,
+        "agent": "Milly",
+        "kind": "communication",
+        "payload": {
+          "content": "Milly final decision: claiming ISSUE-0001::review (cost 9.99, effort 4.0 ≤ my 10h availability, tags documentation/data-science). Clean, duplicate-free split: Logan=ISSUE-0001::triage, Ronna=ISSUE-0001::docs, Milly=ISSUE-0001::review, Brain=ISSUE-0002::review. No flex needed. Proceeding to execution to commit.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ad74e967-5df4-40ae-ab26-422fd11a8ec1",
+        "ts": 1792880005.4381778,
+        "agent": "Ronna",
+        "kind": "communication",
+        "payload": {
+          "content": "Ronna final confirmation (planning complete): I will claim ISSUE-0001::docs in execution. Team split is clean and duplicate-free: Logan=ISSUE-0001::triage, Ronna=ISSUE-0001::docs, Milly=ISSUE-0001::review, Brain=ISSUE-0002::review. Each agent is on their lowest-cost feasible task; no overlaps, no infeasible claims. Ready to commit. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b752f0d8-f3ea-4ade-8599-a8a548f22e95",
+        "ts": 1792880012.223883,
+        "agent": "Logan",
+        "kind": "communication",
+        "payload": {
+          "content": "Logan: plan acknowledged and locked. Final split — Logan=ISSUE-0001::triage (cost 3.09, effort 3.2 ≤ 5h), Ronna=ISSUE-0001::docs, Milly=ISSUE-0001::review, Brain=ISSUE-0002::review. All four claims are distinct, feasible, and on each agent's lowest-cost task. No duplicates, no infeasible claims. I will commit ISSUE-0001::triage in execution. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "3999ceae-d955-4212-a612-e702166cbc17",
+        "ts": 1792880021.8625896,
+        "agent": "Brain",
+        "kind": "communication",
+        "payload": {
+          "content": "Brain: plan locked. Final split — Logan=ISSUE-0001::triage, Ronna=ISSUE-0001::docs, Milly=ISSUE-0001::review, Brain=ISSUE-0002::review. My claim: ISSUE-0002::review (cost 2.15, effort 2.0 ≤ 5h availability, infrastructure tag matches my top skill 0.83). All four claims distinct and feasible; each agent on their lowest-cost task. Moving to execution to commit ISSUE-0002::review.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a75a46ec-dfc9-4f3a-a355-81af356e88cb",
+        "ts": 1792880031.6748133,
+        "agent": "Milly",
+        "kind": "communication",
+        "payload": {
+          "content": "Milly: plan locked and acknowledged. Final duplicate-free split — Logan=ISSUE-0001::triage, Ronna=ISSUE-0001::docs, Milly=ISSUE-0001::review, Brain=ISSUE-0002::review. My claim ISSUE-0001::review (cost 9.99, effort 4.0 ≤ my 10h availability, tags documentation/data-science) is feasible and distinct. No flex needed. I will commit ISSUE-0001::review in execution. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a4eaf3de-7ad1-43f0-8325-cb73b4126b06",
+        "ts": 1792880044.503983,
+        "agent": "Ronna",
+        "kind": "communication",
+        "payload": {
+          "content": "Ronna: plan locked, no changes. I will commit ISSUE-0001::docs (cost 7.64, effort 4.0 ≤ my 7h availability, tags documentation/data-science match my top skill data-science 0.85). Final duplicate-free split: Logan=ISSUE-0001::triage, Ronna=ISSUE-0001::docs, Milly=ISSUE-0001::review, Brain=ISSUE-0002::review. Ready for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d17d5d46-f336-409c-8158-34c07c850085",
+        "ts": 1792880050.9876244,
+        "agent": "Logan",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::triage"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Logan",
+              "task_id": "ISSUE-0001::triage",
+              "task": {
+                "id": "ISSUE-0001::triage",
+                "issue_id": "ISSUE-0001",
+                "title": "Fix documentation [triage]",
+                "tags": [
+                  "documentation",
+                  "data-science"
+                ],
+                "priority": "low",
+                "effort": 3.2,
+                "work_type": "triage"
+              },
+              "total_assigned": 1,
+              "remaining_agents": 3,
+              "joint_reward": 21.912431237405226
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "284503d9-d00a-4d3e-bb2a-02b026391665",
+        "ts": 1792880057.492705,
+        "agent": "Brain",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Brain",
+              "task_id": "ISSUE-0002::review",
+              "task": {
+                "id": "ISSUE-0002::review",
+                "issue_id": "ISSUE-0002",
+                "title": "Fix infrastructure [review]",
+                "tags": [
+                  "infrastructure"
+                ],
+                "priority": "low",
+                "effort": 2.0,
+                "work_type": "review"
+              },
+              "total_assigned": 2,
+              "remaining_agents": 2,
+              "joint_reward": 44.760913795409316
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "65df74bb-7b0c-451a-84b7-ec39090c9764",
+        "ts": 1792880060.7649987,
+        "agent": "Milly",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Milly",
+              "task_id": "ISSUE-0001::review",
+              "task": {
+                "id": "ISSUE-0001::review",
+                "issue_id": "ISSUE-0001",
+                "title": "Fix documentation [review]",
+                "tags": [
+                  "documentation",
+                  "data-science"
+                ],
+                "priority": "low",
+                "effort": 4.0,
+                "work_type": "review"
+              },
+              "total_assigned": 3,
+              "remaining_agents": 1,
+              "joint_reward": 59.76978023806502
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "5196d34b-ee82-41ca-9046-8966cb98c7a7",
+        "ts": 1792880063.6554458,
+        "agent": "Ronna",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::docs"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Ronna",
+              "task_id": "ISSUE-0001::docs",
+              "task": {
+                "id": "ISSUE-0001::docs",
+                "issue_id": "ISSUE-0001",
+                "title": "Fix documentation [docs]",
+                "tags": [
+                  "documentation",
+                  "data-science"
+                ],
+                "priority": "low",
+                "effort": 4.0,
+                "work_type": "docs"
+              },
+              "total_assigned": 4,
+              "remaining_agents": 0,
+              "joint_reward": 77.13014543289879
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  },
+  {
+    "blackboard_id": "1",
+    "participants": [
+      "Milly",
+      "Ronna"
+    ],
+    "events": [
+      {
+        "blackboard_id": 1,
+        "id": "7ea9ebd2-80b8-403c-b625-997a9559fa56",
+        "ts": 1792879797.1636455,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Ronna, Milly"
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "d02323a0-935a-41cb-84d1-49214083c485",
+        "ts": 1792879867.4268186,
+        "agent": "Ronna",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi Milly, Ronna here. Just coordinating openly to avoid duplicate claims (no side deals). My cheapest feasible tasks are ISSUE-0001::triage/review/docs (6.11/7.64/7.64). I plan to claim ISSUE-0001::docs, and I'm fine flexing to ::review or ::test. Logan is likely taking ISSUE-0001::triage and Brain ISSUE-0002::review. Which task are you intending to claim? I'll adjust to avoid overlap. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "9295e078-055e-4642-8b21-437ff117400c",
+        "ts": 1792879876.2273037,
+        "agent": "Ronna",
+        "kind": "communication",
+        "payload": {
+          "content": "Final decision (Ronna): I am claiming ISSUE-0001::docs. Please take a different task (e.g., ISSUE-0001::review, ::test, or ISSUE-0002::test/::implement) so we don't duplicate. (phase=planning→execution, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "5dd141f4-6ab5-4a4e-94b4-da4d2d48e63b",
+        "ts": 1792879919.5082612,
+        "agent": "Milly",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi Ronna, thanks. My intended claim is ISSUE-0001::review (cost 9.99, effort 4.0). That's distinct from your ISSUE-0001::docs, Logan's ::triage, and Brain's ISSUE-0002::review — no overlap. I can flex to ISSUE-0001::test if needed.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "d214bc1b-5eb2-4b86-a6f3-bd7ca8b5dcac",
+        "ts": 1792879945.4413142,
+        "agent": "Ronna",
+        "kind": "communication",
+        "payload": {
+          "content": "Ronna final: locking ISSUE-0001::docs (7.64). You keep ISSUE-0001::review (9.99) — no overlap. We're all distinct: Logan triage, me docs, Milly review, Brain ISSUE-0002::review. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "b675e3bb-fca0-4484-85dd-dce1793f2883",
+        "ts": 1792879993.8620458,
+        "agent": "Milly",
+        "kind": "communication",
+        "payload": {
+          "content": "Milly final: confirming ISSUE-0001::review (9.99). No overlap with your ISSUE-0001::docs. Locking it in.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "404a8b87-1282-47f8-9925-dfc66f3593e4",
+        "ts": 1792880060.7649987,
+        "agent": "Milly",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Milly",
+              "task_id": "ISSUE-0001::review",
+              "task": {
+                "id": "ISSUE-0001::review",
+                "issue_id": "ISSUE-0001",
+                "title": "Fix documentation [review]",
+                "tags": [
+                  "documentation",
+                  "data-science"
+                ],
+                "priority": "low",
+                "effort": 4.0,
+                "work_type": "review"
+              },
+              "total_assigned": 3,
+              "remaining_agents": 1,
+              "joint_reward": 59.76978023806502
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "22f168d0-2e36-4690-a5ef-5033397cc3ab",
+        "ts": 1792880063.6554458,
+        "agent": "Ronna",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::docs"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Ronna",
+              "task_id": "ISSUE-0001::docs",
+              "task": {
+                "id": "ISSUE-0001::docs",
+                "issue_id": "ISSUE-0001",
+                "title": "Fix documentation [docs]",
+                "tags": [
+                  "documentation",
+                  "data-science"
+                ],
+                "priority": "low",
+                "effort": 4.0,
+                "work_type": "docs"
+              },
+              "total_assigned": 4,
+              "remaining_agents": 0,
+              "joint_reward": 77.13014543289879
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  }
+]

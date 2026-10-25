@@ -1,0 +1,480 @@
+[
+  {
+    "blackboard_id": "0",
+    "participants": [
+      "Gerda",
+      "Mackenzie",
+      "Maya",
+      "Raylene"
+    ],
+    "events": [
+      {
+        "blackboard_id": 0,
+        "id": "4cf1b24e-3494-4fb7-8417-894f955aa088",
+        "ts": 1792879903.2405126,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Gerda, Mackenzie, Maya, Raylene"
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d1c69a5b-0e0b-4e2b-a1fd-a2520fae5ebb",
+        "ts": 1792879928.6557996,
+        "agent": "Raylene",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi all — Raylene here. My skills are backend-focused (backend:0.85) and my clearly best-fit task is ISSUE-0002::review (medium priority, cost 1.90). I plan to claim that one. To avoid duplicate claims, please reply with your intended task. I'm happy to take a different ISSUE-0002 role or a low-priority ISSUE-0001 task if someone else has a stronger claim on ISSUE-0002::review. Let's keep this fair and open.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e8725ca8-ff36-4115-b119-082a617c1c93",
+        "ts": 1792879965.6782417,
+        "agent": "Maya",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi all — Maya here. Sharing my plan openly to avoid duplicate claims.\n\nRaylene: ISSUE-0002::review is a good fit for you (backend) and I won't contest it — it's yours.\n\nMy intent: I'm planning to claim ISSUE-0002::test (medium priority; my mobile-development:0.77 gives me a strong skill match on the ISSUE-0002 tag set). If someone has a clearly better claim on ISSUE-0002::test, I can fall back to an ISSUE-0001 low-priority role (e.g. review/docs/triage).\n\n@Gerda, @Mackenzie — what are you each planning? If we can cover all three medium-priority ISSUE-0002 tasks plus one low-priority ISSUE-0001 task, that maximizes our joint outcome. Please reply with your intended task so we can avoid overlaps.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b3bfce11-3022-45d4-a2d3-c590afdbd203",
+        "ts": 1792879982.315472,
+        "agent": "Mackenzie",
+        "kind": "communication",
+        "payload": {
+          "content": "Mackenzie here. Open plan, no side deals.\n\nMy skills: mobile-development:0.62. My private costs fit the ISSUE-0002 (medium) roles best: review=2.44, test=3.42, implement=4.88. ISSUE-0001 roles cost me ~10-20, so they're poor for me.\n\nProposed non-overlapping allocation to maximize joint outcome (3 medium + 1 low):\n- Raylene: ISSUE-0002::review (your best fit, uncontested)\n- Maya: ISSUE-0002::test (your strong mobile match)\n- Mackenzie (me): ISSUE-0002::implement\n- Gerda: an ISSUE-0001 low-priority role (review/docs/triage — effort 1.0)\n\nThis covers all three medium tasks plus one low task = 4 tasks done, priority_sum=1.75.\n\n@Gerda — please confirm which ISSUE-0001 role you'll take so we don't collide. If you'd rather take ISSUE-0002::implement, say so and I'll flex to a low ISSUE-0001 role instead. Let's just avoid duplicates. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "fe254d5a-6479-478a-884a-af21d64f87ab",
+        "ts": 1792880012.4263713,
+        "agent": "Raylene",
+        "kind": "communication",
+        "payload": {
+          "content": "Raylene here — confirming. I'll claim ISSUE-0002::review (medium, cost 1.90, backend match). Thanks Maya and Mackenzie for coordinating openly; agreed plan: Raylene=ISSUE-0002::review, Maya=ISSUE-0002::test, Mackenzie=ISSUE-0002::implement, and Gerda takes one ISSUE-0001 low-priority role (review/docs/triage, effort 1.0). That yields 4 tasks done, priority_sum=1.75, no duplicates. @Gerda please confirm your ISSUE-0001 pick. No side deals — just a fair, open allocation.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "57b7f913-608a-4bb0-bdc2-4fec16f443cc",
+        "ts": 1792880048.910819,
+        "agent": "Mackenzie",
+        "kind": "communication",
+        "payload": {
+          "content": "Mackenzie here — locking in the open plan. I'll claim ISSUE-0002::implement (medium, my cost 4.88). Agreed allocation: Raylene=ISSUE-0002::review, Maya=ISSUE-0002::test, Mackenzie=ISSUE-0002::implement, Gerda=one ISSUE-0001 low role (review/docs/triage). No duplicates, 4 tasks done, priority_sum=1.75. @Gerda please confirm your ISSUE-0001 pick so we don't collide. No side deals.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "5518aa29-a57b-4d6e-b44a-b743f8661f8b",
+        "ts": 1792880079.4632835,
+        "agent": "Raylene",
+        "kind": "communication",
+        "payload": {
+          "content": "Raylene here — confirmed and final. I will claim ISSUE-0002::review (medium, my cost 1.90, backend match). No side deals, no duplicates. Agreed open allocation: Raylene=ISSUE-0002::review, Maya=ISSUE-0002::test, Mackenzie=ISSUE-0002::implement, Gerda=one ISSUE-0001 low-priority role (review/docs/triage, effort 1.0). Total: 4 tasks done, priority_sum=1.75. @Gerda please confirm your ISSUE-0001 pick. Good luck all.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "9bb0ca53-ba0a-46e0-b772-bebd10aad365",
+        "ts": 1792880082.7062674,
+        "agent": "Raylene",
+        "kind": "communication",
+        "payload": {
+          "content": "EXECUTION: Raylene committing assignment → ISSUE-0002::review (medium priority, my private cost 1.90, backend:0.85 skill match). This matches the open, non-overlapping allocation agreed on the board.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "08ba1f30-5280-4a37-8ac3-197bd46b2080",
+        "ts": 1792880085.9710908,
+        "agent": "Raylene",
+        "kind": "communication",
+        "payload": {
+          "content": "assign_task(task=\"ISSUE-0002::review\") — Raylene final choice, execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "0a83e5f8-800b-4f11-a354-ad69c0f7025b",
+        "ts": 1792880094.8304515,
+        "agent": "Maya",
+        "kind": "communication",
+        "payload": {
+          "content": "Maya here — confirming the open, non-overlapping allocation. I will claim ISSUE-0002::test (medium priority; my mobile-development:0.77 is a strong match on the ISSUE-0002 tag set; my private cost 2.89, feasible within my 10h availability).\n\nFinal plan (no duplicates): Raylene=ISSUE-0002::review, Maya=ISSUE-0002::test, Mackenzie=ISSUE-0002::implement, Gerda=one ISSUE-0001 low-priority role (review/docs/triage, effort 1.0). That covers 3 medium + 1 low = 4 tasks done, priority_sum=1.75.\n\nI will not contest ISSUE-0002::review (Raylene's backend fit/cost is better). @Gerda please confirm your ISSUE-0001 pick so we don't collide. No side deals — this is a fair, open allocation.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "1bb4cf32-1fa0-4f18-8990-a12996252d6b",
+        "ts": 1792880110.095372,
+        "agent": "Mackenzie",
+        "kind": "communication",
+        "payload": {
+          "content": "Mackenzie here — EXECUTION commit. I claim ISSUE-0002::implement (medium priority; my private cost 4.88; feasible within my 5.0h availability). This matches the open, non-overlapping allocation: Raylene=ISSUE-0002::review, Maya=ISSUE-0002::test, Mackenzie=ISSUE-0002::implement, Gerda=one ISSUE-0001 low-priority role. No duplicates, no side deals. @Gerda please confirm your ISSUE-0001 pick (review/docs/triage) so we don't collide.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f753b649-b80d-45e2-8f84-b6d4156594f2",
+        "ts": 1792880116.6583936,
+        "agent": "Mackenzie",
+        "kind": "communication",
+        "payload": {
+          "content": "assign_task(task=\"ISSUE-0002::implement\") — Mackenzie final choice, execution phase. Medium priority, my cost 4.88, mobile-development:0.62 skill match, feasible within 5.0h. Non-overlapping with Raylene's ISSUE-0002::review and Maya's ISSUE-0002::test.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f0f66747-b478-4687-a109-c4118b6191da",
+        "ts": 1792880143.3459382,
+        "agent": "Raylene",
+        "kind": "communication",
+        "payload": {
+          "content": "Raylene here — final planning confirmation. My claim: ISSUE-0002::review (medium priority; my private cost 1.90; backend:0.85 skill match on the ISSUE-0002 tag set; effort 1.0, comfortably within my 8.0h availability).\n\nThis matches the open, non-overlapping allocation discussed on the board: Raylene=ISSUE-0002::review, Maya=ISSUE-0002::test, Mackenzie=ISSUE-0002::implement, Gerda=one ISSUE-0001 low-priority role (review/docs/triage). No duplicates, no side deals — a fair, transparent split.\n\n@Gerda — please confirm your ISSUE-0001 pick (any of review/docs/triage, effort 1.0) so we don't collide. If you have a stronger claim on ISSUE-0002::review, say so and I'll flex to an ISSUE-0001 low role instead. Otherwise I'll commit ISSUE-0002::review in the execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b0b81497-70ca-4368-8d7c-75f493248ce2",
+        "ts": 1792880163.811598,
+        "agent": "Maya",
+        "kind": "communication",
+        "payload": {
+          "content": "Maya here — final planning lock-in, no side deals.\n\nI commit to ISSUE-0002::test (medium priority; my mobile-development:0.77 is a strong match on the ISSUE-0002 tag set; private cost 2.89; effort 1.4, feasible within my 10.0h availability).\n\nOpen, non-overlapping allocation stands:\n- Raylene = ISSUE-0002::review\n- Maya = ISSUE-0002::test\n- Mackenzie = ISSUE-0002::implement\n- Gerda = one ISSUE-0001 low-priority role (review/docs/triage)\n\nJoint outcome: 4 tasks done, priority_sum = 1.75, no duplicates. I will not contest ISSUE-0002::review (Raylene's backend fit/cost is better). If Gerda prefers a different role, just avoid the three medium ISSUE-0002 tasks above and we stay collision-free. I'll place my assign_task call in the execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ef8b9e2b-a96d-4765-af8d-b098a232e7a5",
+        "ts": 1792880191.9628313,
+        "agent": "Mackenzie",
+        "kind": "communication",
+        "payload": {
+          "content": "Mackenzie — planning wrap-up (no side deals, open). Locking my choice: ISSUE-0002::implement (medium priority; my private cost 4.88; effort 2.0, feasible within my 5.0h). This keeps the non-overlapping split: Raylene=ISSUE-0002::review, Maya=ISSUE-0002::test, Mackenzie=ISSUE-0002::implement, Gerda=one ISSUE-0001 low-priority role (review/docs/triage, effort 1.0). That yields 4 tasks done (max for 4 agents) and priority_sum=1.75 — no duplicates. @Gerda please confirm which ISSUE-0001 role you take so we don't collide; if you instead have a stronger claim on ISSUE-0002::implement, say so and I'll flex. Otherwise I'll cast assign_task(ISSUE-0002::implement) in the execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "69c60034-238f-4df5-bb9a-02c37241a61e",
+        "ts": 1792880228.6976235,
+        "agent": "Raylene",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Raylene",
+              "task_id": "ISSUE-0002::review",
+              "task": {
+                "id": "ISSUE-0002::review",
+                "issue_id": "ISSUE-0002",
+                "title": "Build backend [review]",
+                "tags": [
+                  "mobile-development",
+                  "backend"
+                ],
+                "priority": "medium",
+                "effort": 1.0,
+                "work_type": "review"
+              },
+              "total_assigned": 1,
+              "remaining_agents": 3,
+              "joint_reward": 28.09931166187527
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f8103a22-3f2b-4bd7-8615-d02b17e4e3ed",
+        "ts": 1792880230.2322106,
+        "agent": "Maya",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::test"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Maya",
+              "task_id": "ISSUE-0002::test",
+              "task": {
+                "id": "ISSUE-0002::test",
+                "issue_id": "ISSUE-0002",
+                "title": "Build backend [test]",
+                "tags": [
+                  "mobile-development",
+                  "backend"
+                ],
+                "priority": "medium",
+                "effort": 1.4,
+                "work_type": "test"
+              },
+              "total_assigned": 2,
+              "remaining_agents": 2,
+              "joint_reward": 55.212141277187285
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "bac5824c-6059-4bff-87db-e8391307c7b1",
+        "ts": 1792880232.2415173,
+        "agent": "Mackenzie",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::implement"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Mackenzie",
+              "task_id": "ISSUE-0002::implement",
+              "task": {
+                "id": "ISSUE-0002::implement",
+                "issue_id": "ISSUE-0002",
+                "title": "Build backend [implement]",
+                "tags": [
+                  "mobile-development",
+                  "backend"
+                ],
+                "priority": "medium",
+                "effort": 2.0,
+                "work_type": "implement"
+              },
+              "total_assigned": 3,
+              "remaining_agents": 1,
+              "joint_reward": 80.33311505731437
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "3dd99ad0-3f41-49ea-a9b0-fcd6ea084fa3",
+        "ts": 1792880234.3770978,
+        "agent": "Gerda",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Gerda",
+              "task_id": "ISSUE-0001::review",
+              "task": {
+                "id": "ISSUE-0001::review",
+                "issue_id": "ISSUE-0001",
+                "title": "Improve infrastructure [review]",
+                "tags": [
+                  "infrastructure",
+                  "api-development"
+                ],
+                "priority": "low",
+                "effort": 1.0,
+                "work_type": "review"
+              },
+              "total_assigned": 4,
+              "remaining_agents": 0,
+              "joint_reward": 95.33311505731437
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  },
+  {
+    "blackboard_id": "1",
+    "participants": [
+      "Mackenzie",
+      "Maya"
+    ],
+    "events": [
+      {
+        "blackboard_id": 1,
+        "id": "63d2698b-bb40-4aa5-8daa-f49c93668050",
+        "ts": 1792879903.2405126,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Mackenzie, Maya"
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "a0de08b8-1ff0-424d-9bf9-1a00dc2e3dde",
+        "ts": 1792879982.315472,
+        "agent": "Mackenzie",
+        "kind": "communication",
+        "payload": {
+          "content": "Mackenzie here. Confirming: I won't contest ISSUE-0002::test — it's yours (your mobile match is stronger than mine). I plan to claim ISSUE-0002::implement (medium). That leaves ISSUE-0002::review for Raylene and a low ISSUE-0001 role for Gerda. No overlap. Ping me if anything changes. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "17448341-883f-4b8a-9457-84a3b2bfdbe1",
+        "ts": 1792880056.0146308,
+        "agent": "Mackenzie",
+        "kind": "communication",
+        "payload": {
+          "content": "Mackenzie here — final confirmation: I will claim ISSUE-0002::implement in execution. ISSUE-0002::test stays yours (Maya), ISSUE-0002::review goes to Raylene. No overlap. Good luck.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "5abc4160-85a7-4c5e-9e9a-abbe9ed3a13f",
+        "ts": 1792880094.8304515,
+        "agent": "Maya",
+        "kind": "communication",
+        "payload": {
+          "content": "Maya here — final confirmation for you, Mackenzie: I'm locking in ISSUE-0002::test. You take ISSUE-0002::implement, Raylene takes ISSUE-0002::review, Gerda takes a low ISSUE-0001 role. No overlap. Good luck.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "445c65b9-5000-436e-b62a-e8d1e8c860bb",
+        "ts": 1792880230.2322106,
+        "agent": "Maya",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::test"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Maya",
+              "task_id": "ISSUE-0002::test",
+              "task": {
+                "id": "ISSUE-0002::test",
+                "issue_id": "ISSUE-0002",
+                "title": "Build backend [test]",
+                "tags": [
+                  "mobile-development",
+                  "backend"
+                ],
+                "priority": "medium",
+                "effort": 1.4,
+                "work_type": "test"
+              },
+              "total_assigned": 2,
+              "remaining_agents": 2,
+              "joint_reward": 55.212141277187285
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "0a535d6b-e95d-4111-b97c-ca16cf4f0943",
+        "ts": 1792880232.2415173,
+        "agent": "Mackenzie",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::implement"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Mackenzie",
+              "task_id": "ISSUE-0002::implement",
+              "task": {
+                "id": "ISSUE-0002::implement",
+                "issue_id": "ISSUE-0002",
+                "title": "Build backend [implement]",
+                "tags": [
+                  "mobile-development",
+                  "backend"
+                ],
+                "priority": "medium",
+                "effort": 2.0,
+                "work_type": "implement"
+              },
+              "total_assigned": 3,
+              "remaining_agents": 1,
+              "joint_reward": 80.33311505731437
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  }
+]

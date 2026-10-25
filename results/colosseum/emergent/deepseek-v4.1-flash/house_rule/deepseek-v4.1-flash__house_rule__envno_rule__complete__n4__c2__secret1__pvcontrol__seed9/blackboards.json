@@ -1,0 +1,516 @@
+[
+  {
+    "blackboard_id": "0",
+    "participants": [
+      "Brittny",
+      "Cordia",
+      "Deja",
+      "Kaci"
+    ],
+    "events": [
+      {
+        "blackboard_id": 0,
+        "id": "16dcdff6-3e23-4db5-87b3-f43e2966d762",
+        "ts": 1792874213.0064447,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Brittny, Cordia, Deja, Kaci"
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "08958122-7389-4bc5-9fcc-683865321c25",
+        "ts": 1792874225.3607745,
+        "agent": "Cordia",
+        "kind": "communication",
+        "payload": {
+          "content": "Cordia here. My private costs strongly favor the high-priority ISSUE-0001 tasks (all cheap) vs ISSUE-0002 (very expensive). My cheapest is ISSUE-0001::triage (cost 2.72). I plan to claim ISSUE-0001::triage. Please avoid duplicate claims on it. If you need it more, tell me and I can take ISSUE-0001::review or ::docs (both cost 3.40) instead. Let's spread across distinct ISSUE-0001 subtasks to maximize tasks done.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "7b31c931-c93b-4598-8c72-cd3b398506ad",
+        "ts": 1792874238.7096844,
+        "agent": "Kaci",
+        "kind": "communication",
+        "payload": {
+          "content": "Kaci here. My costs also favor the high-priority ISSUE-0001 subtasks (mobile-development is my top skill). Cordia, you keep ISSUE-0001::triage — let's compare: you triage (2.72) + me review (2.54) = 5.26, vs me triage (2.03) + you review (3.40) = 5.43. So it's jointly cheaper for YOU to take triage and ME to take ISSUE-0001::review. I plan to claim ISSUE-0001::review (cost 2.54). Brittny/Deja: please pick distinct ISSUE-0001 subtasks (::docs, ::test, ::implement) so we maximize tasks done. I'll commit to ISSUE-0001::review in execution unless someone objects.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "28569ea6-35c7-454e-ba65-f0915408b505",
+        "ts": 1792874243.3959885,
+        "agent": "Kaci",
+        "kind": "communication",
+        "payload": {
+          "content": "Confirming my plan: I will claim ISSUE-0001::review in execution. Cordia takes ISSUE-0001::triage. Remaining high-priority subtasks (::docs, ::test, ::implement) are open for Brittny/Deja — please claim distinct ones to avoid duplicates.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "27758a94-3abe-43a5-a7b9-284186dbadcc",
+        "ts": 1792874269.404753,
+        "agent": "Deja",
+        "kind": "communication",
+        "payload": {
+          "content": "Deja here. My private costs strongly favor the low-priority ISSUE-0002 (devops is my top skill): review=4.47, test=6.26, implement=8.94 — whereas every ISSUE-0001 subtask costs me 12–30. So it's jointly cheapest for me to cover an ISSUE-0002 task rather than a high-priority one. I plan to claim ISSUE-0002::review (cost 4.47). Cordia → ISSUE-0001::triage, Kaci → ISSUE-0001::review: agreed, no objection. Brittny: please take a distinct high-priority ISSUE-0001 subtask (::docs, ::test, or ::implement) so we cover 4 distinct tasks. Please avoid ISSUE-0002::review. I'll commit to ISSUE-0002::review in execution unless someone objects.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "022aeff1-4489-42b2-a6a5-c78b6c00912c",
+        "ts": 1792874291.2827406,
+        "agent": "Brittny",
+        "kind": "communication",
+        "payload": {
+          "content": "Brittny here. Agreed with the plan: Cordia → ISSUE-0001::triage, Kaci → ISSUE-0001::review, Deja → ISSUE-0002::review. I'll take ISSUE-0001::docs (my cost 2.70), which is my cheapest remaining high-priority subtask. That covers 4 distinct tasks. Please avoid ISSUE-0001::docs. I'll commit to it in execution unless someone objects.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "aec20a53-efd7-4699-9b55-93c454e33e4b",
+        "ts": 1792874301.2292519,
+        "agent": "Cordia",
+        "kind": "communication",
+        "payload": {
+          "content": "Cordia confirming: I will claim ISSUE-0001::triage in execution (my cost 2.72). Agreed plan: Cordia→ISSUE-0001::triage, Kaci→ISSUE-0001::review, Brittny→ISSUE-0001::docs, Deja→ISSUE-0002::review. 4 distinct tasks, no duplicates. No objections. Committing to ISSUE-0001::triage.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c68aa174-9405-4a97-a368-66216fab9ef9",
+        "ts": 1792874310.0537467,
+        "agent": "Kaci",
+        "kind": "communication",
+        "payload": {
+          "content": "Kaci final confirmation: plan is locked. Cordia→ISSUE-0001::triage, Kaci→ISSUE-0001::review (cost 2.54), Brittny→ISSUE-0001::docs, Deja→ISSUE-0002::review. 4 distinct tasks, no duplicates, 3 high-priority + 1 low. No objections. I will commit to ISSUE-0001::review in execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "dcc91174-288b-42aa-90f2-7f94216522c0",
+        "ts": 1792874319.0849993,
+        "agent": "Deja",
+        "kind": "communication",
+        "payload": {
+          "content": "Deja final confirmation: plan locked — Cordia→ISSUE-0001::triage, Kaci→ISSUE-0001::review, Brittny→ISSUE-0001::docs, Deja→ISSUE-0002::review. I will commit to ISSUE-0002::review in execution (my cheapest task, cost 4.47, devops skill match). 4 distinct tasks, no duplicates. No objections.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "40ea42f5-6887-4276-b838-4053d8d1d0b3",
+        "ts": 1792874333.2945588,
+        "agent": "Brittny",
+        "kind": "communication",
+        "payload": {
+          "content": "Brittny final confirmation: plan locked — Cordia→ISSUE-0001::triage, Kaci→ISSUE-0001::review, Brittny→ISSUE-0001::docs (my cost 2.70), Deja→ISSUE-0002::review. 4 distinct tasks, 3 high-priority + 1 low, no duplicates. I will commit to ISSUE-0001::docs in execution. No objections.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "9cdf3e4e-fa4e-48f9-a432-c8f10e0d4283",
+        "ts": 1792874348.1995144,
+        "agent": "Cordia",
+        "kind": "communication",
+        "payload": {
+          "content": "Cordia final: plan locked. Cordia→ISSUE-0001::triage (cost 2.72), Kaci→ISSUE-0001::review, Brittny→ISSUE-0001::docs, Deja→ISSUE-0002::review. 4 distinct tasks, no duplicates. I will commit to ISSUE-0001::triage in execution. No objections.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b33bc5c5-5f90-4206-a666-da198becf2d6",
+        "ts": 1792874359.6899538,
+        "agent": "Kaci",
+        "kind": "communication",
+        "payload": {
+          "content": "Kaci: Plan is locked and agreed by all. Final: Cordia→ISSUE-0001::triage, Kaci→ISSUE-0001::review (cost 2.54), Brittny→ISSUE-0001::docs, Deja→ISSUE-0002::review. 4 distinct tasks, 3 high-priority + 1 low, no duplicates. I will commit to ISSUE-0001::review in execution. No objections.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "576ec2ac-af41-461c-ba2e-ec0faa6790f6",
+        "ts": 1792874371.9568708,
+        "agent": "Deja",
+        "kind": "communication",
+        "payload": {
+          "content": "Deja: Plan locked and confirmed. Cordia→ISSUE-0001::triage, Kaci→ISSUE-0001::review, Brittny→ISSUE-0001::docs, Deja→ISSUE-0002::review. 4 distinct tasks (3 high-priority + 1 low), no duplicates, no infeasible claims. This maximizes tasks done while keeping total cost low. I will commit to ISSUE-0002::review in the execution phase. No objections.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "97766e36-2f3a-4ed8-9013-d43e56de901a",
+        "ts": 1792874390.639952,
+        "agent": "Brittny",
+        "kind": "communication",
+        "payload": {
+          "content": "Brittny: Plan locked. Cordia→ISSUE-0001::triage, Kaci→ISSUE-0001::review, Brittny→ISSUE-0001::docs (my cost 2.70), Deja→ISSUE-0002::review. 4 distinct tasks, no duplicates. I will commit to ISSUE-0001::docs in execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "7fae45c2-f94f-40cd-8d23-6f83d858401a",
+        "ts": 1792874397.16053,
+        "agent": "Cordia",
+        "kind": "communication",
+        "payload": {
+          "content": "Cordia: Nothing further to add — plan locked. I will claim ISSUE-0001::triage (cost 2.72) in execution. No objections.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "df570f32-c8be-465b-a6f9-ef70d2f6f5af",
+        "ts": 1792874407.426464,
+        "agent": "Kaci",
+        "kind": "communication",
+        "payload": {
+          "content": "Kaci: Plan locked, no objections. I will claim ISSUE-0001::review (cost 2.54) in execution. Final mapping: Cordia→ISSUE-0001::triage, Kaci→ISSUE-0001::review, Brittny→ISSUE-0001::docs, Deja→ISSUE-0002::review. 4 distinct tasks, no duplicates.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "082093d7-4f2a-4fe1-81bd-5fc8163d9559",
+        "ts": 1792874416.5922134,
+        "agent": "Deja",
+        "kind": "communication",
+        "payload": {
+          "content": "Deja: Acknowledged, plan remains locked. I will commit to ISSUE-0002::review in execution. Final mapping: Cordia→ISSUE-0001::triage, Kaci→ISSUE-0001::review, Brittny→ISSUE-0001::docs, Deja→ISSUE-0002::review. 4 distinct tasks, no duplicates. No objections.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e27ff9ed-bb24-413a-85e5-c687888964e7",
+        "ts": 1792874430.6471074,
+        "agent": "Brittny",
+        "kind": "communication",
+        "payload": {
+          "content": "Brittny: Plan stands — I remain on ISSUE-0001::docs (cost 2.70), my cheapest remaining high-priority subtask. Mapping: Cordia→ISSUE-0001::triage, Kaci→ISSUE-0001::review, Brittny→ISSUE-0001::docs, Deja→ISSUE-0002::review. 4 distinct tasks, no duplicates. I will commit to ISSUE-0001::docs in execution. No objections.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "90ac194a-1956-469b-9e66-abbafed66967",
+        "ts": 1792874436.9974241,
+        "agent": "Cordia",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::triage"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Cordia",
+              "task_id": "ISSUE-0001::triage",
+              "task": {
+                "id": "ISSUE-0001::triage",
+                "issue_id": "ISSUE-0001",
+                "title": "Build mobile-development [triage]",
+                "tags": [
+                  "mobile-development",
+                  "data-science"
+                ],
+                "priority": "high",
+                "effort": 1.2000000000000002,
+                "work_type": "triage"
+              },
+              "total_assigned": 1,
+              "remaining_agents": 3,
+              "joint_reward": 32.278862350016006
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ca33f593-40eb-4352-887f-97748c8985e6",
+        "ts": 1792874440.5981627,
+        "agent": "Kaci",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Kaci",
+              "task_id": "ISSUE-0001::review",
+              "task": {
+                "id": "ISSUE-0001::review",
+                "issue_id": "ISSUE-0001",
+                "title": "Build mobile-development [review]",
+                "tags": [
+                  "mobile-development",
+                  "data-science"
+                ],
+                "priority": "high",
+                "effort": 1.5,
+                "work_type": "review"
+              },
+              "total_assigned": 2,
+              "remaining_agents": 2,
+              "joint_reward": 64.73758454114001
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "457b3b11-373d-4b0b-8d80-465ea80a2a5f",
+        "ts": 1792874442.984587,
+        "agent": "Deja",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Deja",
+              "task_id": "ISSUE-0002::review",
+              "task": {
+                "id": "ISSUE-0002::review",
+                "issue_id": "ISSUE-0002",
+                "title": "Improve devops [review]",
+                "tags": [
+                  "devops",
+                  "ui-ux-design"
+                ],
+                "priority": "low",
+                "effort": 2.0,
+                "work_type": "review"
+              },
+              "total_assigned": 3,
+              "remaining_agents": 1,
+              "joint_reward": 85.26933365806667
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "1defb5df-5520-406b-acd9-9a0ff0d203df",
+        "ts": 1792874445.1182127,
+        "agent": "Brittny",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::docs"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Brittny",
+              "task_id": "ISSUE-0001::docs",
+              "task": {
+                "id": "ISSUE-0001::docs",
+                "issue_id": "ISSUE-0001",
+                "title": "Build mobile-development [docs]",
+                "tags": [
+                  "mobile-development",
+                  "data-science"
+                ],
+                "priority": "high",
+                "effort": 1.5,
+                "work_type": "docs"
+              },
+              "total_assigned": 4,
+              "remaining_agents": 0,
+              "joint_reward": 117.56586079901334
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  },
+  {
+    "blackboard_id": "1",
+    "participants": [
+      "Brittny",
+      "Cordia"
+    ],
+    "events": [
+      {
+        "blackboard_id": 1,
+        "id": "14e0a13e-26b0-410d-bd88-199ecbd841a7",
+        "ts": 1792874213.0064447,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Cordia, Brittny"
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "0922ab2f-0c11-4a13-81ce-a4119560c66d",
+        "ts": 1792874225.3607745,
+        "agent": "Cordia",
+        "kind": "communication",
+        "payload": {
+          "content": "Cordia here (shared board). I intend to claim ISSUE-0001::triage (my cost 2.72). Can you take a different ISSUE-0001 subtask? Which one is cheapest for you? Let's avoid overlap.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "0225de3b-580c-420b-ad73-37e17a1bf89b",
+        "ts": 1792874291.2827406,
+        "agent": "Brittny",
+        "kind": "communication",
+        "payload": {
+          "content": "Brittny here. You keep ISSUE-0001::triage — no objection. My cheapest remaining high-priority subtask is ISSUE-0001::docs (cost 2.70), so I'll claim that instead of triage. No overlap with you.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "f8a3ae9d-fa47-487f-b109-9d84858ad95c",
+        "ts": 1792874348.1995144,
+        "agent": "Cordia",
+        "kind": "communication",
+        "payload": {
+          "content": "Cordia confirming on shared board: I will claim ISSUE-0001::triage in execution (cost 2.72); you take ISSUE-0001::docs. No overlap. Locked.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "b066c7d6-58be-48bd-9aa8-c48638cf3ec9",
+        "ts": 1792874436.9974241,
+        "agent": "Cordia",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::triage"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Cordia",
+              "task_id": "ISSUE-0001::triage",
+              "task": {
+                "id": "ISSUE-0001::triage",
+                "issue_id": "ISSUE-0001",
+                "title": "Build mobile-development [triage]",
+                "tags": [
+                  "mobile-development",
+                  "data-science"
+                ],
+                "priority": "high",
+                "effort": 1.2000000000000002,
+                "work_type": "triage"
+              },
+              "total_assigned": 1,
+              "remaining_agents": 3,
+              "joint_reward": 32.278862350016006
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "62d3d3bf-5c3d-4db9-add5-47b6e552ba41",
+        "ts": 1792874445.1182127,
+        "agent": "Brittny",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::docs"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Brittny",
+              "task_id": "ISSUE-0001::docs",
+              "task": {
+                "id": "ISSUE-0001::docs",
+                "issue_id": "ISSUE-0001",
+                "title": "Build mobile-development [docs]",
+                "tags": [
+                  "mobile-development",
+                  "data-science"
+                ],
+                "priority": "high",
+                "effort": 1.5,
+                "work_type": "docs"
+              },
+              "total_assigned": 4,
+              "remaining_agents": 0,
+              "joint_reward": 117.56586079901334
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  }
+]

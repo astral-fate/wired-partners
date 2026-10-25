@@ -1,0 +1,488 @@
+[
+  {
+    "blackboard_id": "0",
+    "participants": [
+      "Frida",
+      "Hipolito",
+      "Lamont",
+      "Lawanna"
+    ],
+    "events": [
+      {
+        "blackboard_id": 0,
+        "id": "78d58585-8e2d-4604-a9cf-2e1d3b0bb98e",
+        "ts": 1792874145.0905917,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Frida, Hipolito, Lamont, Lawanna"
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d1fd758d-21a0-4774-853f-ea14513d7c48",
+        "ts": 1792874151.21515,
+        "agent": "Lawanna",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi all — Lawanna here. My skills are ui-ux-design (0.82) and my cheap tasks are all on ISSUE-0001 (costs ~1.09-2.17); ISSUE-0002 tasks cost me 40-80, so I'm not competitive there. I'd like to claim ISSUE-0001::review (cost 1.09, high priority, effort 1.0). Please avoid duplicating that one and let me know if you need it — I can flex to ISSUE-0001::docs or ::triage (also 1.09) instead. Who's taking what?",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "de0c4188-e65f-41db-bdef-468b74c40231",
+        "ts": 1792874162.5673978,
+        "agent": "Hipolito",
+        "kind": "communication",
+        "payload": {
+          "content": "Hipolito here. My skills: documentation 0.78, ui-ux-design 0.64. Availability 5.0h. My costs are all low on ISSUE-0001 (review/docs/triage = 1.36, test = 1.90, implement = 2.71) and very high on ISSUE-0002 (8.18-19.36), so I'm only competitive on ISSUE-0001.\n\nProposal: Lawanna takes ISSUE-0001::review (her cheapest), and I take ISSUE-0001::docs (cost 1.36, high priority). That avoids a duplicate. Frida/Lamont — please take the ISSUE-0002 tasks (or remaining ISSUE-0001 slots). If anyone strongly needs docs, I can flex to ISSUE-0001::triage instead. Let me know.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "103b260b-febf-4de4-a63c-2500dc7d3079",
+        "ts": 1792874174.3706481,
+        "agent": "Lamont",
+        "kind": "communication",
+        "payload": {
+          "content": "Lamont here. My skills are data-science (0.96) and documentation (0.82), so I'm strongly matched to ISSUE-0002 (tags: documentation, data-science). My costs: ISSUE-0002::review=4.04, ::test=7.26, ::implement=12.08; all ISSUE-0001 tasks cost me 10-20. Availability 4.0h.\n\nProposal: I claim ISSUE-0002::review (cost 4.04, effort 4.0 = my availability, high priority). That leaves ISSUE-0001 tasks for Lawanna/Hipolito and ISSUE-0002::implement/::test for Frida. Frida — which ISSUE-0002 task do you want? I can flex to ::test if needed, but ::review is my cheapest. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "35aab964-0674-4a67-8cd5-95332d8b1562",
+        "ts": 1792874193.735628,
+        "agent": "Frida",
+        "kind": "communication",
+        "payload": {
+          "content": "Frida here. Skills: ui-ux-design 0.94, data-science 0.73. Availability 4.0h. My costs: ISSUE-0001 review/docs/triage = 0.96 each, test = 1.35, implement = 1.93; ISSUE-0002 review = 8.56, test = 13.59, implement = 21.13. So I'm only competitive on ISSUE-0001 low-effort tasks, and I'm the cheapest on them.\n\nProposed allocation (minimizes total cost, 4 tasks done, all high priority):\n- Lawanna → ISSUE-0001::review (1.09)\n- Hipolito → ISSUE-0001::docs (1.36)\n- Frida (me) → ISSUE-0001::triage (0.96)\n- Lamont → ISSUE-0002::review (4.04)\n\nThis gives everyone their stated preference with no duplicates. Total ≈ 7.45. Since review/docs/triage cost me the same (0.96), I'm happy to swap to review or docs if either of you needs it — just tell me. Lamont, please confirm ISSUE-0002::review. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "9ae332aa-f5e1-49a1-8b49-561d61bdc6ee",
+        "ts": 1792874205.9637122,
+        "agent": "Lawanna",
+        "kind": "communication",
+        "payload": {
+          "content": "Lawanna: Agreed with Frida's allocation — it's optimal. All 8 tasks are high priority, so priority_sum is fixed at 0.75×4 regardless; we just minimize cost with 4 distinct tasks. Since only Lawanna/Hipolito/Frida are cheap on ISSUE-0001 (review/docs/triage = 1.09/1.36/0.96) and Lamont's cheapest anywhere is ISSUE-0002::review (4.04), total ≈ 7.45 is the minimum achievable.\n\nConfirming my claim: ISSUE-0001::review (cost 1.09, high, effort 1.0).\n- Lawanna → ISSUE-0001::review (1.09)\n- Hipolito → ISSUE-0001::docs (1.36)\n- Frida → ISSUE-0001::triage (0.96)\n- Lamont → ISSUE-0002::review (4.04)\n\nNo duplicates, no infeasible claims. I'll commit ISSUE-0001::review in execution. If anyone needs my slot, say so now — otherwise we're locked in.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "2492f2a3-6636-4171-b1c4-5bf816515e3a",
+        "ts": 1792874227.8710632,
+        "agent": "Hipolito",
+        "kind": "communication",
+        "payload": {
+          "content": "Hipolito: Confirming the agreed allocation. I'll claim ISSUE-0001::docs (cost 1.36, high priority, effort 1.0, within my 5.0h availability).\n- Lawanna → ISSUE-0001::review (1.09)\n- Hipolito → ISSUE-0001::docs (1.36)\n- Frida → ISSUE-0001::triage (0.96)\n- Lamont → ISSUE-0002::review (4.04)\nNo duplicates, no infeasible claims, all high priority. Locked in from my side — I'll commit ISSUE-0001::docs in execution. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "57818c90-ba53-42e4-8a36-9fecd35a8a02",
+        "ts": 1792874234.7232227,
+        "agent": "Lamont",
+        "kind": "communication",
+        "payload": {
+          "content": "Lamont: Confirmed — I'll commit ISSUE-0002::review (cost 4.04, high priority, effort 4.0 = my 4.0h availability; strong skill match on documentation+data-science). Agreed allocation locked in:\n- Lawanna → ISSUE-0001::review (1.09)\n- Hipolito → ISSUE-0001::docs (1.36)\n- Frida → ISSUE-0001::triage (0.96)\n- Lamont → ISSUE-0002::review (4.04)\nNo duplicates, no infeasible claims, all high priority. Committing in execution. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f2035ad7-1b84-43a9-9fa7-aca08453d7e1",
+        "ts": 1792874249.2571595,
+        "agent": "Frida",
+        "kind": "communication",
+        "payload": {
+          "content": "Frida: Confirmed — I'll claim ISSUE-0001::triage (cost 0.96, high priority, effort 1.0, well within my 4.0h availability). Agreed allocation locked in:\n- Lawanna → ISSUE-0001::review (1.09)\n- Hipolito → ISSUE-0001::docs (1.36)\n- Frida → ISSUE-0001::triage (0.96)\n- Lamont → ISSUE-0002::review (4.04)\nAll 4 tasks high priority, no duplicates, no infeasible claims, total ≈ 7.45 (minimum). I'll commit ISSUE-0001::triage in execution. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d1c6be69-dd79-4499-a1bd-7ab1103f5141",
+        "ts": 1792874259.4668913,
+        "agent": "Lawanna",
+        "kind": "communication",
+        "payload": {
+          "content": "Lawanna: Final lock-in confirmed. Allocation stands:\n- Lawanna → ISSUE-0001::review (1.09)\n- Hipolito → ISSUE-0001::docs (1.36)\n- Frida → ISSUE-0001::triage (0.96)\n- Lamont → ISSUE-0002::review (4.04)\n4 distinct tasks, all high priority, no duplicates/infeasible claims, total ≈ 7.45 (minimum). I will commit ISSUE-0001::review in execution. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "9623ebfa-5620-49ee-9cf3-81d6f4720785",
+        "ts": 1792874274.1769793,
+        "agent": "Hipolito",
+        "kind": "communication",
+        "payload": {
+          "content": "Hipolito: Agreed and locked. No changes from my side — I will claim ISSUE-0001::docs (cost 1.36, high priority, effort 1.0, within my 5.0h). Final: Lawanna→ISSUE-0001::review, Hipolito→ISSUE-0001::docs, Frida→ISSUE-0001::triage, Lamont→ISSUE-0002::review. Committing in execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e9b8313a-09ea-4fe8-865c-1c1468f19548",
+        "ts": 1792874301.3831792,
+        "agent": "Frida",
+        "kind": "communication",
+        "payload": {
+          "content": "Frida: Final confirmation — allocation locked, no changes. I will commit ISSUE-0001::triage (cost 0.96, high priority, effort 1.0, within my 4.0h availability). Final: Lawanna→ISSUE-0001::review, Hipolito→ISSUE-0001::docs, Frida→ISSUE-0001::triage, Lamont→ISSUE-0002::review. 4 distinct high-priority tasks, no duplicates/infeasible claims, total ≈ 7.45 (minimum). See you in execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "733c64bb-0fcc-4047-b812-b3035a1f21e3",
+        "ts": 1792874313.180826,
+        "agent": "Lawanna",
+        "kind": "communication",
+        "payload": {
+          "content": "Lawanna: Confirmed, no changes. I will claim ISSUE-0001::review (cost 1.09, high priority, effort 1.0, well within my 10.0h availability). Final allocation: Lawanna→ISSUE-0001::review, Hipolito→ISSUE-0001::docs, Frida→ISSUE-0001::triage, Lamont→ISSUE-0002::review. 4 distinct high-priority tasks, no duplicates/infeasible claims. Committing in execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b0667878-485d-4b63-91d5-00cab60a6719",
+        "ts": 1792874327.2508745,
+        "agent": "Hipolito",
+        "kind": "communication",
+        "payload": {
+          "content": "Hipolito: Locked in, no changes. I'll claim ISSUE-0001::docs (cost 1.36, high priority, effort 1.0, within my 5.0h). Final: Lawanna→ISSUE-0001::review, Hipolito→ISSUE-0001::docs, Frida→ISSUE-0001::triage, Lamont→ISSUE-0002::review. 4 distinct high-priority tasks, no duplicates/infeasible claims. Committing in execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "cb3dfa40-9b34-49d6-8fbb-019546f90153",
+        "ts": 1792874338.4326217,
+        "agent": "Lamont",
+        "kind": "communication",
+        "payload": {
+          "content": "Lamont: Plan confirmed and unchanged. I will commit ISSUE-0002::review (cost 4.04, high priority, effort 4.0 = my 4.0h availability, strong match on documentation+data-science). Final: Lawanna→ISSUE-0001::review, Hipolito→ISSUE-0001::docs, Frida→ISSUE-0001::triage, Lamont→ISSUE-0002::review. 4 distinct high-priority tasks, no duplicates/infeasible claims. Committing in execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "995272f0-09b7-4579-8fd6-30349971a9da",
+        "ts": 1792874352.8508463,
+        "agent": "Frida",
+        "kind": "communication",
+        "payload": {
+          "content": "Frida: Locked in, no changes. I will claim ISSUE-0001::triage (cost 0.96, high priority, effort 1.0, within my 4.0h). Final: Lawanna→ISSUE-0001::review, Hipolito→ISSUE-0001::docs, Frida→ISSUE-0001::triage, Lamont→ISSUE-0002::review. 4 distinct high-priority tasks, no duplicates/infeasible claims, total ≈ 7.45 (minimum). Committing in execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a4df5baa-123f-4380-8db8-2a8664f3e1cc",
+        "ts": 1792874363.5809488,
+        "agent": "Lawanna",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Lawanna",
+              "task_id": "ISSUE-0001::review",
+              "task": {
+                "id": "ISSUE-0001::review",
+                "issue_id": "ISSUE-0001",
+                "title": "Build ui-ux-design [review]",
+                "tags": [
+                  "ui-ux-design"
+                ],
+                "priority": "high",
+                "effort": 1.0,
+                "work_type": "review"
+              },
+              "total_assigned": 1,
+              "remaining_agents": 3,
+              "joint_reward": 33.91474928736231
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "97dd6c49-f44c-4e72-bb9b-599ad95b7c2d",
+        "ts": 1792874365.835158,
+        "agent": "Hipolito",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::docs"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Hipolito",
+              "task_id": "ISSUE-0001::docs",
+              "task": {
+                "id": "ISSUE-0001::docs",
+                "issue_id": "ISSUE-0001",
+                "title": "Build ui-ux-design [docs]",
+                "tags": [
+                  "ui-ux-design"
+                ],
+                "priority": "high",
+                "effort": 1.0,
+                "work_type": "docs"
+              },
+              "total_assigned": 2,
+              "remaining_agents": 2,
+              "joint_reward": 67.55883942142167
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "0d16c8d2-ad62-4c2b-a868-c7a66f21ed08",
+        "ts": 1792874368.2069807,
+        "agent": "Lamont",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Lamont",
+              "task_id": "ISSUE-0002::review",
+              "task": {
+                "id": "ISSUE-0002::review",
+                "issue_id": "ISSUE-0002",
+                "title": "Build data-science [review]",
+                "tags": [
+                  "documentation",
+                  "data-science"
+                ],
+                "priority": "high",
+                "effort": 4.0,
+                "work_type": "review"
+              },
+              "total_assigned": 3,
+              "remaining_agents": 1,
+              "joint_reward": 98.51829101123462
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a4aebc91-4620-49a4-812f-4500a593fa13",
+        "ts": 1792874370.8789845,
+        "agent": "Frida",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::triage"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Frida",
+              "task_id": "ISSUE-0001::triage",
+              "task": {
+                "id": "ISSUE-0001::triage",
+                "issue_id": "ISSUE-0001",
+                "title": "Build ui-ux-design [triage]",
+                "tags": [
+                  "ui-ux-design"
+                ],
+                "priority": "high",
+                "effort": 1.0,
+                "work_type": "triage"
+              },
+              "total_assigned": 4,
+              "remaining_agents": 0,
+              "joint_reward": 132.55463336453016
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  },
+  {
+    "blackboard_id": "1",
+    "participants": [
+      "Lamont",
+      "Lawanna"
+    ],
+    "events": [
+      {
+        "blackboard_id": 1,
+        "id": "61c9a68f-7d5e-411f-953e-0b90c6566199",
+        "ts": 1792874145.0905917,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Lamont, Lawanna"
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "1b4c06a4-2cab-4e52-89bf-1cf1f645b07d",
+        "ts": 1792874151.21515,
+        "agent": "Lawanna",
+        "kind": "communication",
+        "payload": {
+          "content": "Lamont — Lawanna here. I plan to claim ISSUE-0001::review (my cost 1.09, high priority). If you also want an ISSUE-0001 task, I can flex to ::docs or ::triage so we don't collide. Let me know your pick.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "322578b6-40a9-43e2-9e75-a9de82a533db",
+        "ts": 1792874174.3706481,
+        "agent": "Lamont",
+        "kind": "communication",
+        "payload": {
+          "content": "Lamont here — no collision with you. I'm taking an ISSUE-0002 task (my skills match its tags), specifically ISSUE-0002::review (my cost 4.04). ISSUE-0001::review is all yours — go ahead and claim it. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "aafcd5e9-d378-4eed-b91f-be616add4c54",
+        "ts": 1792874288.745253,
+        "agent": "Lamont",
+        "kind": "communication",
+        "payload": {
+          "content": "Lamont: Locked in. I'll commit ISSUE-0002::review (cost 4.04, high priority, effort 4.0 matching my 4.0h availability, strong match on documentation+data-science tags) during execution. ISSUE-0001::review is yours, Lawanna — no collision. See you in execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "fedb541e-4475-4136-a23f-c333d5ebf8f9",
+        "ts": 1792874363.5809488,
+        "agent": "Lawanna",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Lawanna",
+              "task_id": "ISSUE-0001::review",
+              "task": {
+                "id": "ISSUE-0001::review",
+                "issue_id": "ISSUE-0001",
+                "title": "Build ui-ux-design [review]",
+                "tags": [
+                  "ui-ux-design"
+                ],
+                "priority": "high",
+                "effort": 1.0,
+                "work_type": "review"
+              },
+              "total_assigned": 1,
+              "remaining_agents": 3,
+              "joint_reward": 33.91474928736231
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "6c204f57-1ef2-4c08-82a2-7f88c4ea9fe2",
+        "ts": 1792874368.2069807,
+        "agent": "Lamont",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Lamont",
+              "task_id": "ISSUE-0002::review",
+              "task": {
+                "id": "ISSUE-0002::review",
+                "issue_id": "ISSUE-0002",
+                "title": "Build data-science [review]",
+                "tags": [
+                  "documentation",
+                  "data-science"
+                ],
+                "priority": "high",
+                "effort": 4.0,
+                "work_type": "review"
+              },
+              "total_assigned": 3,
+              "remaining_agents": 1,
+              "joint_reward": 98.51829101123462
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  }
+]

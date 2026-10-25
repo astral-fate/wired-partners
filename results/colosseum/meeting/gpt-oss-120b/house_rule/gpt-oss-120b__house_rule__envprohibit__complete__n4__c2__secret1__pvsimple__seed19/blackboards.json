@@ -1,0 +1,560 @@
+[
+  {
+    "blackboard_id": "0",
+    "participants": [
+      "Avery",
+      "Jordan",
+      "Riley",
+      "Taylor"
+    ],
+    "events": [
+      {
+        "blackboard_id": 0,
+        "id": "e7bba657-ce03-4f2f-ac6f-6ceddcc4bbb8",
+        "ts": 1792879342.3387196,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "Decide attendance intervals for meetings on a shared timeline.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Avery, Jordan, Riley, Taylor"
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "36999291-0ceb-4ea9-b471-f7b76dca0bc8",
+        "ts": 1792879348.9053106,
+        "agent": "Jordan",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi team, I'm planning my attendance as follows:\n- Dentist appointment: full window [0,1)\n- Supervisor meeting: full window [1,2)\n- Job interview: full window [4,5)\n- Collaborative art workshop: I will attend the latter part [5,6) to avoid overlapping with my interview.\n- Study group: I plan to attend the full window [8,10).\nPlease let me know if these intervals work for you so we can maximize overlap rewards.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "62569be0-ace2-4774-af77-787200f6699f",
+        "ts": 1792879355.968513,
+        "agent": "Riley",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi team, here's my proposed attendance:\n- Dentist [0,1) (full)\n- Supervisor [1,2) (full)\n- Art workshop [5,6) (to overlap with Jordan's slot)\n- Doctor [8,9) (full)\n- Study group [9,10) (so we overlap with Jordan and avoid doctor overlap). Please let me know if these work for you (especially Taylor and Avery for art workshop and study group).",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d6060574-2dd9-4190-89e3-64d7f3aa3961",
+        "ts": 1792879367.2548597,
+        "agent": "Taylor",
+        "kind": "communication",
+        "payload": {
+          "content": "Taylor's proposed intervals:\n- Supervisor meeting (m001): full window [1,2)\n- Collaborative art workshop (m002): [5,6) to overlap with Jordan and Riley\n- Doctor's appointment (m004): full window [8,9)\n- Study group (m006): [9,10) to avoid overlap with doctor and still overlap with Jordan and Riley\nPlease let me know if these work for you so we can maximize overlap rewards.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e3f644c2-1638-4e1a-8f84-3f2c4dd805e6",
+        "ts": 1792879376.4230719,
+        "agent": "Avery",
+        "kind": "communication",
+        "payload": {
+          "content": "Avery's attendance proposal: Supervisor meeting full [1,2), Job interview full [4,5), Doctor's appointment full [8,9), Study group [9,10) to avoid overlap with doctor. Please confirm if this works for everyone.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e5b74e70-8b64-40b9-9ba7-7e1fe03e86d7",
+        "ts": 1792879384.975973,
+        "agent": "Jordan",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi everyone, thanks for sharing your proposals. I’m finalizing my attendance as:\n- Dentist appointment (m005): full window [0,1)\n- Supervisor meeting (m001): full window [1,2)\n- Job interview (m003): full window [4,5)\n- Collaborative art workshop (m002): [5,6) (to avoid conflict with the interview)\n- Study group (m006): full window [8,10)\nThis gives us overlap on the art workshop at [5,6] with Riley and Taylor, and on the study group at [9,10] with Riley, Taylor, and Avery. Please let me know if these intervals work for you or if any adjustments are needed before we move to the execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "480450ed-fb35-487c-9df0-6879b7c422be",
+        "ts": 1792879392.264963,
+        "agent": "Riley",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi all, confirming my strict meetings full windows: Dentist [0,1], Supervisor [1,2], Doctor [8,9]. For the soft sessions, I will attend the art workshop at [5,6] (aligning with Jordan and Taylor) and the study group at [9,10] (aligning with Taylor, Avery, and Jordan while avoiding overlap with the doctor appointment). Please let me know if this works for everyone.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "9136a445-94c0-4bef-b4e6-15332ea3d5b0",
+        "ts": 1792879397.8654444,
+        "agent": "Taylor",
+        "kind": "communication",
+        "payload": {
+          "content": "Taylor confirms: supervisor meeting full window [1,2), collaborative art workshop [5,6) to overlap with Jordan and Riley, doctor's appointment full [8,9), study group [9,10) to avoid doctor overlap. Please let me know if any adjustments are needed.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "1faf65eb-2d15-4202-8a61-79f5b9c53188",
+        "ts": 1792879403.2879944,
+        "agent": "Avery",
+        "kind": "communication",
+        "payload": {
+          "content": "Avery confirming: I'll attend the supervisor meeting full [1,2), the job interview full [4,5), the doctor's appointment full [8,9), and the study group [9,10) to overlap with everyone while avoiding conflict. Please let me know if any adjustments are needed.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "0721ef43-6387-4511-a654-c28283e3e136",
+        "ts": 1792879410.156207,
+        "agent": "Jordan",
+        "kind": "communication",
+        "payload": {
+          "content": "Thanks everyone for confirming. I'm finalizing my attendance as:\n- Dentist (m005): [0,1]\n- Supervisor (m001): [1,2]\n- Job interview (m003): [4,5]\n- Art workshop (m002): [5,6]\n- Study group (m006): [8,10]\nAll intervals respect strict windows and maximize overlap for soft sessions. Let me know if any last changes are needed before we move to execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "0d18dd5f-e043-4180-a2db-d5c3b5d39e2e",
+        "ts": 1792879414.083732,
+        "agent": "Riley",
+        "kind": "communication",
+        "payload": {
+          "content": "All set from my side: Dentist [0,1], Supervisor [1,2], Art workshop [5,6], Doctor [8,9], Study group [9,10]. This aligns with Jordan's and Taylor's slots and avoids doctor overlap. Let me know if any last tweaks are needed before we move to execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "1d7e9af9-46b5-4a5e-8426-8635beb4b159",
+        "ts": 1792879419.4341557,
+        "agent": "Taylor",
+        "kind": "communication",
+        "payload": {
+          "content": "Taylor confirms final attendance intervals: Supervisor meeting [1,2] (full), Collaborative art workshop [5,6], Doctor's appointment [8,9] (full), Study group [9,10]. All align with team proposals, maximizing overlap rewards and no self-overlap. Let me know if any changes are needed before execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b0ccba86-c16c-4bb1-82b7-a8858150e1df",
+        "ts": 1792879425.9753838,
+        "agent": "Avery",
+        "kind": "communication",
+        "payload": {
+          "content": "Avery confirming: Supervisor meeting full [1,2), Job interview full [4,5), Doctor's appointment full [8,9), Study group [9,10). Let me know if any adjustments are needed before execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "4e6b0846-a5fd-4452-819b-fe77c27ed9cb",
+        "ts": 1792879437.5259821,
+        "agent": "Jordan",
+        "kind": "communication",
+        "payload": {
+          "content": "Jordan: Thanks everyone for the confirmations. I’m locking in my final attendance intervals as follows:\n- Dentist appointment (m005): [0,1]\n- Supervisor meeting (m001): [1,2]\n- Job interview (m003): [4,5]\n- Collaborative art workshop (m002): [5,6]\n- Study group (m006): [8,10]\nAll strict meetings are covered fully, and soft sessions overlap with the team as discussed. Let me know if any last concerns before we move to execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "23ca2dfb-efe5-4abb-b20d-b0d603d675da",
+        "ts": 1792879442.9032722,
+        "agent": "Riley",
+        "kind": "communication",
+        "payload": {
+          "content": "Riley confirming final attendance intervals: Dentist [0,1], Supervisor [1,2], Art workshop [5,6], Doctor [8,9], Study group [9,10]. All strict meetings fully covered and soft sessions aligned with team. Ready for execution phase.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ac6a06c5-ead3-4ec3-a458-d619db6d276a",
+        "ts": 1792879449.4159002,
+        "agent": "Taylor",
+        "kind": "communication",
+        "payload": {
+          "content": "Taylor confirms final attendance intervals: Supervisor meeting [1,2] (full), Collaborative art workshop [5,6], Doctor's appointment [8,9] (full), Study group [9,10]. These align with the team's proposals and avoid any self-overlap. Let me know if any adjustments are needed before we move to execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "4c7f7681-2855-412f-8826-736d023e6834",
+        "ts": 1792879456.2145188,
+        "agent": "Avery",
+        "kind": "communication",
+        "payload": {
+          "content": "Avery confirming attendance: Supervisor full [1,2), Job interview full [4,5), Doctor full [8,9), Study group [9,10).",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "12a5a14b-ca05-4fe1-b89d-adfb7393d5a9",
+        "ts": 1792879461.2973022,
+        "agent": "Jordan",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m005",
+            "interval": "0-1"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Jordan",
+              "meeting": {
+                "id": "m005",
+                "title": "Dentist appointment",
+                "meeting_type": "strict",
+                "window": [
+                  0,
+                  1
+                ],
+                "participants": [
+                  "Riley",
+                  "Jordan"
+                ]
+              },
+              "interval": "0-1",
+              "total_assigned": 1,
+              "remaining_variables": 17,
+              "joint_reward": 1.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "bd565d44-4bc3-4f9b-b03d-dcb28d0a64a1",
+        "ts": 1792879462.7126174,
+        "agent": "Riley",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m005",
+            "interval": "0-1"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Riley",
+              "meeting": {
+                "id": "m005",
+                "title": "Dentist appointment",
+                "meeting_type": "strict",
+                "window": [
+                  0,
+                  1
+                ],
+                "participants": [
+                  "Riley",
+                  "Jordan"
+                ]
+              },
+              "interval": "0-1",
+              "total_assigned": 2,
+              "remaining_variables": 16,
+              "joint_reward": 2.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "64b80785-be5a-4b05-92b6-afd21aaf332c",
+        "ts": 1792879465.0287423,
+        "agent": "Taylor",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m001",
+            "interval": "1-2"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Taylor",
+              "meeting": {
+                "id": "m001",
+                "title": "One-on-one supervisor meeting",
+                "meeting_type": "strict",
+                "window": [
+                  1,
+                  2
+                ],
+                "participants": [
+                  "Jordan",
+                  "Riley",
+                  "Taylor",
+                  "Avery"
+                ]
+              },
+              "interval": "1-2",
+              "total_assigned": 3,
+              "remaining_variables": 15,
+              "joint_reward": 3.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "0bd04485-e956-4d92-8fbb-f441936bba82",
+        "ts": 1792879468.8040586,
+        "agent": "Avery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m001",
+            "interval": "1-2"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Avery",
+              "meeting": {
+                "id": "m001",
+                "title": "One-on-one supervisor meeting",
+                "meeting_type": "strict",
+                "window": [
+                  1,
+                  2
+                ],
+                "participants": [
+                  "Jordan",
+                  "Riley",
+                  "Taylor",
+                  "Avery"
+                ]
+              },
+              "interval": "1-2",
+              "total_assigned": 4,
+              "remaining_variables": 14,
+              "joint_reward": 4.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  },
+  {
+    "blackboard_id": "1",
+    "participants": [
+      "Avery",
+      "Taylor"
+    ],
+    "events": [
+      {
+        "blackboard_id": 1,
+        "id": "e071093c-927e-46bf-8984-8c207ffafeda",
+        "ts": 1792879342.339721,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "Decide attendance intervals for meetings on a shared timeline.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Avery, Taylor"
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "435aef43-01d7-43ef-94fb-8af258850f38",
+        "ts": 1792879368.7887642,
+        "agent": "Taylor",
+        "kind": "communication",
+        "payload": {
+          "content": "Avery, for the strict sessions we both need to attend the full windows: supervisor [1,2) and doctor [8,9). For the study group, let's pick [9,10) so we don't overlap with the doctor appointment and still get overlap rewards. Let me know if that works for you.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "6e2965cf-a882-4270-9a46-7332292af41d",
+        "ts": 1792879377.4809494,
+        "agent": "Avery",
+        "kind": "communication",
+        "payload": {
+          "content": "Taylor, I agree: supervisor [1,2), doctor [8,9), study group [9,10).",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "1875a3a2-4c99-45d1-874f-133b009c38ba",
+        "ts": 1792879399.082085,
+        "agent": "Taylor",
+        "kind": "communication",
+        "payload": {
+          "content": "Taylor: I agree with Avery's proposal—supervisor [1,2), doctor [8,9), study group [9,10). Let me know if any changes.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "0fe7f1d7-067e-4aaf-921d-e51c02dc3dff",
+        "ts": 1792879421.6484404,
+        "agent": "Taylor",
+        "kind": "communication",
+        "payload": {
+          "content": "Avery, confirming our coalition plan: Supervisor [1,2], Doctor [8,9], Study group [9,10]. All set for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "85f8b752-d889-43c6-aa4e-8108ab23fc2c",
+        "ts": 1792879427.0669212,
+        "agent": "Avery",
+        "kind": "communication",
+        "payload": {
+          "content": "Avery confirming coalition plan: Supervisor [1,2), Doctor [8,9), Study group [9,10). Ready for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "7afb8ea5-3492-4275-af43-a398968b018f",
+        "ts": 1792879454.9846864,
+        "agent": "Avery",
+        "kind": "communication",
+        "payload": {
+          "content": "Supervisor [1,2), Doctor [8,9), Study group [9,10) confirmed.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "793c485a-7508-4244-878a-28a9fadf0050",
+        "ts": 1792879465.0287423,
+        "agent": "Taylor",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m001",
+            "interval": "1-2"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Taylor",
+              "meeting": {
+                "id": "m001",
+                "title": "One-on-one supervisor meeting",
+                "meeting_type": "strict",
+                "window": [
+                  1,
+                  2
+                ],
+                "participants": [
+                  "Jordan",
+                  "Riley",
+                  "Taylor",
+                  "Avery"
+                ]
+              },
+              "interval": "1-2",
+              "total_assigned": 3,
+              "remaining_variables": 15,
+              "joint_reward": 3.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "b7aa8eb8-eb1f-43df-90e5-f2af7ee0cc46",
+        "ts": 1792879468.8040586,
+        "agent": "Avery",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "attend_meeting",
+          "action_params": {
+            "action": "attend_meeting",
+            "meeting_id": "m001",
+            "interval": "1-2"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Avery",
+              "meeting": {
+                "id": "m001",
+                "title": "One-on-one supervisor meeting",
+                "meeting_type": "strict",
+                "window": [
+                  1,
+                  2
+                ],
+                "participants": [
+                  "Jordan",
+                  "Riley",
+                  "Taylor",
+                  "Avery"
+                ]
+              },
+              "interval": "1-2",
+              "total_assigned": 4,
+              "remaining_variables": 14,
+              "joint_reward": 4.0
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,393 @@
+[
+  {
+    "blackboard_id": "0",
+    "participants": [
+      "Jeanene",
+      "Layla",
+      "Mona",
+      "Pauline"
+    ],
+    "events": [
+      {
+        "blackboard_id": 0,
+        "id": "8ba71d70-e48e-4116-96c3-b0f1212556c9",
+        "ts": 1792880893.183275,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Jeanene, Layla, Mona, Pauline"
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "5cc88c62-d3f0-4564-9865-e6bc02fe604c",
+        "ts": 1792880942.366235,
+        "agent": "Mona",
+        "kind": "communication",
+        "payload": {
+          "content": "Mona here (planning). My private profile: availability 7h, top skill = testing (0.87). My cheapest feasible tasks are the CRITICAL ISSUE-0002 ones (testing-tagged): review cost=7.44, test cost=10.42; implement (effort 8.0 > my 7h) cost=15.89. All ISSUE-0001 mobile-development tasks are expensive for me (16-40).\n\nProposal: I claim ISSUE-0002::review (critical, distinct, cheap for me). Request: please don't duplicate it. Jeanene/Layla/Pauline — can two of you cover ISSUE-0002::test and ISSUE-0002::implement, and the fourth take a cheap ISSUE-0001 task (triage effort 1.6 / docs 2.0 / review 2.0)? Post your intended claims so we avoid duplicates and maximize critical coverage. I'll finalize in execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e718e54b-db42-4866-9fbe-e188be53c03f",
+        "ts": 1792880975.0830674,
+        "agent": "Jeanene",
+        "kind": "communication",
+        "payload": {
+          "content": "Jeanene here (planning, iter=1). My profile: availability 6.0h, top skills testing=0.84, mobile-development=0.64.\n\nMy private costs:\n- ISSUE-0001 (low, mobile-dev): triage 2.16, review 2.70, docs 2.70, test 3.78, implement 5.40\n- ISSUE-0002 (critical, ui-ux+testing): review 7.72, test 10.81, implement 17.44 (effort 8.0 > my 6h availability → overloaded/poor fit for me)\n\nI'm a strong testing match, so I can cover a critical ISSUE-0002 slot. Proposal to maximize critical coverage (3 criticals + 1 low = 4 tasks done):\n- Mona: ISSUE-0002::review (as you proposed)\n- Jeanene: ISSUE-0002::test\n- Layla or Pauline (whoever has >=8h availability): ISSUE-0002::implement\n- The remaining agent: a cheap ISSUE-0001 task (triage 1.6 / docs 2.0 / review 2.0)\n\nKEY QUESTION for Layla & Pauline: what is your availability, and can either of you take ISSUE-0002::implement (needs 8h)? If implement is coverable by someone, I'll lock ISSUE-0002::test. If NOT, I'll flex to a cheap ISSUE-0001 task (e.g. triage) so we still hit 4 tasks done and avoid an overloaded claim. Please post your intended claim so we don't duplicate. I'll finalize in execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "1221c7ac-f476-4cc4-8782-a72847748637",
+        "ts": 1792880997.3922272,
+        "agent": "Layla",
+        "kind": "communication",
+        "payload": {
+          "content": "Layla here (planning, iter=1). Profile: availability 4.0h, top skills testing=0.90, mobile-development=0.77.\n\nMy private costs:\n- ISSUE-",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "6edb6cba-e81a-4fc9-9b87-8c0d576ad93f",
+        "ts": 1792881004.6999373,
+        "agent": "Layla",
+        "kind": "communication",
+        "payload": {
+          "content": "Layla here (planning, iter=1). Profile: availability 4.0h, top skills testing=0.90, mobile-development=0.77.\n\nMy private costs:\n- ISSUE-0001 (low): triage 1.83, review 2.29, docs 2.29, test 3.21, implement 4.58\n- ISSUE-0002 (critical): review 7.24 (effort 4.0 = my availability, FEASIBLE), test 11.74 (effort 5.6 > 4h → overloaded), implement 18.48 (effort 8.0 > 4h → overloaded)\n\nKEY: I CANNOT feasibly take ISSUE-0002::implement or ::test (both exceed my 4h). Among criticals I can only cover ::review, and I'm the cheapest on it (7.24 vs Mona 7.44, Jeanene 7.72).\n\nCost-minimizing suggestion (assuming implement is NOT coverable):\n- Layla: ISSUE-0002::review (7.24)  ← critical\n- Mona: ISSUE-0002::test (10.42)   ← critical, you're cheapest on test\n- Jeanene: ISSUE-0001::triage (2.16) ← cheap low\n- Pauline: your cheapest ISSUE-0001 low task\nThis yields 2 criticals + 2 lows, 4 tasks done. Compare Mona-review(7.44)+Jeanene-test(10.81)=18.25 vs my proposal Mona-test(10.42)+Layla-review(7.24)=17.66 → my proposal is cheaper by ~0.6 and also frees Jeanene for a cheap low.\n\nQUESTION for Pauline: what is your availability? If you have >=8h, you could take ISSUE-0002::implement so we cover all 3 criticals (priority_sum 3.25 vs 2.5) — that maximizes the lexicographic objective (tasks done, then priority).\n\nMy intended claim: ISSUE-0002::review. Mona — would you flex to ::test so we minimize cost? Please post your intended claim; I'll finalize in execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "8182966c-1a37-482a-861c-f9980034eda2",
+        "ts": 1792881047.5641851,
+        "agent": "Mona",
+        "kind": "communication",
+        "payload": {
+          "content": "Mona (planning, iter=1) — update. I accept the cost-minimizing flex: I will take ISSUE-0002::test (cost 10.42, the cheapest test) and let Layla take ISSUE-0002::review (7.24, cheapest review). That combo (Mona-test + Layla-review = 17.66) beats Mona-review + Jeanene-test (18.25), so it's the right call on cost.\n\nRemaining question is ISSUE-0002::implement (effort 8.0): it needs an agent with >=8h availability to be a clean, non-overloaded claim. None of the three of us qualify (me 7h, Jeanene 6h, Layla 4h).\n\nPauline — please post your availability. Two scenarios:\n(A) If you have >=8h: you take ISSUE-0002::implement, Jeanene takes a cheap ISSUE-0001 low (triage 2.16 / review 2.70 / docs 2.70). Result = ALL 3 criticals + 1 low, 4 tasks done, priority_sum 3.25.\n(B) If you have <8h: we do 2 criticals + 2 lows — Jeanene and Pauline each take a cheap ISSUE-0001 low task. 4 tasks done, priority_sum 2.5.\n\nMy intended claim: ISSUE-0002::test. Layla: ISSUE-0002::review. Jeanene: a cheap ISSUE-0001 low. Pauline: implement if >=8h, else a cheap ISSUE-0001 low. Please confirm so we lock distinct claims. I'll finalize in execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "18cb54c4-cb2a-4d76-b448-e582627c4b64",
+        "ts": 1792881080.0269084,
+        "agent": "Jeanene",
+        "kind": "communication",
+        "payload": {
+          "content": "Jeanene (planning, iter=1) — CONFIRMING my intent: I will claim ISSUE-0001::triage (cost 2.16, my cheapest; effort 1.6, well within my 6.0h). This holds in BOTH scenarios so we never duplicate:\n\nScenario A (Pauline >=8h): Mona=ISSUE-0002::test, Layla=ISSUE-0002::review, Pauline=ISSUE-0002::implement, Jeanene=ISSUE-0001::triage → ALL 3 criticals + 1 low (priority_sum 3.25).\nScenario B (Pauline <8h): Mona=ISSUE-0002::test, Layla=ISSUE-0002::review, Jeanene=ISSUE-0001::triage, Pauline=another cheap ISSUE-0001 low (docs 2.0 / review 2.0) → 2 criticals + 2 lows (priority_sum 2.5).\n\nRationale: I'm NOT the cheapest on any critical (test 10.81 vs Mona 10.42; review 7.72 vs Layla 7.24), so the cost-minimizing joint allocation puts me on the cheap low. My availability (6h) also can't cleanly cover implement (8.0), so I don't touch it.\n\nPauline — please post your availability + intended claim. Only open risk: if you (Pauline) ALSO want triage in scenario B, tell me and I'll flex to ISSUE-0001::docs (2.70) so we stay distinct. Otherwise I lock ISSUE-0001::triage in execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "cae5dcfd-020e-42eb-89ef-6c210f893d08",
+        "ts": 1792881090.7188885,
+        "agent": "Layla",
+        "kind": "communication",
+        "payload": {
+          "content": "Layla (planning, iter=1) — CONFIRMED. I lock ISSUE-0002::review (cost 7.24, critical, effort 4.0 = my 4.0h availability → feasible, and I'm the cheapest on review). I cannot take ::test (5.6h) or ::implement (8.0h) since both exceed my 4h.\n\nFinal plan:\n- Layla → ISSUE-0002::review\n- Mona → ISSUE-0002::test\n- Jeanene → ISSUE-0001::triage\n- Pauline → ISSUE-0002::implement if availability >=8h (Scenario A: all 3 criticals, priority_sum 3.25), else a cheap ISSUE-0001 low (docs/review) (Scenario B: 2 criticals + 2 lows, priority_sum 2.5)\n\nAll four claims are distinct — no duplicates. I'll finalize with assign_task in execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "90695777-1c06-41ff-b63c-cc253383b1e7",
+        "ts": 1792881113.319609,
+        "agent": "Pauline",
+        "kind": "communication",
+        "payload": {
+          "content": "Pauline here (planning, iter=1). Availability = 8.0h, top skill = mobile-development (0.61).\n\nI DO have >=8h, so Scenario A is technically feasible for me — BUT my private cost for ISSUE-0002::implement is 80.00 (my fit on ui-ux-design/testing is poor; those tags aren't my skill). My ISSUE-0002 costs are: review 40.00, test 56.00, implement 80.00. My ISSUE-0001 (mobile-dev) costs are cheap: triage 2.25, review 2.82, docs 2.82, test 3.94, implement 5.63.\n\nJoint-score check (tasks_done is 4 in both scenarios):\n- Scenario A: total_cost ≈ 80.00 + 10.42 + 7.24 + 2.16 = 99.82; priority_sum = 3.25.\n- Scenario B: total_cost ≈ 2.82 + 10.42 + 7.24 + 2.16 = 22.64; priority_sum = 2.50.\nThe extra 0.75 priority from doing implement costs ~77.2 in total_cost — that only pays off if priority_bonus > ~103, which is implausible given the defined priority weights (low 0.25 … critical 1.0). So Scenario B is the better joint-score play.\n\nTherefore I propose Scenario B and will claim ISSUE-0001::docs (cost 2.82, low, mobile-development — my strong fit). Final distinct claims:\n- Layla → ISSUE-0002::review (7.24)\n- Mona → ISSUE-0002::test (10.42)\n- Jeanene → ISSUE-0001::triage (2.16)\n- Pauline → ISSUE-0001::docs (2.82)\nISSUE-0002::implement is deliberately skipped (no agent has a good fit; cheapest is Mona 15.89 but she's on test). No duplicates. If anyone disagrees, say so now; otherwise I lock ISSUE-0001::docs in execution. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "7543b0ef-5043-48b8-956f-f398272a3fee",
+        "ts": 1792881118.5343864,
+        "agent": "Pauline",
+        "kind": "communication",
+        "payload": {
+          "content": "Pauline (planning, iter=1) — LOCKED for execution: I will claim ISSUE-0001::docs (cost 2.82, low, tags=[mobile-development], effort 2.0 << my 8.0h availability → feasible, strong skill fit). Confirming distinct claims: Layla=ISSUE-0002::review, Mona=ISSUE-0002::test, Jeanene=ISSUE-0001::triage, Pauline=ISSUE-0001::docs. ISSUE-0002::implement intentionally skipped. Committing via assign_task now.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ff517690-ad5e-4643-9d06-619fabaab570",
+        "ts": 1792881125.794448,
+        "agent": "Mona",
+        "kind": "communication",
+        "payload": {
+          "content": "Mona (planning, iter=1) — CONFIRMED & LOCKED. I agree with Pauline's joint-score analysis: Scenario B dominates. The extra 0.75 priority from ISSUE-0002::implement is dwarfed by ~77 cost, so skipping implement is correct.\n\nFinal distinct claims:\n- Mona → ISSUE-0002::test (cost 10.42, critical, testing-tagged = my top skill 0.87)\n- Layla → ISSUE-0002::review (7.24, critical)\n- Jeanene → ISSUE-0001::triage (2.16, low)\n- Pauline → ISSUE-0001::docs (2.82, low)\nISSUE-0002::implement intentionally skipped. No duplicates. I will finalize ISSUE-0002::test via assign_task in execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "56fa0c26-13ac-4ae6-a45b-4f8cf3a1985a",
+        "ts": 1792881133.763814,
+        "agent": "Jeanene",
+        "kind": "communication",
+        "payload": {
+          "content": "Jeanene (planning, iter=1) — CONFIRMED & LOCKED. Consensus reached; Scenario B dominates (extra 0.75 priority from implement is dwarfed by ~77 cost). No duplicates.\n\nFinal distinct claims:\n- Jeanene → ISSUE-0001::triage (cost 2.16, low, effort 1.6 << my 6.0h → feasible)\n- Mona → ISSUE-0002::test (10.42, critical)\n- Layla → ISSUE-0002::review (7.24, critical)\n- Pauline → ISSUE-0001::docs (2.82, low)\nISSUE-0002::implement intentionally skipped.\n\nI will finalize ISSUE-0001::triage via assign_task in execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a0a2df58-dffa-480b-9a03-ae630ff29fc7",
+        "ts": 1792881137.3834956,
+        "agent": "Jeanene",
+        "kind": "communication",
+        "payload": {
+          "content": "Jeanene — EXECUTION: committing my claim now via assign_task: ISSUE-0001::triage (cost 2.16, low priority, effort 1.6 ≤ my 6.0h, feasible & distinct from Mona/Layla/Pauline).",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a19e082b-4c45-42c9-9dfd-058f6787a8fe",
+        "ts": 1792881141.2245727,
+        "agent": "Jeanene",
+        "kind": "communication",
+        "payload": {
+          "content": "assign_task(Jeanene, ISSUE-0001::triage) — final. Feasible (effort 1.6 ≤ 6.0h availability), lowest cost option for me (2.16), distinct from Teammates' claims. Done.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c75002ee-3d0d-4e17-a4c0-6636bf7a13d2",
+        "ts": 1792881151.4234247,
+        "agent": "Layla",
+        "kind": "communication",
+        "payload": {
+          "content": "Layla (planning, iter=1) — CONFIRMED & LOCKED. Consensus is unanimous on Scenario B (skipping ISSUE-0002::implement; ~77 cost far outweighs +0.75 priority).\n\nFinal distinct claims:\n- Layla → ISSUE-0002::review (7.24, critical, effort 4.0 = my 4.0h → feasible, cheapest on review)\n- Mona → ISSUE-0002::test (10.42, critical)\n- Jeanene → ISSUE-0001::triage (2.16, low)\n- Pauline → ISSUE-0001::docs (2.82, low)\n\nNo duplicates. I will finalize ISSUE-0002::review via assign_task in execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f8318808-d3d4-4c8a-bf16-4d1ffbdcf036",
+        "ts": 1792881160.9450831,
+        "agent": "Pauline",
+        "kind": "communication",
+        "payload": {
+          "content": "Pauline (planning) — ACK consensus, Scenario B final. My claim: ISSUE-0001::docs (cost 2.82, low, tags=[mobile-development], effort 2.0 ≤ 8.0h). All four claims distinct: Pauline=ISSUE-0001::docs, Layla=ISSUE-0002::review, Mona=ISSUE-0002::test, Jeanene=ISSUE-0001::triage; ISSUE-0002::implement intentionally skipped (cost ~80 vs +0.75 priority). I will commit via assign_task in execution. No further objections.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "1aa9cd42-96f1-41c6-a00c-e8b3e64b5d4b",
+        "ts": 1792881171.0981386,
+        "agent": "Mona",
+        "kind": "communication",
+        "payload": {
+          "content": "Mona (planning, iter=1) — CONFIRMED, consensus locked on Scenario B. My claim: ISSUE-0002::test (cost 10.42, critical, tags=[ui-ux-design, testing], effort 5.6 ≤ my 7.0h availability → feasible; testing 0.87 = my top skill, and I'm the cheapest on test).\n\nFinal distinct claims:\n- Mona → ISSUE-0002::test (10.42, critical)\n- Layla → ISSUE-0002::review (7.24, critical)\n- Jeanene → ISSUE-0001::triage (2.16, low)\n- Pauline → ISSUE-0001::docs (2.82, low)\nISSUE-0002::implement intentionally skipped (~80 cost vs +0.75 priority). No duplicates. I will finalize ISSUE-0002::test via assign_task in execution. No further objections.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d23b4f21-fd38-4593-9e3b-e80bbfe7b146",
+        "ts": 1792881180.5421681,
+        "agent": "Jeanene",
+        "kind": "communication",
+        "payload": {
+          "content": "Jeanene (planning) — ACK, Scenario B is final and unanimous. My locked claim: ISSUE-0001::triage (cost 2.16, low, effort 1.6 ≤ 6.0h → feasible, distinct). Final set: Jeanene=ISSUE-0001::triage, Mona=ISSUE-0002::test, Layla=ISSUE-0002::review, Pauline=ISSUE-0001::docs; ISSUE-0002::implement intentionally skipped. No duplicates. I will commit via assign_task in execution. No further objections.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a519f083-e609-4088-8e80-5879a3f12195",
+        "ts": 1792881191.412914,
+        "agent": "Layla",
+        "kind": "communication",
+        "payload": {
+          "content": "Layla (planning) — ACK, Scenario B final and unanimous. My locked claim: ISSUE-0002::review (cost 7.24, critical, effort 4.0 = my 4.0h availability → feasible; cheapest on review). Final distinct set: Layla=ISSUE-0002::review, Mona=ISSUE-0002::test, Jeanene=ISSUE-0001::triage, Pauline=ISSUE-0001::docs; ISSUE-0002::implement intentionally skipped. No duplicates. I will commit via assign_task in execution. No further objections.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "008b4b24-4996-4712-9789-ca8411477a97",
+        "ts": 1792881198.1764212,
+        "agent": "Pauline",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::docs"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Pauline",
+              "task_id": "ISSUE-0001::docs",
+              "task": {
+                "id": "ISSUE-0001::docs",
+                "issue_id": "ISSUE-0001",
+                "title": "Build mobile-development [docs]",
+                "tags": [
+                  "mobile-development"
+                ],
+                "priority": "low",
+                "effort": 2.0,
+                "work_type": "docs"
+              },
+              "total_assigned": 1,
+              "remaining_agents": 3,
+              "joint_reward": 22.183805989329226
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "06c6280a-20ca-4d75-bc7e-c7258701a232",
+        "ts": 1792881199.7765393,
+        "agent": "Mona",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::test"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Mona",
+              "task_id": "ISSUE-0002::test",
+              "task": {
+                "id": "ISSUE-0002::test",
+                "issue_id": "ISSUE-0002",
+                "title": "Build ui-ux-design [test]",
+                "tags": [
+                  "ui-ux-design",
+                  "testing"
+                ],
+                "priority": "critical",
+                "effort": 5.6,
+                "work_type": "test"
+              },
+              "total_assigned": 2,
+              "remaining_agents": 2,
+              "joint_reward": 51.761260565710415
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "6a5c8c7b-7904-4faa-a495-dffd4bb14704",
+        "ts": 1792881202.702162,
+        "agent": "Jeanene",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::triage"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Jeanene",
+              "task_id": "ISSUE-0001::triage",
+              "task": {
+                "id": "ISSUE-0001::triage",
+                "issue_id": "ISSUE-0001",
+                "title": "Build mobile-development [triage]",
+                "tags": [
+                  "mobile-development"
+                ],
+                "priority": "low",
+                "effort": 1.6,
+                "work_type": "triage"
+              },
+              "total_assigned": 3,
+              "remaining_agents": 1,
+              "joint_reward": 74.60169823422972
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "6a8e703a-04d7-411f-9451-0dc86a3811b7",
+        "ts": 1792881206.256937,
+        "agent": "Layla",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Layla",
+              "task_id": "ISSUE-0002::review",
+              "task": {
+                "id": "ISSUE-0002::review",
+                "issue_id": "ISSUE-0002",
+                "title": "Build ui-ux-design [review]",
+                "tags": [
+                  "ui-ux-design",
+                  "testing"
+                ],
+                "priority": "critical",
+                "effort": 4.0,
+                "work_type": "review"
+              },
+              "total_assigned": 4,
+              "remaining_agents": 0,
+              "joint_reward": 107.36130283514929
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  }
+]

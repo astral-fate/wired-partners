@@ -1,0 +1,468 @@
+[
+  {
+    "blackboard_id": "0",
+    "participants": [
+      "Gerda",
+      "Mackenzie",
+      "Maya",
+      "Raylene"
+    ],
+    "events": [
+      {
+        "blackboard_id": 0,
+        "id": "b047da1b-f9b6-4049-bad6-e559dbbcc4bd",
+        "ts": 1792878235.1002958,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Gerda, Mackenzie, Maya, Raylene"
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a96a040e-93ac-44cc-ae41-7b3384a06095",
+        "ts": 1792878246.601102,
+        "agent": "Raylene",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi all — Raylene here. My skill match is backend:0.85, so my costs are far lower on the ISSUE-0002 (backend) tasks than on ISSUE-0001 (infrastructure). My best options: ISSUE-0002::review (cost 1.90), ISSUE-0002::test (2.66), ISSUE-0002::implement (3.80). I plan to claim ISSUE-0002::review. If someone else has a stronger/cheaper claim on review, tell me and I'll shift to test or implement instead. Please avoid duplicating ISSUE-0002::review.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "bd102b3e-dfd6-4bc6-a64c-fc84b0a88eff",
+        "ts": 1792878252.81628,
+        "agent": "Raylene",
+        "kind": "communication",
+        "payload": {
+          "content": "Proposed split to maximize covered tasks while respecting skills: I take ISSUE-0002::review (my cost 1.90). Recommend others grab the remaining higher-priority ISSUE-0002 tasks (implement/test) if your skill matches, then the low-priority ISSUE-0001 tasks. Reply with your intended claim so we can deconflict before execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "6662832a-261e-4ddb-9149-3bcd8b6c8585",
+        "ts": 1792878280.581219,
+        "agent": "Maya",
+        "kind": "communication",
+        "payload": {
+          "content": "Maya here. Skills: mobile-development:0.77, api-development:0.64, so I match ISSUE-0002 (mobile/backend) better than ISSUE-0001 (infrastructure). Given Raylene takes ISSUE-0002::review, I plan to claim ISSUE-0002::test (medium priority). Gerda / Mackenzie: please consider ISSUE-0002::implement and the ISSUE-0001 low-priority tasks so we cover all 3 medium tasks + 1 low task without duplicates. If anyone has a clearly cheaper claim on ISSUE-0002::test, say so and I'll shift (I can also take ISSUE-0001::review/docs/triage). Reply with your intended claim. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "17083114-0f25-4297-b2d3-059f1cd00896",
+        "ts": 1792878432.321539,
+        "agent": "Raylene",
+        "kind": "communication",
+        "payload": {
+          "content": "Raylene here, confirming my plan: I'll claim ISSUE-0002::review (my cost 1.90 — clearly my cheapest and a strong backend match). Maya is on ISSUE-0002::test. That leaves ISSUE-0002::implement (medium) and the ISSUE-0001 low-priority tasks for Gerda and Mackenzie. Gerda / Mackenzie — please reply with your intended claims so we get 3 medium + 1 low with no duplicates. If either of you has a cheaper claim on ISSUE-0002::review than 1.90, say so and I'll switch to implement/test. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "50121be1-2008-489f-8560-0ae90796b436",
+        "ts": 1792878491.457162,
+        "agent": "Maya",
+        "kind": "communication",
+        "payload": {
+          "content": "Maya here, confirming my final plan for execution: I will claim ISSUE-0002::test (medium, my cost 2.89, mobile-development match). Raylene = ISSUE-0002::review. That covers 2 of the 3 medium tasks with no duplicate. Gerda & Mackenzie: please claim ISSUE-0002::implement (medium) and one ISSUE-0001 low task (review/docs/triage) so we cover all 3 medium + 1 low. If either of you is cheaper on ISSUE-0002::test, say so now and I'll shift to an ISSUE-0001 api-development task. (phase=planning)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "a83047fd-9064-459d-a4a5-2c23d17271b8",
+        "ts": 1792878503.3994734,
+        "agent": "Mackenzie",
+        "kind": "communication",
+        "payload": {
+          "content": "Mackenzie here. My skill is mobile-development:0.62, so I'm matched to ISSUE-0002. My private costs: ISSUE-0002::review=2.44, ::test=3.42, ::implement=4.88; all ISSUE-0001 tasks cost me 10.00+.\n\nDeconfliction: Raylene is cheaper on review (1.90<2.44), Maya is cheaper on test (2.89<3.42). So I will claim ISSUE-0002::implement (medium). This covers the 3rd medium task with no duplicates. Gerda: please take an ISSUE-0001 low task (review/docs/triage) to avoid clashing on implement. If Gerda has a cheaper claim on implement, tell me and I'll shift to a low task.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ca560ba7-dee4-40c6-ab8b-a92908e6d6b4",
+        "ts": 1792878545.9313347,
+        "agent": "Raylene",
+        "kind": "communication",
+        "payload": {
+          "content": "Raylene here — plan is deconflicted and confirmed. Final: Raylene = ISSUE-0002::review (cost 1.90), Maya = ISSUE-0002::test, Mackenzie = ISSUE-0002::implement, Gerda = one ISSUE-0001 low task (review/docs/triage). This covers all 3 medium tasks + 1 low with no duplicates. Gerda, please confirm your low-priority pick so we have no collisions. I'll commit ISSUE-0002::review in execution. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "dda9253e-d7e6-4cbb-a345-7414fef12371",
+        "ts": 1792878562.0417817,
+        "agent": "Maya",
+        "kind": "communication",
+        "payload": {
+          "content": "Maya here — final confirmation. Plan is deconflicted: Raylene=ISSUE-0002::review, Maya=ISSUE-0002::test (my cost 2.89, mobile-development match), Mackenzie=ISSUE-0002::implement, Gerda=one ISSUE-0001 low task (review/docs/triage). This covers all 3 medium tasks + 1 low with no duplicates. I will commit ISSUE-0002::test in execution. Gerda, please confirm your low-priority pick to avoid collisions.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "be404dae-1eb5-4b8c-a42f-be74d7a6afd1",
+        "ts": 1792878568.5820131,
+        "agent": "Mackenzie",
+        "kind": "communication",
+        "payload": {
+          "content": "Mackenzie final confirmation: I will commit ISSUE-0002::implement (medium, my cost 4.88, my cheapest medium task). Plan: Raylene=ISSUE-0002::review, Maya=ISSUE-0002::test, Mackenzie=ISSUE-0002::implement, Gerda=one ISSUE-0001 low task. No duplicates from me. Gerda, please confirm your low-priority pick (review/docs/triage) to avoid collisions.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "10e672ac-12a5-4d9e-8cff-698f60ad3b5b",
+        "ts": 1792878590.0086477,
+        "agent": "Raylene",
+        "kind": "communication",
+        "payload": {
+          "content": "Raylene final: locking in ISSUE-0002::review (cost 1.90, backend match). Plan confirmed: Raylene=ISSUE-0002::review, Maya=ISSUE-0002::test, Mackenzie=ISSUE-0002::implement, Gerda=one ISSUE-0001 low task. No duplicates from me. Committing in execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d828291b-5339-4904-acca-f9ceb7923d21",
+        "ts": 1792878620.0115278,
+        "agent": "Mackenzie",
+        "kind": "communication",
+        "payload": {
+          "content": "Mackenzie final lock-in: I will claim ISSUE-0002::implement (medium, effort 2.0, my cost 4.88 — my cheapest medium task and my best skill match). No duplicates: Raylene=ISSUE-0002::review, Maya=ISSUE-0002::test, Mackenzie=ISSUE-0002::implement, Gerda=one ISSUE-0001 low task. Committing in execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "fe4e17e5-5d0f-4a76-90ec-a46d9a637079",
+        "ts": 1792878646.664235,
+        "agent": "Raylene",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Raylene",
+              "task_id": "ISSUE-0002::review",
+              "task": {
+                "id": "ISSUE-0002::review",
+                "issue_id": "ISSUE-0002",
+                "title": "Build backend [review]",
+                "tags": [
+                  "mobile-development",
+                  "backend"
+                ],
+                "priority": "medium",
+                "effort": 1.0,
+                "work_type": "review"
+              },
+              "total_assigned": 1,
+              "remaining_agents": 3,
+              "joint_reward": 28.09931166187527
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ff9ec1f4-458e-49ee-9372-b507bc0b9f25",
+        "ts": 1792878651.6581128,
+        "agent": "Maya",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::test"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Maya",
+              "task_id": "ISSUE-0002::test",
+              "task": {
+                "id": "ISSUE-0002::test",
+                "issue_id": "ISSUE-0002",
+                "title": "Build backend [test]",
+                "tags": [
+                  "mobile-development",
+                  "backend"
+                ],
+                "priority": "medium",
+                "effort": 1.4,
+                "work_type": "test"
+              },
+              "total_assigned": 2,
+              "remaining_agents": 2,
+              "joint_reward": 55.212141277187285
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "bad6b521-d2d9-46c2-b588-6e4015c51913",
+        "ts": 1792878653.9953032,
+        "agent": "Mackenzie",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::implement"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Mackenzie",
+              "task_id": "ISSUE-0002::implement",
+              "task": {
+                "id": "ISSUE-0002::implement",
+                "issue_id": "ISSUE-0002",
+                "title": "Build backend [implement]",
+                "tags": [
+                  "mobile-development",
+                  "backend"
+                ],
+                "priority": "medium",
+                "effort": 2.0,
+                "work_type": "implement"
+              },
+              "total_assigned": 3,
+              "remaining_agents": 1,
+              "joint_reward": 80.33311505731437
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "fa5c482d-b876-48a5-871d-46b456d597d4",
+        "ts": 1792878659.1474898,
+        "agent": "Gerda",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::docs"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Gerda",
+              "task_id": "ISSUE-0001::docs",
+              "task": {
+                "id": "ISSUE-0001::docs",
+                "issue_id": "ISSUE-0001",
+                "title": "Improve infrastructure [docs]",
+                "tags": [
+                  "infrastructure",
+                  "api-development"
+                ],
+                "priority": "low",
+                "effort": 1.0,
+                "work_type": "docs"
+              },
+              "total_assigned": 4,
+              "remaining_agents": 0,
+              "joint_reward": 95.33311505731437
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  },
+  {
+    "blackboard_id": "1",
+    "participants": [
+      "Mackenzie",
+      "Maya"
+    ],
+    "events": [
+      {
+        "blackboard_id": 1,
+        "id": "211745be-22fb-425b-9113-56b2198ee363",
+        "ts": 1792878235.1002958,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Mackenzie, Maya"
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "530087be-e16e-4d14-b5b3-dae7e3973ae6",
+        "ts": 1792878280.581219,
+        "agent": "Maya",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi Mackenzie, Maya here. I intend to claim ISSUE-0002::test (medium, matches my mobile-development:0.77 skill). What are you planning? If you have a stronger claim on the ISSUE-0002 tasks, tell me and I can drop to an ISSUE-0001 task (api-development 0.64). Goal: cover all 3 medium tasks (Raylene=review) + 1 low task, no duplicates. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "fcff092d-8598-4a33-a8dd-749528ff04fa",
+        "ts": 1792878491.457162,
+        "agent": "Maya",
+        "kind": "communication",
+        "payload": {
+          "content": "Mackenzie, final plan from me: I'm claiming ISSUE-0002::test (cost 2.89). Please don't duplicate it. If you have a cheaper claim on test, tell me and I'll take an ISSUE-0001 task instead. Otherwise, ideal for you is ISSUE-0002::implement (medium) or an ISSUE-0001 low task. (phase=planning)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "975cda50-883e-49dc-9aa1-cf543b806b66",
+        "ts": 1792878503.3994734,
+        "agent": "Mackenzie",
+        "kind": "communication",
+        "payload": {
+          "content": "Mackenzie here. Agreed — you take ISSUE-0002::test (2.89 is cheaper than my 3.42, so no shift needed). I'll claim ISSUE-0002::implement (4.88), my cheapest medium task. No duplicates from me.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "e54c7c6c-9161-4ddc-b044-170faf4bc5a2",
+        "ts": 1792878568.5820131,
+        "agent": "Mackenzie",
+        "kind": "communication",
+        "payload": {
+          "content": "Mackenzie: confirmed, no change. You take ISSUE-0002::test, I take ISSUE-0002::implement. See you in execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "575b1526-9586-422b-a3d5-dd38099d2310",
+        "ts": 1792878620.0115278,
+        "agent": "Mackenzie",
+        "kind": "communication",
+        "payload": {
+          "content": "Mackenzie final: claiming ISSUE-0002::implement (4.88). You keep ISSUE-0002::test. No duplicates. Committing in execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "c6a82ba7-356e-4ab0-aa5e-16a740addf42",
+        "ts": 1792878651.6581128,
+        "agent": "Maya",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::test"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Maya",
+              "task_id": "ISSUE-0002::test",
+              "task": {
+                "id": "ISSUE-0002::test",
+                "issue_id": "ISSUE-0002",
+                "title": "Build backend [test]",
+                "tags": [
+                  "mobile-development",
+                  "backend"
+                ],
+                "priority": "medium",
+                "effort": 1.4,
+                "work_type": "test"
+              },
+              "total_assigned": 2,
+              "remaining_agents": 2,
+              "joint_reward": 55.212141277187285
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "946ada06-ea1f-4e08-b936-78b01854c65a",
+        "ts": 1792878653.9953032,
+        "agent": "Mackenzie",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0002::implement"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Mackenzie",
+              "task_id": "ISSUE-0002::implement",
+              "task": {
+                "id": "ISSUE-0002::implement",
+                "issue_id": "ISSUE-0002",
+                "title": "Build backend [implement]",
+                "tags": [
+                  "mobile-development",
+                  "backend"
+                ],
+                "priority": "medium",
+                "effort": 2.0,
+                "work_type": "implement"
+              },
+              "total_assigned": 3,
+              "remaining_agents": 1,
+              "joint_reward": 80.33311505731437
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  }
+]

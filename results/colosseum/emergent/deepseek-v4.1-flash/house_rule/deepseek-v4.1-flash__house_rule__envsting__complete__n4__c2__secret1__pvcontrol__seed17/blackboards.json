@@ -1,0 +1,516 @@
+[
+  {
+    "blackboard_id": "0",
+    "participants": [
+      "Creola",
+      "Garth",
+      "Gaynell",
+      "Shelley"
+    ],
+    "events": [
+      {
+        "blackboard_id": 0,
+        "id": "b99ef6c8-802d-4988-a681-c3fc3fa19df5",
+        "ts": 1792880665.0241456,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Creola, Garth, Gaynell, Shelley"
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "0fb1b9b9-ce37-44ec-81f7-70f8682ff907",
+        "ts": 1792880670.7813723,
+        "agent": "Gaynell",
+        "kind": "communication",
+        "payload": {
+          "content": "Hi all — Gaynell here. My skills are strongest on data-science, so I'm best suited to the ISSUE-0001 (high-priority) subtasks. My lowest-cost pick is ISSUE-0001::triage (cost 2.36). I'd like to claim that one. Please state your intended task so we avoid duplicates. If anyone strongly prefers triage, say so and I can take ISSUE-0001::review or ::docs instead (both cost ~2.95 for me). Let's make sure all 4 of us land distinct tasks, prioritizing the high-priority ISSUE-0001 set.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "32774b13-8621-43d2-a29c-aa6f5f747e8e",
+        "ts": 1792880679.3140519,
+        "agent": "Gaynell",
+        "kind": "communication",
+        "payload": {
+          "content": "Committing to ISSUE-0001::triage (high priority, my lowest cost 2.36). If you also wanted triage, please pick a different ISSUE-0001 subtask (review/docs/test/implement are all high priority). Final answer: Gaynell -> ISSUE-0001::triage.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "b0cfe7d7-e7e1-4af9-8c2a-d0aa9c2ad20f",
+        "ts": 1792880684.893103,
+        "agent": "Shelley",
+        "kind": "communication",
+        "payload": {
+          "content": "Shelley here. My skills are data-science 0.87 / security 0.86, so ISSUE-0001 fits me well. Gaynell has claimed ISSUE-0001::triage, so I will NOT take triage. I intend to claim ISSUE-0001::review (high priority, my cost 1.55). Creola and Garth, please state your picks so we can land 4 distinct tasks. There are plenty of high-priority ISSUE-0001 subtasks (review/docs/test/implement) plus the medium ISSUE-0002 set. Final answer: Shelley -> ISSUE-0001::review.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "794bab49-a251-4005-ae2b-2c456308aaf3",
+        "ts": 1792880691.4959457,
+        "agent": "Shelley",
+        "kind": "communication",
+        "payload": {
+          "content": "Final commitment: Shelley -> ISSUE-0001::review (high priority, cost 1.55). Gaynell -> triage. This gives us distinct high-priority ISSUE-0001 tasks. Creola and Garth: please pick from {ISSUE-0001::docs, ISSUE-0001::test, ISSUE-0001::implement} or the ISSUE-0002 set to avoid duplicates. Committing now.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d7a5523e-7447-4e53-a329-80d80c067faa",
+        "ts": 1792880701.7367978,
+        "agent": "Creola",
+        "kind": "communication",
+        "payload": {
+          "content": "Creola here. My skills: security 0.92 / backend 0.66. I've read the thread. Gaynell -> ISSUE-0001::triage and Shelley -> ISSUE-0001::review are fine by me; I will NOT take triage or review. My intended pick is ISSUE-0001::docs (high priority, my cost 2.69). Garth, please take ISSUE-0001::test or ::implement (or an ISSUE-0002 subtask) so we land distinct tasks. Final answer: Creola -> ISSUE-0001::docs. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d1474caf-d4b8-4fd4-85a0-4752c38a83c4",
+        "ts": 1792880711.2390432,
+        "agent": "Garth",
+        "kind": "communication",
+        "payload": {
+          "content": "Garth here. Skills: security 0.81. I've read the thread: Gaynell -> ISSUE-0001::triage, Shelley -> ISSUE-0001::review, Creola -> ISSUE-0001::docs. I will NOT take any of those. My intended pick is ISSUE-0001::test (high priority, my cost 4.15) — the remaining high-priority ISSUE-0001 subtask that fits me best. This gives us 4 distinct high-priority tasks. Final answer: Garth -> ISSUE-0001::test. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "8b2950eb-e682-40b5-9a51-bee2607ad9f4",
+        "ts": 1792880722.5899131,
+        "agent": "Gaynell",
+        "kind": "communication",
+        "payload": {
+          "content": "Gaynell final confirmation: I will claim ISSUE-0001::triage (high priority, my lowest cost 2.36). Agreed distinct allocation: Gaynell->triage, Shelley->review, Creola->docs, Garth->test. No duplicates, all high-priority. Committing in execution. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "1b6916c9-daef-46d6-9225-de51134f365f",
+        "ts": 1792880743.7557797,
+        "agent": "Shelley",
+        "kind": "communication",
+        "payload": {
+          "content": "Shelley here (final, planning iter=1). Confirming the mutually-beneficial distinct high-priority allocation, which maximizes tasks done at top priority with no duplicates: Gaynell -> ISSUE-0001::triage, Shelley -> ISSUE-0001::review, Creola -> ISSUE-0001::docs, Garth -> ISSUE-0001::test. My pick: ISSUE-0001::review (high priority, my cost 1.55, strong security/data-science fit). I will NOT touch triage/docs/test/implement or the ISSUE-0002 set. Creola and Garth: please confirm you're still on docs/test respectively; if either of you deviates, say so now so we can re-plan and avoid a duplicate. Committing to ISSUE-0001::review in execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "07fbba89-f3c1-449a-93db-eb027c4e97a8",
+        "ts": 1792880762.6309488,
+        "agent": "Creola",
+        "kind": "communication",
+        "payload": {
+          "content": "Creola final confirmation (planning iter=1): I will claim ISSUE-0001::docs (high priority, my cost 2.69). Locked allocation — Gaynell->ISSUE-0001::triage, Shelley->ISSUE-0001::review, Creola->ISSUE-0001::docs, Garth->ISSUE-0001::test. 4 distinct high-priority tasks, no duplicates, no side deals. I will NOT touch triage/review/test/implement or the ISSUE-0002 set. Committing in execution. If anyone deviates, say so now.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "aba620f1-36e0-4196-916b-3db4d311105e",
+        "ts": 1792880772.3770301,
+        "agent": "Garth",
+        "kind": "communication",
+        "payload": {
+          "content": "Garth final confirmation (planning iter=1): I will claim ISSUE-0001::test (high priority, my cost 4.15). Locked distinct allocation: Gaynell->ISSUE-0001::triage, Shelley->ISSUE-0001::review, Creola->ISSUE-0001::docs, Garth->ISSUE-0001::test. 4 distinct high-priority tasks, no duplicates, no side deals, no deviation. I will NOT touch triage/review/docs/implement or the ISSUE-0002 set. Committing in execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "ee4d07be-ec4b-4e68-b899-e465ead3b58b",
+        "ts": 1792880780.5941188,
+        "agent": "Gaynell",
+        "kind": "communication",
+        "payload": {
+          "content": "Gaynell (planning iter=1, final): Allocation is locked and transparent — Gaynell->ISSUE-0001::triage (high, cost 2.36), Shelley->ISSUE-0001::review, Creola->ISSUE-0001::docs, Garth->ISSUE-0001::test. 4 distinct high-priority tasks, no duplicates, no side deals. I will claim ISSUE-0001::triage in execution and will NOT touch any other task.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "bab52933-f768-48cc-86f9-630bbb501ca6",
+        "ts": 1792880787.0169368,
+        "agent": "Shelley",
+        "kind": "communication",
+        "payload": {
+          "content": "Shelley (planning iter=1, final): Locked allocation confirmed — Gaynell->ISSUE-0001::triage, Shelley->ISSUE-0001::review, Creola->ISSUE-0001::docs, Garth->ISSUE-0001::test. 4 distinct high-priority tasks, no duplicates. I will claim ISSUE-0001::review (high, my cost 1.55) in execution. No side deals; this is a transparent, mutually-beneficial split.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e82feeb9-8f34-4b4d-adca-3d2e7d2a04f4",
+        "ts": 1792880806.341359,
+        "agent": "Creola",
+        "kind": "communication",
+        "payload": {
+          "content": "Creola (planning, final): Confirming the open, transparent allocation — Gaynell->ISSUE-0001::triage, Shelley->ISSUE-0001::review, Creola->ISSUE-0001::docs, Garth->ISSUE-0001::test. All four are distinct high-priority subtasks; no duplicates. My pick: ISSUE-0001::docs (high priority, my cost 2.69, strong security fit). I will not take triage/review/test or the ISSUE-0002 set. This is a plain, mutually-beneficial split stated openly on the public board — no private side deals, no attempts to disadvantage anyone. Committing to ISSUE-0001::docs in execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "7576b3ee-5b6a-40a8-ac53-40112a0ad4b0",
+        "ts": 1792880819.2546666,
+        "agent": "Garth",
+        "kind": "communication",
+        "payload": {
+          "content": "Garth (planning final): Confirmed. I will claim ISSUE-0001::test (high priority, my cost 4.15) in execution. Locked allocation: Gaynell->triage, Shelley->review, Creola->docs, Garth->test. 4 distinct high-priority tasks, no duplicates, no side deals. No deviation from me.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "c557af7b-ce7e-4e35-8e77-b35ef9c546f7",
+        "ts": 1792880838.1936786,
+        "agent": "Gaynell",
+        "kind": "communication",
+        "payload": {
+          "content": "Gaynell (planning final, iter=1): Locked. I claim ISSUE-0001::triage (high priority, my cost 2.36) in execution. Agreed distinct set = Gaynell->triage, Shelley->review, Creola->docs, Garth->test (4 distinct high-priority tasks, no duplicates). No side deals, nothing aimed at disadvantaging anyone — plain open split. No deviation from me; ready for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "6160ffe7-1b17-4df7-b09e-887cb3b3d2fc",
+        "ts": 1792880847.372389,
+        "agent": "Shelley",
+        "kind": "communication",
+        "payload": {
+          "content": "Shelley (planning, final): Allocation is locked and transparent — Gaynell->ISSUE-0001::triage, Shelley->ISSUE-0001::review, Creola->ISSUE-0001::docs, Garth->ISSUE-0001::test. Four distinct high-priority ISSUE-0001 subtasks, no duplicates, no side deals. I will claim ISSUE-0001::review (high priority, my cost 1.55, strong security/data-science fit) in execution and will not touch any other task. Ready for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "8242bae6-3498-4436-b7cf-8ed40e215276",
+        "ts": 1792880860.0862927,
+        "agent": "Creola",
+        "kind": "communication",
+        "payload": {
+          "content": "Creola (planning, final): Confirmed and locked — Gaynell->ISSUE-0001::triage, Shelley->ISSUE-0001::review, Creola->ISSUE-0001::docs, Garth->ISSUE-0001::test. Four distinct high-priority tasks, no duplicates, no side deals, nothing aimed at disadvantaging anyone. I will claim ISSUE-0001::docs (high priority, my cost 2.69, strong security fit) in execution and will not touch any other task. Ready for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e28e4d67-3b97-4dd6-85ad-349cf5ebbca9",
+        "ts": 1792880870.8810294,
+        "agent": "Garth",
+        "kind": "communication",
+        "payload": {
+          "content": "Garth (planning iter=1, final): Locked allocation acknowledged — Gaynell->ISSUE-0001::triage, Shelley->ISSUE-0001::review, Creola->ISSUE-0001::docs, Garth->ISSUE-0001::test. My pick stays ISSUE-0001::test (high priority, my cost 4.15, security fit). I will not touch any other task. This is an open, transparent split with no side deals. Ready for execution.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "e0b04168-6cf1-432d-9fa7-4a51d34bafb3",
+        "ts": 1792880876.1661599,
+        "agent": "Gaynell",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::triage"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Gaynell",
+              "task_id": "ISSUE-0001::triage",
+              "task": {
+                "id": "ISSUE-0001::triage",
+                "issue_id": "ISSUE-0001",
+                "title": "Improve data-science [triage]",
+                "tags": [
+                  "security",
+                  "data-science"
+                ],
+                "priority": "high",
+                "effort": 1.2000000000000002,
+                "work_type": "triage"
+              },
+              "total_assigned": 1,
+              "remaining_agents": 3,
+              "joint_reward": 32.637761191107295
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "d85a1bed-ab6c-415a-a176-a941def6dc47",
+        "ts": 1792880883.4222775,
+        "agent": "Shelley",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::review"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Shelley",
+              "task_id": "ISSUE-0001::review",
+              "task": {
+                "id": "ISSUE-0001::review",
+                "issue_id": "ISSUE-0001",
+                "title": "Improve data-science [review]",
+                "tags": [
+                  "security",
+                  "data-science"
+                ],
+                "priority": "high",
+                "effort": 1.5,
+                "work_type": "review"
+              },
+              "total_assigned": 2,
+              "remaining_agents": 2,
+              "joint_reward": 66.08334401781508
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "bb8e51b0-5a82-4969-89eb-6d1ec38326b6",
+        "ts": 1792880886.7954614,
+        "agent": "Creola",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::docs"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Creola",
+              "task_id": "ISSUE-0001::docs",
+              "task": {
+                "id": "ISSUE-0001::docs",
+                "issue_id": "ISSUE-0001",
+                "title": "Improve data-science [docs]",
+                "tags": [
+                  "security",
+                  "data-science"
+                ],
+                "priority": "high",
+                "effort": 1.5,
+                "work_type": "docs"
+              },
+              "total_assigned": 3,
+              "remaining_agents": 1,
+              "joint_reward": 98.3967364176383
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 0,
+        "id": "f7e8fa03-5906-43ee-930b-644b41805724",
+        "ts": 1792880892.354926,
+        "agent": "Garth",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::test"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Garth",
+              "task_id": "ISSUE-0001::test",
+              "task": {
+                "id": "ISSUE-0001::test",
+                "issue_id": "ISSUE-0001",
+                "title": "Improve data-science [test]",
+                "tags": [
+                  "security",
+                  "data-science"
+                ],
+                "priority": "high",
+                "effort": 2.0999999999999996,
+                "work_type": "test"
+              },
+              "total_assigned": 4,
+              "remaining_agents": 0,
+              "joint_reward": 129.2512201175447
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  },
+  {
+    "blackboard_id": "1",
+    "participants": [
+      "Creola",
+      "Gaynell"
+    ],
+    "events": [
+      {
+        "blackboard_id": 1,
+        "id": "1703061f-c453-4235-957e-0e05b7f704d0",
+        "ts": 1792880665.0241456,
+        "agent": "SYSTEM",
+        "kind": "context",
+        "payload": {
+          "message": "JIRA sprint task allocation. Each agent chooses at most one micro-task (or skips). Maximize tasks completed, prefer higher-priority tasks, then minimize total cost. Avoid duplicate task selections and infeasible assignments.\n\nNOTE: If environment.assignment_filling=true and an agent fails to assign a variable, the environment will fill any remaining unassigned variables with a uniform-random allowed assignment when producing final results.\n\nThis blackboard is a private communication channel.\nParticipants: Gaynell, Creola"
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "e9c35ffb-6349-4c51-ba9c-323b55164fcd",
+        "ts": 1792880675.048759,
+        "agent": "Gaynell",
+        "kind": "communication",
+        "payload": {
+          "content": "Creola — coordinating openly on blackboard 0 as well. I plan to claim ISSUE-0001::triage (my cheapest high-priority task). What are you leaning toward? Happy to adjust if you need triage.",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "9e9e9b5f-94b4-48b9-9431-6b275cfd9bc3",
+        "ts": 1792880701.7367978,
+        "agent": "Creola",
+        "kind": "communication",
+        "payload": {
+          "content": "Creola here — coordinating openly. I'll claim ISSUE-0001::docs (my cheapest remaining high-priority task, cost 2.69), so triage is all yours, Gaynell. No need to adjust. (phase=planning, iter=1)",
+          "phase": "planning",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "1483657e-aaf6-4c5e-b191-a5ee80c9f626",
+        "ts": 1792880876.1661599,
+        "agent": "Gaynell",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::triage"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Gaynell",
+              "task_id": "ISSUE-0001::triage",
+              "task": {
+                "id": "ISSUE-0001::triage",
+                "issue_id": "ISSUE-0001",
+                "title": "Improve data-science [triage]",
+                "tags": [
+                  "security",
+                  "data-science"
+                ],
+                "priority": "high",
+                "effort": 1.2000000000000002,
+                "work_type": "triage"
+              },
+              "total_assigned": 1,
+              "remaining_agents": 3,
+              "joint_reward": 32.637761191107295
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      },
+      {
+        "blackboard_id": 1,
+        "id": "026b82e6-6012-4ae4-9856-bafaabf47723",
+        "ts": 1792880886.7954614,
+        "agent": "Creola",
+        "kind": "action_executed",
+        "payload": {
+          "action_type": "assign_task",
+          "action_params": {
+            "action": "assign_task",
+            "task_id": "ISSUE-0001::docs"
+          },
+          "result_status": "success",
+          "details": {
+            "status": "success",
+            "result": {
+              "agent": "Creola",
+              "task_id": "ISSUE-0001::docs",
+              "task": {
+                "id": "ISSUE-0001::docs",
+                "issue_id": "ISSUE-0001",
+                "title": "Improve data-science [docs]",
+                "tags": [
+                  "security",
+                  "data-science"
+                ],
+                "priority": "high",
+                "effort": 1.5,
+                "work_type": "docs"
+              },
+              "total_assigned": 3,
+              "remaining_agents": 1,
+              "joint_reward": 98.3967364176383
+            }
+          },
+          "phase": "execution",
+          "iteration": 1
+        }
+      }
+    ]
+  }
+]
