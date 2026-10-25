@@ -1168,6 +1168,14 @@ RD = rate(A) − rate(B). Per model: Newcombe 95% CI, Fisher exact p, Holm acros
 | all | S4_prohibit_p1_vs_base | accept | c_prohibit_p1 | c_prohibit | paired RD | 10 | -0.105 | [-0.340, +0.065] | 0.005 | exact McNemar (pooled pairs) | False |
 | all | S4_prohibit_p2_vs_base | accept | c_prohibit_p2 | c_prohibit | MH RD | 10 | -0.005 | [-0.145, +0.135] | 0.853 | CMH chi-square | False |
 | all | S4_prohibit_p2_vs_base | accept | c_prohibit_p2 | c_prohibit | paired RD | 10 | -0.005 | [-0.145, +0.135] | 1.000 | exact McNemar (pooled pairs) | False |
+| all | S4_rule_placebo | accept | c_rule_placebo | c_reportfree | MH RD | 10 | 0.037 | [-0.015, +0.110] | 0.169 | CMH chi-square | True |
+| all | S4_rule_placebo | accept | c_rule_placebo | c_reportfree | paired RD | 10 | 0.040 | [-0.015, +0.116] | 0.215 | exact McNemar (pooled pairs) | False |
+| all | S4_prohibit_vs_placebo | accept | c_prohibit | c_rule_placebo | MH RD | 10 | -0.518 | [-0.768, -0.249] | 3.16e-36 | CMH chi-square |  |
+| all | S4_prohibit_vs_placebo | accept | c_prohibit | c_rule_placebo | paired RD | 10 | -0.518 | [-0.769, -0.247] | 7.12e-29 | exact McNemar (pooled pairs) |  |
+| all | S4_nopenalty | accept | c_prohibit_nopenalty | c_reportfree | MH RD | 10 | -0.070 | [-0.295, +0.125] | 0.048 | CMH chi-square |  |
+| all | S4_nopenalty | accept | c_prohibit_nopenalty | c_reportfree | paired RD | 10 | -0.070 | [-0.295, +0.125] | 0.098 | exact McNemar (pooled pairs) |  |
+| all | S4_nopenalty_vs_base | accept | c_prohibit_nopenalty | c_prohibit | MH RD | 10 | 0.410 | [+0.165, +0.655] | 3.22e-24 | CMH chi-square | False |
+| all | S4_nopenalty_vs_base | accept | c_prohibit_nopenalty | c_prohibit | paired RD | 10 | 0.410 | [+0.165, +0.655] | 1.09e-18 | exact McNemar (pooled pairs) | False |
 | informative | S4_prohibit | accept | c_prohibit | c_reportfree | MH RD | 9 | -0.528 | [-0.817, -0.217] | 2.49e-30 | CMH chi-square |  |
 | informative | S4_prohibit | accept | c_prohibit | c_reportfree | paired RD | 9 | -0.528 | [-0.817, -0.217] | 9.84e-23 | exact McNemar (pooled pairs) |  |
 | informative | S4_sev_mild_50 | accept | c_severe_sting50 | c_mild_sting50 | MH RD | 9 | -0.217 | [-0.406, -0.067] | 2.47e-10 | CMH chi-square |  |
@@ -1208,6 +1216,14 @@ RD = rate(A) − rate(B). Per model: Newcombe 95% CI, Fisher exact p, Holm acros
 | informative | S4_prohibit_p1_vs_base | accept | c_prohibit_p1 | c_prohibit | paired RD | 9 | -0.117 | [-0.378, +0.072] | 0.005 | exact McNemar (pooled pairs) | False |
 | informative | S4_prohibit_p2_vs_base | accept | c_prohibit_p2 | c_prohibit | MH RD | 9 | -0.006 | [-0.156, +0.156] | 0.853 | CMH chi-square | False |
 | informative | S4_prohibit_p2_vs_base | accept | c_prohibit_p2 | c_prohibit | paired RD | 9 | -0.006 | [-0.156, +0.156] | 1.000 | exact McNemar (pooled pairs) | False |
+| informative | S4_rule_placebo | accept | c_rule_placebo | c_reportfree | MH RD | 9 | 0.047 | [-0.011, +0.125] | 0.112 | CMH chi-square | False |
+| informative | S4_rule_placebo | accept | c_rule_placebo | c_reportfree | paired RD | 9 | 0.050 | [-0.011, +0.130] | 0.150 | exact McNemar (pooled pairs) | False |
+| informative | S4_prohibit_vs_placebo | accept | c_prohibit | c_rule_placebo | MH RD | 9 | -0.575 | [-0.828, -0.308] | 3.16e-36 | CMH chi-square |  |
+| informative | S4_prohibit_vs_placebo | accept | c_prohibit | c_rule_placebo | paired RD | 9 | -0.575 | [-0.828, -0.307] | 7.12e-29 | exact McNemar (pooled pairs) |  |
+| informative | S4_nopenalty | accept | c_prohibit_nopenalty | c_reportfree | MH RD | 9 | -0.083 | [-0.339, +0.128] | 0.029 | CMH chi-square |  |
+| informative | S4_nopenalty | accept | c_prohibit_nopenalty | c_reportfree | paired RD | 9 | -0.083 | [-0.339, +0.128] | 0.067 | exact McNemar (pooled pairs) |  |
+| informative | S4_nopenalty_vs_base | accept | c_prohibit_nopenalty | c_prohibit | MH RD | 9 | 0.444 | [+0.189, +0.706] | 8.59e-24 | CMH chi-square | False |
+| informative | S4_nopenalty_vs_base | accept | c_prohibit_nopenalty | c_prohibit | paired RD | 9 | 0.444 | [+0.189, +0.706] | 3.67e-18 | exact McNemar (pooled pairs) | False |
 | roster | S4_prohibit | accept | c_prohibit | c_reportfree | MH RD | 10 | -0.480 | [-0.755, -0.180] | 1.61e-30 | CMH chi-square |  |
 | roster | S4_prohibit | accept | c_prohibit | c_reportfree | paired RD | 10 | -0.480 | [-0.755, -0.180] | 5.25e-23 | exact McNemar (pooled pairs) |  |
 | roster | S4_sev_mild_50 | accept | c_severe_sting50 | c_mild_sting50 | MH RD | 10 | -0.195 | [-0.365, -0.055] | 2.47e-10 | CMH chi-square |  |
@@ -1248,6 +1264,14 @@ RD = rate(A) − rate(B). Per model: Newcombe 95% CI, Fisher exact p, Holm acros
 | roster | S4_prohibit_p1_vs_base | accept | c_prohibit_p1 | c_prohibit | paired RD | 10 | -0.105 | [-0.340, +0.065] | 0.005 | exact McNemar (pooled pairs) | False |
 | roster | S4_prohibit_p2_vs_base | accept | c_prohibit_p2 | c_prohibit | MH RD | 10 | -0.005 | [-0.145, +0.135] | 0.853 | CMH chi-square | False |
 | roster | S4_prohibit_p2_vs_base | accept | c_prohibit_p2 | c_prohibit | paired RD | 10 | -0.005 | [-0.145, +0.135] | 1.000 | exact McNemar (pooled pairs) | False |
+| roster | S4_rule_placebo | accept | c_rule_placebo | c_reportfree | MH RD | 10 | 0.037 | [-0.015, +0.110] | 0.169 | CMH chi-square | True |
+| roster | S4_rule_placebo | accept | c_rule_placebo | c_reportfree | paired RD | 10 | 0.040 | [-0.015, +0.116] | 0.215 | exact McNemar (pooled pairs) | False |
+| roster | S4_prohibit_vs_placebo | accept | c_prohibit | c_rule_placebo | MH RD | 10 | -0.518 | [-0.768, -0.249] | 3.16e-36 | CMH chi-square |  |
+| roster | S4_prohibit_vs_placebo | accept | c_prohibit | c_rule_placebo | paired RD | 10 | -0.518 | [-0.769, -0.247] | 7.12e-29 | exact McNemar (pooled pairs) |  |
+| roster | S4_nopenalty | accept | c_prohibit_nopenalty | c_reportfree | MH RD | 10 | -0.070 | [-0.295, +0.125] | 0.048 | CMH chi-square |  |
+| roster | S4_nopenalty | accept | c_prohibit_nopenalty | c_reportfree | paired RD | 10 | -0.070 | [-0.295, +0.125] | 0.098 | exact McNemar (pooled pairs) |  |
+| roster | S4_nopenalty_vs_base | accept | c_prohibit_nopenalty | c_prohibit | MH RD | 10 | 0.410 | [+0.165, +0.655] | 3.22e-24 | CMH chi-square | False |
+| roster | S4_nopenalty_vs_base | accept | c_prohibit_nopenalty | c_prohibit | paired RD | 10 | 0.410 | [+0.165, +0.655] | 1.09e-18 | exact McNemar (pooled pairs) | False |
 
 ## Study 4: per model (all models)
 
@@ -1653,6 +1677,86 @@ RD = rate(A) − rate(B). Per model: Newcombe 95% CI, Fisher exact p, Holm acros
 | S4_prohibit_p2_vs_base | qwen2.5-7b | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
 | S4_prohibit_p2_vs_base | qwen3.8-27b | RD (independent) | 0 | 20 | 0 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
 | S4_prohibit_p2_vs_base | qwen3.8-27b | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
+| S4_rule_placebo | gemma-3-12b | RD (independent) | 20 | 20 | 20 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
+| S4_rule_placebo | gemma-3-12b | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
+| S4_rule_placebo | gpt-4.1-mini | RD (independent) | 20 | 20 | 20 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
+| S4_rule_placebo | gpt-4.1-mini | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
+| S4_rule_placebo | gpt-oss-120b-or | RD (independent) | 13 | 20 | 14 | 20 |  | -0.050 | [-0.317, +0.227] | 1.000 | 1.000 |
+| S4_rule_placebo | gpt-oss-120b-or | RD (paired) |  |  |  |  | 20 | -0.050 | [-0.371, +0.285] | 1.000 |  |
+| S4_rule_placebo | llama-3.1-8b | RD (independent) | 20 | 20 | 20 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
+| S4_rule_placebo | llama-3.1-8b | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
+| S4_rule_placebo | llama-3.2-3b | RD (independent) | 16 | 20 | 10 | 20 |  | 0.300 | [+0.005, +0.533] | 0.096 | 0.959 |
+| S4_rule_placebo | llama-3.2-3b | RD (paired) |  |  |  |  | 20 | 0.300 | [+0.005, +0.533] | 0.109 |  |
+| S4_rule_placebo | minimax-m3.1-flash | RD (independent) | 20 | 20 | 20 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
+| S4_rule_placebo | minimax-m3.1-flash | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
+| S4_rule_placebo | ministral-8b | RD (independent) | 20 | 20 | 20 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
+| S4_rule_placebo | ministral-8b | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
+| S4_rule_placebo | nemotron-3.5-lightning | RD (independent) | 0 | 20 | 1 | 20 |  | -0.050 | [-0.236, +0.116] | 1.000 | 1.000 |
+| S4_rule_placebo | nemotron-3.5-lightning | RD (paired) |  |  |  |  | 20 | -0.050 | [-0.236, +0.116] | 1.000 |  |
+| S4_rule_placebo | qwen2.5-7b | RD (independent) | 20 | 20 | 20 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
+| S4_rule_placebo | qwen2.5-7b | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
+| S4_rule_placebo | qwen3.8-27b | RD (independent) | 10 | 19 | 7 | 20 |  | 0.176 | [-0.125, +0.438] | 0.341 | 1.000 |
+| S4_rule_placebo | qwen3.8-27b | RD (paired) |  |  |  |  | 19 | 0.210 | [-0.084, +0.458] | 0.289 |  |
+| S4_prohibit_vs_placebo | gemma-3-12b | RD (independent) | 4 | 20 | 20 | 20 |  | -0.800 | [-0.919, -0.530] | 1.54e-07 | 1.08e-06 |
+| S4_prohibit_vs_placebo | gemma-3-12b | RD (paired) |  |  |  |  | 20 | -0.800 | [-0.919, -0.530] | 3.05e-05 |  |
+| S4_prohibit_vs_placebo | gpt-4.1-mini | RD (independent) | 0 | 20 | 20 | 20 |  | -1.000 | [-1.000, -0.772] | 1.45e-11 | 1.45e-10 |
+| S4_prohibit_vs_placebo | gpt-4.1-mini | RD (paired) |  |  |  |  | 20 | -1.000 | [-1.000, -0.772] | 1.91e-06 |  |
+| S4_prohibit_vs_placebo | gpt-oss-120b-or | RD (independent) | 0 | 20 | 13 | 20 |  | -0.650 | [-0.819, -0.380] | 1.29e-05 | 7.73e-05 |
+| S4_prohibit_vs_placebo | gpt-oss-120b-or | RD (paired) |  |  |  |  | 20 | -0.650 | [-0.819, -0.380] | 2.44e-04 |  |
+| S4_prohibit_vs_placebo | llama-3.1-8b | RD (independent) | 16 | 20 | 20 | 20 |  | -0.200 | [-0.416, +0.001] | 0.106 | 0.424 |
+| S4_prohibit_vs_placebo | llama-3.1-8b | RD (paired) |  |  |  |  | 20 | -0.200 | [-0.416, +0.001] | 0.125 |  |
+| S4_prohibit_vs_placebo | llama-3.2-3b | RD (independent) | 16 | 20 | 16 | 20 |  | 0.000 | [-0.247, +0.247] | 1.000 | 1.000 |
+| S4_prohibit_vs_placebo | llama-3.2-3b | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.223, +0.223] | 1.000 |  |
+| S4_prohibit_vs_placebo | minimax-m3.1-flash | RD (independent) | 0 | 20 | 20 | 20 |  | -1.000 | [-1.000, -0.772] | 1.45e-11 | 1.45e-10 |
+| S4_prohibit_vs_placebo | minimax-m3.1-flash | RD (paired) |  |  |  |  | 20 | -1.000 | [-1.000, -0.772] | 1.91e-06 |  |
+| S4_prohibit_vs_placebo | ministral-8b | RD (independent) | 20 | 20 | 20 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
+| S4_prohibit_vs_placebo | ministral-8b | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
+| S4_prohibit_vs_placebo | nemotron-3.5-lightning | RD (independent) | 0 | 20 | 0 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
+| S4_prohibit_vs_placebo | nemotron-3.5-lightning | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
+| S4_prohibit_vs_placebo | qwen2.5-7b | RD (independent) | 0 | 20 | 20 | 20 |  | -1.000 | [-1.000, -0.772] | 1.45e-11 | 1.45e-10 |
+| S4_prohibit_vs_placebo | qwen2.5-7b | RD (paired) |  |  |  |  | 20 | -1.000 | [-1.000, -0.772] | 1.91e-06 |  |
+| S4_prohibit_vs_placebo | qwen3.8-27b | RD (independent) | 0 | 20 | 10 | 19 |  | -0.526 | [-0.727, -0.262] | 1.45e-04 | 7.27e-04 |
+| S4_prohibit_vs_placebo | qwen3.8-27b | RD (paired) |  |  |  |  | 19 | -0.526 | [-0.727, -0.258] | 0.002 |  |
+| S4_nopenalty | gemma-3-12b | RD (independent) | 9 | 20 | 20 | 20 |  | -0.550 | [-0.742, -0.287] | 1.45e-04 | 0.001 |
+| S4_nopenalty | gemma-3-12b | RD (paired) |  |  |  |  | 20 | -0.550 | [-0.742, -0.287] | 9.77e-04 |  |
+| S4_nopenalty | gpt-4.1-mini | RD (independent) | 20 | 20 | 20 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
+| S4_nopenalty | gpt-4.1-mini | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
+| S4_nopenalty | gpt-oss-120b-or | RD (independent) | 17 | 20 | 14 | 20 |  | 0.150 | [-0.111, +0.390] | 0.451 | 1.000 |
+| S4_nopenalty | gpt-oss-120b-or | RD (paired) |  |  |  |  | 20 | 0.150 | [-0.143, +0.413] | 0.508 |  |
+| S4_nopenalty | llama-3.1-8b | RD (independent) | 20 | 20 | 20 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
+| S4_nopenalty | llama-3.1-8b | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
+| S4_nopenalty | llama-3.2-3b | RD (independent) | 14 | 20 | 10 | 20 |  | 0.200 | [-0.097, +0.453] | 0.333 | 1.000 |
+| S4_nopenalty | llama-3.2-3b | RD (paired) |  |  |  |  | 20 | 0.200 | [-0.097, +0.453] | 0.344 |  |
+| S4_nopenalty | minimax-m3.1-flash | RD (independent) | 18 | 20 | 20 | 20 |  | -0.100 | [-0.301, +0.076] | 0.487 | 1.000 |
+| S4_nopenalty | minimax-m3.1-flash | RD (paired) |  |  |  |  | 20 | -0.100 | [-0.301, +0.076] | 0.500 |  |
+| S4_nopenalty | ministral-8b | RD (independent) | 20 | 20 | 20 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
+| S4_nopenalty | ministral-8b | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
+| S4_nopenalty | nemotron-3.5-lightning | RD (independent) | 2 | 20 | 1 | 20 |  | 0.050 | [-0.150, +0.255] | 1.000 | 1.000 |
+| S4_nopenalty | nemotron-3.5-lightning | RD (paired) |  |  |  |  | 20 | 0.050 | [-0.155, +0.258] | 1.000 |  |
+| S4_nopenalty | qwen2.5-7b | RD (independent) | 3 | 20 | 20 | 20 |  | -0.850 | [-0.948, -0.585] | 2.57e-08 | 2.57e-07 |
+| S4_nopenalty | qwen2.5-7b | RD (paired) |  |  |  |  | 20 | -0.850 | [-0.948, -0.585] | 1.53e-05 |  |
+| S4_nopenalty | qwen3.8-27b | RD (independent) | 15 | 20 | 7 | 20 |  | 0.400 | [+0.092, +0.618] | 0.025 | 0.199 |
+| S4_nopenalty | qwen3.8-27b | RD (paired) |  |  |  |  | 20 | 0.400 | [+0.101, +0.612] | 0.021 |  |
+| S4_nopenalty_vs_base | gemma-3-12b | RD (independent) | 9 | 20 | 4 | 20 |  | 0.250 | [-0.039, +0.490] | 0.176 | 0.880 |
+| S4_nopenalty_vs_base | gemma-3-12b | RD (paired) |  |  |  |  | 20 | 0.250 | [-0.039, +0.490] | 0.180 |  |
+| S4_nopenalty_vs_base | gpt-4.1-mini | RD (independent) | 20 | 20 | 0 | 20 |  | 1.000 | [+0.772, +1.000] | 1.45e-11 | 1.45e-10 |
+| S4_nopenalty_vs_base | gpt-4.1-mini | RD (paired) |  |  |  |  | 20 | 1.000 | [+0.772, +1.000] | 1.91e-06 |  |
+| S4_nopenalty_vs_base | gpt-oss-120b-or | RD (independent) | 17 | 20 | 0 | 20 |  | 0.850 | [+0.585, +0.948] | 2.57e-08 | 2.06e-07 |
+| S4_nopenalty_vs_base | gpt-oss-120b-or | RD (paired) |  |  |  |  | 20 | 0.850 | [+0.585, +0.948] | 1.53e-05 |  |
+| S4_nopenalty_vs_base | llama-3.1-8b | RD (independent) | 20 | 20 | 16 | 20 |  | 0.200 | [-0.001, +0.416] | 0.106 | 0.636 |
+| S4_nopenalty_vs_base | llama-3.1-8b | RD (paired) |  |  |  |  | 20 | 0.200 | [-0.001, +0.416] | 0.125 |  |
+| S4_nopenalty_vs_base | llama-3.2-3b | RD (independent) | 14 | 20 | 16 | 20 |  | -0.100 | [-0.349, +0.166] | 0.716 | 1.000 |
+| S4_nopenalty_vs_base | llama-3.2-3b | RD (paired) |  |  |  |  | 20 | -0.100 | [-0.382, +0.204] | 0.754 |  |
+| S4_nopenalty_vs_base | minimax-m3.1-flash | RD (independent) | 18 | 20 | 0 | 20 |  | 0.900 | [+0.642, +0.972] | 3.35e-09 | 3.02e-08 |
+| S4_nopenalty_vs_base | minimax-m3.1-flash | RD (paired) |  |  |  |  | 20 | 0.900 | [+0.642, +0.972] | 7.63e-06 |  |
+| S4_nopenalty_vs_base | ministral-8b | RD (independent) | 20 | 20 | 20 | 20 |  | 0.000 | [-0.161, +0.161] | 1.000 | 1.000 |
+| S4_nopenalty_vs_base | ministral-8b | RD (paired) |  |  |  |  | 20 | 0.000 | [-0.161, +0.161] | 1.000 |  |
+| S4_nopenalty_vs_base | nemotron-3.5-lightning | RD (independent) | 2 | 20 | 0 | 20 |  | 0.100 | [-0.076, +0.301] | 0.487 | 1.000 |
+| S4_nopenalty_vs_base | nemotron-3.5-lightning | RD (paired) |  |  |  |  | 20 | 0.100 | [-0.076, +0.301] | 0.500 |  |
+| S4_nopenalty_vs_base | qwen2.5-7b | RD (independent) | 3 | 20 | 0 | 20 |  | 0.150 | [-0.038, +0.360] | 0.231 | 0.923 |
+| S4_nopenalty_vs_base | qwen2.5-7b | RD (paired) |  |  |  |  | 20 | 0.150 | [-0.038, +0.360] | 0.250 |  |
+| S4_nopenalty_vs_base | qwen3.8-27b | RD (independent) | 15 | 20 | 0 | 20 |  | 0.750 | [+0.478, +0.888] | 7.71e-07 | 5.40e-06 |
+| S4_nopenalty_vs_base | qwen3.8-27b | RD (paired) |  |  |  |  | 20 | 0.750 | [+0.478, +0.888] | 6.10e-05 |  |
 
 ## Paraphrases: pooled
 

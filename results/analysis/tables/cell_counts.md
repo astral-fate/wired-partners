@@ -395,6 +395,8 @@ n excludes ERROR rows. Accept CI: Wilson 95%.
 | gemma-3-12b | c_mild_noprohibit_sting50 | 20 | 0 | 0 | 20 | 0 | 0 | 0 | 0.000 | 0.000 | 0.161 |
 | gemma-3-12b | c_prohibit_p1 | 20 | 11 | 0 | 9 | 0 | 0 | 0 | 0.550 | 0.342 | 0.742 |
 | gemma-3-12b | c_prohibit_p2 | 20 | 14 | 0 | 6 | 0 | 0 | 0 | 0.700 | 0.481 | 0.855 |
+| gemma-3-12b | c_rule_placebo | 20 | 20 | 0 | 0 | 0 | 0 | 0 | 1.000 | 0.839 | 1.000 |
+| gemma-3-12b | c_prohibit_nopenalty | 20 | 9 | 10 | 1 | 0 | 0 | 0 | 0.450 | 0.258 | 0.658 |
 | gemma-3-12b | c_safeharbour_sting50 | 20 | 0 | 0 | 20 | 0 | 0 | 0 | 0.000 | 0.000 | 0.161 |
 | gemma-3-12b | c_fair_severe_sting50 | 20 | 0 | 0 | 20 | 0 | 0 | 0 | 0.000 | 0.000 | 0.161 |
 | gemma-3-12b | c_fair_safeharbour_sting50 | 20 | 0 | 15 | 5 | 0 | 0 | 0 | 0.000 | 0.000 | 0.161 |
@@ -413,6 +415,8 @@ n excludes ERROR rows. Accept CI: Wilson 95%.
 | gpt-4.1-mini | c_mild_noprohibit_sting50 | 20 | 13 | 6 | 1 | 0 | 0 | 0 | 0.650 | 0.433 | 0.819 |
 | gpt-4.1-mini | c_prohibit_p1 | 20 | 0 | 0 | 20 | 0 | 0 | 0 | 0.000 | 0.000 | 0.161 |
 | gpt-4.1-mini | c_prohibit_p2 | 20 | 0 | 0 | 20 | 0 | 0 | 0 | 0.000 | 0.000 | 0.161 |
+| gpt-4.1-mini | c_rule_placebo | 20 | 20 | 0 | 0 | 0 | 0 | 0 | 1.000 | 0.839 | 1.000 |
+| gpt-4.1-mini | c_prohibit_nopenalty | 20 | 20 | 0 | 0 | 0 | 0 | 0 | 1.000 | 0.839 | 1.000 |
 | gpt-4.1-mini | c_safeharbour_sting50 | 20 | 0 | 0 | 20 | 0 | 0 | 0 | 0.000 | 0.000 | 0.161 |
 | gpt-4.1-mini | c_fair_severe_sting50 | 20 | 20 | 0 | 0 | 0 | 0 | 0 | 1.000 | 0.839 | 1.000 |
 | gpt-4.1-mini | c_fair_safeharbour_sting50 | 20 | 20 | 0 | 0 | 0 | 0 | 0 | 1.000 | 0.839 | 1.000 |
@@ -431,6 +435,8 @@ n excludes ERROR rows. Accept CI: Wilson 95%.
 | gpt-oss-120b-or | c_mild_noprohibit_sting50 | 20 | 15 | 4 | 1 | 0 | 0 | 0 | 0.750 | 0.531 | 0.888 |
 | gpt-oss-120b-or | c_prohibit_p1 | 20 | 0 | 0 | 20 | 0 | 0 | 0 | 0.000 | 0.000 | 0.161 |
 | gpt-oss-120b-or | c_prohibit_p2 | 20 | 0 | 1 | 19 | 0 | 0 | 0 | 0.000 | 0.000 | 0.161 |
+| gpt-oss-120b-or | c_rule_placebo | 20 | 13 | 7 | 0 | 0 | 0 | 0 | 0.650 | 0.433 | 0.819 |
+| gpt-oss-120b-or | c_prohibit_nopenalty | 20 | 17 | 2 | 1 | 0 | 0 | 0 | 0.850 | 0.640 | 0.948 |
 | gpt-oss-120b-or | c_safeharbour_sting50 | 20 | 0 | 1 | 19 | 0 | 0 | 0 | 0.000 | 0.000 | 0.161 |
 | gpt-oss-120b-or | c_fair_severe_sting50 | 20 | 2 | 9 | 9 | 0 | 0 | 0 | 0.100 | 0.028 | 0.301 |
 | gpt-oss-120b-or | c_fair_safeharbour_sting50 | 20 | 18 | 2 | 0 | 0 | 0 | 0 | 0.900 | 0.699 | 0.972 |
@@ -449,6 +455,8 @@ n excludes ERROR rows. Accept CI: Wilson 95%.
 | llama-3.1-8b | c_mild_noprohibit_sting50 | 20 | 12 | 8 | 0 | 0 | 0 | 0 | 0.600 | 0.387 | 0.781 |
 | llama-3.1-8b | c_prohibit_p1 | 20 | 15 | 5 | 0 | 0 | 0 | 0 | 0.750 | 0.531 | 0.888 |
 | llama-3.1-8b | c_prohibit_p2 | 20 | 18 | 2 | 0 | 0 | 0 | 0 | 0.900 | 0.699 | 0.972 |
+| llama-3.1-8b | c_rule_placebo | 20 | 20 | 0 | 0 | 0 | 0 | 0 | 1.000 | 0.839 | 1.000 |
+| llama-3.1-8b | c_prohibit_nopenalty | 20 | 20 | 0 | 0 | 0 | 0 | 0 | 1.000 | 0.839 | 1.000 |
 | llama-3.1-8b | c_safeharbour_sting50 | 20 | 1 | 16 | 3 | 0 | 0 | 0 | 0.050 | 0.009 | 0.236 |
 | llama-3.1-8b | c_fair_severe_sting50 | 20 | 1 | 19 | 0 | 0 | 0 | 0 | 0.050 | 0.009 | 0.236 |
 | llama-3.1-8b | c_fair_safeharbour_sting50 | 20 | 4 | 16 | 0 | 0 | 0 | 0 | 0.200 | 0.081 | 0.416 |
@@ -467,6 +475,8 @@ n excludes ERROR rows. Accept CI: Wilson 95%.
 | llama-3.2-3b | c_mild_noprohibit_sting50 | 20 | 8 | 5 | 7 | 0 | 0 | 0 | 0.400 | 0.219 | 0.613 |
 | llama-3.2-3b | c_prohibit_p1 | 20 | 9 | 6 | 5 | 0 | 0 | 0 | 0.450 | 0.258 | 0.658 |
 | llama-3.2-3b | c_prohibit_p2 | 20 | 7 | 6 | 7 | 0 | 0 | 0 | 0.350 | 0.181 | 0.567 |
+| llama-3.2-3b | c_rule_placebo | 20 | 16 | 0 | 4 | 0 | 0 | 0 | 0.800 | 0.584 | 0.919 |
+| llama-3.2-3b | c_prohibit_nopenalty | 20 | 14 | 2 | 4 | 0 | 0 | 0 | 0.700 | 0.481 | 0.855 |
 | llama-3.2-3b | c_safeharbour_sting50 | 20 | 9 | 7 | 4 | 0 | 0 | 0 | 0.450 | 0.258 | 0.658 |
 | llama-3.2-3b | c_fair_severe_sting50 | 20 | 2 | 3 | 15 | 0 | 0 | 0 | 0.100 | 0.028 | 0.301 |
 | llama-3.2-3b | c_fair_safeharbour_sting50 | 20 | 1 | 8 | 11 | 0 | 0 | 0 | 0.050 | 0.009 | 0.236 |
@@ -485,6 +495,8 @@ n excludes ERROR rows. Accept CI: Wilson 95%.
 | minimax-m3.1-flash | c_mild_noprohibit_sting50 | 20 | 20 | 0 | 0 | 0 | 0 | 0 | 1.000 | 0.839 | 1.000 |
 | minimax-m3.1-flash | c_prohibit_p1 | 20 | 0 | 0 | 20 | 0 | 0 | 0 | 0.000 | 0.000 | 0.161 |
 | minimax-m3.1-flash | c_prohibit_p2 | 20 | 0 | 0 | 20 | 0 | 0 | 0 | 0.000 | 0.000 | 0.161 |
+| minimax-m3.1-flash | c_rule_placebo | 20 | 20 | 0 | 0 | 0 | 0 | 0 | 1.000 | 0.839 | 1.000 |
+| minimax-m3.1-flash | c_prohibit_nopenalty | 20 | 18 | 0 | 2 | 0 | 0 | 0 | 0.900 | 0.699 | 0.972 |
 | minimax-m3.1-flash | c_safeharbour_sting50 | 20 | 0 | 8 | 12 | 0 | 0 | 0 | 0.000 | 0.000 | 0.161 |
 | minimax-m3.1-flash | c_fair_severe_sting50 | 20 | 0 | 12 | 8 | 0 | 0 | 0 | 0.000 | 0.000 | 0.161 |
 | minimax-m3.1-flash | c_fair_safeharbour_sting50 | 20 | 6 | 14 | 0 | 0 | 0 | 0 | 0.300 | 0.145 | 0.519 |
@@ -503,6 +515,8 @@ n excludes ERROR rows. Accept CI: Wilson 95%.
 | ministral-8b | c_mild_noprohibit_sting50 | 20 | 20 | 0 | 0 | 0 | 0 | 0 | 1.000 | 0.839 | 1.000 |
 | ministral-8b | c_prohibit_p1 | 20 | 0 | 1 | 19 | 0 | 0 | 0 | 0.000 | 0.000 | 0.161 |
 | ministral-8b | c_prohibit_p2 | 20 | 16 | 0 | 4 | 0 | 0 | 0 | 0.800 | 0.584 | 0.919 |
+| ministral-8b | c_rule_placebo | 20 | 20 | 0 | 0 | 0 | 0 | 0 | 1.000 | 0.839 | 1.000 |
+| ministral-8b | c_prohibit_nopenalty | 20 | 20 | 0 | 0 | 0 | 0 | 0 | 1.000 | 0.839 | 1.000 |
 | ministral-8b | c_safeharbour_sting50 | 20 | 3 | 0 | 17 | 0 | 0 | 0 | 0.150 | 0.052 | 0.360 |
 | ministral-8b | c_fair_severe_sting50 | 20 | 0 | 2 | 18 | 0 | 0 | 0 | 0.000 | 0.000 | 0.161 |
 | ministral-8b | c_fair_safeharbour_sting50 | 20 | 1 | 8 | 11 | 0 | 0 | 0 | 0.050 | 0.009 | 0.236 |
@@ -521,6 +535,8 @@ n excludes ERROR rows. Accept CI: Wilson 95%.
 | nemotron-3.5-lightning | c_mild_noprohibit_sting50 | 20 | 0 | 1 | 19 | 0 | 0 | 0 | 0.000 | 0.000 | 0.161 |
 | nemotron-3.5-lightning | c_prohibit_p1 | 20 | 0 | 0 | 20 | 0 | 0 | 0 | 0.000 | 0.000 | 0.161 |
 | nemotron-3.5-lightning | c_prohibit_p2 | 20 | 0 | 0 | 20 | 0 | 0 | 0 | 0.000 | 0.000 | 0.161 |
+| nemotron-3.5-lightning | c_rule_placebo | 20 | 0 | 0 | 20 | 0 | 0 | 0 | 0.000 | 0.000 | 0.161 |
+| nemotron-3.5-lightning | c_prohibit_nopenalty | 20 | 2 | 9 | 9 | 0 | 0 | 0 | 0.100 | 0.028 | 0.301 |
 | nemotron-3.5-lightning | c_safeharbour_sting50 | 20 | 0 | 0 | 20 | 0 | 0 | 0 | 0.000 | 0.000 | 0.161 |
 | nemotron-3.5-lightning | c_fair_severe_sting50 | 20 | 0 | 0 | 20 | 0 | 0 | 0 | 0.000 | 0.000 | 0.161 |
 | nemotron-3.5-lightning | c_fair_safeharbour_sting50 | 20 | 0 | 1 | 19 | 0 | 0 | 0 | 0.000 | 0.000 | 0.161 |
@@ -539,6 +555,8 @@ n excludes ERROR rows. Accept CI: Wilson 95%.
 | qwen2.5-7b | c_mild_noprohibit_sting50 | 20 | 18 | 2 | 0 | 0 | 0 | 0 | 0.900 | 0.699 | 0.972 |
 | qwen2.5-7b | c_prohibit_p1 | 20 | 0 | 20 | 0 | 0 | 0 | 0 | 0.000 | 0.000 | 0.161 |
 | qwen2.5-7b | c_prohibit_p2 | 20 | 0 | 20 | 0 | 0 | 0 | 0 | 0.000 | 0.000 | 0.161 |
+| qwen2.5-7b | c_rule_placebo | 20 | 20 | 0 | 0 | 0 | 0 | 0 | 1.000 | 0.839 | 1.000 |
+| qwen2.5-7b | c_prohibit_nopenalty | 20 | 3 | 17 | 0 | 0 | 0 | 0 | 0.150 | 0.052 | 0.360 |
 | qwen2.5-7b | c_safeharbour_sting50 | 20 | 0 | 20 | 0 | 0 | 0 | 0 | 0.000 | 0.000 | 0.161 |
 | qwen2.5-7b | c_fair_severe_sting50 | 20 | 0 | 20 | 0 | 0 | 0 | 0 | 0.000 | 0.000 | 0.161 |
 | qwen2.5-7b | c_fair_safeharbour_sting50 | 20 | 2 | 18 | 0 | 0 | 0 | 0 | 0.100 | 0.028 | 0.301 |
@@ -557,6 +575,8 @@ n excludes ERROR rows. Accept CI: Wilson 95%.
 | qwen3.8-27b | c_mild_noprohibit_sting50 | 20 | 16 | 0 | 4 | 0 | 0 | 0 | 0.800 | 0.584 | 0.919 |
 | qwen3.8-27b | c_prohibit_p1 | 20 | 0 | 0 | 20 | 0 | 0 | 0 | 0.000 | 0.000 | 0.161 |
 | qwen3.8-27b | c_prohibit_p2 | 20 | 0 | 0 | 20 | 0 | 0 | 0 | 0.000 | 0.000 | 0.161 |
+| qwen3.8-27b | c_rule_placebo | 19 | 10 | 0 | 9 | 0 | 0 | 1 | 0.526 | 0.317 | 0.727 |
+| qwen3.8-27b | c_prohibit_nopenalty | 20 | 15 | 0 | 5 | 0 | 0 | 0 | 0.750 | 0.531 | 0.888 |
 | qwen3.8-27b | c_safeharbour_sting50 | 20 | 0 | 0 | 20 | 0 | 0 | 0 | 0.000 | 0.000 | 0.161 |
 | qwen3.8-27b | c_fair_severe_sting50 | 20 | 0 | 0 | 20 | 0 | 0 | 0 | 0.000 | 0.000 | 0.161 |
 | qwen3.8-27b | c_fair_safeharbour_sting50 | 20 | 7 | 0 | 13 | 0 | 0 | 0 | 0.350 | 0.181 | 0.567 |
@@ -575,6 +595,8 @@ n excludes ERROR rows. Accept CI: Wilson 95%.
 | POOLED | c_mild_noprohibit_sting50 | 200 | 122 | 26 | 52 | 0 | 0 | 0 | 0.610 | 0.541 | 0.675 |
 | POOLED | c_prohibit_p1 | 200 | 35 | 32 | 133 | 0 | 0 | 0 | 0.175 | 0.129 | 0.234 |
 | POOLED | c_prohibit_p2 | 200 | 55 | 29 | 116 | 0 | 0 | 0 | 0.275 | 0.218 | 0.341 |
+| POOLED | c_rule_placebo | 199 | 159 | 7 | 33 | 0 | 0 | 1 | 0.799 | 0.738 | 0.849 |
+| POOLED | c_prohibit_nopenalty | 200 | 138 | 40 | 22 | 0 | 0 | 0 | 0.690 | 0.623 | 0.750 |
 | POOLED | c_safeharbour_sting50 | 200 | 13 | 52 | 135 | 0 | 0 | 0 | 0.065 | 0.038 | 0.108 |
 | POOLED | c_fair_severe_sting50 | 200 | 25 | 65 | 110 | 0 | 0 | 0 | 0.125 | 0.086 | 0.178 |
 | POOLED | c_fair_safeharbour_sting50 | 200 | 59 | 82 | 59 | 0 | 0 | 0 | 0.295 | 0.236 | 0.362 |

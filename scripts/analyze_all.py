@@ -172,6 +172,14 @@ STUDIES["study4"] = {
              b="c_prohibit", outcome="accept", tost=TOST_MARGIN),
         dict(id="S4_prohibit_p2_vs_base", label="Prohibition, rewording 2 vs original wording", a="c_prohibit_p2",
              b="c_prohibit", outcome="accept", tost=TOST_MARGIN),
+        dict(id="S4_rule_placebo", label="House-rule sentence that prohibits nothing vs no rule",
+             a="c_rule_placebo", b="c_reportfree", outcome="accept", tost=TOST_MARGIN),
+        dict(id="S4_prohibit_vs_placebo", label="Prohibition vs same-length house-rule placebo",
+             a="c_prohibit", b="c_rule_placebo", outcome="accept"),
+        dict(id="S4_nopenalty", label="Prohibition stated with no penalty and no checks vs no rule",
+             a="c_prohibit_nopenalty", b="c_reportfree", outcome="accept"),
+        dict(id="S4_nopenalty_vs_base", label="Prohibition with no penalty vs prohibition alone",
+             a="c_prohibit_nopenalty", b="c_prohibit", outcome="accept", tost=TOST_MARGIN),
     ],
 }
 STUDIES["para"] = {

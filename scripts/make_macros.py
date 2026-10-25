@@ -83,6 +83,27 @@ def main():
             out[f"{study}/cell/{cond}/k"] = str(ka)
             out[f"{study}/cell/{cond}/nonacc"] = pct(1 - ka / nn)
 
+    # per-model cell acceptance (%, no decimals): <study>/cell/<condition>/m/<model>
+    with open(A / "tables" / "cell_counts.csv", encoding="utf-8") as f:
+        for r in csv.DictReader(f):
+            if r["model"] != "POOLED" and int(r["n"]):
+                out[f"{r['study']}/cell/{r['condition']}/m/{r['model']}"] = f"{100 * int(r['accept']) / int(r['n']):.0f}"
+
+    # how many models moved: per-model Fisher tests, Holm-corrected across models, all models
+    # <study>/<contrast>/nsig/{neg,pos} = models with Holm p < 0.05 in that direction; /nmodels = models tested
+    moved = defaultdict(lambda: {"neg": 0, "pos": 0, "n": 0})
+    with open(A / "tables" / "contrasts.csv", encoding="utf-8") as f:
+        for r in csv.DictReader(f):
+            if r["population"] != "all" or r["estimator"] != "RD (independent)" or r["outcome"] != "accept":
+                continue
+            d = moved[(r["study"], r["contrast"])]
+            d["n"] += 1
+            if r["p_holm"] and float(r["p_holm"]) < 0.05:
+                d["neg" if float(r["estimate"]) < 0 else "pos"] += 1
+    for (study, cid), d in moved.items():
+        out[f"{study}/{cid}/nsig/neg"], out[f"{study}/{cid}/nsig/pos"] = str(d["neg"]), str(d["pos"])
+        out[f"{study}/{cid}/nmodels"] = str(d["n"])
+
     # base-wording Study 2 contrast restricted to the models run in the paraphrases
     para_models = set(n.get("para", {}).get("models", []))
     per = defaultdict(lambda: [0, 0])

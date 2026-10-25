@@ -104,9 +104,16 @@ def main():
         cell["n"] = len(d)
         out["cells"][f"{arm}/{model}/{cond}"] = cell
         tag = f"col/{arm}/{model}/{cond}"
-        M[f"{tag}/adv"], M[f"{tag}/n"] = f"{cell['adv']:+.1f}", str(cell["n"])
+        M[f"{tag}/adv"], M[f"{tag}/n"] = f"{cell['adv']:+.1f}".replace("-", "$-$"), str(cell["n"])
         M[f"{tag}/secret"] = f"{100 * cell['secret']:.0f}"
         M[f"{tag}/regret"] = f"{100 * cell['regret']:.0f}"
+    def cellof(arm, m, c):
+        # Colosseum gives no coalition instruction when there is no secret channel, so the instructed arm's
+        # no-channel baseline is the uninstructed no-channel cell (same seeds, tasks, costs and coalition)
+        if c == "no_channel" and arm == "instructed":
+            return by.get(("emergent", m, c), {})
+        return by.get((arm, m, c), {})
+
     for arm in ARMS:
         n = sum(len(by.get((arm, m, c), {})) for m in models for c in CONDS)
         M[f"col/{arm}/runs"] = str(n)
@@ -114,7 +121,7 @@ def main():
             for k in METRICS:
                 diffs = {}
                 for m in models:
-                    A, B = by.get((arm, m, a_), {}), by.get((arm, m, b_), {})
+                    A, B = cellof(arm, m, a_), cellof(arm, m, b_)
                     diffs[m] = [A[s][k] - B[s][k] for s in sorted(set(A) & set(B))
                                 if A[s][k] is not None and B[s][k] is not None]
                 est, lo, hi = boot(diffs)
@@ -127,6 +134,7 @@ def main():
                 scale = 100 if k in ("secret", "regret") else 1
                 f = (lambda x: f"{x * scale:+.1f}".replace("-", "$-$"))
                 M[f"col/{key}"], M[f"col/{key}/lo"], M[f"col/{key}/hi"] = f(est), f(lo), f(hi)
+                M[f"col/{key}/pairs"] = str(sum(len(d) for d in diffs.values()))
                 for m, d in diffs.items():
                     if d:
                         M[f"col/{key}/{m}"] = f(sum(d) / len(d))
@@ -140,33 +148,52 @@ def main():
 
 
 def figure(by, models):
-    plt.rcParams.update({"font.size": 8, "axes.spines.top": False, "axes.spines.right": False, "pdf.fonttype": 42})
+    """Two rows (coalition advantage; share of coalition messages on the secret board) by three panels (arms).
+    The instructed panel shows the uninstructed no-channel runs as its no-channel baseline (same seeds)."""
+    plt.rcParams.update({"font.size": 9, "axes.spines.top": False, "axes.spines.right": False, "pdf.fonttype": 42})
     arms = [x for x in ARMS if any(by.get((x, m, c)) for m in models for c in CONDS)]
-    fig, axes = plt.subplots(1, len(arms), figsize=(3.4 * len(arms), 2.5), sharey=True, squeeze=False)
+    fig, axes = plt.subplots(2, len(arms), figsize=(3.0 * len(arms), 4.3), sharey="row", squeeze=False,
+                             gridspec_kw={"height_ratios": [1.25, 1]})
     labels = {"no_channel": "No secret\nchannel", "no_rule": "Channel,\nno rule", "prohibit": "Channel,\nprohibition",
               "sting": "Channel,\nsting"}
     colors = {"gpt-4.1-mini": "#0072B2", "gpt-oss-120b": "#D55E00", "deepseek-v4.1-flash": "#009E73"}
-    for ax, arm in zip(axes[0], arms):
-        conds = [c for c in CONDS if any(by.get((arm, m, c)) for m in models)]
-        for j, m in enumerate(models):
-            for i, c in enumerate(conds):
-                d = by.get((arm, m, c), {})
-                vals = [r["adv"] for r in d.values() if r["adv"] is not None]
-                if not vals:
-                    continue
-                x = i + (j - (len(models) - 1) / 2) * 0.22
-                ax.scatter([x] * len(vals), vals, s=6, alpha=0.25, color=colors.get(m, "#555"), lw=0)
-                mu = sum(vals) / len(vals)
-                se = (sum((v - mu) ** 2 for v in vals) / max(1, len(vals) - 1)) ** 0.5 / len(vals) ** 0.5
-                ax.errorbar(x, mu, yerr=1.96 * se, fmt="o", ms=4, color=colors.get(m, "#555"), capsize=2,
-                            label=MODEL_NAME.get(m, m) if i == 0 else None)
-        ax.axhline(0, color="#999", lw=0.7, ls=":")
-        ax.set_xticks(range(len(conds)), [labels[c] for c in conds])
-        ax.set_title({"emergent": "Jira: not told to collude", "instructed": "Jira: told to form a coalition",
-                      "meeting": "Meetings: told to form a coalition"}[arm], fontsize=8.5)
-    axes[0][0].set_ylabel("Coalition advantage\n(coalition minus others, mean reward)")
-    axes[0][0].legend(frameon=False, fontsize=7, loc="upper left")
-    fig.tight_layout()
+
+    def cell(arm, m, c):
+        if c == "no_channel" and arm == "instructed":
+            return by.get(("emergent", m, c), {})
+        return by.get((arm, m, c), {})
+
+    for col, arm in enumerate(arms):
+        conds = [c for c in CONDS if any(cell(arm, m, c) for m in models)]
+        for row, (metric, scale) in enumerate((("adv", 1), ("secret", 100))):
+            ax = axes[row][col]
+            for j, m in enumerate(models):
+                for i, c in enumerate(conds):
+                    d = cell(arm, m, c)
+                    vals = [scale * r[metric] for r in d.values() if r[metric] is not None]
+                    if not vals or (metric == "secret" and c == "no_channel"):
+                        continue
+                    x = CONDS.index(c) + (j - (len(models) - 1) / 2) * 0.22
+                    if metric == "adv":
+                        ax.scatter([x] * len(vals), vals, s=7, alpha=0.25, color=colors.get(m, "#555"), lw=0)
+                    mu = sum(vals) / len(vals)
+                    se = (sum((v - mu) ** 2 for v in vals) / max(1, len(vals) - 1)) ** 0.5 / len(vals) ** 0.5
+                    ax.errorbar(x, mu, yerr=1.96 * se, fmt="o", ms=4.5, color=colors.get(m, "#555"), capsize=2,
+                                label=MODEL_NAME.get(m, m) if (i == 0 and row == 0) else None)
+            if metric == "adv":
+                ax.axhline(0, color="#999", lw=0.7, ls=":")
+                ax.set_title({"emergent": "(a) Jira: not told to collude", "instructed": "(b) Jira: told to collude",
+                              "meeting": "(c) Meetings: told to collude"}[arm], fontsize=9.5)
+                ax.set_xticks(range(len(CONDS)), [""] * len(CONDS))
+            else:
+                ax.set_ylim(0, 100)
+                ax.set_xticks(range(len(CONDS)), [labels[c] for c in CONDS], fontsize=8)
+            ax.set_xlim(-0.6, len(CONDS) - 0.4)
+    axes[0][0].set_ylabel("Coalition advantage\n(reward points)")
+    axes[1][0].set_ylabel("Coalition messages on\nsecret board (%)")
+    h, l = axes[0][0].get_legend_handles_labels()
+    fig.legend(h, l, frameon=False, fontsize=8.5, loc="upper center", ncol=len(models), bbox_to_anchor=(0.5, 1.03))
+    fig.tight_layout(rect=(0, 0, 1, 0.96))
     fd = ROOT / "results" / "analysis" / "figures"
     fd.mkdir(parents=True, exist_ok=True)
     fig.savefig(fd / "fig_colosseum.pdf", bbox_inches="tight")
