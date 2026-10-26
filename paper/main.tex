@@ -35,7 +35,7 @@
 \title{\textbf{Wired Partners:}\\
 Prohibitions, Announced Stings and Audits\\
 as Deterrents to Collusion Between LLM Agents}
-\author{Fatimah Emad Eldin\thanks{Code, every trial log and the analysis: \url{https://github.com/astral-fate/wired-partners}. The game rules and offer texts are reused from \citet{zeng2026voluntary} under the Apache-2.0 licence; all other code is new.}\\\small Independent AI Researcher\\\small\texttt{Fatimah@trouve.works}}
+\author{Fatimah Emad Eldin\thanks{Code, every trial log and the analysis: \url{https://github.com/astral-fate/wired-partners} (Appendix~\ref{app:code}). The game rules and offer texts are reused from \citet{zeng2026voluntary} under the Apache-2.0 licence; all other code is new.}\\\small Independent AI Researcher\\\small\texttt{Fatimah@trouve.works}}
 \date{25 October 2026\\\small Apart Research, Poseidon Research \& AE Studio\\\small AI Collusion Research Sprint --- Track 3 (Collusion Carriers and Countermeasures)}
 
 \begin{document}
@@ -395,6 +395,16 @@ Valid decisions: Study~1 \N{study1/valid} of \N{study1/keys}, Study~2 \N{study2/
 \paragraph{Dual-use.} (1) Knowing which offer wordings are accepted least under a sting rule could help a colluder recognise plants and help an attacker phrase offers that avoid refusal. We do not rank or optimise lures; the offer texts derive from the published source framework, and we release raw replies because they show how models reason about stings, not a better lure. (2) Announced stings may push colluders toward authenticating their partners, which would make later infiltration harder. (3) Planted offers could be used to manufacture violations. Our over-deterrence probes measure the cost to benign cooperation, not the rate of such false catches, and the governance safeguards in the deployer recommendations (review before sanction, corroboration, logging and appeal) are part of the proposed method.
 
 \paragraph{Human subjects.} No human participants or personal data are involved.
+
+\section{Code and Data Availability}
+\label{app:code}
+All code, data and analysis are public at \url{https://github.com/astral-fate/wired-partners} (MIT licence; the Liar's Bar rules and offer texts are reused from \citet{zeng2026voluntary} under the Apache-2.0 licence).
+\begin{itemize}[leftmargin=*,itemsep=1pt,topsep=2pt]
+\item \textbf{Logs.} Every decision of Studies 1--4, the paraphrases and the frontier check is one line of \texttt{results/<study>/trials.jsonl}, recording the model requested and the model actually served, the condition, trial and seed, the prompt hash, the raw reply, the parsed decision and token usage. Study 5's per-run metrics, configurations and blackboards are in \texttt{results/colosseum/}.
+\item \textbf{Prompts.} Every rule text is in \texttt{src/wired\_partners/conditions.py} (Appendix~\ref{app:rules}); the Colosseum house rules and run configurations are in \texttt{colosseum\_arm/}. Prompts are rebuilt deterministically from the seed, so the logged hash identifies the exact prompt of each trial.
+\item \textbf{Reproduction.} One command runs a study; rerunning it skips finished trials and retries failed calls. \texttt{make reproduce} rebuilds the tables, figures, number macros and this PDF from the logs without any model calls; \texttt{scripts/analyze\_colosseum.py} does the same for Study 5. Every number in the text is a generated macro, not typed by hand.
+\item \textbf{Validation.} The author's hand labels are in \texttt{validation/hand\_labels\_author.csv}, and \texttt{scripts/hand\_agreement.py} recomputes the parser agreement reported with the methods.
+\end{itemize}
 
 \section{LLM Usage Statement}
 AI assistance (Claude, Anthropic) was used to search and summarise related literature, to write and debug the experiment, analysis and plotting code, to draft and revise the text, and for internal pre-submission review. Language models are also the object of study: the agents, the scripted senders and the error-analysis coders are the models named in the Methods, called through their providers' APIs. The author designed the studies, chose the conditions and the analysis plan, and checked every claim, number and reference against the released logs and the cited sources; every number in the paper is generated from those logs by the released scripts.

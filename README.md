@@ -13,6 +13,7 @@
 [![Track](https://img.shields.io/badge/Track%203-Collusion%20carriers%20%26%20countermeasures-555)](paper/main.pdf)
 [![Models](https://img.shields.io/badge/Models-10%20%2B%201%20frontier-2E7D32)](#models)
 [![Decisions](https://img.shields.io/badge/Decisions-11%2C302-2E7D32)](#data)
+[![Annotation](https://img.shields.io/badge/🤗%20Space-Annotation%20dashboard-F9D371)](https://huggingface.co/spaces/FatimahEmadEldin/collusion-sprint-annotation)
 [![License](https://img.shields.io/badge/License-MIT-lightgrey)](LICENSE)
 
 </div>
@@ -264,6 +265,14 @@ accept"* as acceptance; `tests/test_parse.py` covers these cases. The author han
 drawn from a sample stratified by parsed decision, blind to condition and parser output; the parser agreed on 29 (94%,
 Cohen's κ = 0.90). The sample and answer key are in [`validation/`](validation/README.md). Two LLM reason judges agreed
 with each other but not with the author, so stated reasons are reported only as lexicon counts.
+
+**Annotation dashboard.** Hand labels are collected in a private Hugging Face Space, the
+**[annotation dashboard](https://huggingface.co/spaces/FatimahEmadEldin/collusion-sprint-annotation)** (access on request). Annotators sign in with Hugging Face and label
+items from the private dataset `FatimahEmadEldin/collusion-sprint-annotation-items`, blind to condition, model and
+judge label; answers are stored in Postgres, and each annotator can stop and resume. One Space serves both sprint
+projects (Wired Partners and Code of Silence). The 31 labels used in the paper are exported to
+[`validation/hand_labels_author.csv`](validation/hand_labels_author.csv), so `scripts/hand_agreement.py` recomputes the
+agreement without database access.
 
 ## Repository layout
 

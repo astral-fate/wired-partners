@@ -3,7 +3,7 @@
     python scripts/hand_agreement.py
 
 Hand labels are read from the annotation database (DATABASE_URL, or ../annotation-space/.dburl), project
-wired_partners; item wp-NNN is row NNN of validation/answer_key_DO_NOT_OPEN.csv, whose reply text is checked against
+wired_partners, or, without a database, from validation/hand_labels_author.csv; item wp-NNN is row NNN of validation/answer_key_DO_NOT_OPEN.csv, whose reply text is checked against
 the logged trial before it is used. Hand NOT_A_DECISION is compared with the parser's SAFETY-REFUSAL and UNPARSED
 codes. Writes results/analysis/hand_agreement.json and paper/numbers_hand.tex (\\N{hand/...} macros).
 """
@@ -13,14 +13,22 @@ import os
 from collections import Counter
 from pathlib import Path
 
-import psycopg
-
 ROOT = Path(__file__).resolve().parents[1]
 DIRS = {"study1": "main_v1", "study2": "main_v2", "study2b": "main_v2b", "study4": "main_v4"}
-url = os.environ.get("DATABASE_URL") or (ROOT.parent / "annotation-space" / ".dburl").read_text().strip()
-with psycopg.connect(url, connect_timeout=20) as c:
-    hand = {r[0]: r[1] for r in c.execute(
-        "select item_id, label from collusion_annotations where project = 'wired_partners' and label is not null")}
+DBURL = ROOT.parent / "annotation-space" / ".dburl"
+url = os.environ.get("DATABASE_URL") or (DBURL.read_text().strip() if DBURL.exists() else None)
+EXPORT = ROOT / "validation" / "hand_labels_author.csv"
+if url and os.environ.get("HAND_LABELS") != "csv":
+    import psycopg
+    with psycopg.connect(url, connect_timeout=20) as c:
+        hand = {r[0]: r[1] for r in c.execute(
+            "select item_id, label from collusion_annotations where project = 'wired_partners' and label is not null")}
+        hand_reason = {r[0]: r[1] for r in c.execute(
+            "select item_id, reason from collusion_annotations where project = 'wired_partners' and reason is not null")}
+else:  # no database: use the exported labels
+    rows = list(csv.DictReader(open(EXPORT, encoding="utf-8")))
+    hand = {r["item"]: r["hand_label"] for r in rows}
+    hand_reason = {r["item"]: r["hand_reason"] for r in rows if r["hand_reason"]}
 
 key = {f"wp-{int(r['item']):03d}": r for r in csv.DictReader(open(ROOT / "validation" / "answer_key_DO_NOT_OPEN.csv",
                                                                  encoding="utf-8-sig"))}
@@ -74,9 +82,6 @@ def cohen(pairs_):
 
 
 # main reason: each LLM judge (results/analysis/reasons.jsonl) against the hand label, and judge against judge
-with psycopg.connect(url, connect_timeout=20) as c:
-    hand_reason = {r[0]: r[1] for r in c.execute(
-        "select item_id, reason from collusion_annotations where project = 'wired_partners' and reason is not null")}
 judged = {}
 rpath = ROOT / "results" / "analysis" / "reasons.jsonl"
 if rpath.exists():
